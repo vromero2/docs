@@ -1,0 +1,405 @@
+# Laboratorios y Stock - Visión General
+
+Los módulos de **Laboratorios** y **Stock** te permiten gestionar trabajos protésicos externos y el inventario de materiales e insumos de la clínica.
+
+---
+
+## 1. Módulo de Laboratorios
+
+El sistema de laboratorios gestiona solicitudes de trabajos protésicos a laboratorios externos.
+
+### Acceso
+
+**Ruta**: `/laboratory`
+**Permiso**: `list_laboratories` (o permisos específicos según la pestaña)
+
+[IMAGEN: Pantalla principal de laboratorios con pestañas]
+
+---
+
+### Estructura del Módulo (Pestañas)
+
+#### A. Laboratorios (`/laboratory/labs`)
+
+Gestión de laboratorios proveedores.
+
+**Permisos**: `list_laboratories`, `add_labs`, `edit_lab`
+
+**Información de cada Laboratorio**:
+- Nombre del laboratorio
+- Contacto (persona responsable)
+- Teléfono
+- Email
+- Dirección
+- Notas
+
+**Acciones**:
+- Agregar nuevo laboratorio
+- Editar datos del laboratorio
+- Activar/Desactivar laboratorio
+- Ver historial de trabajos con ese laboratorio
+
+**Uso típico**: Mantener listado actualizado de laboratorios con los que trabaja la clínica.
+
+[IMAGEN: Lista de laboratorios proveedores]
+
+---
+
+#### B. Acciones de Laboratorio (`/laboratory/actions`)
+
+Tipos de trabajos que los laboratorios pueden realizar.
+
+**Información de cada Acción**:
+- Nombre del trabajo (Ej: "Corona de metal-porcelana")
+- Descripción
+- Tiempo estimado de entrega
+- Costo promedio
+
+**Ejemplos de Acciones Comunes**:
+- Corona de metal-porcelana
+- Corona de zirconio
+- Puente fijo 3 unidades
+- Prótesis removible superior completa
+- Prótesis removible inferior parcial
+- Placa de relajación (Michigan)
+- Férula de blanqueamiento
+- Aparato de ortopedia
+
+**Asociar a Laboratorios**:
+Cada laboratorio puede tener precios específicos para cada tipo de trabajo.
+
+**Ruta de acciones por laboratorio**: `/laboratory/actions/labs/:id`
+
+[IMAGEN: Lista de acciones de laboratorio]
+
+---
+
+#### C. Solicitudes (`/laboratory/solicitations`)
+
+Registro de trabajos enviados a laboratorios.
+
+**Información de cada Solicitud**:
+- **Paciente**: Para quién es el trabajo
+- **Laboratorio**: A quién se envía
+- **Tipo de trabajo**: Qué se solicita (corona, puente, etc.)
+- **Fecha de solicitud**: Cuándo se envió
+- **Fecha estimada de entrega**: Cuándo debería estar listo
+- **Estado**: Solicitado, En proceso, Listo, Entregado, Cancelado
+- **Costo**: Precio del trabajo
+- **Observaciones**: Detalles especiales (color, forma, etc.)
+
+**Crear Nueva Solicitud**:
+
+1. Clic en **"Nueva Solicitud"**
+2. Completar formulario:
+   - Seleccionar paciente
+   - Seleccionar laboratorio
+   - Elegir tipo de trabajo
+   - Especificar detalles (pieza dental, color de diente, etc.)
+   - Fecha esperada de entrega
+   - Costo acordado
+   - Observaciones especiales
+3. Guardar
+
+**Estados del Trabajo**:
+
+| Estado | Descripción | Color |
+|--------|-------------|-------|
+| **Solicitado** | Enviado al laboratorio | Amarillo |
+| **En Proceso** | Laboratorio está trabajando | Azul |
+| **Listo** | Trabajo terminado, pendiente de retiro | Verde |
+| **Entregado** | Recibido en la clínica | Verde Oscuro |
+| **Cancelado** | Solicitud anulada | Rojo |
+
+**Actualizar Estado**:
+- Seleccionar solicitud
+- Cambiar estado según progreso
+- (Opcional) Agregar nota de actualización
+
+[IMAGEN: Formulario de nueva solicitud de laboratorio]
+
+---
+
+## 2. Módulo de Stock (Inventario)
+
+Gestiona materiales, insumos y productos de la clínica.
+
+### Acceso
+
+**Ruta**: `/stock`
+
+**Estructura con Pestañas**:
+
+#### A. Inventario (`/stock/inventory`)
+
+Listado de todos los productos en stock.
+
+**Información por Producto**:
+- Nombre del producto
+- Código/SKU (si aplica)
+- Categoría (Material odontológico, Oficina, Limpieza, etc.)
+- Cantidad actual
+- Unidad (Unidades, Cajas, Litros, Gramos, etc.)
+- Stock mínimo (para alertas)
+- Precio unitario
+- Proveedor
+
+**Acciones**:
+- Agregar nuevo producto
+- Editar producto
+- Ajustar stock (entrada/salida)
+- Ver historial de movimientos
+- Marcar como agotado
+
+**Alertas**:
+- **Rojo**: Stock por debajo del mínimo
+- **Amarillo**: Stock cercano al mínimo
+- **Verde**: Stock normal
+
+[IMAGEN: Tabla de inventario con alertas de stock]
+
+---
+
+#### B. Órdenes de Compra (`/stock/orders`)
+
+Pedidos realizados a proveedores.
+
+**Información de cada Orden**:
+- Número de orden
+- Proveedor
+- Fecha del pedido
+- Estado (Pendiente, En tránsito, Recibido, Cancelado)
+- Total de la orden
+- Items incluidos
+
+**Crear Orden de Compra**:
+
+1. Clic en **"Nueva Orden"**
+2. Seleccionar proveedor
+3. Agregar productos:
+   - Producto
+   - Cantidad
+   - Precio unitario
+4. El sistema calcula total automáticamente
+5. Guardar orden
+
+**Al Recibir la Orden**:
+1. Marcar orden como "Recibido"
+2. El sistema actualiza automáticamente el inventario
+
+[IMAGEN: Formulario de orden de compra]
+
+---
+
+#### C. Proveedores (`/stock/suppliers`)
+
+Directorio de proveedores de insumos.
+
+**Información de cada Proveedor**:
+- Nombre comercial
+- Razón social
+- CUIT/RUT (si aplica)
+- Contacto
+- Teléfono
+- Email
+- Dirección
+- Sitio web
+- Condiciones de pago
+- Notas
+
+**Acciones**:
+- Agregar proveedor
+- Editar información
+- Ver historial de órdenes
+- Marcar proveedor favorito
+
+[IMAGEN: Lista de proveedores]
+
+---
+
+## Flujos de Trabajo
+
+### Flujo de Laboratorio
+
+#### 1. Necesidad de Trabajo Protésico
+
+**Escenario**: Un paciente necesita una corona.
+
+1. **Durante Consulta**:
+   - Doctor identifica que se necesita corona
+   - Se prepara el diente
+   - Se toma impresión
+
+2. **Crear Solicitud**:
+   - Ve a "Laboratorios" → "Solicitudes"
+   - Clic en "Nueva Solicitud"
+   - Completa datos:
+     - Paciente: Juan Pérez
+     - Laboratorio: DentLab S.A.
+     - Trabajo: Corona de zirconio
+     - Pieza: 16 (Molar superior derecho)
+     - Color: A2
+     - Fecha entrega: +7 días
+     - Costo: $15,000
+   - Guardar
+
+3. **Enviar al Laboratorio**:
+   - Imprimir orden
+   - Embalar impresión + orden
+   - Enviar físicamente al laboratorio
+
+4. **Seguimiento**:
+   - Laboratorio llama: "Está en proceso" → Cambiar estado
+   - Laboratorio llama: "Está listo" → Cambiar estado
+   - Retirar trabajo del laboratorio
+   - Marcar como "Entregado"
+
+5. **Colocación en Paciente**:
+   - Probar corona en paciente
+   - Si ajusta bien: Cementar
+   - Registrar en evolución del presupuesto
+
+#### Tiempos Típicos por Trabajo
+
+| Tipo de Trabajo | Días Estimados |
+|-----------------|----------------|
+| Corona metal-porcelana | 7-10 días |
+| Corona zirconio | 10-14 días |
+| Puente 3 unidades | 10-14 días |
+| Prótesis removible completa | 14-21 días |
+| Placa de relajación | 3-5 días |
+
+---
+
+### Flujo de Inventario
+
+#### Control de Stock
+
+**Escenario**: Gestión diaria del inventario.
+
+1. **Revisar Alertas**:
+   - Al iniciar sesión, ver productos con bajo stock
+   - Identificar qué se necesita comprar
+
+2. **Crear Orden de Compra**:
+   - Ve a "Stock" → "Órdenes"
+   - Nueva orden al proveedor habitual
+   - Agregar productos necesarios
+   - Enviar orden (email/teléfono al proveedor)
+
+3. **Recibir Mercadería**:
+   - Cuando llega el pedido, verificar contenido
+   - Marcar orden como "Recibido" en el sistema
+   - El stock se actualiza automáticamente
+
+4. **Uso Diario**:
+   - Cuando se usa material en tratamiento
+   - Registrar salida de stock (opcional)
+   - O hacer conteo periódico y ajustar
+
+#### Conteo Físico Periódico
+
+**Frecuencia recomendada**: Mensual
+
+1. Contar físicamente cada producto
+2. Comparar con stock del sistema
+3. Ajustar diferencias
+4. Investigar causas de discrepancias
+
+---
+
+## Permisos por Funcionalidad
+
+### Laboratorios
+
+| Acción | Permiso | Rol Típico |
+|--------|---------|------------|
+| Ver laboratorios | `list_laboratories` | Doctor, Admin |
+| Agregar laboratorio | `add_labs` | Admin |
+| Editar laboratorio | `edit_lab` | Admin |
+| Ver solicitudes | (sin permiso específico) | Doctor, Admin |
+| Crear solicitud | (sin permiso específico) | Doctor, Admin |
+
+### Stock
+
+| Acción | Permiso | Rol Típico |
+|--------|---------|------------|
+| Ver inventario | `list_inventory` | Admin, Auxiliar |
+| Editar inventario | `edit_inventory` | Admin |
+| Crear órdenes | `create_orders` | Admin |
+| Ver proveedores | `list_suppliers` | Admin |
+
+**Nota**: Los permisos exactos pueden variar según configuración.
+
+---
+
+## Consejos y Mejores Prácticas
+
+### Laboratorios
+
+1. **Detalle en solicitudes**: Especifica claramente color, forma, ajuste
+2. **Fotos**: Si es posible, adjunta fotos de referencia (dientes vecinos)
+3. **Seguimiento constante**: Llama al laboratorio para confirmar tiempos
+4. **Planificación**: Envía trabajos con margen de tiempo
+5. **Calidad**: Si un trabajo no cumple, devuélvelo (no comprometas calidad)
+
+### Inventario
+
+1. **Stock mínimo realista**: Define según consumo real
+2. **Categorización**: Agrupa productos lógicamente
+3. **Proveedores de respaldo**: Ten alternativas si falta stock
+4. **Fechas de vencimiento**: Controla productos con vencimiento
+5. **Conteo regular**: No confíes solo en el sistema, cuenta físicamente
+
+### Órdenes de Compra
+
+1. **Agrupa compras**: Reduce costos de envío
+2. **Negocia precios**: Por volumen o pago anticipado
+3. **Verifica al recibir**: Cuenta y revisa estado de productos
+4. **Guarda comprobantes**: Para reclamos o garantías
+
+---
+
+## Integración con Otros Módulos
+
+### Presupuestos
+- Al crear presupuesto con prótesis, puedes crear solicitud de laboratorio directamente
+- El costo del laboratorio se incluye en el presupuesto del paciente
+
+### Gastos (Tesorería)
+- Pagos a laboratorios se registran como gastos
+- Órdenes de compra generan gastos en tesorería
+
+### Pacientes
+- Las solicitudes de laboratorio se asocian a pacientes
+- Visibles en historial del paciente
+
+---
+
+## Errores Comunes
+
+### No puedo crear solicitud de laboratorio
+**Causa**: No hay laboratorios registrados
+**Solución**: Primero agrega al menos un laboratorio en la pestaña "Laboratorios"
+
+### El stock no se actualiza
+**Causa**: La orden no está marcada como "Recibida"
+**Solución**: Cambia el estado de la orden a "Recibido"
+
+### No encuentro un producto en inventario
+**Causa**: No fue creado aún
+**Solución**: Agrégalo en "Inventario" → "Agregar producto"
+
+---
+
+## Próximos Pasos
+
+- [Gestión de Laboratorios →](./laboratorios.md)
+- [Solicitudes de Laboratorio →](./solicitudes.md)
+- [Control de Inventario →](./inventario.md)
+- [Órdenes de Compra →](./ordenes.md)
+- [Gestión de Proveedores →](./proveedores.md)
+
+---
+
+[← Volver: Administración](../06-administracion/vision-general.md) | [Siguiente: Multimedia →](../08-multimedia/vision-general.md)

@@ -1,0 +1,404 @@
+# Presupuestos y Tratamientos - Visión General
+
+El módulo de **Presupuestos** es donde se planifican, costean y dan seguimiento a los tratamientos dentales de los pacientes.
+
+---
+
+## ¿Qué es un Presupuesto?
+
+Un **presupuesto** (también llamado plan de tratamiento) es un documento que contiene:
+
+- **Diagnóstico**: Problemas identificados en el paciente
+- **Planificación**: Tratamientos propuestos para resolver los problemas
+- **Odontograma**: Representación visual de los tratamientos por pieza dental
+- **Costos**: Precio de cada tratamiento y total
+- **Método de pago**: Forma en que el paciente pagará (contado, cuotas, etc.)
+- **Estado**: Pendiente, aprobado, en tratamiento, completado
+
+---
+
+## Flujo Completo de un Presupuesto
+
+### 1. Diagnóstico
+El doctor examina al paciente e identifica problemas:
+- Caries en piezas 16, 17
+- Fractura en pieza 24
+- Falta pieza 36 (ausente)
+
+### 2. Creación del Presupuesto
+- El doctor accede al paciente en el sistema
+- Va a "Presupuestos" → "Crear nuevo presupuesto"
+- Completa el wizard de 3 pasos
+
+### 3. Aprobación
+- El presupuesto se envía al paciente (impreso, email o PDF)
+- El paciente revisa y decide
+- Si acepta: Se marca como "Aprobado"
+- Si rechaza: Se marca como "Rechazado"
+
+### 4. Ejecución (Tratamiento)
+- Con el presupuesto aprobado, se comienzan los tratamientos
+- En cada consulta, se marcan tratamientos como "Realizados"
+- Se crean **evoluciones** registrando lo hecho
+
+### 5. Finalización
+- Cuando todos los tratamientos están completados
+- El presupuesto se marca como "Completado"
+- El paciente debe tener balance en 0 (todo pagado)
+
+---
+
+## Wizard de Creación (3 Pasos)
+
+### Paso 1: Diagnóstico
+
+Aquí identificas los problemas del paciente usando el **odontograma interactivo**.
+
+**Acciones**:
+- Seleccionar diente en el odontograma
+- Elegir superficies afectadas (mesial, distal, oclusal, vestibular, lingual)
+- Asignar símbolo de diagnóstico (ej: Caries, Fractura, Ausente)
+- Repetir para cada problema encontrado
+
+**Símbolos de Diagnóstico Comunes**:
+- **Caries**: Deterioro del esmalte
+- **Fractura**: Diente roto o fisurado
+- **Ausente**: Pieza faltante
+- **Extracción indicada**: Debe extraerse
+- **Movilidad**: Diente flojo
+
+**Color**: Los diagnósticos se muestran en **ROJO** en el odontograma.
+
+[IMAGEN: Odontograma con diagnósticos en rojo]
+
+### Paso 2: Planificación
+
+Aquí propones los tratamientos para solucionar los problemas diagnosticados.
+
+**Acciones**:
+1. Volver a seleccionar el diente
+2. Elegir tratamiento de una lista (ej: Obturación, Endodoncia, Corona)
+3. El sistema asocia automáticamente el tratamiento al diagnóstico previo
+4. Asignar costo del tratamiento
+5. Repetir para cada tratamiento propuesto
+
+**Símbolos de Tratamiento Comunes**:
+- **Obturación**: Resina, amalgama
+- **Endodoncia**: Tratamiento de conducto
+- **Corona**: Prótesis fija
+- **Extracción**: Remoción del diente
+- **Implante**: Reemplazo de pieza ausente
+- **Puente**: Prótesis para múltiples piezas
+
+**Color**: Los tratamientos propuestos se muestran en **AZUL** en el odontograma.
+
+[IMAGEN: Odontograma con tratamientos en azul]
+
+**Tabla de Planificación**:
+A medida que agregas tratamientos, se crea una tabla que muestra:
+- Diente
+- Superficie
+- Tratamiento
+- Costo unitario
+- Subtotal
+
+### Paso 3: Método de Pago
+
+Aquí defines cómo el paciente pagará el presupuesto.
+
+**Opciones de Pago**:
+
+#### A. Contado
+- Pago único del total
+- Opcional: Descuento por pago anticipado
+
+#### B. Cuotas
+- Dividir el total en pagos mensuales
+- Definir número de cuotas (ej: 3, 6, 12 meses)
+- Opcional: Interés o recargo por financiación
+- El sistema calcula automáticamente el monto de cada cuota
+
+#### C. Por Sesión
+- El paciente paga en cada consulta
+- Monto variable según lo realizado ese día
+
+#### D. Mixto
+- Combinación de las anteriores
+- Ej: Señal de 30% + resto en 6 cuotas
+
+**Información Adicional**:
+- **Moneda**: Peso, Dólar, Euro, etc. (según configuración)
+- **Comentarios**: Notas especiales sobre el pago
+- **Descuentos**: Porcentaje o monto fijo de descuento
+
+**Resumen Final**:
+- Subtotal (suma de todos los tratamientos)
+- Descuentos aplicados
+- Total a pagar
+- Método de pago seleccionado
+
+---
+
+## Acceso a Presupuestos del Paciente
+
+### Desde la Ficha del Paciente
+
+1. Buscar y abrir paciente
+2. Ir a pestaña **"Presupuestos"**
+3. Verás lista de todos los presupuestos del paciente
+
+**Ruta**: `/patients/:id/budgets`
+**Permiso**: `list_budgets`
+
+[IMAGEN: Lista de presupuestos en ficha del paciente]
+
+### Información Visible
+
+Para cada presupuesto:
+- **Número**: Identificador único (ej: PRE-001)
+- **Fecha de creación**: Cuándo se creó
+- **Estado**: Badge con color según estado
+- **Total**: Monto total del presupuesto
+- **Saldo pendiente**: Cuánto falta pagar
+- **Doctor**: Quién lo creó
+- **Acciones**: Ver, editar, eliminar
+
+---
+
+## Estados de un Presupuesto
+
+| Estado | Descripción | Color Badge | Acciones Disponibles |
+|--------|-------------|-------------|----------------------|
+| **Borrador** | En creación, no enviado | Gris | Editar, Eliminar, Enviar |
+| **Pendiente** | Enviado, esperando respuesta | Amarillo | Ver, Aprobar, Rechazar |
+| **Aprobado** | Paciente aceptó | Verde | Ver, Iniciar Tratamiento |
+| **Rechazado** | Paciente no aceptó | Rojo | Ver, (Archivar) |
+| **En Tratamiento** | Tratamientos en progreso | Azul | Ver, Crear Evolución |
+| **Completado** | Todos los tratamientos finalizados | Verde Oscuro | Ver, Imprimir |
+| **Cancelado** | Anulado por alguna razón | Gris Oscuro | Ver |
+
+---
+
+## Ver Detalle de un Presupuesto
+
+Haz clic en cualquier presupuesto para ver su detalle completo.
+
+**Ruta**: `/patients/:patientId/budgets/:budgetId`
+
+### Secciones del Detalle
+
+#### 1. Resumen Superior
+- Estado actual
+- Fecha de creación
+- Doctor responsable
+- Total del presupuesto
+- Saldo pendiente
+- Progreso de tratamientos (barra de porcentaje)
+
+#### 2. Odontograma del Presupuesto
+- Visualización gráfica de todos los tratamientos
+- **Rojo**: Diagnósticos
+- **Azul**: Tratamientos propuestos
+- **Negro**: Tratamientos realizados
+
+#### 3. Tabla de Diagnósticos
+Listado de todos los problemas identificados.
+
+Columnas:
+- Diente
+- Superficie
+- Diagnóstico
+- Observaciones
+
+#### 4. Tabla de Planificación (Tratamientos)
+Listado de todos los tratamientos propuestos.
+
+Columnas:
+- Diente
+- Superficie
+- Tratamiento
+- Costo
+- Estado (Pendiente/Realizado)
+- Fecha de realización (si aplica)
+- Acciones (Marcar como realizado)
+
+#### 5. Método de Pago
+- Forma de pago acordada
+- Desglose de cuotas (si aplica)
+- Descuentos aplicados
+
+#### 6. Totales
+- Subtotal
+- Descuentos
+- Total general
+- Total pagado
+- Saldo pendiente
+
+#### 7. Evoluciones Asociadas
+Listado de todas las evoluciones clínicas relacionadas con este presupuesto.
+
+---
+
+## Crear Evolución desde Presupuesto
+
+Una **evolución** registra lo realizado en cada consulta.
+
+### Flujo de Creación
+
+1. Estás en el detalle del presupuesto aprobado
+2. Haz clic en **"Crear Evolución"**
+3. Se abre modal con:
+   - Fecha de la consulta
+   - Tratamientos realizados (checkbox para marcar)
+   - Descripción de lo realizado
+   - Observaciones
+   - Próximos pasos
+
+4. Selecciona los tratamientos que completaste en esta sesión
+5. Escribe la descripción detallada
+6. Guardar
+
+**Efecto**:
+- Los tratamientos marcados cambian a estado "Realizado"
+- El odontograma actualiza colores (azul → negro)
+- El porcentaje de progreso aumenta
+- Queda registro legal de lo realizado
+
+[IMAGEN: Modal de creación de evolución]
+
+---
+
+## Aprobar o Rechazar Presupuesto
+
+### Aprobar
+
+**Requisitos**:
+- Presupuesto en estado "Pendiente"
+- Permiso `approve_budget`
+
+**Pasos**:
+1. Abrir presupuesto
+2. Clic en botón **"Aprobar Presupuesto"** (verde)
+3. Confirmar aprobación
+4. El estado cambia a "Aprobado"
+5. (Opcional) El sistema envía confirmación al paciente
+
+### Rechazar
+
+**Pasos**:
+1. Abrir presupuesto
+2. Clic en botón **"Rechazar Presupuesto"** (rojo)
+3. (Opcional) Ingresar motivo del rechazo
+4. Confirmar
+5. El estado cambia a "Rechazado"
+
+**Nota**: Un presupuesto rechazado puede editarse y re-enviarse si el paciente cambia de opinión.
+
+---
+
+## Editar Presupuesto
+
+### Cuándo se Puede Editar
+
+- **Borrador o Pendiente**: Edición completa
+- **Aprobado**: Solo se pueden agregar tratamientos adicionales (no eliminar)
+- **En Tratamiento**: No se puede editar plan, solo marcar tratamientos como realizados
+- **Completado o Cancelado**: No editable
+
+### Cómo Editar
+
+1. Abrir presupuesto
+2. Clic en **"Editar"** (ícono lápiz)
+3. Volver al wizard de creación con datos pre-cargados
+4. Modificar lo necesario
+5. Guardar cambios
+
+**Advertencia**: Editar un presupuesto aprobado puede requerir nueva aprobación del paciente.
+
+---
+
+## Eliminar Presupuesto
+
+**Permisos**: `delete_budget` (generalmente solo admin)
+
+**Restricciones**:
+- Solo se pueden eliminar presupuestos en **Borrador** o **Rechazado**
+- No se puede eliminar si tiene:
+  - Pagos registrados
+  - Evoluciones asociadas
+  - Estado aprobado o en tratamiento
+
+**Pasos**:
+1. En lista de presupuestos, clic en ícono papelera (rojo)
+2. Confirmar eliminación
+3. El presupuesto se borra permanentemente
+
+---
+
+## Permisos por Funcionalidad
+
+| Acción | Permiso | Rol Típico |
+|--------|---------|------------|
+| Ver presupuestos | `list_budgets` | Doctor, Secretaria, Admin |
+| Crear presupuesto | `add_budget` | Doctor, Admin |
+| Editar presupuesto | `edit_budget` | Doctor, Admin |
+| Eliminar presupuesto | `delete_budget` | Admin |
+| Aprobar presupuesto | `approve_budget` | Doctor, Admin |
+| Crear evolución | `add_evolution` | Doctor |
+
+---
+
+## Consejos y Mejores Prácticas
+
+### Creación de Presupuestos
+
+1. **Diagnóstico completo**: No omitas problemas, aunque sean menores
+2. **Priorizar tratamientos**: Indica qué es urgente y qué puede esperar
+3. **Costos realistas**: Incluye todos los materiales y honorarios
+4. **Explicar al paciente**: Usa el odontograma para explicar visualmente
+
+### Seguimiento
+
+1. **Evoluciones detalladas**: Registra TODO lo realizado, tiene valor legal
+2. **Actualizar en cada consulta**: No dejes evoluciones sin registrar
+3. **Comunicación**: Informa al paciente del progreso
+
+### Organización
+
+1. **Un presupuesto por plan**: No mezcles tratamientos no relacionados
+2. **Presupuestos parciales**: Para tratamientos extensos, divide en fases
+3. **Nomenclatura consistente**: Usa nombres estandarizados para tratamientos
+
+---
+
+## Errores Comunes
+
+### "No se puede crear presupuesto"
+**Causa**: El paciente no tiene datos completos
+**Solución**: Completa información básica del paciente primero
+
+### No puedo editar el presupuesto
+**Causa**: El presupuesto está en estado no editable
+**Solución**: Verifica el estado. Si está completado, no es editable
+
+### Los tratamientos no se marcan como realizados
+**Causa**: Debes crear una evolución para marcarlos
+**Solución**: Usa "Crear Evolución" en lugar de editar directamente
+
+### El odontograma no se visualiza
+**Causa**: Problemas de navegador o permisos
+**Solución**: Refresca la página, usa Chrome/Firefox
+
+---
+
+## Próximos Pasos
+
+- [Crear un Presupuesto →](./crear-presupuesto.md)
+- [Odontograma en Presupuestos →](./odontograma-presupuesto.md)
+- [Símbolos y Tratamientos →](./simbolos-tratamientos.md)
+- [Evoluciones de Presupuesto →](./evoluciones.md)
+- [Aprobar y Rechazar →](./aprobar-rechazar.md)
+
+---
+
+[← Volver: Agenda](../03-agenda/vision-general.md) | [Siguiente: Crear Presupuesto →](./crear-presupuesto.md)

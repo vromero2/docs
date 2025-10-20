@@ -1,0 +1,344 @@
+# Conceptos Básicos de BlackTooth
+
+Antes de comenzar a usar el sistema, es importante entender algunos conceptos fundamentales que se utilizan a lo largo de BlackTooth.
+
+---
+
+## 1. Paciente
+
+### Definición
+Un **paciente** es cualquier persona que recibe atención odontológica en tu clínica. Es la entidad central del sistema alrededor de la cual gira toda la información clínica y administrativa.
+
+### Información del Paciente
+
+Cada paciente tiene:
+- **Datos personales**: Nombre, apellido, documento, fecha de nacimiento, género
+- **Datos de contacto**: Email, teléfono, dirección
+- **Número de Historia Clínica (HC)**: Identificador único en la clínica
+- **Expediente clínico**: Historial médico completo
+- **Odontograma**: Registro visual del estado dental
+- **Multimedia**: Fotos, radiografías, modelos 3D
+- **Presupuestos**: Tratamientos propuestos y en curso
+- **Balance financiero**: Deudas y pagos
+
+---
+
+## 2. Expediente Clínico
+
+### Definición
+El **expediente clínico** es el historial médico digital completo de un paciente.
+
+### Componentes del Expediente
+
+1. **Antecedentes**: Información médica previa relevante
+2. **Odontograma**: Estado actual de las piezas dentales
+3. **Evoluciones**: Notas clínicas de cada consulta
+4. **Multimedia**: Imágenes y archivos adjuntos
+5. **Recetas**: Prescripciones médicas
+6. **Consentimientos**: Documentos firmados por el paciente
+
+**Nota**: El expediente es confidencial y solo puede ser accedido por personal autorizado.
+
+---
+
+## 3. Odontograma
+
+### Definición
+El **odontograma** es una representación gráfica de la boca del paciente que muestra el estado de cada pieza dental.
+
+### Numeración Dental
+
+El sistema utiliza la numeración **FDI (Federación Dental Internacional)**:
+
+- **Adultos**: Dientes del 11 al 48 (4 cuadrantes de 8 dientes)
+- **Niños**: Dientes del 51 al 85 (4 cuadrantes de 5 dientes)
+
+[IMAGEN: Odontograma con numeración FDI]
+
+### Símbolos Dentales
+
+Cada diente puede tener símbolos que representan:
+- **Estado actual**: Caries, fractura, ausente, sano
+- **Tratamientos realizados**: Endodoncia, corona, puente
+- **Tratamientos propuestos**: Lo que se planea hacer
+
+**Colores**:
+- **Azul**: Tratamiento propuesto (por hacer)
+- **Rojo**: Diagnóstico (problema identificado)
+- **Negro**: Tratamiento realizado
+
+---
+
+## 4. Cita
+
+### Definición
+Una **cita** es una reserva de tiempo en la agenda para atender a un paciente.
+
+### Información de la Cita
+
+- **Paciente**: Quién será atendido
+- **Doctor**: Profesional que atenderá
+- **Fecha y hora**: Cuándo se realizará
+- **Duración**: Tiempo estimado
+- **Motivo**: Razón de la consulta
+- **Estado**: Confirmada, pendiente, completada, cancelada
+
+### Estados de una Cita
+
+- **Pendiente**: Creada pero no confirmada
+- **Confirmada**: El paciente confirmó su asistencia
+- **En curso**: La cita está sucediendo ahora
+- **Completada**: La atención finalizó
+- **Cancelada**: La cita fue anulada
+- **No asistió**: El paciente no se presentó
+
+---
+
+## 5. Presupuesto
+
+### Definición
+Un **presupuesto** (también llamado plan de tratamiento) es una propuesta de tratamientos dentales con sus costos asociados.
+
+### Estructura de un Presupuesto
+
+1. **Diagnóstico**: Qué problemas se identificaron
+2. **Planificación**: Qué tratamientos se proponen
+3. **Odontograma**: Representación visual de los tratamientos
+4. **Costos**: Precio de cada tratamiento
+5. **Método de pago**: Forma de pago acordada (contado, cuotas, etc.)
+6. **Estado**: Pendiente, aprobado, rechazado
+
+### Estados del Presupuesto
+
+- **Borrador**: En creación, no enviado al paciente
+- **Pendiente**: Enviado, esperando aprobación
+- **Aprobado**: Paciente aceptó el tratamiento
+- **Rechazado**: Paciente no aceptó
+- **En tratamiento**: Tratamientos en progreso
+- **Completado**: Todos los tratamientos finalizados
+
+---
+
+## 6. Evolución
+
+### Definición
+Una **evolución** es una nota clínica que registra lo realizado en una consulta o sesión de tratamiento.
+
+### Contenido de una Evolución
+
+- **Fecha**: Cuándo se realizó la atención
+- **Doctor**: Quién atendió al paciente
+- **Descripción**: Qué se hizo durante la consulta
+- **Tratamientos realizados**: Qué procedimientos se completaron
+- **Observaciones**: Notas adicionales relevantes
+- **Próximos pasos**: Qué se hará en la siguiente consulta
+
+**Consejo**: Las evoluciones son fundamentales para el seguimiento del tratamiento y tienen valor legal.
+
+---
+
+## 7. Tratamiento/Acción
+
+### Definición
+Un **tratamiento** (o **acción**) es un procedimiento odontológico específico que se realiza al paciente.
+
+### Tipos de Tratamientos
+
+- **Preventivos**: Limpieza, flúor, sellantes
+- **Restauradores**: Obturaciones (resinas, amalgamas)
+- **Endodónticos**: Tratamientos de conducto
+- **Quirúrgicos**: Extracciones, cirugías
+- **Protésicos**: Coronas, puentes, prótesis
+- **Ortodónticos**: Brackets, alineadores
+- **Estéticos**: Blanqueamiento, carillas
+
+### Categorías de Tratamientos
+
+Los tratamientos están organizados en **categorías** configurables por el administrador:
+- Operatoria
+- Endodoncia
+- Prótesis
+- Cirugía
+- Ortodoncia
+- Etc.
+
+---
+
+## 8. Pago y Cobro
+
+### Pago
+Es el dinero que el paciente abona por los servicios recibidos.
+
+### Información de un Pago
+
+- **Monto**: Cantidad pagada
+- **Moneda**: Peso, dólar, euro, etc.
+- **Método de pago**: Efectivo, tarjeta, transferencia
+- **Fecha**: Cuándo se realizó el pago
+- **Concepto**: Para qué tratamiento o presupuesto
+
+### Recibo
+Es el comprobante que se entrega al paciente como constancia del pago recibido.
+
+### Balance del Paciente
+
+Es el resumen financiero que muestra:
+- **Total adeudado**: Costo de tratamientos
+- **Total pagado**: Dinero recibido
+- **Saldo pendiente**: Lo que falta por pagar
+- **Historial de pagos**: Todos los pagos realizados
+
+---
+
+## 9. Caja
+
+### Definición
+Una **caja** es un punto de cobro donde se registran ingresos y egresos de dinero.
+
+### Tipos de Caja
+
+- **Caja física**: Efectivo en un lugar físico
+- **Banco**: Cuenta bancaria
+- **Tarjeta**: Terminal de cobro con tarjeta
+
+### Movimientos de Caja
+
+- **Ingreso**: Dinero que entra (pagos de pacientes)
+- **Egreso**: Dinero que sale (gastos, pagos a proveedores)
+- **Transferencia**: Movimiento entre cajas
+
+---
+
+## 10. Gasto
+
+### Definición
+Un **gasto** es cualquier salida de dinero de la clínica.
+
+### Tipos de Gastos
+
+- **Sueldos**: Pago a empleados
+- **Servicios**: Luz, agua, internet
+- **Insumos**: Material odontológico
+- **Mantenimiento**: Reparaciones, limpieza
+- **Laboratorio**: Pagos a laboratorios externos
+- **Otros**: Cualquier otro gasto
+
+### Categorías de Gastos
+
+Los gastos se clasifican en categorías configurables para facilitar el control y los reportes.
+
+---
+
+## 11. Laboratorio
+
+### Definición
+Un **laboratorio** es un proveedor externo que realiza trabajos protésicos (coronas, puentes, prótesis, etc.).
+
+### Solicitud de Laboratorio
+
+Es un pedido que se envía al laboratorio con:
+- **Paciente**: Para quién es el trabajo
+- **Tipo de trabajo**: Corona, puente, prótesis, etc.
+- **Fecha de solicitud**: Cuándo se pidió
+- **Fecha de entrega**: Cuándo debe estar listo
+- **Estado**: Solicitado, en proceso, listo, entregado
+- **Costo**: Precio del trabajo
+
+---
+
+## 12. Plantillas
+
+### Definición
+Las **plantillas** son documentos predefinidos que se pueden personalizar para cada paciente.
+
+### Tipos de Plantillas
+
+- **Recetas médicas**: Formato para prescripciones
+- **Consentimientos informados**: Documentos legales para tratamientos
+- **Comentarios de presupuesto**: Texto estándar para presupuestos
+
+**Consejo**: Las plantillas ahorran tiempo al evitar escribir lo mismo repetidamente.
+
+---
+
+## 13. Permisos
+
+### Definición
+Los **permisos** son autorizaciones que determinan qué puede hacer cada usuario en el sistema.
+
+### Tipos de Permisos
+
+- **Listar** (list_): Ver listados (ej: list_patients)
+- **Agregar** (add_): Crear nuevos registros (ej: add_patient)
+- **Editar** (edit_): Modificar registros existentes (ej: edit_patient)
+- **Eliminar** (delete_): Borrar registros (ej: delete_patient)
+- **Ver** (view_): Ver detalles específicos
+
+**Nota**: Los permisos se asignan por rol y pueden ser personalizados por usuario.
+
+---
+
+## 14. Organización
+
+### Definición
+En el contexto de BlackTooth, una **organización** es tu clínica dental.
+
+### Multi-Organización
+
+Algunas clínicas pueden tener **múltiples sedes** u organizaciones:
+- Cada organización tiene su propia configuración
+- Los datos pueden compartirse o estar aislados según la configuración
+- Los usuarios pueden tener acceso a una o más organizaciones
+
+**Nota**: Esto aplica solo si tu clínica tiene múltiples sedes.
+
+---
+
+## 15. Reportes
+
+### Definición
+Los **reportes** son análisis y estadísticas sobre diferentes aspectos de la clínica.
+
+### Tipos de Reportes
+
+- **Financieros**: Ingresos, gastos, balance
+- **Operativos**: Citas atendidas, tratamientos realizados
+- **Pacientes**: Cantidad de pacientes, nuevos vs recurrentes
+- **Personal**: Producción por doctor, asistencia
+
+### Filtros
+
+La mayoría de los reportes permiten filtrar por:
+- **Fecha**: Rango de fechas específico
+- **Doctor**: Producción por profesional
+- **Tratamiento**: Por tipo de procedimiento
+- **Estado**: Por estado del registro (completado, pendiente, etc.)
+
+---
+
+## Términos Técnicos Comunes
+
+| Término | Significado |
+|---------|-------------|
+| **Modal** | Ventana emergente sobre la pantalla principal |
+| **Toast** | Notificación emergente temporal |
+| **Breadcrumb** | Migas de pan - ruta de navegación |
+| **Tooltip** | Texto de ayuda que aparece al pasar el cursor |
+| **Dropdown** | Lista desplegable de opciones |
+| **Checkbox** | Casilla de verificación |
+| **Badge** | Etiqueta con número (ej: cantidad de notificaciones) |
+| **Pagination** | Navegación entre páginas de resultados |
+
+---
+
+## Siguientes Pasos
+
+Ahora que conoces los conceptos básicos, puedes:
+
+1. **Aprender la navegación**: [Navegación del Sistema](./navegacion.md)
+2. **Entender roles**: [Roles y Permisos](./roles-permisos.md)
+3. **Empezar a trabajar**: Elige un módulo según tu rol
+
+---
+
+[← Volver: Primeros Pasos](./primeros-pasos.md) | [Siguiente: Navegación →](./navegacion.md)

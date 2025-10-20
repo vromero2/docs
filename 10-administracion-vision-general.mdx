@@ -1,0 +1,506 @@
+# Administración - Visión General
+
+El módulo de **Administración** es el panel de control del sistema. Aquí se configuran usuarios, permisos, categorías, plantillas y todos los aspectos operativos de la clínica.
+
+---
+
+## ¿Qué Puedes Hacer en Este Módulo?
+
+### Gestión de Personal
+- **Staff**: Crear y gestionar usuarios del sistema
+- **Horarios**: Configurar disponibilidad de cada doctor
+- **Permisos**: Asignar qué puede hacer cada usuario
+- **Contratos**: Gestionar contratos laborales del personal
+
+### Configuración del Sistema
+- **Listas y Categorías**: Organizar tratamientos, diagnósticos, gastos
+- **Tratamientos y Acciones**: Definir procedimientos disponibles
+- **Plantillas**: Crear formatos para recetas, consentimientos, presupuestos
+- **Estados del Calendario**: Personalizar estados de citas
+- **Cajas**: Configurar puntos de cobro
+
+### Organización
+- **Organizaciones/Clínicas**: Gestionar información de la clínica
+- **Recordatorios**: Configurar notificaciones automáticas
+
+---
+
+## Acceso al Módulo
+
+### Desde el Menú Lateral
+
+Haz clic en **"Administración"** en el menú lateral.
+
+**Permisos Variables**: Cada sub-sección requiere permisos específicos. Generalmente solo **Super Admin** y **Admin** tienen acceso completo.
+
+[IMAGEN: Menú lateral con Administración]
+
+---
+
+## 1. Gestión de Personal (`/admin/staff`)
+
+### Ver Lista de Personal
+
+**Ruta**: `/admin/staff`
+**Permiso**: `list_staff`
+
+**Información visible**:
+- Foto de perfil
+- Nombre completo
+- Email
+- Rol (Admin, Doctor, Secretaria, etc.)
+- Estado (Activo/Inactivo)
+- Acciones (Editar, Horarios, Permisos)
+
+[IMAGEN: Lista de personal]
+
+### Agregar Nuevo Usuario
+
+**Permiso**: `add_staff` (solo Super Admin)
+
+**Pasos**:
+1. Clic en **"Agregar Personal"**
+2. Completar formulario:
+   - **Datos personales**: Nombre, apellido, email, teléfono
+   - **Credenciales**: Email (usuario) y contraseña inicial
+   - **Rol**: Seleccionar rol predefinido
+   - **Estado**: Activo/Inactivo
+3. Guardar
+
+**El usuario recibirá**:
+- Email con credenciales de acceso
+- Link para cambiar contraseña
+- Instrucciones de primer ingreso
+
+### Editar Usuario
+
+**Permiso**: `edit_staff`
+
+Modificar datos personales, cambiar rol o desactivar usuario.
+
+**Nota**: No puedes editar tu propio rol o eliminar tu propio usuario.
+
+---
+
+## 2. Horarios de Trabajo (`/admin/staff/:id/schedules`)
+
+Configura los días y horarios en que cada doctor está disponible para atender.
+
+**Ruta**: `/admin/staff/:id/schedules`
+**Permiso**: `manage_schedules` (implícito en gestión de staff)
+
+### Configuración de Horarios
+
+**Por día de la semana**:
+- Lunes a Domingo
+- Para cada día:
+  - **Horario de entrada**: Ej: 09:00
+  - **Horario de salida**: Ej: 18:00
+  - **Pausas**: Ej: Almuerzo de 13:00 a 14:00
+  - **Activo/Inactivo**: Si trabaja ese día
+
+**Ejemplo**:
+```
+Lunes:    09:00 - 13:00 | 14:00 - 18:00 (Activo)
+Martes:   09:00 - 13:00 | 14:00 - 18:00 (Activo)
+Miércoles: No trabaja (Inactivo)
+Jueves:   09:00 - 13:00 | 14:00 - 18:00 (Activo)
+Viernes:  09:00 - 13:00 | 14:00 - 18:00 (Activo)
+Sábado:   10:00 - 14:00 (Activo)
+Domingo:  No trabaja (Inactivo)
+```
+
+**Uso**: El sistema usará estos horarios para:
+- Mostrar disponibilidad en la agenda
+- Evitar agendar citas fuera de horario
+- Calcular horas trabajadas
+
+[IMAGEN: Configuración de horarios semanales]
+
+---
+
+## 3. Permisos de Usuario (`/admin/staff/:id/permissions`)
+
+Asigna permisos granulares a cada usuario.
+
+**Ruta**: `/admin/staff/:id/permissions`
+**Permiso**: `manage_permissions` (solo Super Admin)
+
+### Interfaz de Permisos
+
+El sistema muestra un **árbol de permisos** organizado por módulos:
+
+```
+☐ Pacientes
+  ☐ Listar pacientes (list_patients)
+  ☐ Agregar paciente (add_patient)
+  ☐ Editar paciente (edit_patient)
+  ☐ Eliminar paciente (delete_patient)
+
+☐ Expediente Clínico
+  ☐ Ver expediente (view_expedient)
+  ☐ Agregar antecedentes (add_background)
+  ☐ Agregar evolución (add_evolution)
+
+☐ Agenda
+  ☐ Ver calendario (list_calendar)
+  ☐ Crear citas (add_appointment)
+  ...
+```
+
+**Funcionalidades**:
+- **Seleccionar todo un módulo**: Marca todos los permisos del módulo
+- **Seleccionar individual**: Marca permisos específicos
+- **Guardar**: Aplica cambios inmediatamente
+
+**Advertencia**: Cambios en permisos requieren que el usuario cierre sesión y vuelva a ingresar para aplicarse.
+
+[IMAGEN: Árbol de permisos con checkboxes]
+
+---
+
+## 4. Contratos de Personal (`/admin/staff/contracts`)
+
+Gestión de contratos laborales.
+
+**Ruta**: `/admin/staff/contracts`
+**Permiso**: `list_contracts`
+
+**Información de Contrato**:
+- Empleado
+- Tipo de contrato (Tiempo completo, Part-time, Por servicio)
+- Fecha de inicio
+- Fecha de fin (si aplica)
+- Salario base
+- Comisión (%)
+- Observaciones
+
+**Acciones**:
+- Ver contratos activos/vencidos
+- Crear nuevo contrato
+- Editar contrato existente
+- Finalizar contrato
+
+**Uso típico**: Liquidación de sueldos, cálculo de comisiones.
+
+---
+
+## 5. Organizaciones/Clínicas (`/admin/organizations`)
+
+Información de la clínica o clínicas (si hay múltiples sedes).
+
+**Ruta**: `/admin/organizations`
+**Permiso**: `list_clinics`
+
+**Información de la Organización**:
+- Nombre comercial
+- Razón social
+- CUIT/RUT/RFC (según país)
+- Dirección completa
+- Teléfonos de contacto
+- Email institucional
+- Logo de la clínica
+- Configuración fiscal
+
+**Edición**: Solo Super Admin.
+
+---
+
+## 6. Listas y Categorías (`/admin/lists`)
+
+Organización de tratamientos, diagnósticos y otros elementos.
+
+**Ruta**: `/admin/lists`
+**Permiso**: `list_categories`
+
+### Tipos de Listas
+
+#### A. Categorías de Tratamientos
+Agrupaciones de procedimientos odontológicos:
+- Operatoria
+- Endodoncia
+- Prótesis
+- Cirugía
+- Ortodoncia
+- Periodoncia
+- Prevención
+
+#### B. Acciones por Categoría
+Tratamientos específicos dentro de cada categoría.
+
+**Ejemplo - Categoría "Operatoria"**:
+- Obturación con resina
+- Obturación con amalgama
+- Incrustación
+- Reconstrucción
+
+#### C. Categorías de Gastos
+Clasificación de egresos:
+- Sueldos
+- Insumos
+- Servicios
+- Mantenimiento
+- Laboratorio
+- Otros
+
+### Gestionar Categorías
+
+**Acciones disponibles**:
+- **Ver categorías**: Lista completa
+- **Agregar categoría**: Crear nueva agrupación
+- **Editar categoría**: Cambiar nombre o descripción
+- **Eliminar categoría**: Borrar si no tiene elementos asociados
+- **Ver acciones**: Ir a detalle de tratamientos de esa categoría
+
+[IMAGEN: Lista de categorías con acciones]
+
+---
+
+## 7. Tratamientos y Acciones (`/admin/lists/categories/actions/:id`)
+
+Detalle de tratamientos de una categoría específica.
+
+**Ruta**: `/admin/lists/categories/actions/:id`
+
+**Información de cada Tratamiento**:
+- Nombre del procedimiento
+- Código (si aplica)
+- Precio sugerido
+- Duración estimada
+- Descripción
+
+**Acciones**:
+- Agregar nuevo tratamiento
+- Editar tratamiento existente
+- Eliminar tratamiento (si no está en uso)
+- Cambiar precio
+
+**Uso**: Estos tratamientos aparecerán en:
+- Creación de presupuestos
+- Planificación odontológica
+- Facturación
+
+---
+
+## 8. Plantillas (`/admin/templates`)
+
+Formatos predefinidos para documentos frecuentes.
+
+**Ruta**: `/admin/templates`
+**Permiso**: `list_templates`
+
+### Tipos de Plantillas
+
+#### A. Consentimientos Informados (`/admin/templates/consents`)
+Documentos legales que el paciente firma antes de tratamientos.
+
+**Ejemplos**:
+- Consentimiento para cirugía
+- Consentimiento para ortodoncia
+- Consentimiento para implantes
+
+**Campos dinámicos**:
+- `{{paciente_nombre}}` - Se reemplaza con nombre del paciente
+- `{{paciente_documento}}` - Documento del paciente
+- `{{fecha}}` - Fecha actual
+- `{{doctor_nombre}}` - Nombre del doctor
+- `{{tratamiento}}` - Procedimiento a realizar
+
+#### B. Recetas Médicas (`/admin/templates/prescriptions`)
+Formato de prescripciones.
+
+**Incluye**:
+- Encabezado con datos de la clínica
+- Espacio para medicamentos
+- Firma del profesional
+- Número de matrícula
+
+#### C. Comentarios de Presupuesto (`/admin/templates/budget`)
+Texto estándar que se agrega a presupuestos.
+
+**Ejemplos**:
+- Condiciones de pago
+- Garantías
+- Instrucciones post-tratamiento
+- Términos y condiciones
+
+### Crear/Editar Plantilla
+
+**Editor WYSIWYG** (What You See Is What You Get):
+- Escribir texto libremente
+- Formato (negrita, cursiva, tamaño de fuente)
+- Insertar campos dinámicos
+- Vista previa antes de guardar
+
+[IMAGEN: Editor de plantillas]
+
+---
+
+## 9. Estados del Calendario (`/admin/calendarStatuses`)
+
+Personaliza los estados de citas en la agenda.
+
+**Ruta**: `/admin/calendarStatuses`
+**Permiso**: `list_calendar_status`
+
+**Configuración de cada Estado**:
+- **Nombre**: Ej: "Confirmada", "Cancelada"
+- **Color**: Identificador visual en el calendario
+- **Descripción**: Para qué se usa este estado
+- **Activo**: Si está disponible para usar
+
+**Estados comunes**:
+- Pendiente (Gris)
+- Confirmada (Azul)
+- En curso (Verde)
+- Completada (Verde oscuro)
+- Cancelada (Rojo)
+- No asistió (Naranja)
+
+**Personalización**:
+Puedes crear estados propios, ej:
+- En sala de espera
+- En silla de atención
+- Pagada
+- Esperando laboratorio
+
+[IMAGEN: Configuración de estados del calendario]
+
+---
+
+## 10. Cajas de Cobro (`/admin/boxes`)
+
+Configuración de puntos de cobro.
+
+**Ruta**: `/admin/boxes`
+**Permiso**: `list_boxes`
+
+**Información de cada Caja**:
+- Nombre (Ej: "Caja Principal", "Banco Santander", "POS Visa")
+- Tipo (Efectivo, Banco, Tarjeta)
+- Moneda principal
+- Saldo inicial
+- Estado (Activa/Inactiva)
+
+**Acciones**:
+- Crear nueva caja
+- Editar caja existente
+- Activar/Desactivar caja
+- Ver movimientos de la caja
+
+**Nota**: Las cajas no editables en cuanto a divisas son aquellas ya configuradas con transacciones.
+
+---
+
+## 11. Recordatorios (`/admin/reminders`)
+
+Configuración de notificaciones automáticas a pacientes.
+
+**Ruta**: `/admin/reminders`
+
+**Tipos de Recordatorios**:
+- **24 horas antes**: Recordatorio de cita para mañana
+- **Confirmación de cita**: Al agendar nueva cita
+- **Recordatorio de pago**: Pacientes con deuda
+- **Cumpleaños**: Saludo automatizado
+
+**Configuración**:
+- Activar/Desactivar recordatorio
+- Mensaje personalizado
+- Canal (Email, SMS, WhatsApp)
+- Horario de envío
+
+**Variables dinámicas en mensajes**:
+- `{{paciente}}` - Nombre del paciente
+- `{{fecha}}` - Fecha de la cita
+- `{{hora}}` - Hora de la cita
+- `{{doctor}}` - Doctor asignado
+- `{{clinica}}` - Nombre de la clínica
+
+[IMAGEN: Configuración de recordatorios]
+
+---
+
+## Permisos Generales del Módulo
+
+| Sección | Permiso Principal | Solo Admin |
+|---------|-------------------|:----------:|
+| Personal | `list_staff` | ✅ |
+| Agregar Personal | `add_staff` | ✅ (Super) |
+| Editar Personal | `edit_staff` | ✅ (Super) |
+| Horarios | (implícito con staff) | ✅ |
+| Permisos | `manage_permissions` | ✅ (Super) |
+| Contratos | `list_contracts` | ✅ |
+| Organizaciones | `list_clinics` | ✅ (Super) |
+| Categorías | `list_categories` | ✅ |
+| Agregar Categorías | `add_category` | ✅ |
+| Plantillas | `list_templates` | ✅ |
+| Editar Plantillas | `edit_template` | ✅ |
+| Estados Calendario | `list_calendar_status` | ✅ |
+| Cajas | `list_boxes` | ✅ |
+
+---
+
+## Consejos y Mejores Prácticas
+
+### Gestión de Personal
+
+1. **Roles claros**: Define bien qué puede hacer cada rol
+2. **Principio de menor privilegio**: Solo otorga los permisos necesarios
+3. **Revisión periódica**: Audita permisos cada 3-6 meses
+4. **Desactivar, no eliminar**: Si alguien se va, desactiva su cuenta en lugar de borrarla
+
+### Organización de Categorías
+
+1. **Categorías lógicas**: Agrupa tratamientos de forma coherente
+2. **Nombres consistentes**: Usa nomenclatura estándar
+3. **Evitar duplicados**: Verifica antes de crear nueva categoría
+4. **Mantener actualizado**: Revisa precios de tratamientos regularmente
+
+### Plantillas
+
+1. **Lenguaje claro**: Usa términos comprensibles para pacientes
+2. **Legal**: Consulta con abogado para consentimientos
+3. **Variables dinámicas**: Aprovecha campos personalizables
+4. **Versiones**: Guarda copias antiguas antes de grandes cambios
+
+### Seguridad
+
+1. **Contraseñas fuertes**: Exige al crear usuarios
+2. **Cambio periódico**: Recomienda cambiar contraseña cada 3 meses
+3. **Sesiones únicas**: No compartir credenciales
+4. **Logs de auditoría**: Revisa quién hace qué (si disponible)
+
+---
+
+## Errores Comunes
+
+### No puedo ver el módulo de Administración
+**Causa**: No tienes permisos de administrador
+**Solución**: Solo Admin y Super Admin tienen acceso
+
+### No puedo editar permisos de un usuario
+**Causa**: Solo Super Admin puede gestionar permisos
+**Solución**: Contacta al Super Administrador
+
+### Las plantillas no se guardan
+**Causa**: Campos dinámicos mal escritos o caracteres especiales
+**Solución**: Verifica sintaxis de variables `{{variable}}`
+
+### No puedo eliminar una categoría
+**Causa**: La categoría tiene tratamientos o presupuestos asociados
+**Solución**: No es posible eliminar para mantener integridad de datos
+
+---
+
+## Próximos Pasos
+
+- [Gestión de Personal →](./personal.md)
+- [Configurar Horarios →](./horarios.md)
+- [Asignar Permisos →](./permisos.md)
+- [Crear Plantillas →](./plantillas.md)
+- [Gestionar Categorías →](./categorias.md)
+
+---
+
+[← Volver: Tesorería](../05-tesoreria/vision-general.md) | [Siguiente: Gestión de Personal →](./personal.md)

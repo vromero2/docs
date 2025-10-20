@@ -1,15 +1,36 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "OCLÜ",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#fff",
+    "light": "#409eff",
+    "dark": "#333333"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
+      {
+        "tab": "BlackTooth",
+        "groups": [
+          {
+            "group": "Documentación principal",
+            "pages": [
+              "01-bienvenida",
+              "02-conceptos-basicos",
+              "03-primeros-pasos",
+              "04-roles-permisos",
+              "05-pacientes-vision-general",
+              "06-pacientes-listar",
+              "07-agenda-vision-general",
+              "08-presupuestos-vision-general",
+              "09-tesoreria-vision-general",
+              "10-administracion-vision-general",
+              "11-laboratorios-vision-general"
+            ]
+          }
+        ]
+      },
       {
         "tab": "Guides",
         "groups": [

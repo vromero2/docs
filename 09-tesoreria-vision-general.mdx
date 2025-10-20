@@ -1,0 +1,467 @@
+# Tesorería y Cobros - Visión General
+
+El módulo de **Tesorería** es el centro financiero de tu clínica dental. Aquí controlas ingresos, egresos, pagos de pacientes y la salud financiera de tu negocio.
+
+---
+
+## ¿Qué Puedes Hacer en Este Módulo?
+
+### Control Financiero
+- **Dashboard**: Vista general de ingresos, gastos y balance
+- **Cajas y bancos**: Gestión de efectivo y cuentas bancarias
+- **Monedas**: Manejo de múltiples divisas (Peso, Dólar, Euro)
+- **Gastos**: Registro de egresos operativos
+
+### Cobros y Pagos
+- **Registrar pagos**: Cobros de pacientes por tratamientos
+- **Recibos**: Generación automática de comprobantes
+- **Balance del paciente**: Deuda actual de cada paciente
+- **Historial**: Todos los pagos realizados
+
+### Reportes Financieros
+- **Reporte de ventas**: Ingresos por período
+- **Reporte de deudores**: Pacientes con saldo pendiente
+- **Reporte de balance**: Ingresos vs egresos
+- **Reporte de movimientos**: Transacciones por caja
+- **Reporte de ingresos**: Análisis de cobranzas
+- **Reporte de personal**: Producción por doctor
+
+---
+
+## Acceso al Módulo
+
+### Desde el Menú Lateral
+
+Haz clic en **"Tesorería"** en el menú lateral para acceder al dashboard.
+
+**Ruta**: `/treasury`
+**Permisos**: `list_treasury` (generalmente Admin y Secretarias autorizadas)
+
+[IMAGEN: Menú lateral con Tesorería]
+
+---
+
+## Estructura del Módulo
+
+### 1. Dashboard de Tesorería (`/treasury`)
+
+Vista principal con resumen financiero.
+
+**Tarjetas de Resumen**:
+- **Ingresos del mes**: Total cobrado en el mes actual
+- **Gastos del mes**: Total de egresos del mes
+- **Balance del mes**: Diferencia (ingresos - gastos)
+- **Caja actual**: Efectivo disponible
+
+**Gráficos**:
+- Evolución de ingresos (últimos 6 meses)
+- Distribución de gastos por categoría
+- Comparación ingresos vs gastos
+
+[IMAGEN: Dashboard de tesorería con gráficos]
+
+### 2. Cajas y Bancos (`/treasury/accounts/accounts`)
+
+Gestión de puntos de cobro y cuentas.
+
+**Tipos de Caja**:
+- **Caja Efectivo**: Dinero físico en la clínica
+- **Banco**: Cuentas bancarias
+- **Tarjeta**: Terminales de cobro con tarjeta
+
+**Información por Caja**:
+- Saldo actual
+- Moneda
+- Movimientos del día
+- Historial completo
+
+### 3. Gastos (`/treasury/accounts/expenses`)
+
+Registro de todos los egresos de la clínica.
+
+**Categorías de Gastos**:
+- Sueldos de personal
+- Insumos odontológicos
+- Servicios (luz, agua, internet)
+- Mantenimiento
+- Laboratorio externo
+- Alquiler
+- Otros
+
+**Información de Cada Gasto**:
+- Fecha
+- Monto
+- Categoría
+- Descripción
+- Método de pago
+- Comprobante (opcional)
+
+### 4. Monedas (`/treasury/currencies`)
+
+Configuración de divisas utilizadas.
+
+**Funcionalidades**:
+- Ver todas las monedas activas
+- Configurar tipo de cambio
+- Moneda principal de la clínica
+
+**Nota**: Generalmente configurado por el administrador.
+
+---
+
+## Registrar un Pago de Paciente
+
+El flujo más común en tesorería es registrar cuando un paciente paga.
+
+### Desde Balance del Paciente
+
+**Ruta**: `/patients/:id/balance`
+
+1. **Acceder**:
+   - Busca al paciente
+   - Ve a la pestaña "Balance"
+   - Verás resumen de deuda
+
+2. **Información Visible**:
+   - Total de presupuestos aprobados
+   - Total ya pagado
+   - **Saldo pendiente** (lo que falta pagar)
+   - Historial de pagos previos
+
+3. **Registrar Pago**:
+   - Clic en botón **"Registrar Pago"** (verde)
+   - Se abre modal de pago
+
+[IMAGEN: Pantalla de balance del paciente]
+
+### Modal de Registro de Pago
+
+**Campos del formulario**:
+
+#### Monto*
+- Cantidad que el paciente está pagando
+- No puede exceder el saldo pendiente
+- Puede ser pago parcial o total
+
+#### Moneda*
+- Seleccionar divisa (Peso, Dólar, etc.)
+- Si es diferente a la principal, se aplica tipo de cambio
+
+#### Método de Pago*
+Opciones comunes:
+- **Efectivo**: Dinero en mano
+- **Tarjeta de Débito**
+- **Tarjeta de Crédito**
+- **Transferencia Bancaria**
+- **Cheque**
+- **Mercado Pago** (u otros digitales)
+
+#### Caja de Destino*
+- Dónde se registra el dinero
+- Ej: "Caja Principal", "Banco Santander", "Terminal POS"
+
+#### Fecha de Pago*
+- Por defecto: Fecha actual
+- Modificable si registras pagos atrasados
+
+#### Presupuesto Asociado
+- Seleccionar a qué presupuesto aplicar el pago
+- Si el paciente tiene múltiples presupuestos activos
+
+#### Observaciones (Opcional)
+- Notas adicionales sobre el pago
+- Ej: "Pago cuota 2 de 6", "Seña del tratamiento"
+
+**Botones**:
+- **Guardar y Generar Recibo**: Registra y muestra recibo
+- **Solo Guardar**: Registra sin imprimir
+- **Cancelar**: Cierra sin guardar
+
+[IMAGEN: Modal de registro de pago]
+
+### Después de Registrar
+
+1. El pago se guarda en el sistema
+2. Se actualiza el balance del paciente
+3. Se registra el movimiento en la caja seleccionada
+4. (Opcional) Se genera recibo automático
+
+---
+
+## Recibo de Pago
+
+Cada pago genera un **recibo** que sirve como comprobante.
+
+### Información en el Recibo
+
+- **Número de recibo**: Identificador único (ej: REC-001)
+- **Fecha de emisión**
+- **Datos de la clínica**: Nombre, dirección, contacto
+- **Datos del paciente**: Nombre, documento
+- **Detalle del pago**:
+  - Monto pagado
+  - Moneda
+  - Método de pago
+  - Concepto (presupuesto asociado)
+- **Saldo anterior y saldo actual**
+- **Firma o sello de la clínica**
+
+### Acciones con Recibos
+
+- **Ver**: Visualizar en pantalla
+- **Imprimir**: Formato listo para impresora
+- **Descargar PDF**: Guardar o enviar por email
+- **Reenviar**: Enviar por email al paciente
+
+**Ruta**: `/payments/receipt/:receiptId`
+
+[IMAGEN: Ejemplo de recibo de pago]
+
+---
+
+## Reportes Financieros
+
+### 1. Reporte de Ventas (`/treasury/reports/sales`)
+
+**Qué muestra**: Todos los pagos recibidos en un período.
+
+**Filtros**:
+- Rango de fechas
+- Doctor (producción por profesional)
+- Método de pago
+- Moneda
+
+**Información**:
+- Lista de todos los pagos
+- Monto por pago
+- Paciente
+- Fecha
+- **Total del período**
+
+**Uso típico**: Ver ingresos del mes, semana o día.
+
+### 2. Reporte de Deudores (`/treasury/reports/debts`)
+
+**Qué muestra**: Pacientes que tienen saldo pendiente.
+
+**Información por paciente**:
+- Nombre del paciente
+- Total adeudado
+- Total pagado
+- Saldo pendiente
+- Días de mora (si aplica)
+- Último pago
+
+**Ordenamiento**:
+- Por monto (mayor a menor deuda)
+- Por fecha (más atrasados primero)
+- Alfabético
+
+**Uso típico**: Identificar pacientes para recordatorios de pago.
+
+[IMAGEN: Reporte de deudores]
+
+### 3. Reporte de Balance (`/treasury/reports/balance`)
+
+**Qué muestra**: Comparación entre ingresos y egresos.
+
+**Información**:
+- Total de ingresos del período
+- Total de gastos del período
+- **Balance** (ingresos - gastos)
+- Gráfico de evolución
+
+**Filtros**:
+- Rango de fechas
+- Por caja
+
+**Uso típico**: Análisis de rentabilidad mensual.
+
+### 4. Reporte de Movimientos (`/treasury/accounts/banks`)
+
+**Qué muestra**: Todas las transacciones (ingresos y egresos) por caja.
+
+**Información**:
+- Fecha de movimiento
+- Tipo (Ingreso/Egreso)
+- Monto
+- Caja origen/destino
+- Descripción
+- Saldo resultante
+
+**Filtros**:
+- Rango de fechas
+- Caja específica
+- Tipo de movimiento
+
+**Uso típico**: Auditoría de cajas, cuadre diario.
+
+### 5. Reporte de Ingresos (`/treasury/reports/income`)
+
+**Qué muestra**: Análisis detallado de cobranzas.
+
+**Desglose**:
+- Por método de pago (cuánto en efectivo, tarjeta, etc.)
+- Por doctor (producción individual)
+- Por tratamiento (qué genera más ingresos)
+
+**Uso típico**: Estrategia de cobranza, evaluación de performance.
+
+### 6. Reporte de Personal (`/treasury/reports/personal`)
+
+**Qué muestra**: Producción de cada doctor.
+
+**Información por doctor**:
+- Cantidad de pacientes atendidos
+- Cantidad de presupuestos creados
+- Total facturado
+- Total cobrado
+- Pendiente de cobro
+
+**Uso típico**: Liquidación de comisiones, evaluación de desempeño.
+
+**Permiso**: `see_report_personal` (generalmente solo admin)
+
+---
+
+## Pagos a Doctores (`/treasury/doctor-payments`)
+
+Módulo para registrar pagos/comisiones a los profesionales.
+
+**Funcionalidades**:
+- Ver producción del doctor
+- Calcular comisión según configuración
+- Registrar pago al doctor
+- Historial de pagos
+- Detalle de pago (qué tratamientos incluyó)
+
+**Ruta detalle**: `/treasury/doctor-payments/:paymentId/detail`
+
+---
+
+## Permisos por Funcionalidad
+
+| Acción | Permiso | Rol Típico |
+|--------|---------|------------|
+| Ver dashboard | `list_treasury` | Admin, Secretaria autorizada |
+| Registrar pagos | `register_payment` | Secretaria, Admin |
+| Ver reportes de ventas | `see_report_sales` | Admin |
+| Ver deudores | `see_report_debtors` | Admin, Secretaria |
+| Ver balance | `see_report_movements` | Admin |
+| Agregar gastos | `add_expense` | Admin |
+| Ver reportes de personal | `see_report_personal` | Admin, Doctor (solo propio) |
+| Gestionar cajas | `manage_boxes` | Admin |
+
+---
+
+## Flujo de Trabajo Diario
+
+### Para Secretaria
+
+1. **Al iniciar el día**:
+   - Verificar saldo de cajas
+   - Revisar pagos pendientes del día
+
+2. **Durante el día**:
+   - Registrar cada pago que realicen los pacientes
+   - Entregar recibos
+   - Actualizar balance
+
+3. **Al cerrar**:
+   - Cuadrar caja (contar efectivo físico vs sistema)
+   - Reporte de movimientos del día
+   - Preparar depósito bancario si corresponde
+
+### Para Administrador
+
+1. **Diario**:
+   - Revisar dashboard de tesorería
+   - Verificar que se registren todos los pagos
+
+2. **Semanal**:
+   - Reporte de ventas
+   - Identificar deudores y enviar recordatorios
+   - Registro de gastos de la semana
+
+3. **Mensual**:
+   - Reporte de balance completo
+   - Análisis de rentabilidad
+   - Pago de comisiones a doctores
+   - Cierre contable
+
+---
+
+## Consejos y Mejores Prácticas
+
+### Registro de Pagos
+
+1. **Registrar inmediatamente**: No dejes pagos sin registrar
+2. **Recibos siempre**: Entrega comprobante a cada paciente
+3. **Verificar método**: Confirma forma de pago con el paciente
+4. **Observaciones claras**: Anota detalles relevantes
+
+### Control de Cajas
+
+1. **Cuadrar diariamente**: Verifica que efectivo físico = sistema
+2. **Separar cajas**: Una para cada tipo (efectivo, banco, tarjeta)
+3. **Depositar regularmente**: No acumules mucho efectivo en clínica
+4. **Respaldos**: Guarda comprobantes físicos
+
+### Reportes
+
+1. **Revisar semanalmente**: No esperes al mes para detectar problemas
+2. **Comparar períodos**: Analiza evolución mes a mes
+3. **Seguimiento de deudores**: Contacta a pacientes con mora
+4. **Exportar datos**: Guarda reportes para contabilidad externa
+
+---
+
+## Errores Comunes
+
+### "El monto excede el saldo pendiente"
+**Causa**: Intentas registrar más de lo que el paciente debe
+**Solución**: Verifica el saldo actual antes de ingresar el monto
+
+### No puedo ver reportes financieros
+**Causa**: No tienes los permisos necesarios
+**Solución**: Contacta al administrador para solicitar acceso
+
+### Las cajas no cuadran
+**Causa**: Pagos no registrados o registrados incorrectamente
+**Solución**: Revisa el reporte de movimientos, busca discrepancias
+
+### El recibo no se genera
+**Causa**: Datos incompletos o error del sistema
+**Solución**: Verifica que todos los campos estén completos, refresca la página
+
+---
+
+## Integración con Otros Módulos
+
+### Pacientes
+- Balance del paciente en ficha
+- Historial de pagos
+- Deuda actual siempre visible
+
+### Presupuestos
+- Los pagos se asocian a presupuestos
+- El saldo del presupuesto se actualiza automáticamente
+- No se puede completar presupuesto con saldo pendiente
+
+### Citas
+- (Opcional) Recordatorio de pago al agendar cita
+
+---
+
+## Próximos Pasos
+
+- [Dashboard de Tesorería →](./dashboard.md)
+- [Registrar un Pago →](./registrar-pago.md)
+- [Recibos de Pago →](./recibos.md)
+- [Cajas y Bancos →](./cajas-bancos.md)
+- [Gastos →](./gastos.md)
+- [Reportes Financieros →](./reportes-financieros.md)
+
+---
+
+[← Volver: Presupuestos](../04-presupuestos/vision-general.md) | [Siguiente: Dashboard →](./dashboard.md)

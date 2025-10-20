@@ -1,0 +1,143 @@
+# Bienvenida a BlackTooth/OCLÜ
+
+## Qué es BlackTooth
+
+BlackTooth (también conocido como OCLÜ) es un sistema integral de gestión para clínicas dentales que te permite administrar todos los aspectos de tu práctica odontológica en un solo lugar.
+
+### Características Principales
+
+BlackTooth te ofrece:
+
+- **Gestión Completa de Pacientes**: Ficha clínica digital, historial médico, documentos y multimedia
+- **Agenda Inteligente**: Calendario diario y semanal para gestionar citas de forma eficiente
+- **Odontograma Digital**: Registro visual y detallado del estado dental de cada paciente
+- **Presupuestos y Tratamientos**: Creación, seguimiento y evolución de planes de tratamiento
+- **Control Financiero**: Gestión de pagos, gastos, cajas y reportes financieros completos
+- **Laboratorios**: Solicitudes y seguimiento de trabajos de laboratorio dental
+- **Multimedia**: Almacenamiento de fotos, videos, radiografías y modelos 3D
+- **Recetas y Consentimientos**: Generación de documentos médicos desde plantillas
+- **Reportes**: Estadísticas y análisis para la toma de decisiones
+
+### Para Quién es Este Sistema
+
+BlackTooth está diseñado para:
+
+- **Odontólogos**: Gestión de pacientes, diagnósticos y tratamientos
+- **Secretarias/Recepcionistas**: Agenda de citas, cobros y atención al paciente
+- **Administradores**: Control financiero, reportes y gestión del personal
+- **Auxiliares**: Apoyo en expedientes clínicos y multimedia
+
+---
+
+## Arquitectura Multi-Tenant
+
+BlackTooth utiliza una arquitectura **multi-tenant** (multi-inquilino), lo que significa:
+
+### ¿Qué es Multi-Tenant?
+
+Cada clínica dental tiene su propio **espacio aislado** dentro del sistema. Tus datos están completamente separados y protegidos de otras clínicas que también usan BlackTooth.
+
+### Acceso a Tu Clínica
+
+Para acceder a tu clínica, usarás una URL personalizada:
+
+```
+https://[nombre-tu-clinica].localhost:8000
+```
+
+Por ejemplo:
+- Clínica "Dental Smile" → `https://dentalsmile.localhost:8000`
+- Clínica "Ortodoncia Plus" → `https://ortodonciaplus.localhost:8000`
+
+**Importante**: Solo puedes acceder a los datos de tu propia clínica. El sistema garantiza total privacidad y seguridad de la información.
+
+---
+
+## Tipos de Usuarios
+
+El sistema maneja diferentes roles con distintos niveles de acceso:
+
+### 1. Super Administrador
+- Acceso total al sistema
+- Gestión de personal y permisos
+- Configuración de la clínica
+- Acceso a todos los módulos
+
+### 2. Administrador
+- Gestión de usuarios y permisos (limitado)
+- Acceso a reportes financieros
+- Configuración de categorías y plantillas
+- No puede modificar configuración crítica del sistema
+
+### 3. Doctor/Odontólogo
+- Gestión de pacientes
+- Acceso a expedientes clínicos
+- Creación de presupuestos y tratamientos
+- Agenda de citas
+- Acceso limitado a reportes
+
+### 4. Secretaria/Recepcionista
+- Gestión de citas
+- Cobros y recibos
+- Datos básicos de pacientes
+- Sin acceso a información clínica sensible
+
+### 5. Auxiliar
+- Apoyo en expedientes
+- Carga de multimedia
+- Sin acceso a información financiera
+- Sin permisos de edición de tratamientos
+
+**Nota**: Los permisos específicos pueden ser personalizados por el administrador del sistema. Ver [Roles y Permisos](./roles-permisos.md) para más detalles.
+
+---
+
+## Requisitos del Sistema
+
+### Para Usuarios
+- Navegador web moderno (Chrome, Firefox, Edge, Safari)
+- Conexión a internet estable
+- Recomendado: Pantalla de al menos 1280x720 píxeles
+
+### Dispositivos Compatibles
+- Computadoras de escritorio (Windows, macOS, Linux)
+- Laptops
+- Tablets (funcionalidad limitada)
+- No recomendado para teléfonos móviles
+
+---
+
+## Primeros Pasos
+
+Una vez que tengas acceso al sistema, te recomendamos:
+
+1. **Completar tu perfil**: Configura tu información personal y preferencias
+2. **Explorar la interfaz**: Familiarízate con el menú de navegación
+3. **Revisar tus permisos**: Conoce qué módulos tienes disponibles
+4. **Leer la documentación**: Especialmente los módulos que usarás con frecuencia
+
+### Siguiente Paso
+
+Continúa con [Primeros Pasos](./primeros-pasos.md) para aprender cómo iniciar sesión y navegar por el sistema.
+
+---
+
+## Soporte y Actualizaciones
+
+### Obtener Ayuda
+- Consulta esta documentación para dudas sobre funcionalidades
+- Contacta al administrador de tu clínica para temas de permisos
+- Reporta errores o problemas técnicos al equipo de soporte
+
+### Actualizaciones del Sistema
+El sistema se actualiza periódicamente con:
+- Nuevas funcionalidades
+- Mejoras de seguridad
+- Corrección de errores
+- Optimizaciones de rendimiento
+
+Las actualizaciones se realizan sin interrumpir tu trabajo diario.
+
+---
+
+[Siguiente: Primeros Pasos →](./primeros-pasos.md)

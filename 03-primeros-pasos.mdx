@@ -1,0 +1,296 @@
+# Primeros Pasos en BlackTooth
+
+Esta guía te ayudará a comenzar a usar el sistema BlackTooth desde el primer momento.
+
+---
+
+## 1. Iniciar Sesión
+
+### Acceso al Sistema
+
+1. Abre tu navegador web
+2. Dirígete a la URL de tu clínica: `https://[tu-clinica].localhost:8000`
+3. Verás la pantalla de inicio de sesión
+
+[IMAGEN: Pantalla de login con campos de email y contraseña]
+
+### Credenciales de Acceso
+
+Para iniciar sesión necesitas:
+- **Email**: Tu correo electrónico registrado en el sistema
+- **Contraseña**: La contraseña que te proporcionó el administrador
+
+**Primera vez**: Si es tu primera vez ingresando, recibirás un email con:
+- Tu nombre de usuario (email)
+- Una contraseña temporal
+- Instrucciones para cambiar tu contraseña
+
+### Recuperar Contraseña
+
+Si olvidaste tu contraseña:
+
+1. Haz clic en "¿Olvidaste tu contraseña?"
+2. Ingresa tu email registrado
+3. Recibirás un correo con un enlace de recuperación
+4. Sigue las instrucciones del email para crear una nueva contraseña
+
+**Nota**: El enlace de recuperación expira en 24 horas por seguridad.
+
+---
+
+## 2. Pantalla Principal (Dashboard)
+
+Una vez que inicies sesión, llegarás al **Dashboard** o pantalla principal.
+
+[IMAGEN: Dashboard principal del sistema]
+
+### Elementos del Dashboard
+
+#### Barra Superior
+- **Logo de la clínica**: Haz clic para volver al dashboard
+- **Nombre de usuario**: Muestra tu nombre y rol
+- **Notificaciones**: Campana con alertas importantes
+- **Configuración**: Acceso rápido a ajustes personales
+- **Cerrar sesión**: Salir del sistema de forma segura
+
+#### Menú Lateral (Sidebar)
+El menú lateral contiene todos los módulos del sistema:
+- Pacientes
+- Agenda
+- Tesorería
+- Administración
+- Laboratorios
+- Stock
+- Reportes
+
+**Nota**: Solo verás los módulos para los que tienes permiso de acceso.
+
+#### Área de Contenido Principal
+Aquí se muestra la información relevante según el módulo que estés usando.
+
+#### Breadcrumbs (Migas de Pan)
+En la parte superior del contenido verás la ruta de navegación:
+```
+Home > Pacientes > Juan Pérez > Expediente
+```
+Esto te ayuda a saber dónde estás y navegar hacia atrás fácilmente.
+
+---
+
+## 3. Navegación Básica
+
+### Uso del Menú Lateral
+
+1. **Expandir/Contraer**: Algunos elementos del menú tienen sub-opciones que se despliegan al hacer clic
+2. **Módulos principales**: Haz clic directamente para acceder
+3. **Indicador visual**: El módulo activo se resalta en el menú
+
+### Búsqueda Rápida
+
+En muchos módulos encontrarás una **barra de búsqueda** en la parte superior:
+
+[IMAGEN: Barra de búsqueda con ícono de lupa]
+
+- Escribe el nombre, documento o cualquier dato relevante
+- Los resultados se filtran automáticamente mientras escribes
+- Usa el botón "Limpiar" (X) para borrar la búsqueda
+
+### Botones de Acción Comunes
+
+A lo largo del sistema encontrarás botones estándar:
+
+- **Agregar/Crear**: Botón azul con ícono "+" para crear nuevos registros
+- **Editar**: Botón amarillo con ícono de lápiz
+- **Eliminar**: Botón rojo con ícono de papelera
+- **Guardar**: Botón verde para confirmar cambios
+- **Cancelar**: Botón gris para descartar cambios
+- **Volver**: Flecha para regresar a la pantalla anterior
+
+**Consejo**: Pasa el cursor sobre los botones para ver una descripción de su función.
+
+---
+
+## 4. Tablas de Datos
+
+La mayoría de los listados se muestran en **tablas interactivas**.
+
+[IMAGEN: Tabla de pacientes con datos de ejemplo]
+
+### Funciones de las Tablas
+
+#### Ordenamiento
+- Haz clic en el encabezado de una columna para ordenar
+- Primer clic: orden ascendente (A-Z)
+- Segundo clic: orden descendente (Z-A)
+- Tercer clic: volver al orden original
+
+#### Paginación
+En la parte inferior de las tablas:
+- **Anterior/Siguiente**: Navegar entre páginas
+- **Números de página**: Saltar a una página específica
+- **Total de registros**: Muestra cuántos elementos hay
+
+#### Acciones por Fila
+Al final de cada fila encontrarás botones de acción:
+- Ver detalles
+- Editar
+- Eliminar
+- Acciones específicas del módulo
+
+**Consejo**: También puedes hacer clic en toda la fila para ver los detalles (en la mayoría de los módulos).
+
+---
+
+## 5. Modales y Formularios
+
+### Qué es un Modal
+
+Un **modal** es una ventana emergente que aparece sobre la pantalla principal para:
+- Crear o editar registros
+- Confirmar acciones importantes
+- Mostrar información adicional
+
+[IMAGEN: Modal de ejemplo con formulario]
+
+### Interacción con Modales
+
+- **Cerrar**: Haz clic en la "X" o fuera del modal
+- **Guardar cambios**: Usa el botón "Guardar" o "Aceptar"
+- **Cancelar**: Usa el botón "Cancelar" o presiona ESC
+
+### Formularios
+
+Al completar formularios en el sistema:
+
+#### Campos Obligatorios
+- Marcados con un **asterisco rojo (*)**
+- Debes completarlos para poder guardar
+
+#### Validaciones
+- El sistema valida los datos en tiempo real
+- Los errores se muestran debajo del campo con texto rojo
+- Ejemplo: "El email no es válido", "Este campo es obligatorio"
+
+#### Tipos de Campos
+- **Texto**: Ingreso libre de texto
+- **Email**: Valida formato de correo electrónico
+- **Fecha**: Selector de calendario
+- **Selección**: Lista desplegable de opciones
+- **Checkbox**: Casilla de verificación (sí/no)
+- **Área de texto**: Para textos largos
+
+---
+
+## 6. Notificaciones del Sistema
+
+El sistema te notifica sobre acciones importantes mediante **mensajes toast** (notificaciones emergentes).
+
+### Tipos de Notificaciones
+
+#### Éxito (Verde)
+- "Paciente creado correctamente"
+- "Cambios guardados"
+- Indica que la acción se completó exitosamente
+
+#### Error (Rojo)
+- "No tienes permisos para esta acción"
+- "Error al guardar los datos"
+- Indica que algo salió mal
+
+#### Advertencia (Amarillo)
+- "Algunos campos están vacíos"
+- "Esta acción no se puede deshacer"
+- Información importante que debes considerar
+
+#### Información (Azul)
+- "Cargando datos..."
+- "Proceso en curso"
+- Mensajes informativos generales
+
+---
+
+## 7. Permisos y Acceso
+
+### Comprender Tus Permisos
+
+No todos los usuarios pueden ver o hacer lo mismo en el sistema. Tus permisos dependen de tu **rol**.
+
+### Elementos Ocultos o Deshabilitados
+
+Si no tienes permiso para una acción:
+- **No verás el botón**: El elemento simplemente no aparece
+- **Botón deshabilitado**: El botón aparece en gris y no se puede hacer clic
+- **Mensaje de error**: Al intentar acceder, verás "Sin permisos suficientes"
+
+**Consejo**: Si necesitas acceso a una funcionalidad, contacta al administrador de tu clínica.
+
+---
+
+## 8. Cerrar Sesión de Forma Segura
+
+### Cómo Cerrar Sesión
+
+1. Haz clic en tu **nombre de usuario** en la esquina superior derecha
+2. Selecciona **"Cerrar Sesión"**
+3. Serás redirigido a la pantalla de login
+
+### Sesión Automática
+
+Por seguridad:
+- Tu sesión expirará después de **2 horas de inactividad**
+- Se te pedirá iniciar sesión nuevamente
+- Los cambios sin guardar se perderán
+
+**Advertencia**: Siempre cierra sesión si:
+- Compartes la computadora con otras personas
+- Vas a alejarte por un tiempo prolongado
+- Terminas tu jornada laboral
+
+---
+
+## 9. Atajos de Teclado
+
+Algunos atajos útiles para trabajar más rápido:
+
+| Atajo | Acción |
+|-------|--------|
+| `ESC` | Cerrar modales |
+| `CTRL + S` | Guardar (en algunos formularios) |
+| `CTRL + F` | Buscar en la página |
+| `TAB` | Navegar entre campos de formulario |
+
+---
+
+## 10. Consejos para Nuevos Usuarios
+
+### Mejores Prácticas
+
+1. **Explora con cuidado**: Familiarízate con la interfaz antes de hacer cambios importantes
+2. **Lee los mensajes**: Las notificaciones del sistema te guían
+3. **Usa la búsqueda**: Es más rápido que navegar manualmente
+4. **Guarda frecuentemente**: No esperes a completar todo para guardar
+5. **Pide ayuda**: Consulta con tu administrador o esta documentación
+
+### Errores Comunes
+
+- **No guardar cambios**: Siempre haz clic en "Guardar" antes de salir
+- **Ignorar validaciones**: Lee los mensajes de error y corrígelos
+- **No cerrar sesión**: Siempre cierra sesión al terminar
+- **Usar el botón "Atrás" del navegador**: Usa la navegación del sistema en su lugar
+
+---
+
+## Siguientes Pasos
+
+Ahora que conoces lo básico, te recomendamos:
+
+1. **Explora tu perfil**: [Configuración de Usuario](./configuracion-usuario.md)
+2. **Aprende los conceptos clave**: [Conceptos Básicos](./conceptos-basicos.md)
+3. **Empieza con un módulo**: Según tu rol:
+   - Doctores: [Gestión de Pacientes](../02-pacientes/vision-general.md)
+   - Secretarias: [Agenda de Citas](../03-agenda/vision-general.md)
+   - Administradores: [Panel de Administración](../06-administracion/vision-general.md)
+
+---
+
+[← Volver: Bienvenida](./bienvenida.md) | [Siguiente: Conceptos Básicos →](./conceptos-basicos.md)

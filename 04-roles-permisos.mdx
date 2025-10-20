@@ -1,0 +1,394 @@
+# Roles y Permisos en BlackTooth
+
+El sistema BlackTooth utiliza un sistema de **permisos granulares** que permite controlar con precisión qué puede hacer cada usuario.
+
+---
+
+## Comprender el Sistema de Permisos
+
+### Estructura de Permisos
+
+Cada funcionalidad del sistema está protegida por **permisos específicos**. Un permiso típico tiene el formato:
+
+```
+[accion]_[entidad]
+```
+
+**Ejemplos**:
+- `list_patients` - Ver listado de pacientes
+- `add_patient` - Crear nuevo paciente
+- `edit_patient` - Modificar datos de paciente
+- `delete_patient` - Eliminar paciente
+
+### Tipos de Acciones
+
+| Acción | Descripción | Ejemplo |
+|--------|-------------|---------|
+| `list_` | Ver listados | `list_patients` |
+| `add_` | Crear nuevos registros | `add_appointment` |
+| `edit_` | Modificar registros | `edit_budget` |
+| `delete_` | Eliminar registros | `delete_prescription` |
+| `view_` | Ver detalles específicos | `view_financial_reports` |
+| `see_` | Acceder a secciones | `see_report_sales` |
+
+---
+
+## Roles Predefinidos
+
+### 1. Super Administrador
+
+**Descripción**: Control total del sistema sin restricciones.
+
+**Permisos Completos**:
+- Todos los módulos
+- Todos los reportes
+- Gestión de usuarios y permisos
+- Configuración del sistema
+- Acceso a datos sensibles
+
+**Responsabilidades**:
+- Configuración inicial de la clínica
+- Gestión de personal
+- Asignación de permisos
+- Respaldo de datos críticos
+
+**Nota**: Solo debe haber 1-2 super administradores por clínica por seguridad.
+
+---
+
+### 2. Administrador
+
+**Descripción**: Gestión administrativa sin acceso a configuración crítica.
+
+**Permisos Típicos**:
+
+#### Pacientes
+- `list_patients` - Ver pacientes
+- `add_patient` - Agregar pacientes
+- `edit_patient` - Editar pacientes
+- ❌ `delete_patient` - No puede eliminar
+
+#### Agenda
+- `list_calendar` - Ver calendario
+- `add_appointment` - Crear citas
+- `edit_appointment` - Modificar citas
+- `delete_appointment` - Cancelar citas
+
+#### Tesorería
+- `list_treasury` - Ver tesorería
+- `see_report_sales` - Ver ventas
+- `see_report_debtors` - Ver deudores
+- `see_report_income` - Ver ingresos
+- `add_expense` - Registrar gastos
+- ❌ No puede modificar cajas
+
+#### Administración
+- `list_staff` - Ver personal
+- `list_categories` - Ver categorías
+- `list_templates` - Ver plantillas
+- ❌ No puede crear/editar usuarios
+
+**Responsabilidades**:
+- Gestión diaria de la clínica
+- Supervisión financiera
+- Reportes y análisis
+- Apoyo al personal
+
+---
+
+### 3. Doctor/Odontólogo
+
+**Descripción**: Profesional que realiza tratamientos dentales.
+
+**Permisos Típicos**:
+
+#### Pacientes (Completo)
+- `list_patients`
+- `add_patient`
+- `edit_patient`
+- `view_patient_expedient` - Ver expediente completo
+
+#### Expediente Clínico
+- `add_background` - Agregar antecedentes
+- `edit_background` - Editar antecedentes
+- `add_evolution` - Agregar evoluciones
+- `edit_evolution` - Editar evoluciones
+- `add_prescription` - Crear recetas
+- `add_consent` - Agregar consentimientos
+
+#### Presupuestos
+- `list_budgets` - Ver presupuestos
+- `add_budget` - Crear presupuestos
+- `edit_budget` - Modificar presupuestos
+- `approve_budget` - Aprobar presupuestos
+
+#### Agenda
+- `list_calendar` - Ver su propia agenda
+- `add_appointment` - Agendar citas
+- `edit_appointment` - Modificar sus citas
+
+#### Multimedia
+- `add_multimedia` - Subir archivos
+- `edit_multimedia` - Organizar archivos
+- `delete_multimedia` - Eliminar archivos
+
+#### Reportes (Limitado)
+- `see_report_personal` - Ver su propia producción
+- ❌ No ve reportes financieros completos
+
+**Responsabilidades**:
+- Atención clínica de pacientes
+- Registro de tratamientos y evoluciones
+- Creación de presupuestos
+- Diagnóstico y planificación
+
+---
+
+### 4. Secretaria/Recepcionista
+
+**Descripción**: Gestión de citas, cobros y atención administrativa.
+
+**Permisos Típicos**:
+
+#### Pacientes (Limitado)
+- `list_patients` - Ver pacientes
+- `add_patient` - Agregar pacientes
+- `edit_patient` - Editar datos básicos
+- ❌ No accede a información clínica sensible
+
+#### Agenda (Completo)
+- `list_calendar` - Ver calendario completo
+- `add_appointment` - Agendar citas
+- `edit_appointment` - Modificar citas
+- `delete_appointment` - Cancelar citas
+- `select_doctors` - Asignar doctores
+
+#### Pagos y Cobros
+- `register_payment` - Registrar pagos
+- `print_receipt` - Imprimir recibos
+- `view_patient_balance` - Ver balance del paciente
+
+#### Multimedia (Básico)
+- `add_multimedia` - Subir archivos administrativos
+- ❌ No accede a radiografías o fotos clínicas
+
+#### Reportes (Muy Limitado)
+- ❌ No ve reportes financieros
+- ❌ No ve información de producción
+
+**Responsabilidades**:
+- Gestión de citas
+- Atención a pacientes
+- Cobros y recibos
+- Recordatorios de citas
+
+---
+
+### 5. Auxiliar Dental
+
+**Descripción**: Apoyo al doctor en tareas clínicas y administrativas.
+
+**Permisos Típicos**:
+
+#### Pacientes
+- `list_patients` - Ver pacientes
+- `view_patient_expedient` - Ver expediente (solo lectura)
+
+#### Multimedia
+- `add_multimedia` - Subir fotos/radiografías
+- `edit_multimedia` - Organizar archivos
+- `add_multimedia_category` - Crear categorías
+
+#### Evoluciones (Solo Lectura)
+- `view_evolutions` - Ver evoluciones
+- ❌ No puede crear/editar evoluciones
+
+#### Agenda
+- `list_calendar` - Ver calendario
+- ❌ No puede crear/modificar citas
+
+**Responsabilidades**:
+- Apoyo al doctor durante consultas
+- Subir multimedia (fotos, rayos X)
+- Preparación de materiales
+- Esterilización de instrumentos
+
+---
+
+## Permisos por Módulo
+
+### Módulo de Pacientes
+
+| Permiso | Descripción | Super Admin | Admin | Doctor | Secretaria | Auxiliar |
+|---------|-------------|:-----------:|:-----:|:------:|:----------:|:--------:|
+| `list_patients` | Ver listado | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `add_patient` | Crear paciente | ✅ | ✅ | ✅ | ✅ | ❌ |
+| `edit_patient` | Editar paciente | ✅ | ✅ | ✅ | ✅ | ❌ |
+| `delete_patient` | Eliminar paciente | ✅ | ❌ | ❌ | ❌ | ❌ |
+| `view_expedient` | Ver expediente clínico | ✅ | ✅ | ✅ | ❌ | ✅ |
+
+### Módulo de Agenda
+
+| Permiso | Descripción | Super Admin | Admin | Doctor | Secretaria | Auxiliar |
+|---------|-------------|:-----------:|:-----:|:------:|:----------:|:--------:|
+| `list_calendar` | Ver calendario | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `add_appointment` | Crear cita | ✅ | ✅ | ✅ | ✅ | ❌ |
+| `edit_appointment` | Editar cita | ✅ | ✅ | ✅ | ✅ | ❌ |
+| `delete_appointment` | Eliminar cita | ✅ | ✅ | ❌ | ✅ | ❌ |
+| `select_doctors` | Asignar doctores | ✅ | ✅ | ❌ | ✅ | ❌ |
+| `add_agenda_break` | Agregar pausas | ✅ | ✅ | ✅ | ✅ | ❌ |
+
+### Módulo de Presupuestos
+
+| Permiso | Descripción | Super Admin | Admin | Doctor | Secretaria | Auxiliar |
+|---------|-------------|:-----------:|:-----:|:------:|:----------:|:--------:|
+| `list_budgets` | Ver presupuestos | ✅ | ✅ | ✅ | ✅ | ❌ |
+| `add_budget` | Crear presupuesto | ✅ | ✅ | ✅ | ❌ | ❌ |
+| `edit_budget` | Editar presupuesto | ✅ | ✅ | ✅ | ❌ | ❌ |
+| `delete_budget` | Eliminar presupuesto | ✅ | ✅ | ❌ | ❌ | ❌ |
+| `approve_budget` | Aprobar presupuesto | ✅ | ✅ | ✅ | ❌ | ❌ |
+
+### Módulo de Tesorería
+
+| Permiso | Descripción | Super Admin | Admin | Doctor | Secretaria | Auxiliar |
+|---------|-------------|:-----------:|:-----:|:------:|:----------:|:--------:|
+| `list_treasury` | Ver tesorería | ✅ | ✅ | ❌ | ❌ | ❌ |
+| `register_payment` | Registrar pagos | ✅ | ✅ | ❌ | ✅ | ❌ |
+| `add_expense` | Agregar gastos | ✅ | ✅ | ❌ | ❌ | ❌ |
+| `list_expenses` | Ver gastos | ✅ | ✅ | ❌ | ❌ | ❌ |
+| `see_report_sales` | Ver reporte ventas | ✅ | ✅ | ❌ | ❌ | ❌ |
+| `see_report_debtors` | Ver deudores | ✅ | ✅ | ❌ | ❌ | ❌ |
+| `see_report_personal` | Ver producción | ✅ | ✅ | ✅ | ❌ | ❌ |
+
+### Módulo de Administración
+
+| Permiso | Descripción | Super Admin | Admin | Doctor | Secretaria | Auxiliar |
+|---------|-------------|:-----------:|:-----:|:------:|:----------:|:--------:|
+| `list_staff` | Ver personal | ✅ | ✅ | ❌ | ❌ | ❌ |
+| `add_staff` | Agregar personal | ✅ | ❌ | ❌ | ❌ | ❌ |
+| `edit_staff` | Editar personal | ✅ | ❌ | ❌ | ❌ | ❌ |
+| `list_categories` | Ver categorías | ✅ | ✅ | ✅ | ❌ | ❌ |
+| `add_category` | Crear categorías | ✅ | ✅ | ❌ | ❌ | ❌ |
+| `list_templates` | Ver plantillas | ✅ | ✅ | ✅ | ❌ | ❌ |
+| `edit_template` | Editar plantillas | ✅ | ✅ | ✅ | ❌ | ❌ |
+
+---
+
+## Permisos Especiales
+
+### Permisos Sensibles
+
+Estos permisos deben asignarse con mucho cuidado:
+
+- `delete_patient` - Eliminar pacientes (permanente)
+- `delete_budget` - Eliminar presupuestos
+- `edit_payment` - Modificar pagos registrados
+- `delete_appointment` - Eliminar citas
+- `manage_permissions` - Gestionar permisos de otros usuarios
+
+**Advertencia**: Solo el Super Administrador debería tener la mayoría de estos permisos.
+
+### Permisos Multi-Organización
+
+Si tu clínica tiene múltiples sedes:
+
+- `switch_organization` - Cambiar entre organizaciones
+- `view_all_organizations` - Ver datos de todas las sedes
+- `manage_organizations` - Crear/editar organizaciones
+
+---
+
+## Personalizar Permisos
+
+### Permisos por Usuario
+
+El administrador puede personalizar permisos de forma individual:
+
+1. Ve a **Administración > Personal**
+2. Selecciona un usuario
+3. Haz clic en **Permisos**
+4. Marca/desmarca los permisos específicos
+5. Guarda los cambios
+
+[IMAGEN: Pantalla de gestión de permisos con árbol de permisos]
+
+### Mejores Prácticas
+
+1. **Principio de Menor Privilegio**: Solo otorga los permisos estrictamente necesarios
+2. **Revisión Periódica**: Revisa los permisos cada 3-6 meses
+3. **Documentar Cambios**: Anota por qué se otorgó un permiso especial
+4. **No compartir credenciales**: Cada usuario debe tener su propia cuenta
+5. **Revocar al desvincularse**: Elimina permisos inmediatamente cuando alguien deja la clínica
+
+---
+
+## Verificar Tus Permisos
+
+### Cómo Saber Qué Permisos Tienes
+
+1. **Menú lateral**: Solo verás los módulos a los que tienes acceso
+2. **Botones ocultos**: Si un botón no aparece, no tienes ese permiso
+3. **Mensajes de error**: Si intentas una acción prohibida, verás "Sin permisos suficientes"
+
+### Solicitar Permisos Adicionales
+
+Si necesitas acceso a una funcionalidad:
+
+1. Identifica qué necesitas hacer (ej: "crear presupuestos")
+2. Contacta a tu administrador
+3. Explica por qué necesitas ese permiso
+4. El administrador evaluará y otorgará si es apropiado
+
+**Nota**: Nunca compartas tu usuario con otro colega para "prestarle" tus permisos. Cada uno debe tener su propia cuenta con los permisos adecuados.
+
+---
+
+## Errores Comunes con Permisos
+
+### 1. "No tienes permisos para ver esta página"
+**Causa**: Intentaste acceder a un módulo sin los permisos necesarios
+**Solución**: Contacta al administrador si crees que deberías tener acceso
+
+### 2. Botones o secciones no aparecen
+**Causa**: No tienes los permisos requeridos y el sistema oculta esas opciones
+**Solución**: Esto es normal. Solo ves lo que puedes usar
+
+### 3. "Acción no autorizada"
+**Causa**: Intentaste una acción específica (ej: eliminar) sin el permiso correspondiente
+**Solución**: Si necesitas esta función, solicita el permiso al administrador
+
+---
+
+## Seguridad y Permisos
+
+### Responsabilidades del Usuario
+
+- **No compartir contraseñas**: Cada usuario es responsable de sus acciones
+- **Cerrar sesión**: Siempre cierra sesión al terminar
+- **Reportar accesos inusuales**: Si notas actividad extraña, repórtalo
+- **Usar permisos éticamente**: No accedas a información que no necesites
+
+### Auditoría
+
+El sistema registra:
+- Quién hizo qué acción
+- Cuándo se realizó
+- Desde qué dispositivo
+
+Esto permite rastrear cambios y garantizar la seguridad de los datos.
+
+---
+
+## Resumen
+
+| Rol | Nivel de Acceso | Módulos Principales |
+|-----|-----------------|---------------------|
+| Super Admin | ⭐⭐⭐⭐⭐ Total | Todos |
+| Administrador | ⭐⭐⭐⭐ Alto | Pacientes, Agenda, Tesorería, Administración |
+| Doctor | ⭐⭐⭐ Medio-Alto | Pacientes, Expediente, Presupuestos, Agenda |
+| Secretaria | ⭐⭐ Medio | Agenda, Cobros, Pacientes (básico) |
+| Auxiliar | ⭐ Básico | Multimedia, Expediente (lectura) |
+
+---
+
+[← Volver: Conceptos Básicos](./conceptos-basicos.md) | [Siguiente: Módulo de Pacientes →](../02-pacientes/vision-general.md)
