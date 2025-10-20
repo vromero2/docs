@@ -43,19 +43,11 @@
             ]
           },
           {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
+            "group": "Guías Prácticas",
             "pages": [
               "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "essentials/navigation",
+              "essentials/settings"
             ]
           },
           {
@@ -92,14 +84,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "OCLÜ CRM",
+          "href": "https://www.oclucrm.com",
+          "icon": "globe"
         }
       ]
     }
@@ -111,14 +98,14 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Soporte",
+        "href": "mailto:soporte@oclucrm.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Ir a OCLÜ CRM",
+      "href": "https://www.oclucrm.com"
     }
   },
   "contextual": {

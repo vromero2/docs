@@ -1,88 +1,138 @@
 ---
-title: 'Markdown syntax'
-description: 'Text, title, and styling in standard markdown'
-icon: 'text-size'
+title: 'Guía de Uso del Sistema'
+description: 'Consejos y mejores prácticas para usar OCLÜ CRM eficientemente'
+icon: 'lightbulb'
 ---
 
-## Titles
+## Consejos para Doctores
 
-Best used for section headers.
+### Gestión Eficiente de Pacientes
 
-```md
-## Titles
-```
+**Organización del Expediente**:
+- Siempre completa los datos básicos al crear un paciente
+- Usa el odontograma para registrar el estado inicial
+- Agrega notas descriptivas en cada consulta
+- Sube radiografías y fotos inmediatamente después de tomarlas
 
-### Subtitles
+**Flujo de Consulta Optimizado**:
+1. Busca el paciente por nombre o documento
+2. Revisa el historial previo
+3. Registra síntomas y hallazgos
+4. Actualiza el odontograma
+5. Crea presupuesto si es necesario
+6. Programa próxima cita
 
-Best used for subsection headers.
+### Uso del Odontograma
 
-```md
-### Subtitles
-```
+**Símbolos más utilizados**:
+- 🔴 **Caries**: Marca con "C" en la superficie afectada
+- ⚫ **Ausente**: Marca con "X" el diente faltante
+- 🔵 **Obturación**: Marca con "O" el tratamiento realizado
+- 🟡 **Corona**: Marca con "Cr" para coronas
 
-<Tip>
+**Mejores prácticas**:
+- Siempre marca el estado actual antes de cualquier tratamiento
+- Usa colores diferentes para planificado vs realizado
+- Documenta cambios en notas adicionales
 
-Each **title** and **subtitle** creates an anchor and also shows up on the table of contents on the right.
+## Consejos para Secretarias
 
-</Tip>
+### Gestión de Agenda
 
-## Text formatting
+**Optimización de Horarios**:
+- Bloquea horarios de almuerzo y descansos
+- Reserva tiempo para emergencias
+- Agrupa tratamientos similares en el mismo día
+- Programa limpiezas en horarios menos demandados
 
-We support most markdown formatting. Simply add `**`, `_`, or `~` around text to format it.
+**Comunicación con Pacientes**:
+- Envía recordatorios 24 horas antes
+- Confirma citas el día anterior
+- Mantén registro de pacientes que cancelan frecuentemente
 
-| Style         | How to write it   | Result          |
-| ------------- | ----------------- | --------------- |
-| Bold          | `**bold**`        | **bold**        |
-| Italic        | `_italic_`        | _italic_        |
-| Strikethrough | `~strikethrough~` | ~strikethrough~ |
+### Manejo de Presupuestos
 
-You can combine these. For example, write `**_bold and italic_**` to get **_bold and italic_** text.
+**Creación Eficiente**:
+- Usa plantillas para tratamientos comunes
+- Incluye siempre tiempo de ejecución estimado
+- Agrega notas sobre materiales especiales
+- Establece fechas de vencimiento claras
 
-You need to use HTML to write superscript and subscript text. That is, add `<sup>` or `<sub>` around your text.
+## Consejos para Administradores
 
-| Text Size   | How to write it          | Result                 |
-| ----------- | ------------------------ | ---------------------- |
-| Superscript | `<sup>superscript</sup>` | <sup>superscript</sup> |
-| Subscript   | `<sub>subscript</sub>`   | <sub>subscript</sub>   |
+### Configuración del Sistema
 
-## Linking to pages
+**Usuarios y Permisos**:
+- Asigna roles específicos según funciones
+- Revisa permisos periódicamente
+- Crea usuarios temporales para personal de reemplazo
+- Mantén registro de accesos
 
-You can add a link by wrapping text in `[]()`. You would write `[link to google](https://google.com)` to [link to google](https://google.com).
+**Categorías y Tratamientos**:
+- Organiza por especialidades (endodoncia, ortodoncia, etc.)
+- Establece códigos consistentes
+- Actualiza precios regularmente
+- Crea paquetes para tratamientos combinados
 
-Links to pages in your docs need to be root-relative. Basically, you should include the entire folder path. For example, `[link to text](/writing-content/text)` links to the page "Text" in our components section.
+### Reportes y Análisis
 
-Relative links like `[link to text](../text)` will open slower because we cannot optimize them as easily.
+**Métricas Importantes**:
+- Pacientes nuevos por mes
+- Tratamientos más realizados
+- Ingresos por especialidad
+- Tasa de cancelación de citas
 
-## Blockquotes
+## Atajos de Teclado Útiles
 
-### Singleline
+| Atajo | Función | Dónde usar |
+|-------|---------|-----------|
+| `Ctrl + F` | Buscar | Lista de pacientes |
+| `Ctrl + N` | Nuevo paciente | Módulo pacientes |
+| `Ctrl + S` | Guardar | Formularios |
+| `Tab` | Siguiente campo | Formularios |
+| `Esc` | Cancelar | Modales y formularios |
 
-To create a blockquote, add a `>` in front of a paragraph.
+## Solución de Problemas Comunes
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+### "No puedo ver la agenda"
+- Verifica que tengas permisos de `view_appointments`
+- Confirma que estés en el rango de fechas correcto
+- Revisa si hay filtros activos
 
-```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
-```
+### "El presupuesto no se guarda"
+- Verifica que todos los campos obligatorios estén completos
+- Confirma que el paciente esté correctamente seleccionado
+- Revisa que tengas permisos de `create_budget`
 
-### Multiline
+### "No aparecen las fotos del paciente"
+- Verifica el formato del archivo (JPG, PNG, HEIC)
+- Confirma que el archivo no sea muy grande (máximo 10MB)
+- Revisa tu conexión a internet
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
->
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+## Integración con Otros Sistemas
 
-```md
-> Dorothy followed her through many of the beautiful rooms in her castle.
->
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
-```
+### Exportar Datos
+- Usa la función de exportación para respaldos
+- Exporta reportes financieros mensualmente
+- Mantén copias de seguridad de multimedia importante
 
-### LaTeX
+### Importar Pacientes
+- Usa la plantilla Excel proporcionada
+- Verifica datos antes de importar
+- Importa en lotes pequeños para evitar errores
 
-Mintlify supports [LaTeX](https://www.latex-project.org) through the Latex component.
+## Mantenimiento y Actualizaciones
 
-<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+### Respaldo de Datos
+- El sistema realiza respaldos automáticos diarios
+- Exporta datos críticos antes de actualizaciones mayores
+- Mantén copias locales de documentos importantes
 
-```md
-<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
-```
+### Actualizaciones del Sistema
+- Las actualizaciones se realizan automáticamente
+- Recibirás notificación de nuevas funcionalidades
+- Consulta el changelog para ver mejoras
+
+<Note>
+**¿Necesitas más ayuda?** Contacta soporte en soporte@oclucrm.com o consulta la documentación específica de cada módulo.
+</Note>

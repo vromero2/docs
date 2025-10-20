@@ -1,94 +1,219 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: 'Desarrollo y Personalización'
+description: 'Guía para desarrolladores y personalización avanzada de OCLÜ'
 ---
 
 <Info>
-  **Prerequisites**:
-  - Node.js version 19 or higher
-  - A docs repository with a `docs.json` file
+  **Prerrequisitos**:
+  - Acceso de administrador a OCLÜ CRM
+  - Conocimientos básicos de configuración de sistemas
+  - Acceso a la documentación técnica
 </Info>
 
-Follow these steps to install and run Mintlify on your operating system.
+Esta guía está dirigida a desarrolladores y administradores técnicos que necesitan personalizar o integrar OCLÜ CRM.
 
 <Steps>
-<Step title="Install the Mintlify CLI">
+<Step title="Acceso de Desarrollador">
+
+Para acceder a las funciones de desarrollo:
+
+1. Solicita credenciales de desarrollador a soporte@oclucrm.com
+2. Accede al panel de administración avanzado
+3. Configura tu entorno de desarrollo local
 
 ```bash
-npm i -g mint
+# Configuración básica del entorno
+export OCLU_API_KEY="tu_api_key"
+export OCLU_ENVIRONMENT="development"
 ```
+
 </Step>
 
-<Step title="Preview locally">
+<Step title="API y Integraciones">
 
-Navigate to your docs directory where your `docs.json` file is located, and run the following command:
+OCLÜ CRM ofrece API REST para integraciones:
 
 ```bash
-mint dev
+# Ejemplo de consulta de pacientes
+curl -H "Authorization: Bearer $OCLU_API_KEY" \
+     -H "Content-Type: application/json" \
+     https://api.oclucrm.com/v1/patients
 ```
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+**Endpoints principales**:
+- `/v1/patients` - Gestión de pacientes
+- `/v1/appointments` - Agenda y citas
+- `/v1/treatments` - Tratamientos y presupuestos
+- `/v1/payments` - Pagos y finanzas
 
 </Step>
 </Steps>
 
-## Custom ports
+## Personalización Avanzada
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. For example, to run Mintlify on port 3333, use this command:
+### Configuración de Campos Personalizados
+
+Puedes agregar campos específicos para tu clínica:
+
+```json
+{
+  "custom_fields": {
+    "patient": [
+      {
+        "name": "seguro_medico",
+        "type": "text",
+        "label": "Seguro Médico",
+        "required": false
+      }
+    ]
+  }
+}
+```
+
+### Integración con Sistemas Externos
+
+<AccordionGroup>
+  <Accordion title="Integración con Contabilidad">
+    
+    Conecta OCLÜ con tu sistema contable:
+    
+    1. Configura webhooks para sincronización automática
+    2. Exporta reportes financieros en formato compatible
+    3. Sincroniza datos de pacientes y pagos
+    
+    ```bash
+    # Webhook para nuevos pagos
+    POST https://tu-sistema-contable.com/webhook/oclu-payment
+    ```
+  </Accordion>
+
+  <Accordion title="Integración con Laboratorios">
+    
+    Automatiza la comunicación con laboratorios:
+    
+    1. Envía órdenes de trabajo automáticamente
+    2. Recibe notificaciones de estado
+    3. Actualiza presupuestos con costos reales
+    
+  </Accordion>
+
+  <Accordion title="SMS y Notificaciones">
+    
+    Personaliza notificaciones automáticas:
+    
+    1. Recordatorios de citas por SMS
+    2. Notificaciones de pagos pendientes
+    3. Alertas de seguimiento de tratamientos
+    
+  </Accordion>
+</AccordionGroup>
+
+## Herramientas de Desarrollo
+
+### Logs y Debugging
+
+Accede a los logs del sistema para troubleshooting:
 
 ```bash
-mint dev --port 3333
+# Ver logs en tiempo real
+tail -f /var/log/oclu/app.log
+
+# Filtrar por usuario específico
+grep "user_id:123" /var/log/oclu/app.log
 ```
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+### Backup y Restauración
 
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
-
-## Mintlify versions
-
-Please note that each CLI release is associated with a specific version of Mintlify. If your local preview does not align with the production version, please update the CLI:
+Procedimientos para respaldo de datos:
 
 ```bash
-npm mint update
+# Backup completo de la base de datos
+pg_dump oclu_production > backup_$(date +%Y%m%d).sql
+
+# Restauración desde backup
+psql oclu_production < backup_20241201.sql
 ```
 
-## Validating links
+### Monitoreo y Performance
 
-The CLI can assist with validating links in your documentation. To identify any broken links, use the following command:
+<AccordionGroup>
+  <Accordion title="Métricas de Performance">
+    
+    Monitorea el rendimiento del sistema:
+    
+    - Tiempo de respuesta de consultas
+    - Uso de memoria y CPU
+    - Conexiones simultáneas
+    - Errores de API
+    
+  </Accordion>
 
-```bash
-mint broken-links
-```
-
-## Deployment
-
-If the deployment is successful, you should see the following:
-
-<Frame>
-  <img src="/images/checks-passed.png" alt="Screenshot of a deployment confirmation message that says All checks have passed." style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-## Code formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+  <Accordion title="Alertas Automáticas">
+    
+    Configura alertas para:
+    
+    - Caídas del sistema
+    - Errores críticos
+    - Espacio en disco bajo
+    - Intentos de acceso no autorizados
+    
+  </Accordion>
+</AccordionGroup>
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of the CLI: `npm remove -g mint`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall the CLI: `npm i -g mint`
+  <Accordion title='Error: "API rate limit exceeded"'>
+    
+    Si recibes este error:
+    1. Verifica tu plan de API
+    2. Implementa throttling en tus requests
+    3. Contacta soporte para aumentar límites
+    
   </Accordion>
 
-  <Accordion title="Issue: Encountering an unknown error">
-  
-    Solution: Go to the root of your device and delete the `~/.mintlify` folder. Then run `mint dev` again.
+  <Accordion title="Problema: Sincronización de datos">
+    
+    Solución:
+    1. Verifica la conectividad de red
+    2. Revisa los logs de webhook
+    3. Ejecuta sincronización manual
+    4. Contacta soporte técnico
+    
+  </Accordion>
+
+  <Accordion title="Error: Permisos insuficientes">
+    
+    Para resolver problemas de permisos:
+    1. Verifica tu rol de usuario
+    2. Solicita permisos adicionales al administrador
+    3. Revisa la configuración de seguridad
+    
   </Accordion>
 </AccordionGroup>
 
-Curious about what changed in the latest CLI version? Check out the [CLI changelog](https://www.npmjs.com/package/mintlify?activeTab=versions).
+## Recursos Adicionales
+
+<CardGroup cols={2}>
+
+<Card title="API Reference" icon="code" href="/api-reference/introduction">
+  Documentación completa de la API REST.
+</Card>
+
+<Card title="Webhooks" icon="link" href="/api-reference/endpoint/webhook">
+  Configuración de notificaciones automáticas.
+</Card>
+
+<Card title="SDKs" icon="square-code" href="/api-reference/endpoint/get">
+  Librerías para diferentes lenguajes.
+</Card>
+
+<Card title="Ejemplos" icon="lightbulb" href="/api-reference/endpoint/create">
+  Casos de uso y ejemplos prácticos.
+</Card>
+
+</CardGroup>
+
+<Note>
+  **Soporte Técnico**: Para consultas específicas de desarrollo, contacta a dev@oclucrm.com
+</Note>
