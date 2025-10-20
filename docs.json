@@ -32,10 +32,10 @@
         ]
       },
       {
-        "tab": "Guides",
+        "tab": "Guías y Herramientas",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Inicio Rápido",
             "pages": [
               "index",
               "quickstart",
@@ -48,14 +48,6 @@
               "essentials/markdown",
               "essentials/navigation",
               "essentials/settings"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
             ]
           }
         ]
