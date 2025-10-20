@@ -14,7 +14,7 @@
         "tab": "BlackTooth",
         "groups": [
           {
-            "group": "Documentación principal",
+            "group": "Documentación Principal",
             "pages": [
               "01-bienvenida",
               "02-conceptos-basicos",
@@ -32,10 +32,10 @@
         ]
       },
       {
-        "tab": "Guías y Herramientas",
+        "tab": "Guías",
         "groups": [
           {
-            "group": "Inicio Rápido",
+            "group": "Inicio y Herramientas",
             "pages": [
               "index",
               "quickstart",
@@ -51,37 +51,8 @@
             ]
           }
         ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "OCLÜ CRM",
-          "href": "https://www.oclucrm.com",
-          "icon": "globe"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -114,9 +85,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/vromero2",
+      "linkedin": "https://linkedin.com/company/oclu"
     }
   }
 }
