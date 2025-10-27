@@ -35,7 +35,22 @@
         "tab": "Guías",
         "groups": [
           {
-            "group": "Inicio y Herramientas",
+            "group": "Tutoriales Paso a Paso",
+            "pages": [
+              "tutorial-crear-paciente",
+              "tutorial-agendar-turno",
+              "tutorial-registrar-pago"
+            ]
+          },
+          {
+            "group": "Referencia",
+            "pages": [
+              "roles-permisos",
+              "glosario"
+            ]
+          },
+          {
+            "group": "Herramientas",
             "pages": [
               "index",
               "quickstart",

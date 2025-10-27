@@ -1,143 +1,68 @@
-# Bienvenida a BlackTooth/OCLÜ
+# Bienvenido a Oclü
 
-## Qué es BlackTooth
+¡Bienvenido al sistema de gestión dental más completo para tu clínica odontológica!
 
-BlackTooth (también conocido como OCLÜ) es un sistema integral de gestión para clínicas dentales que te permite administrar todos los aspectos de tu práctica odontológica en un solo lugar.
+Oclü (también conocido como BlackTooth) es tu aliado para administrar todos los aspectos de tu consultorio: desde la primera llamada del paciente hasta el seguimiento post-tratamiento.
 
-### Características Principales
+---
 
-BlackTooth te ofrece:
+## ¿A quién está dirigido este sistema?
 
-- **Gestión Completa de Pacientes**: Ficha clínica digital, historial médico, documentos y multimedia
-- **Agenda Inteligente**: Calendario diario y semanal para gestionar citas de forma eficiente
-- **Odontograma Digital**: Registro visual y detallado del estado dental de cada paciente
-- **Presupuestos y Tratamientos**: Creación, seguimiento y evolución de planes de tratamiento
-- **Control Financiero**: Gestión de pagos, gastos, cajas y reportes financieros completos
-- **Laboratorios**: Solicitudes y seguimiento de trabajos de laboratorio dental
-- **Multimedia**: Almacenamiento de fotos, videos, radiografías y modelos 3D
-- **Recetas y Consentimientos**: Generación de documentos médicos desde plantillas
-- **Reportes**: Estadísticas y análisis para la toma de decisiones
+Oclü está diseñado para facilitar el trabajo de todo el equipo de la clínica:
 
-### Para Quién es Este Sistema
-
-BlackTooth está diseñado para:
-
-- **Odontólogos**: Gestión de pacientes, diagnósticos y tratamientos
-- **Secretarias/Recepcionistas**: Agenda de citas, cobros y atención al paciente
+- **Odontólogos y Especialistas**: Gestión completa de tratamientos, diagnósticos y seguimiento de pacientes
+- **Secretarias y Recepcionistas**: Agenda de turnos, cobros y atención al paciente
 - **Administradores**: Control financiero, reportes y gestión del personal
-- **Auxiliares**: Apoyo en expedientes clínicos y multimedia
+- **Auxiliares**: Apoyo en expedientes clínicos y organización de multimedia
 
 ---
 
-## Arquitectura Multi-Tenant
+## ¿Qué hace diferente a Oclü?
 
-BlackTooth utiliza una arquitectura **multi-tenant** (multi-inquilino), lo que significa:
+### Fácil de usar
+No necesitas ser experto en informática. La interfaz es intuitiva y está pensada para que puedas concentrarte en lo importante: tus pacientes.
 
-### ¿Qué es Multi-Tenant?
+### Todo en un solo lugar
+Desde la historia clínica hasta los pagos, todo lo que necesitas está integrado en una sola plataforma.
 
-Cada clínica dental tiene su propio **espacio aislado** dentro del sistema. Tus datos están completamente separados y protegidos de otras clínicas que también usan BlackTooth.
+### Acceso desde cualquier lugar
+Solo necesitas una conexión a internet y un navegador. Puedes acceder desde la computadora de tu consultorio, tu casa o incluso desde tu celular.
 
-### Acceso a Tu Clínica
-
-Para acceder a tu clínica, usarás una URL personalizada:
-
-```
-https://[nombre-tu-clinica].localhost:8000
-```
-
-Por ejemplo:
-- Clínica "Dental Smile" → `https://dentalsmile.localhost:8000`
-- Clínica "Ortodoncia Plus" → `https://ortodonciaplus.localhost:8000`
-
-**Importante**: Solo puedes acceder a los datos de tu propia clínica. El sistema garantiza total privacidad y seguridad de la información.
+### Seguro y privado
+Tus datos y los de tus pacientes están protegidos. Cada clínica tiene su propio espacio seguro, completamente aislado.
 
 ---
 
-## Tipos de Usuarios
+## Cómo usar esta guía
 
-El sistema maneja diferentes roles con distintos niveles de acceso:
+Esta documentación está organizada para que encuentres rápidamente lo que necesitas:
 
-### 1. Super Administrador
-- Acceso total al sistema
-- Gestión de personal y permisos
-- Configuración de la clínica
-- Acceso a todos los módulos
+### Si eres nuevo
+1. Lee **"¿Qué es Oclü?"** para conocer todas las funcionalidades
+2. Revisa **"Primer Acceso"** para comenzar a usar el sistema
+3. Sigue **"Primeros Pasos"** para familiarizarte con la interfaz
 
-### 2. Administrador
-- Gestión de usuarios y permisos (limitado)
-- Acceso a reportes financieros
-- Configuración de categorías y plantillas
-- No puede modificar configuración crítica del sistema
+### Si buscas algo específico
+- Usa el índice para ir directamente al módulo que necesitas
+- Los tutoriales paso a paso te guiarán en tareas comunes
+- La sección de Preguntas Frecuentes resuelve dudas rápidas
 
-### 3. Doctor/Odontólogo
-- Gestión de pacientes
-- Acceso a expedientes clínicos
-- Creación de presupuestos y tratamientos
-- Agenda de citas
-- Acceso limitado a reportes
-
-### 4. Secretaria/Recepcionista
-- Gestión de citas
-- Cobros y recibos
-- Datos básicos de pacientes
-- Sin acceso a información clínica sensible
-
-### 5. Auxiliar
-- Apoyo en expedientes
-- Carga de multimedia
-- Sin acceso a información financiera
-- Sin permisos de edición de tratamientos
-
-**Nota**: Los permisos específicos pueden ser personalizados por el administrador del sistema. Ver [Roles y Permisos](./04-roles-permisos) para más detalles.
+### Si administras la clínica
+- Revisa la sección de **Roles y Permisos** para configurar tu equipo
+- Consulta el **Glosario** cuando encuentres un término desconocido
 
 ---
 
-## Requisitos del Sistema
+## Soporte y ayuda
 
-### Para Usuarios
-- Navegador web moderno (Chrome, Firefox, Edge, Safari)
-- Conexión a internet estable
-- Recomendado: Pantalla de al menos 1280x720 píxeles
+Si necesitas ayuda adicional:
 
-### Dispositivos Compatibles
-- Computadoras de escritorio (Windows, macOS, Linux)
-- Laptops
-- Tablets (funcionalidad limitada)
-- No recomendado para teléfonos móviles
+- **Consulta esta guía**: La mayoría de las dudas están respondidas aquí
+- **Contacta a tu administrador**: Para temas de permisos o accesos
+- **Soporte técnico**: Para problemas o consultas técnicas, contacta al equipo de Oclü
 
 ---
 
-## Primeros Pasos
+## ¡Empecemos!
 
-Una vez que tengas acceso al sistema, te recomendamos:
-
-1. **Completar tu perfil**: Configura tu información personal y preferencias
-2. **Explorar la interfaz**: Familiarízate con el menú de navegación
-3. **Revisar tus permisos**: Conoce qué módulos tienes disponibles
-4. **Leer la documentación**: Especialmente los módulos que usarás con frecuencia
-
-### Siguiente Paso
-
-Continúa con [Primeros Pasos](./03-primeros-pasos) para aprender cómo iniciar sesión y navegar por el sistema.
-
----
-
-## Soporte y Actualizaciones
-
-### Obtener Ayuda
-- Consulta esta documentación para dudas sobre funcionalidades
-- Contacta al administrador de tu clínica para temas de permisos
-- Reporta errores o problemas técnicos al equipo de soporte
-
-### Actualizaciones del Sistema
-El sistema se actualiza periódicamente con:
-- Nuevas funcionalidades
-- Mejoras de seguridad
-- Corrección de errores
-- Optimizaciones de rendimiento
-
-Las actualizaciones se realizan sin interrumpir tu trabajo diario.
-
----
-
-[Siguiente: Primeros Pasos →](./03-primeros-pasos)
+Continúa con la siguiente sección para conocer a fondo todo lo que Oclü puede hacer por tu clínica.
