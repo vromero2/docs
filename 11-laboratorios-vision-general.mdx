@@ -132,36 +132,43 @@ Listado de todos los productos en stock.
 
 ---
 
-#### B. Órdenes de Compra (`/stock/orders`)
+#### B. Movimientos (`/stock/orders`)
 
-Pedidos realizados a proveedores.
+Entradas y salidas de los productos.
 
-**Información de cada Orden**:
+**Información de cada movimiento de producto**:
 
-- Número de orden
+- Operación
+- Fecha
 - Proveedor
-- Fecha del pedido
-- Estado (Pendiente, En tránsito, Recibido, Cancelado)
-- Total de la orden
-- Items incluidos
+- Producto
+- Cantidad
+- Precio unitario
+- Acciones
 
-**Crear Orden de Compra**:
+![Movimientos.png](/images/Movimientos.png)
 
-1. Clic en **"Nueva Orden"**
-2. Seleccionar proveedor
-3. Agregar productos:
-   - Producto
-   - Cantidad
-   - Precio unitario
-4. El sistema calcula total automáticamente
-5. Guardar orden
+**Crear Entrada**:
 
-**Al Recibir la Orden**:
+1. Clic en **"Crear Entrada"**
+2. Seleccionar:
 
-1. Marcar orden como "Recibido"
-2. El sistema actualiza automáticamente el inventario
+- Producto
+- Precio de costo
+- Cantidad
 
-[IMAGEN: Formulario de orden de compra]
+  ![image.png](/images/image.png)
+
+**Crear Salida**:
+
+1. Clic en **"Crear Salida"**
+2. Seleccionar:
+
+- Producto
+- Precio de costo
+- Cantidad
+
+  ![image.png](/Crearsalida.png)
 
 ---
 
@@ -171,16 +178,11 @@ Directorio de proveedores de insumos.
 
 **Información de cada Proveedor**:
 
-- Nombre comercial
-- Razón social
-- CUIT/RUT (si aplica)
-- Contacto
-- Teléfono
+- Nombre - Razón social
+- Apellido
 - Email
-- Dirección
-- Sitio web
-- Condiciones de pago
-- Notas
+- Documento
+- Teléfono
 
 **Acciones**:
 
@@ -188,8 +190,6 @@ Directorio de proveedores de insumos.
 - Editar información
 - Ver historial de órdenes
 - Marcar proveedor favorito
-
-[IMAGEN: Lista de proveedores]
 
 ---
 
