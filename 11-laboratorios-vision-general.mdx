@@ -10,10 +10,9 @@ El sistema de laboratorios gestiona solicitudes de trabajos protésicos a labora
 
 ### Acceso
 
-**Ruta**: `/laboratory`
-**Permiso**: `list_laboratories` (o permisos específicos según la pestaña)
+**Ruta**: `/laboratory/solicitations` **Permiso**: `list_laboratories`
 
-[IMAGEN: Pantalla principal de laboratorios con pestañas]
+![image.png](/Laboratoriosbase.png)
 
 ---
 
@@ -26,14 +25,16 @@ Gestión de laboratorios proveedores.
 **Permisos**: `list_laboratories`, `add_labs`, `edit_lab`
 
 **Información de cada Laboratorio**:
+
 - Nombre del laboratorio
 - Contacto (persona responsable)
 - Teléfono
 - Email
 - Dirección
-- Notas
+- Detalle
 
 **Acciones**:
+
 - Agregar nuevo laboratorio
 - Editar datos del laboratorio
 - Activar/Desactivar laboratorio
@@ -41,36 +42,7 @@ Gestión de laboratorios proveedores.
 
 **Uso típico**: Mantener listado actualizado de laboratorios con los que trabaja la clínica.
 
-[IMAGEN: Lista de laboratorios proveedores]
-
----
-
-#### B. Acciones de Laboratorio (`/laboratory/actions`)
-
-Tipos de trabajos que los laboratorios pueden realizar.
-
-**Información de cada Acción**:
-- Nombre del trabajo (Ej: "Corona de metal-porcelana")
-- Descripción
-- Tiempo estimado de entrega
-- Costo promedio
-
-**Ejemplos de Acciones Comunes**:
-- Corona de metal-porcelana
-- Corona de zirconio
-- Puente fijo 3 unidades
-- Prótesis removible superior completa
-- Prótesis removible inferior parcial
-- Placa de relajación (Michigan)
-- Férula de blanqueamiento
-- Aparato de ortopedia
-
-**Asociar a Laboratorios**:
-Cada laboratorio puede tener precios específicos para cada tipo de trabajo.
-
-**Ruta de acciones por laboratorio**: `/laboratory/actions/labs/:id`
-
-[IMAGEN: Lista de acciones de laboratorio]
+![image.png](/Laboratorios.png)
 
 ---
 
@@ -79,6 +51,7 @@ Cada laboratorio puede tener precios específicos para cada tipo de trabajo.
 Registro de trabajos enviados a laboratorios.
 
 **Información de cada Solicitud**:
+
 - **Paciente**: Para quién es el trabajo
 - **Laboratorio**: A quién se envía
 - **Tipo de trabajo**: Qué se solicita (corona, puente, etc.)
@@ -103,20 +76,20 @@ Registro de trabajos enviados a laboratorios.
 
 **Estados del Trabajo**:
 
-| Estado | Descripción | Color |
-|--------|-------------|-------|
-| **Solicitado** | Enviado al laboratorio | Amarillo |
-| **En Proceso** | Laboratorio está trabajando | Azul |
-| **Listo** | Trabajo terminado, pendiente de retiro | Verde |
-| **Entregado** | Recibido en la clínica | Verde Oscuro |
-| **Cancelado** | Solicitud anulada | Rojo |
+| Estado         | Descripción                            | Color        |
+| -------------- | -------------------------------------- | ------------ |
+| **Solicitado** | Enviado al laboratorio                 | Amarillo     |
+| **En Proceso** | Laboratorio está trabajando            | Azul         |
+| **Listo**      | Trabajo terminado, pendiente de retiro | Verde        |
+| **Entregado**  | Recibido en la clínica                 | Verde Oscuro |
+| **Cancelado**  | Solicitud anulada                      | Rojo         |
 
 **Actualizar Estado**:
+
 - Seleccionar solicitud
 - Cambiar estado según progreso
-- (Opcional) Agregar nota de actualización
 
-[IMAGEN: Formulario de nueva solicitud de laboratorio]
+![image.png](/Estadodesolicitud.png)
 
 ---
 
@@ -135,6 +108,7 @@ Gestiona materiales, insumos y productos de la clínica.
 Listado de todos los productos en stock.
 
 **Información por Producto**:
+
 - Nombre del producto
 - Código/SKU (si aplica)
 - Categoría (Material odontológico, Oficina, Limpieza, etc.)
@@ -145,18 +119,16 @@ Listado de todos los productos en stock.
 - Proveedor
 
 **Acciones**:
+
 - Agregar nuevo producto
 - Editar producto
 - Ajustar stock (entrada/salida)
 - Ver historial de movimientos
 - Marcar como agotado
 
-**Alertas**:
-- **Rojo**: Stock por debajo del mínimo
-- **Amarillo**: Stock cercano al mínimo
-- **Verde**: Stock normal
+**Alerta**:
 
-[IMAGEN: Tabla de inventario con alertas de stock]
+![image.png](/advertenciadestock.png)
 
 ---
 
@@ -165,6 +137,7 @@ Listado de todos los productos en stock.
 Pedidos realizados a proveedores.
 
 **Información de cada Orden**:
+
 - Número de orden
 - Proveedor
 - Fecha del pedido
@@ -184,6 +157,7 @@ Pedidos realizados a proveedores.
 5. Guardar orden
 
 **Al Recibir la Orden**:
+
 1. Marcar orden como "Recibido"
 2. El sistema actualiza automáticamente el inventario
 
@@ -196,6 +170,7 @@ Pedidos realizados a proveedores.
 Directorio de proveedores de insumos.
 
 **Información de cada Proveedor**:
+
 - Nombre comercial
 - Razón social
 - CUIT/RUT (si aplica)
@@ -208,6 +183,7 @@ Directorio de proveedores de insumos.
 - Notas
 
 **Acciones**:
+
 - Agregar proveedor
 - Editar información
 - Ver historial de órdenes
@@ -229,7 +205,6 @@ Directorio de proveedores de insumos.
    - Doctor identifica que se necesita corona
    - Se prepara el diente
    - Se toma impresión
-
 2. **Crear Solicitud**:
    - Ve a "Laboratorios" → "Solicitudes"
    - Clic en "Nueva Solicitud"
@@ -240,20 +215,17 @@ Directorio de proveedores de insumos.
      - Pieza: 16 (Molar superior derecho)
      - Color: A2
      - Fecha entrega: +7 días
-     - Costo: $15,000
+     - Costo: \$15,000
    - Guardar
-
 3. **Enviar al Laboratorio**:
    - Imprimir orden
    - Embalar impresión + orden
    - Enviar físicamente al laboratorio
-
 4. **Seguimiento**:
    - Laboratorio llama: "Está en proceso" → Cambiar estado
    - Laboratorio llama: "Está listo" → Cambiar estado
    - Retirar trabajo del laboratorio
    - Marcar como "Entregado"
-
 5. **Colocación en Paciente**:
    - Probar corona en paciente
    - Si ajusta bien: Cementar
@@ -261,13 +233,13 @@ Directorio de proveedores de insumos.
 
 #### Tiempos Típicos por Trabajo
 
-| Tipo de Trabajo | Días Estimados |
-|-----------------|----------------|
-| Corona metal-porcelana | 7-10 días |
-| Corona zirconio | 10-14 días |
-| Puente 3 unidades | 10-14 días |
-| Prótesis removible completa | 14-21 días |
-| Placa de relajación | 3-5 días |
+| Tipo de Trabajo             | Días Estimados |
+| --------------------------- | -------------- |
+| Corona metal-porcelana      | 7-10 días      |
+| Corona zirconio             | 10-14 días     |
+| Puente 3 unidades           | 10-14 días     |
+| Prótesis removible completa | 14-21 días     |
+| Placa de relajación         | 3-5 días       |
 
 ---
 
@@ -280,18 +252,15 @@ Directorio de proveedores de insumos.
 1. **Revisar Alertas**:
    - Al iniciar sesión, ver productos con bajo stock
    - Identificar qué se necesita comprar
-
 2. **Crear Orden de Compra**:
    - Ve a "Stock" → "Órdenes"
    - Nueva orden al proveedor habitual
    - Agregar productos necesarios
    - Enviar orden (email/teléfono al proveedor)
-
 3. **Recibir Mercadería**:
    - Cuando llega el pedido, verificar contenido
    - Marcar orden como "Recibido" en el sistema
    - El stock se actualiza automáticamente
-
 4. **Uso Diario**:
    - Cuando se usa material en tratamiento
    - Registrar salida de stock (opcional)
@@ -312,22 +281,22 @@ Directorio de proveedores de insumos.
 
 ### Laboratorios
 
-| Acción | Permiso | Rol Típico |
-|--------|---------|------------|
-| Ver laboratorios | `list_laboratories` | Doctor, Admin |
-| Agregar laboratorio | `add_labs` | Admin |
-| Editar laboratorio | `edit_lab` | Admin |
-| Ver solicitudes | (sin permiso específico) | Doctor, Admin |
-| Crear solicitud | (sin permiso específico) | Doctor, Admin |
+| Acción              | Permiso                  | Rol Típico    |
+| ------------------- | ------------------------ | ------------- |
+| Ver laboratorios    | `list_laboratories`      | Doctor, Admin |
+| Agregar laboratorio | `add_labs`               | Admin         |
+| Editar laboratorio  | `edit_lab`               | Admin         |
+| Ver solicitudes     | (sin permiso específico) | Doctor, Admin |
+| Crear solicitud     | (sin permiso específico) | Doctor, Admin |
 
 ### Stock
 
-| Acción | Permiso | Rol Típico |
-|--------|---------|------------|
-| Ver inventario | `list_inventory` | Admin, Auxiliar |
-| Editar inventario | `edit_inventory` | Admin |
-| Crear órdenes | `create_orders` | Admin |
-| Ver proveedores | `list_suppliers` | Admin |
+| Acción            | Permiso          | Rol Típico      |
+| ----------------- | ---------------- | --------------- |
+| Ver inventario    | `list_inventory` | Admin, Auxiliar |
+| Editar inventario | `edit_inventory` | Admin           |
+| Crear órdenes     | `create_orders`  | Admin           |
+| Ver proveedores   | `list_suppliers` | Admin           |
 
 **Nota**: Los permisos exactos pueden variar según configuración.
 
@@ -363,14 +332,17 @@ Directorio de proveedores de insumos.
 ## Integración con Otros Módulos
 
 ### Presupuestos
+
 - Al crear presupuesto con prótesis, puedes crear solicitud de laboratorio directamente
 - El costo del laboratorio se incluye en el presupuesto del paciente
 
 ### Gastos (Tesorería)
+
 - Pagos a laboratorios se registran como gastos
 - Órdenes de compra generan gastos en tesorería
 
 ### Pacientes
+
 - Las solicitudes de laboratorio se asocian a pacientes
 - Visibles en historial del paciente
 
@@ -379,16 +351,15 @@ Directorio de proveedores de insumos.
 ## Errores Comunes
 
 ### No puedo crear solicitud de laboratorio
-**Causa**: No hay laboratorios registrados
-**Solución**: Primero agrega al menos un laboratorio en la pestaña "Laboratorios"
+
+**Causa**: No hay laboratorios registrados **Solución**: Primero agrega al menos un laboratorio en la pestaña "Laboratorios"
 
 ### El stock no se actualiza
-**Causa**: La orden no está marcada como "Recibida"
-**Solución**: Cambia el estado de la orden a "Recibido"
+
+**Causa**: La orden no está marcada como "Recibida" **Solución**: Cambia el estado de la orden a "Recibido"
 
 ### No encuentro un producto en inventario
-**Causa**: No fue creado aún
-**Solución**: Agrégalo en "Inventario" → "Agregar producto"
+
+**Causa**: No fue creado aún **Solución**: Agrégalo en "Inventario" → "Agregar producto"
 
 ---
-

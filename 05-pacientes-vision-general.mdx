@@ -1,18 +1,20 @@
 # Gestión de Pacientes - Visión General
 
-El módulo de **Pacientes** es el corazón del sistema BlackTooth. Aquí gestionas toda la información clínica, administrativa y financiera de tus pacientes.
+El módulo de **Pacientes** es el corazón del sistema Oclü. Aquí gestionas toda la información clínica, administrativa y financiera de tus pacientes.
 
 ---
 
 ## ¿Qué Puedes Hacer en Este Módulo?
 
 ### Información del Paciente
+
 - **Datos personales**: Nombre, apellido, documento, fecha de nacimiento
 - **Datos de contacto**: Email, teléfono, dirección completa
 - **Seguros médicos**: Información de cobertura y planes
 - **Historia clínica**: Número de HC único
 
 ### Expediente Clínico Digital
+
 - **Antecedentes médicos**: Alergias, enfermedades previas, medicación actual
 - **Odontograma**: Representación visual del estado dental
 - **Evoluciones**: Notas de cada consulta y tratamiento realizado
@@ -21,12 +23,14 @@ El módulo de **Pacientes** es el corazón del sistema BlackTooth. Aquí gestion
 - **Consentimientos**: Documentos firmados digitalmente
 
 ### Gestión Financiera
+
 - **Presupuestos**: Planes de tratamiento con costos
 - **Pagos**: Registro de cobros y recibos
 - **Balance**: Deuda actual y historial de pagos
 - **Evoluciones de presupuesto**: Seguimiento de tratamientos en curso
 
 ### Citas y Agenda
+
 - **Historial de citas**: Todas las consultas del paciente
 - **Próximas citas**: Turnos agendados
 - **Comentarios**: Notas administrativas sobre el paciente
@@ -40,11 +44,12 @@ El módulo de **Pacientes** es el corazón del sistema BlackTooth. Aquí gestion
 1. Haz clic en **"Pacientes"** en el menú lateral izquierdo
 2. Verás el listado completo de pacientes registrados
 
-[IMAGEN: Menú lateral con opción Pacientes resaltada]
+   ![image.png](/Pacientes3.png)
 
 ### Permisos Requeridos
 
 Para acceder a este módulo necesitas el permiso:
+
 - **`list_patients`** - Ver listado de pacientes
 
 **Nota**: Diferentes acciones dentro del módulo requieren permisos específicos adicionales.
@@ -56,19 +61,23 @@ Para acceder a este módulo necesitas el permiso:
 El módulo de pacientes se divide en varias secciones:
 
 ### 1. Lista de Pacientes (`/patients`)
+
 Vista principal con todos los pacientes en formato de tabla.
 
 **Funcionalidades**:
-- Búsqueda por nombre, email, documento o HC
+
+- Búsqueda por nombre, email, documento, telefono o HC
 - Ordenamiento por columnas
 - Paginación
 - Acciones rápidas (editar, eliminar)
 - Importar pacientes desde Excel
 
 ### 2. Agregar Paciente (`/patients/add`)
+
 Formulario de dos pasos para crear un nuevo paciente.
 
 **Paso 1 - Datos Básicos**:
+
 - Nombre y apellido (obligatorio)
 - Email
 - Fecha de nacimiento (obligatorio)
@@ -78,6 +87,7 @@ Formulario de dos pasos para crear un nuevo paciente.
 - Número de historia clínica
 
 **Paso 2 - Datos Adicionales**:
+
 - Dirección completa (obligatorio)
 - País, provincia, localidad (obligatorio)
 - Seguro médico (opcional)
@@ -85,39 +95,43 @@ Formulario de dos pasos para crear un nuevo paciente.
 - Referido por
 
 ### 3. Ficha del Paciente (`/patients/:id`)
+
 Vista completa del paciente con pestañas:
 
 #### A. Datos (`/patients/:id/data`)
+
 Sub-secciones:
+
 - **Información**: Datos personales editables
 - **Citas**: Historial de turnos
 - **Comentarios**: Notas administrativas
 - **Historial**: Registro de cambios
 
 #### B. Expediente (`/patients/:id/expedient`)
+
 Sub-secciones:
+
 - **Antecedentes**: Historia médica
 - **Odontograma**: Estado dental actual
 - **Evoluciones**: Notas clínicas por consulta
 - **Multimedia**: Archivos del paciente
 - **Recetas Digitales**: Prescripciones
-- **Recetas de Práctica**: Indicaciones de procedimientos
 - **Consentimientos**: Documentos firmados
 
 #### C. Presupuestos (`/patients/:id/budgets`)
+
 - Lista de todos los presupuestos del paciente
-- Estados: Pendiente, Aprobado, Rechazado, En tratamiento
+- Estados: Pendiente, Aprobado, Rechazado, Cerrado, Borrador, Eliminado
 - Acceso rápido a cada presupuesto
+- Botón para registrar nuevo pago
 
 #### D. Balance (`/patients/:id/balance`)
+
 - Resumen financiero completo
 - Total adeudado
 - Total pagado
 - Saldo pendiente
 - Historial de pagos
-- Botón para registrar nuevo pago
-
----
 
 ## Flujo de Trabajo Típico
 
@@ -127,31 +141,26 @@ Sub-secciones:
    - Ir a "Pacientes" → "Agregar paciente"
    - Completar formulario de 2 pasos
    - Guardar
-
 2. **Cargar Antecedentes**
    - Ingresar al paciente creado
-   - Ir a "Expediente" → "Antecedentes"
+   - Ir a "Historia Clinica" → "Antecedentes"
    - Registrar alergias, enfermedades, medicación
-
 3. **Tomar Fotografías/Radiografías**
-   - Ir a "Expediente" → "Multimedia"
+   - Ir a "Historia Clinica" → "Multimedia"
    - Subir archivos (fotos intraorales, radiografías)
    - Organizar por categorías
-
 4. **Examen Odontológico**
-   - Ir a "Expediente" → "Odontograma"
+   - Ir a "Historia Clinica" → "Odontograma"
    - Marcar estado actual de cada pieza dental
    - Agregar diagnósticos
-
 5. **Crear Presupuesto**
    - Ir a "Presupuestos"
    - Crear nuevo presupuesto
    - Agregar tratamientos necesarios
    - Definir método de pago
    - Enviar al paciente para aprobación
-
 6. **Registrar Evolución**
-   - Ir a "Expediente" → "Evoluciones"
+   - Ir a "Historia Clinica" → "Evoluciones"
    - Crear nueva evolución
    - Describir lo realizado en la consulta
 
@@ -161,21 +170,19 @@ Sub-secciones:
    - Usar barra de búsqueda en lista de pacientes
    - Buscar por nombre, email, documento o HC
    - Hacer clic en el paciente
-
 2. **Revisar Información**
    - Verificar datos de contacto actualizados
    - Revisar historial de citas
    - Consultar evoluciones previas
-
 3. **Continuar Tratamiento**
    - Ir al presupuesto aprobado
    - Ver tratamientos pendientes
    - Actualizar evolución con lo realizado
-
 4. **Registrar Pago** (si aplica)
-   - Ir a "Balance"
+   - Ir a "Presupuesto"
    - Hacer clic en "Registrar pago"
    - Ingresar monto y método
+   - Ir a "Balance"
    - Imprimir recibo
 
 ---
@@ -185,6 +192,7 @@ Sub-secciones:
 ### Búsqueda Inteligente
 
 La barra de búsqueda filtra en tiempo real por:
+
 - Nombre completo
 - Email
 - Documento de identidad
@@ -205,6 +213,7 @@ Puedes importar múltiples pacientes desde un archivo Excel:
 ### Odontograma Interactivo
 
 El odontograma digital permite:
+
 - Clic en cualquier diente para agregar símbolos
 - Superficies individuales (mesial, distal, oclusal, vestibular, lingual/palatino)
 - Símbolos de diagnóstico (caries, fractura, ausente)
@@ -214,6 +223,7 @@ El odontograma digital permite:
 ### Multimedia Avanzada
 
 Soporta múltiples formatos:
+
 - **Imágenes**: JPG, PNG, HEIC
 - **Documentos**: PDF, DOCX, XLSX
 - **Videos**: MP4, MOV, AVI, WEBM, MKV
@@ -223,19 +233,19 @@ Soporta múltiples formatos:
 
 ## Permisos por Funcionalidad
 
-| Acción | Permiso Requerido | Descripción |
-|--------|-------------------|-------------|
-| Ver lista de pacientes | `list_patients` | Acceder al listado |
-| Agregar paciente | `add_patient` | Crear nuevo paciente |
-| Editar paciente | `edit_patient` | Modificar datos |
-| Eliminar paciente | `delete_patient` | Borrar paciente (permanente) |
-| Importar pacientes | `add_patient` | Importación masiva desde Excel |
-| Ver expediente clínico | `view_expedient` | Acceso a historia clínica |
-| Agregar multimedia | `add_multimedia` | Subir archivos |
-| Editar multimedia | `edit_multimedia` | Modificar archivos |
-| Eliminar multimedia | `delete_multimedia` | Borrar archivos |
-| Agregar evolución | `add_evolution` | Crear notas clínicas |
-| Crear presupuesto | `add_budget` | Nuevos planes de tratamiento |
+| Acción                 | Permiso Requerido   | Descripción                    |
+| ---------------------- | ------------------- | ------------------------------ |
+| Ver lista de pacientes | `list_patients`     | Acceder al listado             |
+| Agregar paciente       | `add_patient`       | Crear nuevo paciente           |
+| Editar paciente        | `edit_patient`      | Modificar datos                |
+| Eliminar paciente      | `delete_patient`    | Borrar paciente (permanente)   |
+| Importar pacientes     | `add_patient`       | Importación masiva desde Excel |
+| Ver expediente clínico | `view_expedient`    | Acceso a historia clínica      |
+| Agregar multimedia     | `add_multimedia`    | Subir archivos                 |
+| Editar multimedia      | `edit_multimedia`   | Modificar archivos             |
+| Eliminar multimedia    | `delete_multimedia` | Borrar archivos                |
+| Agregar evolución      | `add_evolution`     | Crear notas clínicas           |
+| Crear presupuesto      | `add_budget`        | Nuevos planes de tratamiento   |
 
 ---
 
@@ -267,21 +277,21 @@ Soporta múltiples formatos:
 ## Errores Comunes
 
 ### "No se puede eliminar este paciente"
-**Causa**: El paciente tiene citas, presupuestos o pagos asociados
-**Solución**: No es posible eliminar. Contacta al administrador si necesitas desactivarlo
+
+**Causa**: El paciente tiene citas, presupuestos o pagos asociados **Solución**: No es posible eliminar. Contacta al administrador si necesitas desactivarlo
 
 ### "El número de HC ya existe"
-**Causa**: Ya hay un paciente con ese número de historia clínica
-**Solución**: Usa un número diferente o verifica si el paciente ya está registrado
+
+**Causa**: Ya hay un paciente con ese número de historia clínica **Solución**: Usa un número diferente o verifica si el paciente ya está registrado
 
 ### "Error al subir multimedia"
-**Causa**: Archivo muy grande o formato no soportado
-**Solución**:
+
+**Causa**: Archivo muy grande o formato no soportado **Solución**:
+
 - Verifica que el archivo sea menor a 10MB
 - Usa formatos soportados (JPG, PNG, PDF, STL, etc.)
 - Comprime imágenes de alta resolución
 
 ### "No puedes editar este campo"
-**Causa**: No tienes el permiso `edit_patient`
-**Solución**: Solicita el permiso al administrador si lo necesitas
 
+**Causa**: No tienes el permiso `edit_patient` **Solución**: Solicita el permiso al administrador si lo necesitas

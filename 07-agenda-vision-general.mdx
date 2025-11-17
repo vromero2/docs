@@ -1,12 +1,12 @@
 # Agenda y Citas - Visión General
 
-El módulo de **Agenda** es el centro de operaciones diarias de tu clínica dental. Aquí gestionas todas las citas, horarios de los doctores y la disponibilidad de la clínica.
+El módulo de **Calendario** es el centro de operaciones diarias de tu clínica dental. Aquí gestionas todas las citas, horarios de los doctores y la disponibilidad de la clínica.
 
 ---
 
-## ¿Qué es la Agenda?
+## ¿Qué es el Calendario?
 
-La agenda es un calendario interactivo que te permite:
+El calendario es una agenda interactiva que te permite:
 
 - **Visualizar citas**: Ver todos los turnos agendados
 - **Crear citas**: Agendar nuevos turnos para pacientes
@@ -22,9 +22,10 @@ La agenda es un calendario interactivo que te permite:
 
 ### Desde el Menú Lateral
 
-Haz clic en **"Agenda"** en el menú lateral izquierdo. Esto te llevará a la vista diaria por defecto.
+Haz clic en **"Calendario"** en el menú lateral izquierdo. Esto te llevará a la vista diaria por defecto.
 
 **Permisos Requeridos**:
+
 - **`list_calendar`** - Ver el calendario
 - **`add_appointment`** - Crear citas (opcional según tu rol)
 
@@ -32,13 +33,14 @@ Haz clic en **"Agenda"** en el menú lateral izquierdo. Esto te llevará a la vi
 
 ## Vistas Disponibles
 
-El módulo de agenda ofrece dos vistas principales:
+El módulo de Calendario ofrece dos vistas principales:
 
 ### 1. Vista Diaria (`/calendar/daily`)
 
 Muestra la agenda completa de UN día específico.
 
 **Características**:
+
 - Franja horaria de 6:00 AM a 10:00 PM
 - Columnas por doctor (si hay múltiples profesionales)
 - Vista detallada de cada cita
@@ -52,6 +54,7 @@ Muestra la agenda completa de UN día específico.
 Muestra la agenda completa de UNA semana (lunes a domingo).
 
 **Características**:
+
 - 7 días en pantalla simultáneamente
 - Vista compacta de citas
 - Navegación rápida entre semanas
@@ -67,6 +70,7 @@ Muestra la agenda completa de UNA semana (lunes a domingo).
 ### Barra Superior
 
 #### Selector de Fecha
+
 - **Fecha actual**: Se muestra destacada
 - **Botones de navegación**:
   - **Anterior**: Día/semana previa
@@ -75,6 +79,7 @@ Muestra la agenda completa de UNA semana (lunes a domingo).
 - **Selector de fecha**: Hacer clic para elegir fecha específica en calendario
 
 #### Filtro de Doctores
+
 - **Solo si hay múltiples profesionales**
 - Dropdown para seleccionar qué doctor(es) ver
 - Opciones:
@@ -85,11 +90,13 @@ Muestra la agenda completa de UNA semana (lunes a domingo).
 **Permiso requerido**: `select_doctors`
 
 #### Botón "Nueva Cita"
+
 - **Botón azul** con ícono "+"
 - Abre modal para crear cita
 - **Permiso requerido**: `add_appointment`
 
-#### Botón "Agregar Pausa"
+#### Botón "Bloqueo de Agenda"
+
 - Crea bloqueos en la agenda (almuerzos, reuniones, etc.)
 - **Permiso requerido**: `add_agenda_break`
 
@@ -97,16 +104,13 @@ Muestra la agenda completa de UNA semana (lunes a domingo).
 
 El sistema usa colores para identificar el estado de cada cita:
 
-| Color | Estado | Descripción |
-|-------|--------|-------------|
-| **Gris claro** | Pendiente | Cita creada pero no confirmada |
-| **Azul** | Confirmada | Paciente confirmó su asistencia |
-| **Verde** | En curso | La cita está sucediendo ahora |
-| **Verde oscuro** | Completada | Atención finalizada |
-| **Rojo** | Cancelada | Cita anulada |
-| **Naranja** | No asistió | Paciente no se presentó |
+| Color        | Estado     | Descripción                     |
+| ------------ | ---------- | ------------------------------- |
+| **Amarillo** | Pendiente  | Cita creada pero no confirmada  |
+| **Verde**    | Confirmada | Paciente confirmó su asistencia |
+| **Rojo**     | Cancelada  | Cita anulada                    |
 
-**Nota**: Los colores exactos dependen de la configuración de "Estados del Calendario" en Administración.
+**Nota**: Los nombres y colores de los estados dependen de la configuración de "Estados del Calendario" en Administración, y son completamente modificables.
 
 ---
 
@@ -133,14 +137,12 @@ Al ver una cita en el calendario, verás:
    - Revisar citas del día en vista diaria
    - Confirmar citas pendientes (llamar a pacientes)
    - Identificar huecos disponibles
-
 2. **Durante el día**:
    - Responder llamadas para agendar citas
    - Marcar citas como "Confirmada" cuando el paciente confirma
    - Cambiar a "En curso" cuando el paciente llega
    - Marcar como "Completada" al finalizar atención
    - Manejar cancelaciones y reprogramaciones
-
 3. **Al finalizar el día**:
    - Marcar "No asistió" para ausencias
    - Preparar agenda del día siguiente
@@ -167,12 +169,10 @@ Al ver una cita en el calendario, verás:
    - Ver citas agendadas en vista diaria
    - Revisar motivos de consulta
    - Identificar pacientes con tratamientos en curso
-
 2. **Durante consultas**:
    - Acceder a expediente del paciente desde la cita
    - Completar evoluciones
    - Agendar próxima cita si es necesario
-
 3. **Al finalizar**:
    - Verificar que todas las citas estén marcadas como completadas
 
@@ -183,18 +183,19 @@ Al ver una cita en el calendario, verás:
 ### Drag & Drop (Arrastrar y Soltar)
 
 **En Vista Diaria**:
+
 - Puedes arrastrar una cita a otro horario
 - O a otra columna (otro doctor)
 - El sistema actualiza automáticamente
 
 **Limitaciones**:
-- Solo funciona dentro del mismo día
+
 - Requiere permisos de edición
-- No puedes solapar citas
 
 ### Clic Rápido para Crear Cita
 
 **En Vista Diaria**:
+
 1. Haz clic en un espacio vacío del calendario
 2. Se abre modal con fecha/hora pre-completada
 3. Solo completas paciente y motivo
@@ -202,6 +203,7 @@ Al ver una cita en el calendario, verás:
 ### Notificaciones Automáticas (si está configurado)
 
 El sistema puede enviar:
+
 - **24h antes**: Recordatorio de cita al paciente
 - **Al crear**: Confirmación de cita agendada
 - **Al cancelar**: Notificación de cancelación
@@ -212,37 +214,68 @@ El sistema puede enviar:
 
 ## Permisos por Funcionalidad
 
-| Acción | Permiso | Rol Típico |
-|--------|---------|------------|
-| Ver calendario | `list_calendar` | Todos |
-| Crear cita | `add_appointment` | Secretaria, Admin, Doctor |
-| Editar cita | `edit_appointment` | Secretaria, Admin, Doctor |
-| Eliminar cita | `delete_appointment` | Secretaria, Admin |
-| Seleccionar doctores | `select_doctors` | Secretaria, Admin |
-| Agregar pausa | `add_agenda_break` | Secretaria, Admin, Doctor |
+| Acción               | Permiso              | Rol Típico                |
+| -------------------- | -------------------- | ------------------------- |
+| Ver calendario       | `list_calendar`      | Todos                     |
+| Crear cita           | `add_appointment`    | Secretaria, Admin, Doctor |
+| Editar cita          | `edit_appointment`   | Secretaria, Admin, Doctor |
+| Eliminar cita        | `delete_appointment` | Secretaria, Admin         |
+| Seleccionar doctores | `select_doctors`     | Secretaria, Admin         |
+| Agregar pausa        | `add_agenda_break`   | Secretaria, Admin, Doctor |
 
 ---
 
 ## Tipos de Eventos en la Agenda
 
 ### 1. Cita Regular
+
 - Turno de paciente para consulta
 - Tiene paciente asignado
 - Tiene doctor asignado (opcional)
 - Color según estado
 
 ### 2. Pausa/Bloqueo
+
 - Espacio no disponible para citas
 - Ejemplos: Almuerzo, reunión, capacitación
 - Color distintivo (generalmente gris oscuro)
 - No tiene paciente asignado
 
 ### 3. Cita de Emergencia
+
 - Cita creada sin planificación previa
 - Generalmente se inserta en huecos pequeños
 - Puede tener menor duración que citas regulares
 
 ---
+
+## Estados del Calendario (`/admin/calendarStatuses`)
+
+Personaliza los estados de citas en la agenda.
+
+**Ruta**: `/admin/calendarStatuses` **Permiso**: `list_calendar_status`
+
+**Configuración de cada Estado**:
+
+- **Nombre**: Ej: "Confirmada", "Cancelada"
+- **Color**: Identificador visual en el calendario
+- **Descripción**: Para qué se usa este estado
+- **Activo**: Si está disponible para usar
+
+**Estados comunes**:
+
+- Pendiente (Amarillo)
+- Confirmada (Verde)
+- Cancelada (Rojo)
+
+**Personalización**: Puedes crear estados propios, ej:
+
+- En sala de espera
+- En silla de atención
+- Pagada
+- Esperando laboratorio
+
+![image.png](/Estadosdecalendario.png)
 
 ## Consejos y Mejores Prácticas
 
@@ -272,37 +305,39 @@ El sistema puede enviar:
 ## Errores Comunes
 
 ### "No se puede crear cita en este horario"
-**Causa**: Ya existe una cita en ese horario
-**Solución**: Busca otro horario disponible
+
+**Causa**: Ya existe una cita en ese horario **Solución**: Busca otro horario disponible
 
 ### "El doctor no está disponible"
-**Causa**: No hay horario configurado para ese doctor ese día
-**Solución**: Contacta al administrador para configurar horarios
+
+**Causa**: No hay horario configurado para ese doctor ese día **Solución**: Contacta al administrador para configurar horarios
 
 ### No veo las citas de otros doctores
-**Causa**: El filtro está activo mostrando solo un doctor
-**Solución**: Cambia filtro a "Todos los doctores"
+
+**Causa**: El filtro está activo mostrando solo un doctor **Solución**: Cambia filtro a "Todos los doctores"
 
 ### Las citas no se guardan
-**Causa**: Campos obligatorios sin completar
-**Solución**: Verifica que paciente, fecha y hora estén completos
+
+**Causa**: Campos obligatorios sin completar **Solución**: Verifica que paciente, fecha y hora estén completos
 
 ---
 
 ## Integración con Otros Módulos
 
 ### Pacientes
+
 - Acceso directo al expediente desde la cita
 - Crear paciente nuevo desde formulario de cita
 - Ver historial de citas en ficha del paciente
 
 ### Tratamientos
+
 - Especificar tratamiento al crear cita
 - Facilita preparación de materiales
 
 ### Recordatorios
+
 - Sistema de recordatorios automáticos (si está activo)
 - Configurado en Administración → Recordatorios
 
 ---
-
