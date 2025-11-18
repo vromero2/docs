@@ -1,19 +1,23 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.06145 23.1079C5.26816 22.3769 -3.39077 20.6274 1.4173 5.06384C9.6344 6.09939 16.9728 14.0644 9.06145 23.1079Z" fill="url(#paint0_linear_17557_2021)"/>
-<path d="M8.91928 23.0939C5.27642 21.2223 0.78371 4.20891 17.0071 0C20.7569 7.19341 19.6212 16.5452 8.91928 23.0939Z" fill="url(#paint1_linear_17557_2021)"/>
-<path d="M8.91388 23.0788C8.73534 19.8817 10.1585 9.08525 23.5699 13.1107C23.1812 20.1229 18.984 26.4182 8.91388 23.0788Z" fill="url(#paint2_linear_17557_2021)"/>
-<defs>
-<linearGradient id="paint0_linear_17557_2021" x1="3.77557" y1="5.91571" x2="5.23185" y2="21.5589" gradientUnits="userSpaceOnUse">
-<stop stop-color="#18E299"/>
-<stop offset="1" stop-color="#15803D"/>
-</linearGradient>
-<linearGradient id="paint1_linear_17557_2021" x1="12.1711" y1="-0.718425" x2="10.1897" y2="22.9832" gradientUnits="userSpaceOnUse">
-<stop stop-color="#16A34A"/>
-<stop offset="1" stop-color="#4ADE80"/>
-</linearGradient>
-<linearGradient id="paint2_linear_17557_2021" x1="23.1327" y1="15.353" x2="9.33841" y2="18.5196" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4ADE80"/>
-<stop offset="1" stop-color="#0D9373"/>
-</linearGradient>
-</defs>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M0 2560 l0 -2560 2560 0 2560 0 0 2560 0 2560 -2560 0 -2560 0 0
+-2560z m2337 1933 c10 -4 13 -58 13 -259 0 -163 -4 -254 -10 -254 -5 0 -120 0
+-255 0 -135 0 -249 0 -255 0 -11 0 -15 502 -3 513 7 8 490 8 510 0z m920 0
+c10 -4 13 -55 13 -259 0 -163 -4 -254 -10 -254 -5 0 -120 0 -255 0 -135 0
+-249 0 -255 0 -16 0 -13 507 3 513 16 7 487 7 504 0z m-466 -937 c301 -45 493
+-139 689 -335 189 -190 278 -363 342 -667 20 -96 23 -137 22 -349 0 -263 -9
+-333 -65 -518 -184 -602 -713 -916 -1425 -846 -405 39 -719 227 -923 552 -77
+122 -142 302 -177 487 -35 188 -29 503 12 709 74 363 292 668 597 831 89 48
+251 105 341 120 33 6 84 14 111 19 83 14 373 12 476 -3z"/>
+<path d="M2400 3164 c-217 -39 -378 -132 -488 -282 -135 -183 -192 -386 -192
+-684 0 -339 90 -591 271 -762 113 -107 226 -162 390 -191 399 -70 746 110 898
+465 109 254 120 635 26 916 -87 262 -280 451 -530 519 -58 16 -319 29 -375 19z"/>
+</g>
 </svg>

@@ -4,8 +4,8 @@
   "name": "OCLÜ",
   "colors": {
     "primary": "#fff",
-    "light": "#409eff",
-    "dark": "#333333"
+    "light": "#1976d2",
+    "dark": "#409eff"
   },
   "favicon": "/favicon.svg",
   "navigation": {
