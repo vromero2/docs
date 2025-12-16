@@ -37,8 +37,8 @@ Oclü CRM soporta el manejo de **múltiples divisas y monedas** para adaptarse a
 
 El sistema acepta las siguientes divisas y monedas:
 
--   **Peso Argentino (ARS)**
--   **Dólar Estadounidense (USD)**
+- **Peso Argentino (ARS)**
+- **Dólar Estadounidense (USD)**
 
 ---
 
@@ -291,7 +291,53 @@ Cada pago genera un **recibo** que sirve como comprobante.
 
 ![Reporte de deudores.png](/images/Reportededeudores.png)
 
-### 3. Reporte de Balance (`/treasury/reports/balance`)
+## 3. Deudas de Obras Sociales
+
+### A. Deudas de Obras Sociales (/treasury/health-insurance-debts)
+
+**Qué muestra:**\
+Las deudas pendientes de cobro correspondientes a obras sociales, asociadas a pacientes y presupuestos.
+
+**Filtros:**\
+• Obra social\
+• Estado (pendiente - cobrado)\
+• Rango de fechas (desde / hasta)
+
+**Información:**\
+• Obra social\
+• Paciente\
+• Presupuesto\
+• Prestación\
+• Monto adeudado\
+• Estado\
+• Fecha
+
+**Uso típico:**\
+Controlar las deudas pendientes de cobro de obras sociales y hacer seguimiento de los importes a recibir.
+
+![Para El Chatcito](/images/Paraelchatcito.png)
+
+### B. Historial de Cobros (/treasury/health-insurance-debts)
+
+**Qué muestra:**\
+Todos los cobros ya registrados de obras sociales en un período determinado.
+
+**Filtros:**\
+• Rango de fechas (desde / hasta)
+
+**Información:**\
+• Fecha del cobro\
+• Descripción del cobro\
+• Cuenta destino\
+• Cantidad de prestaciones\
+• Total cobrado
+
+**Uso típico:**\
+Consultar el historial de cobros realizados a obras sociales y verificar montos ingresados en cuentas bancarias.
+
+![Para El Chatcito 5](/images/Paraelchatcito5.png)
+
+### 4. Reporte de Balance (`/treasury/reports/balance`)
 
 **Qué muestra**: Comparación entre ingresos y egresos.
 
@@ -309,7 +355,7 @@ Cada pago genera un **recibo** que sirve como comprobante.
 
 **Uso típico**: Análisis de rentabilidad mensual.
 
-### 4. Reporte de Movimientos (`/treasury/accounts/banks`)
+### 5. Reporte de Movimientos (`/treasury/accounts/banks`)
 
 **Qué muestra**: Todas las transacciones (ingresos y egresos) por caja.
 
@@ -330,7 +376,7 @@ Cada pago genera un **recibo** que sirve como comprobante.
 
 **Uso típico**: Auditoría de cajas, cuadre diario.
 
-### 5. Reporte de Ingresos (`/treasury/reports/income`)
+### 6. Reporte de Ingresos (`/treasury/reports/income`)
 
 **Qué muestra**: Análisis detallado de cobranzas.
 
@@ -342,7 +388,7 @@ Cada pago genera un **recibo** que sirve como comprobante.
 
 **Uso típico**: Estrategia de cobranza, evaluación de performance.
 
-### 6. Reporte de Personal (`/treasury/reports/personal`)
+### 7. Reporte de Personal (`/treasury/reports/personal`)
 
 **Qué muestra**: Producción de cada doctor.
 
