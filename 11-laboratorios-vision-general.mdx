@@ -42,9 +42,23 @@ Gestión de laboratorios proveedores.
 
 **Uso típico**: Mantener listado actualizado de laboratorios con los que trabaja la clínica.
 
-![image.png](/Laboratorios.png)
+![Para El Chatcito 14](/images/Paraelchatcito14.png)
 
----
+**Lista de precios de laboratorio**
+
+Es la lista donde figuran todos los items que la clínica le puede solicitar a el laboratorio, junto con sus valores. Figura en el listado de acciones de **Laboratorios:**
+
+![Para El Chatcito 14 Copia](/images/Paraelchatcito14copia.png)
+
+![Para El Chatcito 15](/images/Paraelchatcito15.png)
+
+**Agregar acción**
+
+- Nombre
+- Precio
+- Divisa
+
+![Para El Chatcito 16](/images/Paraelchatcito16.png)
 
 #### C. Solicitudes (`/laboratory/solicitations`)
 
@@ -67,12 +81,31 @@ Registro de trabajos enviados a laboratorios.
 2. Completar formulario:
    - Seleccionar paciente
    - Seleccionar laboratorio
-   - Elegir tipo de trabajo
-   - Especificar detalles (pieza dental, color de diente, etc.)
+   - Elegir presupuesto a asignar
+   - Acción de presupuesto a vincular
    - Fecha esperada de entrega
-   - Costo acordado
+   - Titulo de la solicitud
    - Observaciones especiales
-3. Guardar
+   - Adjuntar imagenes
+   - Estado de la solicitud
+3. Siguiente
+
+### Items de laboratorio
+
+Los items de laboratorio son acciones que la clínica le solicita al laboratorio para utilizarlo en las prestaciones que se le van a realizar al paciente. Los mismos estan listados en la lista de precios de laboratorio.
+
+**Campos a completar:**
+
+- Accion del laboratorio
+- Cantidad
+- Precio
+- Subtotal
+
+4. Agregar solicitud
+
+![Para El Chatcito 11](/images/Paraelchatcito11.png)
+
+![Para El Chatcito 12](/images/Paraelchatcito12.png)
 
 **Estados del Trabajo**:
 
@@ -88,6 +121,10 @@ Registro de trabajos enviados a laboratorios.
 - Cambiar estado según progreso
 
 ![image.png](/Estadodesolicitud.png)
+
+Cuando un **item de laboratorio** este anexado a un **presupuesto**, estara visualizado de la siguiente forma:
+
+![Para El Chatcito 13](/images/Paraelchatcito13.png)
 
 ---
 
