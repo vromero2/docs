@@ -1,0 +1,96 @@
+# Prestaciones, Obras Sociales y Pago a Doctores en Oclü
+
+### 1- Prestaciones y Obras Sociales
+
+Dentro del **Administrador**, en la sección **Prestaciones**, se encuentra el listado completo de las prestaciones que pueden realizarse en la clínica.
+
+Oclü permite:
+
+- Crear **listas de prestaciones vinculadas a Obras Sociales**.
+- Definir qué prestaciones pueden ser **cubiertas parcial o totalmente** por una obra social.
+
+Esto habilita que, al momento de atender a un paciente con obra social, parte del tratamiento no sea abonado por el paciente sino por la obra social.
+
+---
+
+### 2- Presupuesto del paciente con Obra Social
+
+Cuando se genera un **presupuesto (Tplan)**:
+
+- Si la prestación está vinculada a una obra social:
+  - Aparece el campo **Precio OS (Obra Social)**.
+  - Este valor representa **cuánto cubre la obra social** por esa prestación.
+- El resto del importe queda a cargo del paciente, si corresponde.
+
+El presupuesto queda así dividido conceptualmente en:
+
+- 💳 Parte paciente
+- 🏥 Parte obra social
+
+---
+
+### 3- Deuda de la Obra Social
+
+La porción cubierta por la obra social:
+
+- **No se cobra en el momento**
+- Genera una **deuda pendiente** a nombre de la obra social
+
+Para gestionarla:
+
+- Se accede al módulo **Tesorería → Deudas de Obras Sociales**
+- Ruta: `/treasury/health-insurance-debts`
+- Allí se visualizan:
+  - Prestación
+  - Paciente
+  - Presupuesto
+  - Monto adeudado
+  - Estado (pendiente / cobrado)
+
+### 4- ¿Cómo impacta esto en el pago al doctor?
+
+Si el doctor tiene un **contrato configurado** (por presupuesto o por acción), el sistema puede calcular su honorario considerando:
+
+- El **precio total del presupuesto**
+- La **parte cubierta por obra social**
+- Los **porcentajes definidos en el contrato**:
+  - % Paciente
+  - % Obra Social
+  - % Descuento Lab (si aplica)
+
+👉 Es decir:
+
+> El doctor **no depende de cuándo paga la obra social**, sino de **cómo está definido su contrato**.
+
+---
+
+### 5- Confirmación y procesamiento del pago al doctor
+
+En el módulo de **Tesorería**, al procesar el pago al doctor, se llega a la pantalla de **Confirmación de Pago** (imagen enviada).
+
+Allí se muestra:
+
+#### 🔧 Configuración del Pago
+
+- **Cuenta origen (Caja / Banco)**\
+  Desde dónde sale el dinero.
+- **Cuenta destino (Gasto)**\
+  Cuenta contable del honorario.
+- **Método de pago**\
+  Transferencia, efectivo, etc.
+- **Ajustes manuales (opcional)**\
+  Correcciones excepcionales.
+
+#### 📄 Resumen del Pago
+
+- Doctor
+- Contrato aplicado (ej.: _Por presupuesto_)
+- Cantidad de prestaciones
+- Cantidad con obra social
+- **Total a pagar al doctor**, discriminado por moneda
+
+El total ya contempla:
+
+- Parte paciente
+- Parte obra social
+- Reglas del contrato

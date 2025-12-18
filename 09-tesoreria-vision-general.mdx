@@ -418,6 +418,81 @@ Módulo para registrar pagos/comisiones a los profesionales.
 - Historial de pagos
 - Detalle de pago (qué tratamientos incluyó)
 
+## **Contratos**
+
+### Creación del contrato
+
+Ruta:\
+**Administrador → Staff → Contratos → Creación**
+
+El contrato define **cómo se calcula el pago del doctor** a partir de los presupuestos y sus acciones.
+
+### Datos generales del contrato
+
+En esta primera sección se configuran los datos base:
+
+- **Tipo de contrato**\
+  Ejemplo visible: **Por presupuesto**\
+  Define la lógica general de cálculo (no se modifica luego).
+- **Nombre del contrato**\
+  Identificador interno (ej.: “Implantología – Dr. Pérez”).
+- **Descripción**\
+  Campo libre para aclaraciones administrativas o contables.
+
+### Base de cálculo
+
+Define **sobre qué valor se calcula el honorario**:
+
+- 🔘 **Precio del presupuesto**\
+  El cálculo se realiza sobre el valor final del presupuesto aprobado.
+- ⚪ **Precio de la lista**\
+  El cálculo se realiza sobre el precio base de la prestación, independientemente de descuentos.
+
+> Esta elección impacta directamente en el monto final del honorario.
+
+---
+
+### Configuración de pago al doctor
+
+En esta sección se ajustan los porcentajes que afectan el cálculo:
+
+- **% Paciente**\
+  Porcentaje del valor pagado por el paciente que se considera para el cálculo.
+- **% Obra Social**\
+  Porcentaje del valor cubierto por obra social que se considera.
+- **% Descuento Lab**\
+  Ajuste aplicado cuando hay descuentos provenientes del laboratorio.
+
+Estos valores permiten **modelar escenarios reales de cobro**, sin modificar el presupuesto original.
+
+### Acciones del contrato
+
+Una vez guardado el contrato:
+
+- Se habilita la sección **Acciones del contrato**
+- Se asocian las **prestaciones odontológicas**
+- Para cada acción se define:
+  - Porcentaje o monto fijo
+  - Moneda
+
+Estas acciones son las que luego se cruzan con los presupuestos.
+
+### Asignación a doctores
+
+- El contrato se puede asignar a **uno o varios doctores**
+- La relación es flexible:
+  - Si se quita un doctor → **soft delete**
+  - Si se vuelve a asignar → **reactivación del vínculo**
+
+### Uso en presupuestos
+
+- Solo los presupuestos **Aprobados** o **Cerrados** generan cálculos.
+- El sistema:
+  - Toma las acciones del presupuesto
+  - Las cruza con las acciones del contrato
+  - Aplica base de cálculo + porcentajes
+  - Genera los honorarios del doctor
+
 **Ruta detalle**: `/treasury/doctor-payments/:paymentId/detail`
 
 ---
