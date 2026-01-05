@@ -118,7 +118,7 @@ Encuentra rápidamente lo que necesitas según tu función:
 
 Esta documentación se actualiza constantemente con nuevas funcionalidades y mejoras.
 
-**Última actualización**: Octubre 2025 **Versión de Oclü**: 1.0
+**Última actualización**: Octubre 2025 **Versión de OCLÜ**: 1.0
 
 ---
 
