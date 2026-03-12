@@ -18,6 +18,7 @@
             "pages": [
               "01-bienvenida",
               "02-conceptos-basicos",
+              "untitled-page",
               "03-primeros-pasos",
               "04-roles-permisos",
               "05-pacientes-vision-general",
@@ -26,8 +27,7 @@
               "08-presupuestos-vision-general",
               "09-tesoreria-vision-general",
               "10-administracion-vision-general",
-              "11-laboratorios-vision-general",
-              "untitled-page"
+              "11-laboratorios-vision-general"
             ]
           }
         ]
