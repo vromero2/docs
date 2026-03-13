@@ -21,14 +21,7 @@
               "modulos-del-sistema",
               "primeros-pasos",
               "interfaz-y-navegacion",
-              "roles-y-permisos",
-              "05-pacientes-vision-general",
-              "06-pacientes-listar",
-              "07-agenda-vision-general",
-              "08-presupuestos-vision-general",
-              "09-tesoreria-vision-general",
-              "10-administracion-vision-general",
-              "11-laboratorios-vision-general"
+              "roles-y-permisos"
             ]
           }
         ]
