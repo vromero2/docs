@@ -16,11 +16,12 @@
           {
             "group": "Documentación Principal",
             "pages": [
-              "01-bienvenida",
-              "02-conceptos-basicos",
-              "untitled-page",
-              "03-primeros-pasos",
-              "04-roles-permisos",
+              "bienvenida",
+              "introduccion",
+              "modulos-del-sistema",
+              "primeros-pasos",
+              "interfaz-y-navegacion",
+              "roles-y-permisos",
               "05-pacientes-vision-general",
               "06-pacientes-listar",
               "07-agenda-vision-general",

@@ -1,0 +1,160 @@
+---
+title: "Interfaz y Navegación"
+---
+
+Una vez que iniciás sesión en OCLÜ, el sistema te lleva directamente al **home**, que es la pantalla principal desde la que vas a operar el día a día de la clínica. Es el primer pantallazo que ves cada vez que accedés al sistema.
+
+La interfaz de OCLÜ está compuesta por tres áreas que están siempre presentes mientras navegás el sistema:
+
+- **Menú lateral izquierdo** — desde donde accedés a todos los módulos
+- **Encabezado** — con accesos rápidos, notificaciones y configuración del perfil
+- **Área de contenido central** — donde se despliega la información de cada módulo o vista
+
+---
+
+### Menú lateral
+
+El menú lateral se encuentra en el lado izquierdo de la pantalla y está siempre visible. Por defecto aparece comprimido, mostrando únicamente los íconos de cada módulo. Al pasar el cursor por encima, se despliega y muestra el nombre completo de cada módulo.
+
+Al hacer clic en cualquier módulo, el sistema te lleva a esa sección y el ítem queda resaltado en gris, indicando visualmente en qué parte del sistema estás parado en ese momento.
+
+Desde el menú lateral accedés a todos los módulos del sistema: **Calendario, Pacientes, Laboratorio, Stock, Finanzas y Administrador.**
+
+---
+
+### Encabezado
+
+El encabezado está fijo en la parte superior de la pantalla y es visible desde cualquier módulo o sección del sistema. Contiene los siguientes elementos, organizados de izquierda a derecha:
+
+**Logo y nombre de la clínica** Muestra el logo que hayás cargado en el sistema y el nombre de la clínica en la que estás operando en ese momento. Si tu usuario tiene acceso a más de una sede, haciendo clic en la flecha hacia abajo podés cambiar de clínica sin necesidad de cerrar sesión.
+
+**Buscador** El ícono de lupa abre un buscador general del sistema. Desde ahí podés buscar atajos a distintas secciones del sistema —por ejemplo, podés acceder directamente al reporte de deudores sin tener que navegar módulo por módulo— y también podés buscar pacientes. Sin embargo, este buscador no está diseñado específicamente para pacientes, por lo que puede demorar unos segundos más que el buscador propio del módulo Pacientes. Si buscás un paciente desde acá y la respuesta tarda, no significa que el paciente no esté cargado en el sistema; simplemente este buscador tiene un alcance más amplio y es más lento en esa tarea específica. Para búsquedas de pacientes frecuentes o urgentes, recomendamos usar el buscador del módulo Pacientes.
+
+**Notificaciones** El ícono de campana muestra dos tipos de información: los recordatorios que tengas pendientes y todas las novedades del sistema, como mejoras, nuevas funcionalidades y actualizaciones que el equipo de OCLÜ va incorporando. Es el canal principal por el que te comunicamos todo lo nuevo que llega al sistema.
+
+**Acceso rápido a mensajes** Ícono de acceso directo a la mensajería interna del sistema, equivalente a la isla de mensajes del home.
+
+**Nombre del usuario activo** Muestra el nombre del usuario con el que estás operando en ese momento. Al hacer clic, se despliega un menú con las siguientes opciones:
+
+- **Mi suscripción** — visible únicamente para administradores. Muestra toda la información relacionada con el plan contratado: el nombre del plan activo, el valor del mismo, y los límites de uso configurados, es decir, cuántas clínicas, boxes, usuarios de staff y pacientes tenés habilitados según tu plan. También muestra el historial de facturación: si hay facturas o movimientos registrados, los podés consultar desde acá en cualquier momento.
+- **Mis honorarios** — visible para usuarios con rol Doctor que tengan agenda habilitada y contratos configurados en el sistema. Permite hacer un seguimiento de los honorarios generados, los pacientes atendidos y si cada paciente abonó o no el tratamiento realizado. Esto es útil para que el profesional pueda ir controlando, a lo largo del mes o de su jornada, que la información registrada en el sistema coincida con lo que esperaba cobrar, y también para saber si hay pacientes con pagos pendientes.
+- **Configuración** — edición rápida del perfil personal. Desde acá podés modificar tu nombre, apellido, correo electrónico, teléfono, contraseña y firma. Si tu rol es Doctor, también podés editar tu profesión y especialidad.
+- **Notas personales** — espacio privado para dejar anotaciones que solo vos podés ver. No son visibles para otros usuarios ni para el administrador. Útil para recordatorios personales o información que no necesitás compartir con el equipo.
+- **Cerrar sesión**
+
+**Menú de opciones** Ícono de tres líneas ubicado en el extremo derecho del encabezado. Al hacer clic, se despliegan las siguientes opciones:
+
+- **Modo claro / Modo oscuro** — cambia la apariencia visual del sistema. Podés alternar entre ambos modos según tu preferencia o las condiciones de iluminación en las que estés trabajando.
+- **Idioma** — permite seleccionar entre español e inglés. Por el momento el sistema está desarrollado en español. El modo inglés está disponible como opción, pero aún no está completamente implementado, por lo que seleccionarlo no cambia la visualización del sistema. Próximamente estará disponible al 100%.
+- **OCLÜ Learn** — acceso directo a la guía de tutoriales en video. Desde ahí también podés acceder a esta guía escrita.
+- **Contacto** — abre una ventana con acceso directo por WhatsApp a las áreas de Ventas, Administración, Soporte y Reclamos. Cada botón abre una conversación de WhatsApp directamente con el área correspondiente a través de la API oficial.
+
+---
+
+### Home
+
+El home es la pantalla principal del sistema y lo primero que ves al iniciar sesión. Está pensado para darte una vista rápida y completa de lo más importante del día, sin necesidad de entrar a cada módulo por separado. La información está organizada en **islas**, que son bloques de contenido independientes, cada uno enfocado en un área específica de la operación de la clínica.
+
+Las islas vienen en un orden predeterminado por el sistema, pero podés reorganizarlas arrastrándolas y soltándolas en la posición que prefieras. Esta configuración queda guardada para tu usuario.
+
+---
+
+#### Isla de citas
+
+Es la isla principal del home. Muestra el listado completo de citas del día de hoy, con la siguiente información por cada turno: hora, nombre del paciente, presupuesto asociado, descripción de la cita y estado actual del turno.
+
+Si tenés los permisos habilitados, podés filtrar el listado por doctor para ver únicamente las citas de un profesional en particular. Esto es especialmente útil en clínicas con varios doctores, donde cada uno puede revisar su propia agenda desde el home sin necesidad de entrar al módulo Calendario.
+
+---
+
+#### Isla de calendario
+
+Muestra dos datos clave: el conteo total de citas agendadas para el día de hoy y cuál es la próxima cita según el horario actual. Si ya pasó la última cita del día —por ejemplo, si la clínica cierra a las 18:00 y ya son las 19:00— esta isla no mostrará una próxima cita hasta el día siguiente.
+
+---
+
+#### Isla de pacientes
+
+Muestra los cumpleaños del día, es decir, qué pacientes cumplen años hoy. Al hacer clic en el nombre de un paciente:
+
+- Si hay un solo cumpleaños, el sistema te lleva directamente al perfil del paciente.
+- Si hay dos o más cumpleaños, se abre un listado con todos los pacientes que cumplen años ese día, desde donde podés acceder al perfil de cada uno individualmente. Una vez dentro del perfil, desde el encabezado podés contactar al paciente directamente por WhatsApp.
+
+---
+
+#### Isla de finanzas
+
+Muestra el balance mensual de la clínica. Una etiqueta indica a qué mes corresponde el monto que se está mostrando. Si necesitás ocultar los números por privacidad —por ejemplo, si hay otras personas cerca— podés hacerlo con el ícono del ojo que tiene esta isla. El ocultamiento es momentáneo y solo afecta tu visualización.
+
+---
+
+#### Isla de laboratorio
+
+Muestra cuántas solicitudes de laboratorio tienen fecha de entrega para el día de hoy y qué pacientes están asociados a esas solicitudes. Al hacer clic, el sistema te lleva directamente al módulo de Laboratorio para que puedas ver el detalle completo de cada solicitud.
+
+---
+
+#### Isla de recordatorios
+
+Está pensada para gestionar tareas pendientes dentro del equipo de la clínica. Funciona como un sistema de recordatorios interno que permite que ninguna tarea importante quede olvidada, independientemente de quién sea el responsable de llevarla a cabo.
+
+El listado muestra todos los recordatorios pendientes ordenados por fecha, con la siguiente información por cada uno: fecha en la que debía realizarse la tarea, paciente asociado si tiene alguno, descripción del recordatorio, categoría y acciones disponibles.
+
+**Acciones disponibles desde el listado:**
+
+- **Ver detalle** — abre una ventana con la información completa del recordatorio, incluyendo los usuarios que fueron notificados.
+- **Marcar como realizado** — cierra el recordatorio y lo mueve a la sección de completados.
+- **Añadir nuevo recordatorio** — abre el formulario para crear un recordatorio nuevo.
+
+**Formulario para crear un recordatorio:** Al crear un nuevo recordatorio, el sistema te pide completar los siguientes campos:
+
+- **Fecha** — cuándo querés que se te recuerde la tarea.
+- **Categoría** — las categorías disponibles son las que tengas configuradas. El sistema viene con dos categorías precargadas: _Staff_ (para recordatorios asignados a miembros del equipo) y _Personal_ (para recordatorios propios de cada usuario). Ambas son editables y podés crear nuevas categorías según las necesidades de tu clínica.
+- **Descripción** — el texto del recordatorio, es decir, qué tarea o acción hay que realizar.
+- **Paciente** (opcional) — podés vincular un paciente al recordatorio como referencia interna. El paciente no recibe ninguna notificación; el vínculo es únicamente a nivel interno de la clínica.
+- **Usuario a notificar** — podés asignarte el recordatorio a vos mismo o a otro miembro del staff. Si no seleccionás a nadie, el recordatorio no le aparecerá a ningún usuario.
+- **Repetición** (opcional) — al activar esta opción, el recordatorio se convierte en un recordatorio recurrente. El sistema te pregunta cada cuánto tiempo querés que se repita (por ejemplo, cada 1 mes, cada 3 semanas, cada 1 año) y hasta qué fecha. Si querés que sea indefinido, podés ingresar una fecha de finalización lejana.
+
+Una vez completados todos los campos, hacés clic en **Agregar recordatorio** para guardarlo.
+
+**Configuración de recordatorios:** Desde el botón de configuración dentro de la isla accedés a un apartado con tres solapas:
+
+- **Recordatorios pendientes** — listado completo de todos los recordatorios activos.
+- **Recordatorios recurrentes** — muestra todos los recordatorios que tienen repetición activada. Esta funcionalidad está pensada especialmente para el área de recepción y administración. Un caso de uso típico es el de un paciente en tratamiento de ortodoncia que necesita un control mensual: en lugar de crear un recordatorio nuevo cada mes, la secretaria crea un recordatorio recurrente vinculado a ese paciente y el sistema se lo recuerda automáticamente cada mes hasta la fecha configurada. Así se elimina la carga mental de tener que acordarse de crearlo de nuevo.
+- **Recordatorios completados** — historial de todos los recordatorios que fueron marcados como realizados. Útil para hacer un seguimiento de las tareas cerradas. Desde esta vista también podés eliminar recordatorios definitivamente.
+
+---
+
+#### Isla de mensajes
+
+Funciona como un sistema de mensajería interna institucional de la clínica, similar a un chat, pero con características pensadas específicamente para el entorno clínico. Una diferencia importante respecto a otras herramientas de mensajería es que **los mensajes no se pueden eliminar**: toda la comunicación queda registrada de forma permanente dentro del sistema, lo que garantiza trazabilidad y evita que información importante se pierda.
+
+Al ingresar a la isla, el sistema filtra automáticamente los mensajes no leídos para que veas primero lo que todavía no revisaste.
+
+Desde el listado de conversaciones, cada chat tiene un menú de acciones con un ícono de ojo. Al hacer clic, se abre una ventana de previsualización dentro del propio home, sin necesidad de entrar al módulo de mensajes. Desde esa ventana podés leer la conversación y dar una respuesta rápida, o bien abrirla completa si necesitás más contexto. Es una forma de mantenerse al tanto de la mensajería sin interrumpir lo que estás haciendo en el home.
+
+**Funcionalidades disponibles dentro de la mensajería:**
+
+- **Crear un nuevo chat** — al hacerlo, el sistema te pide ingresar un título para la conversación y seleccionar los participantes. Solo podés agregar usuarios que tengan acceso al sistema, es decir, miembros del staff de la clínica.
+- **Reaccionar con emojis** a mensajes individuales dentro de una conversación.
+- **Responder a un mensaje específico** — podés responder a un mensaje puntual dentro de una conversación, similar a la función de respuesta de WhatsApp.
+- **Marcar como no leído** — para retomar una conversación más tarde sin perderla.
+- **Agregar participantes a una conversación en curso** — podés sumar a un miembro del staff a una conversación que ya está activa. Esto es útil, por ejemplo, cuando estás coordinando con la recepcionista sobre un paciente que se atiende con otro doctor: podés agregar a ese doctor a la conversación para que todos estén al tanto sin necesidad de crear un chat nuevo.
+
+Los chats no se pueden archivar ni silenciar.
+
+La mensajería está disponible también desde la **app móvil de OCLÜ**, por lo que todo el equipo puede mantenerse comunicado aunque no estén frente a la computadora.
+
+---
+
+### Recursos de ayuda siempre disponibles
+
+Desde cualquier parte del sistema, en todo momento, tenés acceso a dos recursos de ayuda:
+
+### Bot de OCLÜ 
+
+Ubicado en la esquina inferior izquierda de la pantalla. Es el asistente virtual del sistema, disponible las 24 horas del día, los 7 días de la semana. Se alimenta de esta guía de usuario, por lo que puede responder preguntas sobre el funcionamiento del sistema, sus módulos y cómo realizar distintas acciones dentro de OCLÜ. Al abrirlo, te saluda con: _"Hola, soy el asistente de OCLÜ CRM, ¿en qué puedo ayudarte hoy?"_
+
+### Ver tutoriales 
+
+Ubicado en la esquina inferior derecha de la pantalla. En muchos módulos y apartados del sistema encontrás este botón, que activa una guía interactiva paso a paso. Al hacer clic, se abren ventanas que van explicando qué estás viendo en esa sección y para qué sirve cada elemento. Es una herramienta especialmente útil cuando estás explorando un módulo por primera vez o cuando querés entender mejor alguna funcionalidad puntual. No todos los módulos del sistema tienen tutorial disponible.
