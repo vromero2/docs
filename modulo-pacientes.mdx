@@ -1,4 +1,296 @@
 ---
-title: 'Módulo Pacientes'
+title: "Módulo Pacientes"
 ---
 
+El módulo Pacientes es un eje central de **OCLÜ**. Concentra toda la información clínica, administrativa y financiera de cada paciente, y es desde donde se gestiona el recorrido completo del paciente dentro de la clínica, desde el primer contacto hasta el seguimiento posterior al tratamiento.
+
+---
+
+## Listado de pacientes
+
+Al ingresar al módulo, lo primero que ves es el listado completo de todos los pacientes registrados en la clínica. El listado muestra las siguientes columnas: ID, nombre completo, email, teléfono, número de historia clínica y un indicador de paciente incompleto.
+
+### Buscador de Pacientes
+
+Permite buscar pacientes por nombre, email, teléfono, documento o número de historia clínica. El buscador filtra en tiempo real mientras escribís. Es el buscador más rápido y específico del sistema para encontrar pacientes — más ágil que el buscador general del encabezado.
+
+### Filtro de pacientes incompletos 
+
+Junto al buscador hay un botón que permite filtrar únicamente los pacientes que tienen información obligatoria sin completar. Un paciente aparece como incompleto cuando le faltan campos obligatorios en alguna de las siguientes secciones:
+
+En la solapa **Datos personales**:
+
+- Isla de información personal: nombre, apellido, documento, fecha de nacimiento, género
+- Isla de contacto: prefijo y teléfono
+- Isla de domicilio: dirección, localidad, provincia y país
+- Isla de seguro médico: si se seleccionó una obra social o prepaga, el número de afiliado es obligatorio
+
+Es importante tener en cuenta que un paciente cargado desde la carga rápida del Calendario va a aparecer como incompleto, ya que en ese flujo solo se registran nombre, apellido y teléfono. Para completar su información, se le puede enviar el **link de actualización de datos**.
+
+### Agregar paciente manualmente 
+
+Desde el botón correspondiente se abre el formulario completo de alta de paciente, donde se cargan todos los datos personales, de contacto y de domicilio. La historia clínica se completa posteriormente desde la ficha del paciente.
+
+### Importación masiva 
+
+Permite importar información de forma masiva desde archivos Excel. El sistema cuenta con dos importaciones independientes: una para importar múltiples pacientes y otra para importar evoluciones de pacientes. Cada una tiene su propio archivo Excel con el formato correspondiente.
+
+### **Envío masivo de link de actualización de datos** 
+
+Al hacer clic en esta opción se abre una ventana con un listado de todos los pacientes que tienen email cargado en el sistema. Cada uno tiene un checklist que permite seleccionarlos individualmente o seleccionar todos. Una vez elegidos los destinatarios, se envía el link para que cada paciente complete o actualice su información desde su propio dispositivo. Por debajo del listado aparece un resumen indicando cuántos pacientes no tienen email cargado y por lo tanto no pueden recibir el envío masivo. Esto permite tomar decisiones sobre cómo contactarlos para obtener ese dato.
+
+---
+
+### Encabezado de la ficha del paciente
+
+Al ingresar a la ficha de un paciente, el encabezado muestra la información más relevante de un vistazo:
+
+- **Foto** del paciente
+- **Nombre completo**
+- **Edad**
+- **Acceso directo a WhatsApp**
+- **Indicador de deuda** — muestra si el paciente tiene saldo pendiente
+- **Link paciente** — botón con ícono de enlace para gestionar el acceso del paciente al portal
+
+### Portal del paciente — gestión de acceso
+
+El botón de **link paciente** permite otorgarle al paciente acceso a su propio panel dentro de OCLÜ. Al hacer clic cuando el paciente todavía no tiene acceso, aparece una ventana que dice "Crear usuario" y solicita confirmación. Al confirmar, el sistema envía automáticamente un email al paciente con sus credenciales de acceso. _Es importante avisarle al paciente que revise su correo, ya que las credenciales pueden llegar a la carpeta de_ **_spam_**_._
+
+Una vez creado el usuario, el botón pasa a llamarse **Gestionar acceso**. \
+Desde ahí podés:
+
+- **Habilitar o deshabilitar** el acceso del paciente al portal
+- **Reenviar las credenciales** por email si el paciente no las recuerda
+
+_Cada vez que habilitás o deshabilitás el acceso es necesario guardar los cambios para que el sistema los aplique._
+
+La cantidad de accesos de pacientes disponibles depende del plan contratado. Desde **Mi suscripción** en el encabezado del sistema podés ver cuántos accesos ya fueron otorgados y cuántos quedan disponibles. Si se agota el cupo, podés deshabilitar el acceso de un paciente que no viene hace tiempo para habilitárselo a uno nuevo.
+
+---
+
+### Portal del paciente
+
+El portal del paciente es una visualización dentro de OCLÜ pensada para que el paciente pueda consultar su propia información de forma autónoma. Al ingresar con sus credenciales accede a un panel con menú lateral siempre visible que incluye las siguientes secciones:
+
+**Dashboard principal** Es la pantalla de inicio del portal. Muestra dos islas (próximas citas y estado de cuenta) y un historial de actividad reciente donde se van acumulando citas programadas, tratamientos iniciados y tratamientos finalizados.
+
+**Mis citas** Muestra tres islas: citas pendientes, citas completadas y próximo turno. Debajo hay un listado de próximas citas con fecha, hora, tipo de consulta, doctor y estado. También incluye un historial de citas con fecha, tipo, doctor, resultado y estado.
+
+**Recetas digitales** El paciente puede consultar todas sus recetas médicas y solicitudes de estudios, y descargar cada una en formato PDF.
+
+**Multimedia** Acceso a todos los archivos cargados en su ficha: imágenes, videos, archivos 3D y documentos.
+
+**Facturación** Muestra el estado de cuenta del paciente con total de cargos, total de pagos y saldo restante. Tiene un filtro por moneda para ver la información en pesos o en dólares. Incluye un historial de transacciones donde se registran todos los pagos realizados y todos los cargos generados; cada vez que se progresa una prestación se genera un cargo en la deuda del paciente. Cada transacción muestra fecha, tipo, descripción, débito, crédito y moneda.
+
+**Grupo familiar** Si el paciente tiene un grupo familiar configurado, desde este apartado puede ver los miembros del grupo con sus etiquetas de parentesco, el estado de cuenta de cada integrante y el balance familiar consolidado. También puede ver el historial de presupuestos de todos los miembros del grupo. Si no tiene grupo familiar asignado, el apartado aparece vacío.
+
+**Evoluciones** El paciente no puede ver las evoluciones tal como las escribió el doctor, pero sí puede ver el avance de sus tratamientos; qué prestaciones fueron progresadas y en qué porcentaje están completadas.
+
+---
+
+### Solapas de la ficha del paciente
+
+La ficha del paciente se organiza en cuatro solapas principales:
+
+#### 1. Datos personales
+
+Contiene toda la información personal, de contacto y administrativa del paciente, organizada en islas:
+
+**Isla de información personal** Nombre, apellido, documento, fecha de nacimiento y género. Todos obligatorios.
+
+**Isla de contacto** Prefijo y teléfono (obligatorios), email y otros medios de contacto.
+
+**Isla de domicilio** Dirección, localidad, provincia y país. Todos obligatorios.
+
+**Isla de seguro médico** Opcional. Si se selecciona una obra social, prepaga o seguro médico, el número de afiliado pasa a ser obligatorio.
+
+**Isla de información adicional** Campos opcionales como referido por y contacto de emergencia.
+
+**Isla de grupo familiar** Desde acá se gestiona el grupo familiar del paciente. Al crear un grupo, el paciente en el que se está trabajando queda automáticamente como titular. El nombre del grupo se puede editar y viene precargado con el apellido de ese paciente. Desde esta isla podés:
+
+- Agregar miembros al grupo buscándolos por nombre dentro del sistema
+- Asignarle a cada miembro una etiqueta de parentesco: titular, cónyuge, hijo, hija, madre, padre u otras
+- Cambiar el titular del grupo — solo puede haber un titular a la vez
+- Quitar al paciente actual del grupo
+- Eliminar el grupo completo
+
+**Citas** Historial de todas las citas del paciente con sus estados.
+
+**Comentarios** Notas administrativas internas sobre el paciente, visibles para el equipo de la clínica.
+
+**Historial** Registro de cambios realizados en la ficha del paciente.
+
+---
+
+#### 2. Historia clínica
+
+Contiene el expediente clínico completo del paciente.
+
+**Antecedentes** La sección de antecedentes se divide en cuatro islas que el paciente completa al actualizar sus datos o que el equipo puede completar manualmente. Una vez completada, requiere firma del consentimiento legal del paciente confirmando que la información es verídica. Cualquier modificación posterior también requiere esta firma.
+
+Las cuatro islas son:
+
+**Historia médica**
+
+- Estado general de salud: excelente, bueno, regular o malo (obligatorio)
+- Si está bajo tratamiento médico (obligatorio) — si responde que sí, debe especificar cuál
+- Trastornos y condiciones: respiratorias, neurológicas, hematológicas, enfermedades infecciosas, alergias — si selecciona alguna, debe desarrollarla
+- Hospitalizaciones o cirugías (obligatorio) — si responde que sí, debe detallarlas
+- Salud reproductiva (opcional)
+
+**Medicamentos**
+
+- Si está tomando medicación actualmente (obligatorio)
+- Si responde que sí, debe cargar al menos un medicamento con nombre, dosis, frecuencia y desde cuándo. Se pueden agregar múltiples medicamentos al listado.
+
+**Antecedentes odontológicos**
+
+- Última consulta odontológica aproximada — mes y año (obligatorio)
+- Tratamientos dentales previos (opcional)
+- Historia periodontal, historia funcional, sensibilidad y dolor (opcionales)
+- Motivo de la consulta (opcional)
+
+**Hábitos**
+
+- Tabaquismo (obligatorio): nunca fumó, ex fumador o fumador actual
+  - Ex fumador: cuántos cigarrillos por día fumó, durante cuántos años y hace cuántos años dejó
+  - Fumador actual: cuántos cigarrillos por día y hace cuántos años fuma
+- Alcohol (obligatorio): ninguno, social o regular
+- Dieta y exposición ácida (opcional)
+- Hábitos orales como morderse las uñas, masticar objetos o hielo (opcional)
+
+**Comentarios** Campo de texto libre para registrar información que no encaje en ninguno de los campos anteriores. Es opcional.
+
+---
+
+**OCLÜ IA** Asistente de inteligencia artificial disponible dentro de la historia clínica, pensado como apoyo para la toma de decisiones clínicas. Ofrece recomendaciones y sugerencias basadas en la información registrada del paciente.
+
+---
+
+**Odontograma** OCLÜ cuenta con dos versiones del odontograma:
+
+- **Odontograma permanente** — para pacientes adultos, incluye todas las piezas dentarias
+- **Odontograma temporario** — para pacientes infantes, incluye las piezas de la dentición temporaria
+
+Ambos odontogramas son interactivos. Para cargar un diagnóstico es obligatorio seleccionar al menos una pieza dental, una arcada, un sextante o ambas arcadas. También se puede seleccionar una cara específica del diente: mesial, distal, oclusal, vestibular o lingual/palatino.
+
+Una vez seleccionada la zona, se elige el diagnóstico desde un conjunto de íconos organizados en tres categorías:
+
+- **Salud** — piezas en buen estado: corona, corona provisoria, endodoncia, implante, permuñón, sellante, prótesis removible
+- **Patologías** — caries, periodontitis, gingivitis, abrasión, atrición, erosión, residuo radicular, movilidad, fractura, infección pulpar, amalgama, restauración en mal estado, amalgama en mal estado, permuñón en mal estado, corona provisoria en mal estado, corona en mal estado
+- **Otros** — pieza ausente, pieza sin erupcionar
+
+Se pueden seleccionar múltiples diagnósticos sobre una misma zona y agregar un comentario a cada uno. Todos los diagnósticos cargados aparecen en un listado debajo del odontograma con su detalle.
+
+Desde ese listado, usando el checklist a la izquierda de cada diagnóstico, podés seleccionar uno o varios para eliminarlos o para crear una planificación a partir de ellos.
+
+**Planificaciones** Las planificaciones pueden crearse de dos formas:
+
+- **Desde diagnósticos seleccionados** — el sistema toma los ítems seleccionados y solicita que para cada uno se elija una lista de precios, una categoría dentro de esa lista y una prestación. También se puede asignar un símbolo opcional.
+- **Desde cero** — haciendo clic en agregar nueva planificación, sin necesidad de tener diagnósticos previos. Se ingresa un título obligatorio y se agregan prestaciones al odontograma permanente, al temporario, o ambos.
+
+En ambos casos, el título de la planificación es obligatorio. Las planificaciones creadas aparecen en el listado de la solapa **Planificaciones**, debajo del odontograma. Desde una planificación se puede crear un presupuesto directamente.
+
+Es importante aclarar que el recorrido diagnóstico → planificación → presupuesto es una opción, no un requisito. Se puede crear un presupuesto directamente sin haber generado diagnósticos ni planificaciones previas. El sistema es flexible y se adapta al flujo de trabajo de cada clínica y de cada caso clínico.
+
+---
+
+**Periodontograma** El periodontograma registra el estado periodontal del paciente. Cada vez que se carga información queda registrada con su fecha, generando un historial de mediciones que permite hacer seguimiento de la evolución periodontal a lo largo del tiempo.
+
+La visualización muestra cuatro vistas del maxilar:
+
+- Maxilar superior vestibular
+- Maxilar superior palatino
+- Maxilar inferior vestibular
+- Maxilar inferior lingual
+
+En cada vista y por cada pieza dental se pueden registrar: profundidad del surco, margen, nivel de inserción clínica, furca, supuración, sangrado y movilidad.
+
+---
+
+**Evoluciones** Las evoluciones registran lo realizado en cada consulta. Se pueden cargar de tres formas:
+
+- **Manual** — texto libre
+- **Dictado** — usando el micrófono del dispositivo. No requiere configuración previa; la primera vez que se usa, el dispositivo solicita permiso para acceder al micrófono. Una vez concedido, el dictado funciona directamente.
+- **Mejora con OCLÜ IA** — el texto de la evolución puede ser mejorado y enriquecido con asistencia de inteligencia artificial
+
+Las evoluciones se pueden exportar en formato PDF.
+
+---
+
+**Multimedia** Permite cargar y organizar archivos del paciente en los siguientes formatos:
+
+- Imágenes: JPG, PNG, HEIC
+- Videos: MP4, MOV, AVI, WEBM, MKV
+- Documentos: PDF, DOCX, XLSX
+- Modelos 3D: STL, PLY — con visualizador 3D propio integrado al sistema
+
+---
+
+**Recetas digitales** Disponibles únicamente en Argentina. Tienen validez legal y están incluidas en el plan. El doctor puede generar recetas digitales desde la ficha del paciente, que quedan registradas en el sistema y son accesibles también desde el portal del paciente.
+
+---
+
+**Consentimientos** Los consentimientos informados se firman digitalmente desde la ficha del paciente y tienen validez legal. El sistema viene con plantillas precargadas que se pueden editar desde el módulo Administrador.
+
+---
+
+#### 3. Presupuestos
+
+Desde esta solapa se gestionan todos los presupuestos del paciente. Los presupuestos en OCLÜ funcionan como contratos de tratamiento y siguen un flujo de estados con reglas claras:
+
+- **Borrador** — único estado editable. El presupuesto puede modificarse libremente.
+- **Pendiente** — el presupuesto deja de ser editable y funciona como un contrato entre la clínica y el paciente.
+- **Aprobado** — el tratamiento fue aceptado por el paciente.
+- **Rechazado** — el paciente no aceptó el presupuesto.
+- **Cerrado** — el tratamiento fue finalizado.
+- **Eliminado** — el presupuesto fue eliminado del sistema.
+
+Los estados son unidireccionales: una vez que un presupuesto avanza de Borrador a cualquier otro estado, no puede volver atrás. No es posible, por ejemplo, pasar de Aprobado a Pendiente o de Pendiente a Borrador.
+
+Los presupuestos se pueden manejar en moneda local o en dólares, y se pueden enviar al paciente para su aprobación. Una vez aprobado el presupuesto, se pueden comenzar a registrar pagos aunque las prestaciones todavía no estén progresadas — funcionando como anticipos. A medida que se van progresando las prestaciones, se va generando deuda en el balance del paciente.
+
+---
+
+#### 4. Balance
+
+Muestra el estado financiero completo del paciente: deuda actual, pagos realizados y saldo a favor o pendiente.
+
+**Registro de pagos** Se pueden registrar pagos totales o parciales sobre un presupuesto aprobado. Los pagos parciales permiten que el paciente vaya abonando en cuotas o anticipos a medida que avanza el tratamiento.
+
+**Revocación de pagos** OCLÜ permite revocar pagos registrados, con las siguientes condiciones y características:
+
+- Solo se pueden revocar pagos sobre los cuales **no se hayan liquidado honorarios al profesional**. Si ya se pagaron los honorarios calculados por contrato al doctor, el pago no puede revocarse. En ese caso corresponde contactar a soporte.
+- Al hacer clic en revocar pago desde el menú de acciones, el sistema muestra una ventana de confirmación que indica que si el pago involucra una conversión de monedas se usará la cotización original del momento del pago, y que la acción no se puede deshacer.
+- Es obligatorio ingresar el **motivo de revocación** con un mínimo de 10 caracteres y un máximo de 500.
+- Una vez confirmada la revocación, el pago queda desasociado de los presupuestos y prestaciones correspondientes, y los montos son revertidos en el balance del paciente.
+- El pago revocado no desaparece del balance — sigue siendo visible pero aparece con una línea gris tachada y visualmente atenuado, indicando que fue revocado.
+- Los pagos revocados también quedan registrados en los reportes del módulo Finanzas.
+- Una vez revocado un pago, el monto correspondiente queda disponible para ser reasignado manualmente a otro presupuesto. El sistema no genera un indicador automático dentro de la ficha del paciente recordando que hay un monto pendiente de reasignar — queda bajo la responsabilidad de la clínica hacerlo en el momento o recordarlo posteriormente. Lo ideal es realizar la reasignación de inmediato para mantener el balance del paciente ordenado y evitar confusiones.
+- Esta funcionalidad tiene permisos propios — no todos los usuarios pueden revocar pagos. Solo aquellos a quienes el administrador les haya habilitado ese permiso específico.
+
+---
+
+### Descarga de historia clínica
+
+La historia clínica de cada paciente está almacenada de forma digital dentro del sistema, pero puede exportarse en formato PDF cuando sea necesario. Desde cualquiera de las solapas de la ficha del paciente — tanto Datos personales como Historia clínica — hay un botón que dice **Descargar HC**.
+
+Al descargarlo, el PDF incluye la información completa del paciente organizada de la siguiente manera:
+
+- Encabezado con los datos de la clínica
+- Título: Historia Clínica del Paciente
+- Identificación del paciente
+- Identificación del profesional tratante
+- Antecedentes del paciente
+- Motivo de consulta y examen clínico inicial
+- Evoluciones y registros cronológicos — con fecha, nombre del profesional, procedimiento y observaciones
+- Diagnósticos y tratamientos — diagnósticos definitivos y procedimientos realizados con fecha y nombre del profesional
+- Medicación prescripta — nombre, dosis, vía, frecuencia, duración, fecha y profesional que prescribió
+- Estudios complementarios solicitados, si los hubiera
+- Epicrisis o resumen del caso
+- Observaciones y notas complementarias
+- Declaración de confidencialidad y protección de datos, indicando que la historia clínica es confidencial y está protegida por las leyes N° 26.529 y N° 25.326, que los datos consignados son responsabilidad del profesional firmante y del titular de la historia clínica, y que OCLÜ actúa únicamente como plataforma de registro y resguardo seguro de la información
+- Espacio para la firma manuscrita del profesional responsable, con su nombre, matrícula nacional, especialidad y fecha de impresión
+- Pie de página con los datos de la clínica: domicilio, email y teléfono
+
+Para que el documento tenga validez legal, debe ser impreso y firmado de forma manuscrita por el profesional responsable.
