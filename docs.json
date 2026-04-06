@@ -24,7 +24,8 @@
               "roles-y-permisos",
               "modulo-calendario",
               "modulo-pacientes",
-              "modulo-laboratorio"
+              "modulo-laboratorio",
+              "modulo-stock"
             ]
           }
         ]
