@@ -23,7 +23,8 @@
               "interfaz-y-navegacion",
               "roles-y-permisos",
               "modulo-calendario",
-              "modulo-pacientes"
+              "modulo-pacientes",
+              "modulo-laboratorio"
             ]
           }
         ]
