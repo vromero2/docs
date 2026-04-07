@@ -1,5 +1,5 @@
 ---
-title: "Módulo Laboratorio"
+title: "Laboratorio"
 ---
 
 El módulo Laboratorio permite gestionar los laboratorios con los que trabaja la clínica, las solicitudes de trabajos y los estados por los que pasa cada solicitud. Se organiza en tres solapas: **Solicitudes**, **Laboratorios** y **Estados**.
@@ -10,11 +10,11 @@ El módulo Laboratorio permite gestionar los laboratorios con los que trabaja la
 
 Es la solapa principal del módulo. Muestra el listado completo de todas las solicitudes de laboratorio generadas en la clínica. Si el listado es extenso, se divide en páginas con un filtro para navegar entre ellas.
 
-## **Crear una solicitud** 
+## **Crear una solicitud**
 
 El proceso se divide en dos pasos:
 
-#### **Paso 1 — Datos de la solicitud** 
+#### **Paso 1 — Datos de la solicitud**
 
 Los campos a completar son:
 
@@ -28,7 +28,7 @@ Los campos a completar son:
 - **Imágenes adjuntas** (opcional) — se pueden adjuntar archivos en formato JPG, PNG, PDF y DOCX. No se aceptan videos, audios ni archivos .MOV
 - **Descripción** (opcional) — espacio para detallar las especificaciones del trabajo solicitado. Por ejemplo, si es un implante, se puede indicar el tipo, el material, el color y cualquier otra indicación técnica relevante para el laboratorio. Cuanto más detallada sea la descripción, menos posibilidades hay de errores o malentendidos en la elaboración del trabajo.
 
-#### **Paso 2 — Ítems de laboratorio** 
+#### **Paso 2 — Ítems de laboratorio**
 
 Este paso es opcional pero recomendado si se quiere llevar el control del costo de la orden. Desde el botón **Agregar ítem** se selecciona un **ítem** de la lista de precios del laboratorio (elegido en el paso anterior), se indica la cantidad y el precio se trae automáticamente aunque se puede modificar. Se pueden agregar múltiples ítems y el sistema va calculando el total en tiempo real en la parte inferior.
 
@@ -36,7 +36,7 @@ Si la solicitud está vinculada a un presupuesto y el profesional tiene configur
 
 Una vez completados ambos pasos, se hace clic en **Agregar solicitud** y la solicitud queda registrada en el listado.
 
-#### **Editar y eliminar solicitudes** 
+#### **Editar y eliminar solicitudes**
 
 Las solicitudes ya creadas se pueden editar y eliminar desde el menú de acciones del listado.
 
@@ -55,7 +55,7 @@ Desde el menú de acciones de cada laboratorio podés:
 - **Ver detalles** — abre una ventana con toda la información del laboratorio: nombre, detalle, email, dirección, teléfono, fecha de lista de precios y si está habilitado o deshabilitado
 - **Habilitar / Deshabilitar** — permite activar o desactivar el laboratorio mediante un switch. Un laboratorio deshabilitado no puede ser seleccionado al crear nuevas solicitudes. Esta opción está pensada para los casos en que ya no se trabaja con un laboratorio pero no se lo puede eliminar porque tiene solicitudes asociadas con información cargada.
 
-#### **Crear un laboratorio** 
+#### **Crear un laboratorio**
 
 Al hacer clic en **Agregar laboratorio** se abre un formulario con los siguientes campos:
 
@@ -66,7 +66,7 @@ Al hacer clic en **Agregar laboratorio** se abre un formulario con los siguiente
 - **Detalle** (opcional) — información adicional sobre el laboratorio, como las especialidades que realiza
 - **Fecha de lista de precios** (opcional) — indica desde cuándo está vigente la lista de precios actual. Se puede actualizar cada vez que el laboratorio entrega una nueva lista
 
-#### **Lista de precios** 
+#### **Lista de precios**
 
 Al hacer clic en **Ver lista de precios**, el sistema abre una visualización con el listado de ítems del laboratorio. Las columnas son: nombre de la acción, precio y acciones.
 
@@ -92,6 +92,6 @@ El listado muestra: nombre del estado, color, switch de mostrar/ocultar y menú 
 - **Editar** — permite modificar el nombre y el color del estado
 - **Eliminar** — solo si el estado no tiene solicitudes asociadas
 
-Hay un **buscador **por nombre para encontrar estados rápidamente cuando el listado es extenso, y un botón de **Configurar orden** para definir en qué posición aparece cada estado en el listado.
+Hay un **buscador** por nombre para encontrar estados rápidamente cuando el listado es extenso, y un botón de **Configurar orden** para definir en qué posición aparece cada estado en el listado.
 
 **Agregar un estado** Al hacer clic en **Agregar estado** se abre una ventana donde se completan obligatoriamente el nombre y el color del nuevo estado. Se pueden crear tantos estados como sean necesarios.
