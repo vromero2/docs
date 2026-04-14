@@ -26,7 +26,8 @@
               "modulo-pacientes",
               "modulo-laboratorio",
               "modulo-stock",
-              "finanzas"
+              "finanzas",
+              "administrador"
             ]
           }
         ]
