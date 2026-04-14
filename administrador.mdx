@@ -91,7 +91,7 @@ Al hacer clic en Agregar miembro se abre un formulario con los siguientes campos
 
 ---
 
-## **Rol**
+### **Rol**
 
 (obligatorio) — selector con las tres opciones disponibles en OCLÜ: **Administrador**, **Doctor** y **Secretaria**. Es importante entender que estos roles funcionan como etiquetas dentro del sistema y no necesariamente reflejan el cargo real de la persona en la clínica. El rol determina algunas características específicas del usuario, pero no define sus permisos reales, que se configuran individualmente desde el apartado de permisos.
 
@@ -446,21 +446,3 @@ Gráficos debajo de los indicadores:
 ---
 
 **Ocultar montos** — permite enmascarar todos los valores monetarios de la pantalla, mostrándolos como puntos. Es útil para proteger la información sensible cuando hay terceros mirando la pantalla. Se reactiva haciendo clic en el mismo botón (que pasa a decir "Mostrar").
-
----
-
-## **Facturador Electrónico**
-
-El módulo incluye integración con facturación electrónica (AFIP). En el estado actual de la clínica, el facturador se encuentra deshabilitado y requiere activación por parte del equipo de soporte de Oclü. Una vez habilitado, permite emitir comprobantes fiscales directamente desde el sistema.
-
----
-
-## **Soporte bi-divisa**
-
-El módulo soporta operaciones en dos divisas: Pesos argentinos (ARS) como moneda principal y Dólares estadounidenses (USD) como moneda secundaria. La selección de divisa en el dashboard filtra toda la información visible. En los reportes de deudores, los montos se muestran desglosados por divisa cuando el paciente tiene deudas en ambas monedas. Cada caja y banco se configura con una divisa fija que no puede ser modificada posteriormente. Al registrar egresos o transferencias entre cajas de distinta divisa, el sistema solicita la cotización del momento.
-
----
-
-## **Exportaciones**
-
-La mayoría de las secciones permiten exportar la información en dos formatos: PDF (documento imprimible) y Excel (archivo .xlsx para análisis externo). Los botones de exportación se encuentran en el panel izquierdo de filtros, debajo del botón Generar. El módulo de Reportes Avanzados además permite exportar el dashboard completo a PDF y Excel.
