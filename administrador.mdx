@@ -26,6 +26,8 @@ Acciones disponibles por clínica Cada fila del listado tiene cuatro botones de 
 - Editar clínica (naranja) — abre el formulario de edición con los datos precargados, incluyendo la posibilidad de cambiar el logo con el botón "Cambiar logo"
 - Eliminar clínica (rojo) — elimina la clínica del sistema
 
+---
+
 **Agregar una clínica** Al hacer clic en Agregar clínica se abre un formulario dividido en dos secciones:
 
 Información de la clínica:
@@ -45,6 +47,8 @@ Horarios de atención:
 - Hora de fin (obligatorio) — selector de hora para definir el cierre de la atención
 
 Una vez completados los campos, se hace clic en Agregar.
+
+---
 
 **Staff**
 
@@ -70,6 +74,8 @@ Acciones disponibles por miembro Cada fila del listado tiene seis botones de acc
 - Contraseña (gris, ícono de candado) — abre un menú con dos opciones: Enviar mail de recuperación (envía un email al miembro para que restablezca su contraseña) y Cambiar contraseña directamente (permite al administrador asignar una nueva contraseña sin intervención del miembro)
 - Eliminar miembro (rojo, ícono de papelera) — elimina al miembro del sistema. Los administradores no pueden ser eliminados
 
+---
+
 **Agregar un miembro** Al hacer clic en Agregar miembro se abre un formulario con los siguientes campos:
 
 - Nombre (obligatorio) — nombre de pila del miembro
@@ -79,7 +85,9 @@ Acciones disponibles por miembro Cada fila del listado tiene seis botones de acc
 - Contraseña (obligatorio) — contraseña de acceso al sistema
 - Género (obligatorio) — selector con las opciones: Masculino, Femenino, Indefinido
 
-·         **Rol** (obligatorio) — selector con las tres opciones disponibles en OCLÜ: **Administrador**, **Doctor** y **Secretaria**. Es importante entender que estos roles funcionan como etiquetas dentro del sistema y no necesariamente reflejan el cargo real de la persona en la clínica. El rol determina algunas características específicas del usuario, pero no define sus permisos reales, que se configuran individualmente desde el apartado de permisos.
+---
+
+**Rol** (obligatorio) — selector con las tres opciones disponibles en OCLÜ: **Administrador**, **Doctor** y **Secretaria**. Es importante entender que estos roles funcionan como etiquetas dentro del sistema y no necesariamente reflejan el cargo real de la persona en la clínica. El rol determina algunas características específicas del usuario, pero no define sus permisos reales, que se configuran individualmente desde el apartado de permisos.
 
 El **Administrador** tiene todos los permisos del sistema habilitados de forma permanente y no pueden ser revocados ni restringidos. Siempre va a tener acceso a todos los apartados del sistema. Si además va a ejercer funciones clínicas dentro de la clínica, se le pueden habilitar las labores de doctor desde su perfil una vez creado, lo que le otorga las mismas facultades dentro del sistema que un usuario con rol Doctor.
 
@@ -89,7 +97,7 @@ La **Secretaria** está pensada para el personal administrativo y de recepción.
 
 Una vez completados los campos, se hace clic en Agregar.
 
-** **
+---
 
 **Editar un miembro** El formulario de edición incluye todos los campos del formulario de creación más los siguientes campos adicionales:
 
@@ -101,6 +109,8 @@ Una vez completados los campos, se hace clic en Agregar.
 - Fecha de nacimiento (opcional) — selector de fecha
 
 Una vez modificados los datos, se hace clic en Guardar cambios.
+
+---
 
 **Configurar contratos** Desde el botón Configurar contratos se navega a una sección donde se gestionan los contratos de honorarios que definen cómo se liquida a cada profesional.
 
@@ -115,6 +125,8 @@ Herramientas disponibles:
 - Total de contratos — cantidad total de contratos registrados
 - Agregar contrato — abre el formulario para crear un nuevo contrato
 
+---
+
 **Automatizaciones**
 
 Sección para configurar procesos automáticos del sistema que se ejecutan sin intervención manual. Actualmente hay tres automatizaciones disponibles, de las cuales dos son configurables y una está pendiente de implementación.
@@ -128,6 +140,8 @@ Herramientas disponibles:
 
 Las tres automatizaciones disponibles son:
 
+---
+
 **Recordatorio de Citas** — Envía email a pacientes para confirmar o cancelar su cita.
 
 Al hacer clic en el engranaje de configuración se abre un formulario con los siguientes campos:
@@ -140,6 +154,8 @@ Al hacer clic en el engranaje de configuración se abre un formulario con los si
 
 Un cartel informativo advierte que la automatización solo funcionará si se configuran los tres campos de estado correctamente. Una vez completados los campos, se hace clic en Guardar.
 
+---
+
 **Vencimiento de Presupuestos** — Marca presupuestos como vencidos automáticamente después de cierta cantidad de días.
 
 Al hacer clic en el engranaje de configuración se abre un formulario con los siguientes campos:
@@ -149,12 +165,16 @@ Al hacer clic en el engranaje de configuración se abre un formulario con los si
 
 Un texto informativo se actualiza en tiempo real: "Los presupuestos se marcarán como vencidos después de X días". Una vez configurado, se hace clic en Guardar.
 
+---
+
 **WhatsApp** — Recordatorios y confirmaciones por WhatsApp. Esta automatización se encuentra en estado "Próximamente" y no tiene opciones de configuración disponibles por el momento.
 
 Los estados posibles de las automatizaciones son:
 
 - Activo (verde) — la automatización está habilitada y funcionando
 - Próximamente (gris) — la funcionalidad aún no está disponible
+
+---
 
 **Prestaciones**
 
@@ -176,12 +196,16 @@ Herramientas disponibles:
   - Duplicar lista — permite copiar una lista existente con todas sus categorías y prestaciones
   - Importar prestaciones — permite importar prestaciones masivamente desde un archivo
 
+---
+
 **Agregar una lista** Al hacer clic en Agregar lista se abre un formulario con los siguientes campos:
 
 - Nombre de la lista (obligatorio) — nombre identificatorio del listado de precios
 - Obra Social (opcional) — selector desplegable con las obras sociales y prepagas registradas en el sistema (más de 40 opciones disponibles, incluyendo OSDE, Swiss Medical, Galeno, Medifé, entre muchas otras). Permite asociar la lista a una cobertura médica específica
 
 Una vez completados los campos, se hace clic en Agregar.
+
+---
 
 **Dentro de una lista — Categorías** Al hacer clic en el nombre de una lista se navega a la vista de categorías, que organiza las prestaciones por especialidad o tipo de tratamiento. El listado muestra el nombre de cada categoría como link clickeable con flecha para navegar al detalle de sus prestaciones.
 
@@ -190,6 +214,8 @@ Cada categoría tiene botones de editar y eliminar. El sistema incluye hasta 15 
 Se pueden agregar nuevas categorías con el botón correspondiente.
 
 **Dentro de una categoría — Prestaciones** Al hacer clic en el nombre de una categoría se navega al listado de prestaciones individuales. Cada prestación representa un servicio o tratamiento específico con su precio.
+
+---
 
 **Agregar una prestación** Al hacer clic en Agregar prestación se abre un formulario con los siguientes campos:
 
@@ -201,6 +227,8 @@ Se pueden agregar nuevas categorías con el botón correspondiente.
 - Divisa (obligatorio) — selector de moneda (ARS o USD)
 
 Una vez completados los campos, se hace clic en Agregar.
+
+---
 
 **Plantillas**
 
@@ -219,6 +247,8 @@ Herramientas disponibles:
 
 La clínica puede tener múltiples plantillas de consentimiento para diferentes procedimientos (periodoncia, toma de imágenes, biopsia, prótesis parcial removible, blanqueamiento dental, prótesis fija, ortodoncia, entre otros).
 
+---
+
 **Agregar/Editar un consentimiento** Al hacer clic en Agregar consentimiento o en el botón de editar se abre un formulario con los siguientes campos:
 
 - Nombre del consentimiento (obligatorio) — nombre identificatorio de la plantilla
@@ -232,6 +262,8 @@ Acciones disponibles por plantilla:
 - Eliminar (rojo) — elimina la plantilla del sistema
 
 Una vez completado el contenido, se hace clic en Guardar cambios.
+
+---
 
 **Plantillas de presupuesto**
 
@@ -251,6 +283,8 @@ Herramientas disponibles:
 
 Una vez completado, se hace clic en Guardar o Guardar cambios.
 
+---
+
 **Plantillas de correo**
 
 Gestiona las plantillas de los emails que el sistema envía automáticamente a los pacientes. A diferencia de las otras pestañas, las plantillas de correo vienen preconfiguradas por el sistema y no se pueden crear nuevas ni eliminar, solo editar su contenido.
@@ -269,6 +303,8 @@ El sistema incluye 11 plantillas preconfiguradas que cubren los distintos tipos 
 
 Cada campo tiene un comportamiento de texto libre. Los botones disponibles son: Restaurar valores (devuelve la plantilla a su contenido original de fábrica), Cerrar y Guardar cambios.
 
+---
+
 **Plantillas de WhatsApp**
 
 Gestiona las plantillas de los mensajes que el sistema envía por WhatsApp. Al igual que las de correo, vienen preconfiguradas y no se pueden crear nuevas ni eliminar.
@@ -285,6 +321,8 @@ El sistema incluye dos plantillas preconfiguradas:
 - Mensaje (obligatorio) — contenido del mensaje de WhatsApp con soporte para variables dinámicas
 
 El formulario incluye un panel de "Vista previa" en tiempo real que muestra cómo se verá el mensaje con las variables reemplazadas por datos de ejemplo. Los botones disponibles son: Restaurar valores, Cerrar y Guardar cambios.
+
+---
 
 **Cajas y Bancos**
 
@@ -304,6 +342,8 @@ Herramientas disponibles:
 - Agregar caja de ajuste — crea una cuenta de tipo ajuste para correcciones contables
 - Reporte por caja — genera un reporte detallado de movimientos por cuenta específica, con filtros de rango de fechas y selector de caja, tabla de movimientos y opciones de exportación a PDF y Excel
 
+---
+
 **Agregar una caja o banco** Al hacer clic en Agregar caja o banco se abre un formulario con los siguientes campos:
 
 - Organización (opcional) — selector que indica a qué sede pertenece la cuenta. Por defecto aparece "Sin organización establecida"
@@ -320,6 +360,8 @@ Una vez completados los campos, se hace clic en Agregar.
 
 **Editar una caja o banco** El formulario de edición contiene los mismos campos que el de creación, pero con los datos precargados. La divisa aparece deshabilitada (no se puede modificar) según la regla de negocio del sistema.
 
+---
+
 **Transferir entre cajas** Al hacer clic en Transferir entre cajas se abre un formulario con los siguientes campos:
 
 - Caja origen (obligatorio) — selector con las cajas disponibles
@@ -331,6 +373,8 @@ Una vez completados los campos, se hace clic en Agregar.
 
 Una vez completados los campos, se hace clic en Transferir.
 
+---
+
 **Agregar caja de ajuste** Al hacer clic en Agregar caja de ajuste se abre un formulario simplificado con los siguientes campos:
 
 - Organización (opcional) — selector de sede
@@ -338,6 +382,8 @@ Una vez completados los campos, se hace clic en Transferir.
 - Divisa (obligatorio) — selector de moneda
 
 Una vez completados los campos, se hace clic en Agregar.
+
+---
 
 **Reportes Avanzados**
 
@@ -371,19 +417,31 @@ Gráficos debajo de los indicadores:
 
 - Tendencia de Gestión — gráficos de Evolución de Pacientes y Presupuestos a lo largo del tiempo
 
+---
+
 **Oclü IA** — botón integrado que abre una ventana donde el asistente de inteligencia artificial de Oclü analiza los datos financieros del período seleccionado. Muestra indicadores de procesamiento ("Analizando datos financieros...", "Generando insights...") y luego presenta un análisis de tendencias financieras con identificación de patrones estacionales, fortalezas (como resultado neto positivo) y debilidades (como dependencia de pocos meses para generar ingresos significativos). Permite consultar interpretaciones y recomendaciones basadas en los datos financieros y de gestión de la clínica.
+
+---
 
 **Exportar PDF** — genera un reporte en PDF de dos páginas que incluye: encabezado con logo y datos de la clínica, resumen del período con todos los KPIs, gráfico de tendencia de ingresos vs egresos, gráfico de composición de egresos, gráfico de evolución de gastos, tabla mensual completa del estado de resultado, y sección de datos financieros en tiempo real con saldos de cajas y deudas pendientes.
 
+---
+
 **Ocultar montos** — permite enmascarar todos los valores monetarios de la pantalla, mostrándolos como puntos. Es útil para proteger la información sensible cuando hay terceros mirando la pantalla. Se reactiva haciendo clic en el mismo botón (que pasa a decir "Mostrar").
+
+---
 
 **Facturador Electrónico**
 
 El módulo incluye integración con facturación electrónica (AFIP). En el estado actual de la clínica, el facturador se encuentra deshabilitado y requiere activación por parte del equipo de soporte de Oclü. Una vez habilitado, permite emitir comprobantes fiscales directamente desde el sistema.
 
-**Soporte multi-divisa**
+---
+
+**Soporte bi-divisa**
 
 El módulo soporta operaciones en dos divisas: Pesos argentinos (ARS) como moneda principal y Dólares estadounidenses (USD) como moneda secundaria. La selección de divisa en el dashboard filtra toda la información visible. En los reportes de deudores, los montos se muestran desglosados por divisa cuando el paciente tiene deudas en ambas monedas. Cada caja y banco se configura con una divisa fija que no puede ser modificada posteriormente. Al registrar egresos o transferencias entre cajas de distinta divisa, el sistema solicita la cotización del momento.
+
+---
 
 **Exportaciones**
 
