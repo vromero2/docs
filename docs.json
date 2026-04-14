@@ -12,7 +12,7 @@
     "tabs": [
       {
         "tab": "OCLÜ",
-        "groups": [
+        "pages": [
           {
             "group": "Documentación Principal",
             "pages": [
@@ -25,7 +25,8 @@
               "modulo-calendario",
               "modulo-pacientes",
               "modulo-laboratorio",
-              "modulo-stock"
+              "modulo-stock",
+              "finanzas"
             ]
           }
         ]
