@@ -6,7 +6,9 @@ title: "Administrador"
 
 El módulo Administrador es el centro de configuración general de la clínica dentro de OCLÜ. Desde acá se gestionan las clínicas (sedes), el equipo de trabajo, las automatizaciones del sistema, las listas de prestaciones con sus precios, las plantillas de documentos y comunicaciones, las cajas y bancos, y los reportes avanzados de finanzas y gestión. Se accede desde el menú lateral izquierdo y se organiza en siete secciones: Clínicas, Staff, Automatizaciones, Prestaciones, Plantillas, Cajas y Bancos, y Reportes.
 
-**Clínicas**
+---
+
+## **Clínicas**
 
 Esta sección permite agregar nuevas sedes o sucursales de la clínica y gestionar las existentes. Cada clínica tiene su propio horario de atención, días de trabajo e intervalo de turnos.
 
@@ -28,7 +30,9 @@ Acciones disponibles por clínica Cada fila del listado tiene cuatro botones de 
 
 ---
 
-**Agregar una clínica** Al hacer clic en Agregar clínica se abre un formulario dividido en dos secciones:
+### **Agregar una clínica** 
+
+Al hacer clic en Agregar clínica se abre un formulario dividido en dos secciones:
 
 Información de la clínica:
 
@@ -50,7 +54,7 @@ Una vez completados los campos, se hace clic en Agregar.
 
 ---
 
-**Staff**
+## **Staff**
 
 Sección para gestionar el equipo de trabajo de la clínica: administradores, doctores y secretarias. Permite crear miembros, configurar sus permisos, horarios, firmas, contraseñas y contratos de honorarios.
 
@@ -76,7 +80,9 @@ Acciones disponibles por miembro Cada fila del listado tiene seis botones de acc
 
 ---
 
-**Agregar un miembro** Al hacer clic en Agregar miembro se abre un formulario con los siguientes campos:
+### **Agregar un miembro** 
+
+Al hacer clic en Agregar miembro se abre un formulario con los siguientes campos:
 
 - Nombre (obligatorio) — nombre de pila del miembro
 - Apellido (obligatorio) — apellido del miembro
@@ -87,7 +93,9 @@ Acciones disponibles por miembro Cada fila del listado tiene seis botones de acc
 
 ---
 
-**Rol** (obligatorio) — selector con las tres opciones disponibles en OCLÜ: **Administrador**, **Doctor** y **Secretaria**. Es importante entender que estos roles funcionan como etiquetas dentro del sistema y no necesariamente reflejan el cargo real de la persona en la clínica. El rol determina algunas características específicas del usuario, pero no define sus permisos reales, que se configuran individualmente desde el apartado de permisos.
+## **Rol**
+
+(obligatorio) — selector con las tres opciones disponibles en OCLÜ: **Administrador**, **Doctor** y **Secretaria**. Es importante entender que estos roles funcionan como etiquetas dentro del sistema y no necesariamente reflejan el cargo real de la persona en la clínica. El rol determina algunas características específicas del usuario, pero no define sus permisos reales, que se configuran individualmente desde el apartado de permisos.
 
 El **Administrador** tiene todos los permisos del sistema habilitados de forma permanente y no pueden ser revocados ni restringidos. Siempre va a tener acceso a todos los apartados del sistema. Si además va a ejercer funciones clínicas dentro de la clínica, se le pueden habilitar las labores de doctor desde su perfil una vez creado, lo que le otorga las mismas facultades dentro del sistema que un usuario con rol Doctor.
 
@@ -99,7 +107,9 @@ Una vez completados los campos, se hace clic en Agregar.
 
 ---
 
-**Editar un miembro** El formulario de edición incluye todos los campos del formulario de creación más los siguientes campos adicionales:
+### **Editar un miembro** 
+
+El formulario de edición incluye todos los campos del formulario de creación más los siguientes campos adicionales:
 
 - Documento (opcional) — número de documento de identidad
 - M. Nacional (opcional) — matrícula nacional del profesional
@@ -112,7 +122,9 @@ Una vez modificados los datos, se hace clic en Guardar cambios.
 
 ---
 
-**Configurar contratos** Desde el botón Configurar contratos se navega a una sección donde se gestionan los contratos de honorarios que definen cómo se liquida a cada profesional.
+### **Configurar contratos** 
+
+Desde el botón Configurar contratos se navega a una sección donde se gestionan los contratos de honorarios que definen cómo se liquida a cada profesional.
 
 Al ingresar aparecen dos carteles informativos: uno que explica cómo crear contratos y otro que advierte crear contratos nuevos en lugar de editar los existentes cuando cambian las condiciones.
 
@@ -127,7 +139,7 @@ Herramientas disponibles:
 
 ---
 
-**Automatizaciones**
+## **Automatizaciones**
 
 Sección para configurar procesos automáticos del sistema que se ejecutan sin intervención manual. Actualmente hay tres automatizaciones disponibles, de las cuales dos son configurables y una está pendiente de implementación.
 
@@ -176,7 +188,7 @@ Los estados posibles de las automatizaciones son:
 
 ---
 
-**Prestaciones**
+## **Prestaciones**
 
 La sección de Prestaciones (internamente llamada "Listas") gestiona los listados de precios de los tratamientos y servicios odontológicos que ofrece la clínica. Se organiza en una estructura jerárquica de tres niveles: Listas \> Categorías \> Prestaciones.
 
@@ -217,7 +229,9 @@ Se pueden agregar nuevas categorías con el botón correspondiente.
 
 ---
 
-**Agregar una prestación** Al hacer clic en Agregar prestación se abre un formulario con los siguientes campos:
+### **Agregar una prestación** 
+
+Al hacer clic en Agregar prestación se abre un formulario con los siguientes campos:
 
 - Nombre de la prestación (obligatorio) — nombre del tratamiento o servicio
 - Código (opcional) — código identificatorio del tratamiento (puede ser un código de nomenclador)
@@ -230,11 +244,13 @@ Una vez completados los campos, se hace clic en Agregar.
 
 ---
 
-**Plantillas**
+## **Plantillas**
 
 La sección de Plantillas permite gestionar los modelos de documentos y mensajes que utiliza la clínica en su operación diaria. Se organiza en cuatro pestañas: Plantillas de consentimiento, Plantillas de presupuesto, Plantillas de correo y Plantillas de WhatsApp.
 
-**Plantillas de consentimiento**
+---
+
+### **Plantillas de consentimiento**
 
 Gestiona los consentimientos informados que los pacientes firman antes de los tratamientos. Es la pestaña activa por defecto al ingresar a la sección.
 
@@ -249,7 +265,9 @@ La clínica puede tener múltiples plantillas de consentimiento para diferentes 
 
 ---
 
-**Agregar/Editar un consentimiento** Al hacer clic en Agregar consentimiento o en el botón de editar se abre un formulario con los siguientes campos:
+**Agregar/Editar un consentimiento** 
+
+Al hacer clic en Agregar consentimiento o en el botón de editar se abre un formulario con los siguientes campos:
 
 - Nombre del consentimiento (obligatorio) — nombre identificatorio de la plantilla
 - Campo a agregar (opcional) — selector desplegable que permite insertar variables dinámicas en el contenido del consentimiento. Las variables disponibles son: Nombre del paciente, DNI del paciente, Fecha, Dirección del paciente, Nombre del profesional, Matrícula nacional y Matrícula provincial. Al seleccionar una variable, se inserta automáticamente en la posición del cursor dentro del editor
@@ -265,7 +283,7 @@ Una vez completado el contenido, se hace clic en Guardar cambios.
 
 ---
 
-**Plantillas de presupuesto**
+### **Plantillas de presupuesto**
 
 Gestiona las plantillas que se utilizan como base para generar los documentos de presupuesto que se entregan a los pacientes.
 
@@ -285,7 +303,7 @@ Una vez completado, se hace clic en Guardar o Guardar cambios.
 
 ---
 
-**Plantillas de correo**
+### **Plantillas de correo**
 
 Gestiona las plantillas de los emails que el sistema envía automáticamente a los pacientes. A diferencia de las otras pestañas, las plantillas de correo vienen preconfiguradas por el sistema y no se pueden crear nuevas ni eliminar, solo editar su contenido.
 
@@ -305,7 +323,7 @@ Cada campo tiene un comportamiento de texto libre. Los botones disponibles son: 
 
 ---
 
-**Plantillas de WhatsApp**
+### **Plantillas de WhatsApp**
 
 Gestiona las plantillas de los mensajes que el sistema envía por WhatsApp. Al igual que las de correo, vienen preconfiguradas y no se pueden crear nuevas ni eliminar.
 
@@ -324,7 +342,7 @@ El formulario incluye un panel de "Vista previa" en tiempo real que muestra cóm
 
 ---
 
-**Cajas y Bancos**
+## **Cajas y Bancos**
 
 Sección de configuración y administración de las cuentas donde se registran los movimientos de dinero. Cada caja o banco queda asociada a una divisa y a los métodos de pago que acepta. Esta sección es compartida con el módulo de Finanzas.
 
@@ -362,7 +380,9 @@ Una vez completados los campos, se hace clic en Agregar.
 
 ---
 
-**Transferir entre cajas** Al hacer clic en Transferir entre cajas se abre un formulario con los siguientes campos:
+### **Transferir entre cajas** 
+
+Al hacer clic en Transferir entre cajas se abre un formulario con los siguientes campos:
 
 - Caja origen (obligatorio) — selector con las cajas disponibles
 - Caja destino (obligatorio) — selector con las cajas disponibles
@@ -385,7 +405,7 @@ Una vez completados los campos, se hace clic en Agregar.
 
 ---
 
-**Reportes Avanzados**
+## **Reportes Avanzados**
 
 El módulo de Reportes Avanzados ofrece un análisis financiero y de gestión completo con gráficos interactivos, KPIs y asistencia de inteligencia artificial. Se accede desde el banner de la pantalla principal de Finanzas o desde Administrador \> Reportes. Es compartido con el módulo de Finanzas.
 
@@ -431,18 +451,18 @@ Gráficos debajo de los indicadores:
 
 ---
 
-**Facturador Electrónico**
+## **Facturador Electrónico**
 
 El módulo incluye integración con facturación electrónica (AFIP). En el estado actual de la clínica, el facturador se encuentra deshabilitado y requiere activación por parte del equipo de soporte de Oclü. Una vez habilitado, permite emitir comprobantes fiscales directamente desde el sistema.
 
 ---
 
-**Soporte bi-divisa**
+## **Soporte bi-divisa**
 
 El módulo soporta operaciones en dos divisas: Pesos argentinos (ARS) como moneda principal y Dólares estadounidenses (USD) como moneda secundaria. La selección de divisa en el dashboard filtra toda la información visible. En los reportes de deudores, los montos se muestran desglosados por divisa cuando el paciente tiene deudas en ambas monedas. Cada caja y banco se configura con una divisa fija que no puede ser modificada posteriormente. Al registrar egresos o transferencias entre cajas de distinta divisa, el sistema solicita la cotización del momento.
 
 ---
 
-**Exportaciones**
+## **Exportaciones**
 
 La mayoría de las secciones permiten exportar la información en dos formatos: PDF (documento imprimible) y Excel (archivo .xlsx para análisis externo). Los botones de exportación se encuentran en el panel izquierdo de filtros, debajo del botón Generar. El módulo de Reportes Avanzados además permite exportar el dashboard completo a PDF y Excel.
