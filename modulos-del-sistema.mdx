@@ -404,6 +404,10 @@ Por cada tratamiento a realizar, podés generar un consentimiento informado para
 
 Desde esta solapa podés crear y gestionar todos los presupuestos del paciente. OCLÜ trabaja en la moneda local que tengas configurada en tu clínica y en dólar, permitiendo gestionar presupuestos y recibir pagos en ambas divisas. También permite enviar presupuestos masivamente.
 
+<Frame>
+  ![Image](/images/image-60.png)
+</Frame>
+
 Los presupuestos se manejan con los siguientes estados:
 
 | Estado | Descripción |
@@ -415,15 +419,23 @@ Los presupuestos se manejan con los siguientes estados:
 | **Cerrado** | Todos los tratamientos finalizados |
 | **Eliminado** | Presupuesto eliminado |
 
-> Un presupuesto en estado **Pendiente** funciona como un contrato entre la clínica y el paciente, por eso no es editable una vez compartido.
+> _Un presupuesto en estado **Pendiente** funciona como un contrato entre la clínica y el paciente, por eso no es editable una vez compartido._
 
 ---
 
 #### D. Balance
 
+<Frame>
+  ![Image](/images/image-61.png)
+</Frame>
+
 Muestra el estado financiero completo del paciente: todo lo que se le fue generando como deuda y todo lo que fue abonando. Desde acá podés ver si tiene saldo a favor o deuda pendiente, y registrar nuevos pagos.
 
 También podés **revocar pagos ya registrados**. Esto es útil cuando, por ejemplo, un paciente abonó un anticipo sobre un presupuesto que luego necesita eliminarse o reemplazarse. Al revocar un pago, el sistema registra la revocación con el usuario que la realizó y el motivo obligatorio. Una vez revocado, el pago debe ser reasignado a un nuevo presupuesto.
+
+<Frame>
+  ![Image](/images/image-63.png)
+</Frame>
 
 ---
 
@@ -441,6 +453,10 @@ El módulo está organizado en tres solapas:
 
 ### Laboratorios
 
+<Frame>
+  ![Image](/images/image-64.png)
+</Frame>
+
 Antes de crear solicitudes, configurás los laboratorios con los que trabaja la clínica. Por cada laboratorio podés cargar:
 
 - Nombre, dirección, email, teléfono y detalle de especialidad
@@ -448,9 +464,17 @@ Antes de crear solicitudes, configurás los laboratorios con los que trabaja la 
 
 ### Estados
 
+<Frame>
+  ![Image](/images/image-65.png)
+</Frame>
+
 Podés configurar los estados del flujo de trabajo con el laboratorio: por ejemplo, pendiente de envío, enviado al laboratorio, entregado. Los estados son totalmente personalizables: podés editarlos, cambiarles el color y configurar el orden en que aparecen.
 
 ### Solicitudes
+
+<Frame>
+  ![Diseño Sin Título (6)](/images/Diseño-sin-título-\(6\).png)
+</Frame>
 
 Registro de todos los trabajos enviados a laboratorios. Cada solicitud incluye:
 
@@ -464,6 +488,10 @@ Registro de todos los trabajos enviados a laboratorios. Cada solicitud incluye:
 
 Cada solicitud puede vincularse a un presupuesto del paciente. Esto permite que dentro del presupuesto quede asentada la orden de laboratorio asociada, y que el sistema la considere al calcular los honorarios del profesional según el contrato configurado.
 
+<Frame>
+  ![Image](/images/image-67.png)
+</Frame>
+
 ---
 
 ## Stock
@@ -472,21 +500,57 @@ El módulo de **Stock** centraliza la gestión del inventario de materiales e in
 
 ### Proveedores
 
+<Frame>
+  ![Image](/images/image-68.png)
+</Frame>
+
 Directorio de proveedores de insumos. Por cada proveedor podés cargar nombre, dirección, teléfono, email, sitio web y observaciones. El teléfono funciona como acceso directo a WhatsApp. Los proveedores se pueden editar o deshabilitar.
 
 ### Inventario
+
+<Frame>
+  ![Image](/images/image-69.png)
+</Frame>
 
 Listado completo de todos los productos en stock. Al ingresar, si algún producto está por debajo del stock mínimo configurado, el sistema te avisa automáticamente con un indicador.
 
 Desde el inventario podés:
 
 - **Crear categorías** de productos para organizar el inventario
+
+<Frame>
+  ![Image](/images/image-71.png)
+</Frame>
+
 - **Agregar productos** cargando nombre, cantidad, número de lote, categoría, precio de costo, divisa, proveedor, stock de seguridad, fecha de vencimiento y marca
+
+<Frame>
+  ![Image](/images/image-72.png)
+</Frame>
+
 - **Importar productos** masivamente desde un archivo Excel
+
+<Frame>
+  ![Image](/images/image-73.png)
+</Frame>
+
 - **Filtrar** por categoría o por productos bajo stock
+
+<Frame>
+  ![Image](/images/image-74.png)
+</Frame>
+
 - **Exportar** el listado filtrado en PDF o Excel
 
+<Frame>
+  ![Image](/images/image-75.png)
+</Frame>
+
 ### Movimientos
+
+<Frame>
+  ![Image](/images/image-76.png)
+</Frame>
 
 Registro de todas las entradas y salidas de productos. Cada vez que ingresa mercadería nueva o se consume un insumo, se registra el movimiento con fecha, producto, cantidad y precio, manteniendo el inventario siempre actualizado.
 
@@ -494,11 +558,23 @@ Registro de todas las entradas y salidas de productos. Cada vez que ingresa merc
 
 ## Finanzas
 
+<Frame>
+  ![Diseño Sin Título (8)](/images/Diseño-sin-título-\(8\).png)
+</Frame>
+
 El módulo de **Finanzas** es el centro de control económico de la clínica. Desde acá se registran y supervisan todos los ingresos, egresos y movimientos financieros.
 
 > **Filtros globales** — Al ingresar al módulo, lo primero que vas a ver es el panel de filtros: mes, año y divisa. Estos tres campos son obligatorios y determinan toda la información que se muestra en el módulo. Asegurate de tener los filtros correctamente configurados antes de analizar cualquier dato.
+>
+> <Frame>
+>   ![Image](/images/image-77.png)
+> </Frame>
 
 ### Resumen financiero
+
+<Frame>
+  ![Image](/images/image-78.png)
+</Frame>
 
 El módulo muestra un gráfico general con los ingresos versus los egresos del período seleccionado, y accesos directos a:
 
@@ -508,11 +584,20 @@ El módulo muestra un gráfico general con los ingresos versus los egresos del p
 
 ### Deudas de seguro médico
 
+<Frame>
+  ![Image](/images/image-79.png)
+</Frame>
+
 Isla donde el sistema contabiliza automáticamente cuánto debe la obra social a la clínica por prestaciones realizadas a pacientes con cobertura.
 
 ### Reportes
 
 - **Reporte de deudores** — Listado de pacientes con saldo pendiente, con detalle del presupuesto y las prestaciones adeudadas.
+
+<Frame>
+  ![Image](/images/image-80.png)
+</Frame>
+
 - **Reporte de presupuestos** — Estado de todos los presupuestos de la clínica, filtrable por estado: pendiente, aprobado, rechazado, eliminado, expirado.
 - **Reporte de personal** — Detalle de qué realizó cada profesional, en qué estado están sus presupuestos, a qué pacientes atendió y los valores asociados.
 
