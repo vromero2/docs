@@ -26,13 +26,48 @@ Herramientas disponibles:
 Acciones disponibles por clínica Cada fila del listado tiene cuatro botones de acción:
 
 - Configurar doctores (azul) — abre una ventana donde se asignan los doctores que atienden en esa sede. Muestra el listado de doctores asignados con etiquetas y permite agregar o quitar profesionales. Una vez modificado, se hace clic en Guardar cambios
+
+<Frame>
+  ![Image](/images/image-179.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-183.png)
+</Frame>
+
 - Configurar boxes (gris) — navega a la página de boxes de la clínica, donde se gestionan los consultorios o sillones. El listado muestra nombre y acciones (editar y eliminar). Se pueden agregar nuevos boxes con un nombre identificatorio
+
+<Frame>
+  ![Image](/images/image-180.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-184.png)
+</Frame>
+
 - Editar clínica (naranja) — abre el formulario de edición con los datos precargados, incluyendo la posibilidad de cambiar el logo con el botón "Cambiar logo"
+
+<Frame>
+  ![Image](/images/image-181.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-185.png)
+</Frame>
+
 - Eliminar clínica (rojo) — elimina la clínica del sistema
+
+<Frame>
+  ![Image](/images/image-182.png)
+</Frame>
 
 ---
 
 ### **Agregar una clínica**
+
+<Frame>
+  ![Image](/images/image-186.png)
+</Frame>
 
 Al hacer clic en Agregar clínica se abre un formulario dividido en dos secciones:
 
@@ -53,10 +88,6 @@ Horarios de atención:
 - Hora de fin (obligatorio) — selector de hora para definir el cierre de la atención
 
 Una vez completados los campos, se hace clic en Agregar.
-
-<Frame>
-  ![Image](/images/image-60.png)
-</Frame>
 
 ---
 
@@ -82,11 +113,68 @@ Herramientas disponibles:
 Acciones disponibles por miembro Cada fila del listado tiene seis botones de acción:
 
 - Configurar permisos (celeste, ícono de escudo) — abre la ventana de administración de permisos del miembro, donde se pueden habilitar o deshabilitar accesos específicos a las distintas funcionalidades del sistema
+
+<Frame>
+  ![Image](/images/image-187.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-188.png)
+</Frame>
+
 - Editar miembro (naranja, ícono de persona) — abre el formulario de edición con todos los datos del miembro, incluyendo campos adicionales que no están en el formulario de creación
+
+<Frame>
+  ![Image](/images/image-189.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-190.png)
+</Frame>
+
 - Configurar horarios (gris, ícono de calendario) — navega a la página de configuración de horarios del profesional, donde se definen los días de trabajo, horarios de inicio y fin de turno, y si atiende o no en cada franja
+
+<Frame>
+  ![Image](/images/image-191.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-193.png)
+</Frame>
+
 - Firma (gris, ícono de documento) — abre la ventana de gestión de firma del miembro. Permite dibujar la firma a mano alzada o subir una imagen. Tiene botones para Limpiar firma, Cerrar y Guardar firma
+
+<Frame>
+  ![Image](/images/image-194.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-195.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-196.png)
+</Frame>
+
 - Contraseña (gris, ícono de candado) — abre un menú con dos opciones: Enviar mail de recuperación (envía un email al miembro para que restablezca su contraseña) y Cambiar contraseña directamente (permite al administrador asignar una nueva contraseña sin intervención del miembro)
+
+<Frame>
+  ![Image](/images/image-197.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-198.png)
+</Frame>
+
 - Eliminar miembro (rojo, ícono de papelera) — elimina al miembro del sistema. Los administradores no pueden ser eliminados
+
+<Frame>
+  ![Image](/images/image-199.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-200.png)
+</Frame>
 
 ---
 
@@ -112,6 +200,14 @@ Al hacer clic en Agregar miembro se abre un formulario con los siguientes campos
 (obligatorio) — selector con las tres opciones disponibles en OCLÜ: **Administrador**, **Doctor** y **Secretaria**. Es importante entender que estos roles funcionan como etiquetas dentro del sistema y no necesariamente reflejan el cargo real de la persona en la clínica. El rol determina algunas características específicas del usuario, pero no define sus permisos reales, que se configuran individualmente desde el apartado de permisos.
 
 El **Administrador** tiene todos los permisos del sistema habilitados de forma permanente y no pueden ser revocados ni restringidos. Siempre va a tener acceso a todos los apartados del sistema. Si además va a ejercer funciones clínicas dentro de la clínica, se le pueden habilitar las labores de doctor desde su perfil una vez creado, lo que le otorga las mismas facultades dentro del sistema que un usuario con rol Doctor.
+
+<Frame>
+  ![Image](/images/image-201.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-203.png)
+</Frame>
 
 El **Doctor** es el rol clínico por defecto. Tiene agenda propia, puede ser asignado a presupuestos como profesional responsable y puede tener contratos de honorarios configurados.
 
@@ -140,7 +236,15 @@ Una vez modificados los datos, se hace clic en Guardar cambios.
 
 Desde el botón Configurar contratos se navega a una sección donde se gestionan los contratos de honorarios que definen cómo se liquida a cada profesional.
 
+<Frame>
+  ![Image](/images/image-205.png)
+</Frame>
+
 Al ingresar aparecen dos carteles informativos: uno que explica cómo crear contratos y otro que advierte crear contratos nuevos en lugar de editar los existentes cuando cambian las condiciones.
+
+<Frame>
+  ![Image](/images/image-206.png)
+</Frame>
 
 El listado muestra las siguientes columnas: nombre, tipo de contrato, doctores vinculados, descripción y acciones.
 
@@ -223,7 +327,7 @@ Los estados posibles de las automatizaciones son:
 
 ## **Prestaciones**
 
-La sección de Prestaciones (internamente llamada "Listas") gestiona los listados de precios de los tratamientos y servicios odontológicos que ofrece la clínica. Se organiza en una estructura jerárquica de tres niveles: Listas \> Categorías \> Prestaciones.
+La sección de Prestaciones gestiona los listados de precios de los tratamientos y servicios odontológicos que ofrece la clínica. Se organiza en una estructura jerárquica de tres niveles: Listas \> Categorías \> Prestaciones.
 
 El listado principal muestra las siguientes columnas: lista (nombre clickeable con flecha para navegar al detalle), obra social (si la lista está asociada a alguna) y acciones.
 

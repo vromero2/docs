@@ -4,6 +4,10 @@ title: "Calendario"
 
 El módulo **Calendario** es el centro de gestión de turnos de la clínica. Desde acá se administra la agenda diaria, se crean y modifican citas, se gestionan los bloqueos de agenda y se hace el seguimiento del estado de cada turno en tiempo real.
 
+<Frame>
+  ![Image](/images/image-208.png)
+</Frame>
+
 ---
 
 ## Acceso y vista general
@@ -12,19 +16,44 @@ Al ingresar al módulo Calendario, lo primero que ves es el calendario completo 
 
 ### Isla de fecha y modo de vista
 
+<Frame>
+  ![Image](/images/image-209.png)
+</Frame>
+
 Concentra todos los controles de navegación y visualización del calendario. Desde acá podés:
 
 - Seleccionar la fecha usando el selector desplegable, que funciona en tres niveles. Por defecto muestra los días del mes y año actual. Si hacés clic en el mes, pasa a mostrar todos los meses del año para que puedas saltar directamente a uno. Si hacés clic en el año, pasa a mostrar los años disponibles. En cada nivel hay flechas para avanzar o retroceder. Una vez que seleccionás el año pasa a los meses, y una vez que seleccionás el mes pasa a los días.
 - Seleccionar el **tipo de vista**: diaria o semanal. Podés cambiarla en cualquier momento mientras usás el calendario.
+
+<Frame>
+  ![Image](/images/image-210.png)
+</Frame>
+
 - Elegir el **modo de agrupación**: por doctores o por boxes. Podés cambiarlo en cualquier momento mientras usás el calendario.
 
+<Frame>
+  ![Image](/images/image-211.png)
+</Frame>
+
 Desde la configuración de esta isla podés definir cuál de las dos vistas y cuál de los dos modos de agrupación querés que aparezca por defecto cada vez que ingreses al módulo. Una vez configurada la preferencia, siempre que abras el Calendario va a abrirse con esa vista y agrupación predeterminada, independientemente de cómo lo hayas dejado la última vez.
+
+<Frame>
+  ![Image](/images/image-212.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-213.png)
+</Frame>
 
 ### Isla de filtro por profesional o por box
 
 Dependiendo del modo de agrupación seleccionado, esta isla se llama **Profesional** o **Box**. Desde acá podés elegir qué columnas mostrar en el calendario; todos los profesionales o boxes, o solo algunos. El menú se despliega y permite seleccionar o deseleccionar individualmente cada opción.
 
 Si el filtro está en modo **Box**, esta isla tiene arriba a la derecha un acceso directo a la **configuración de boxes**, equivalente a la que se encuentra en Administrador → Clínica → Boxes.
+
+<Frame>
+  ![Image](/images/image-214.png)
+</Frame>
 
 Desde ahí podés:
 
@@ -37,7 +66,19 @@ Por defecto el sistema crea un box llamado **Box 1**, que podés editar o elimin
 
 ### Isla de estados de calendario
 
+<Frame>
+  ![Image](/images/image-215.png)
+</Frame>
+
 Muestra los estados disponibles para las citas. Los estados predeterminados son **Pendiente**, **Confirmado** y **Cancelado**. Desde el ícono de configuración de esta isla accedés a la gestión completa de estados, donde podés:
+
+<Frame>
+  ![Image](/images/image-216.png)
+</Frame>
+
+<Frame>
+  ![Image](/images/image-217.png)
+</Frame>
 
 - Ver el listado de estados con su nombre, color y visibilidad
 - **Mostrar u ocultar** citas con un estado determinado mediante un switch; por ejemplo, podés ocultar las citas canceladas para que no ocupen espacio visual en la agenda, sin que eso elimine el registro de esa cita en el historial del paciente
@@ -46,10 +87,6 @@ Muestra los estados disponibles para las citas. Los estados predeterminados son 
 - **Configurar el orden** en que se visualizan los estados en el listado
 - **Agregar nuevos estados** indicando nombre y color — podés crear tantos como necesites
 
-<Frame>
-  ![Image](/images/image-173.png)
-</Frame>
-
 ---
 
 ### Crear una cita
@@ -57,6 +94,10 @@ Muestra los estados disponibles para las citas. Los estados predeterminados son 
 Hay dos formas de crear una cita nueva:
 
 **Desde el botón \+** Ubicado arriba a la izquierda del calendario. Al hacer clic se abre un formulario completo donde todos los campos de horario y doctor deben completarse manualmente.
+
+<Frame>
+  ![Image](/images/image-218.png)
+</Frame>
 
 **Desde un espacio vacío en el calendario** Al hacer clic en cualquier espacio libre dentro del calendario, se abre una pequeña ventana con dos opciones: **Nueva cita** o **Bloqueo de agenda**. Al seleccionar Nueva cita, se abre el mismo formulario pero con el rango horario y el doctor correspondiente a la columna y franja seleccionada ya precargados. Esta es la forma más práctica de crear citas en el uso diario.
 
@@ -87,6 +128,10 @@ El formulario contiene los siguientes campos:
 
 Dentro del formulario de nueva cita, al hacer clic en **Agregar nuevo paciente**, se abre una ventana con el formulario de carga rápida. Es la forma más veloz de registrar un paciente dentro de OCLÜ y está especialmente pensada para clínicas que atienden por demanda espontánea o para situaciones donde el paciente está presente y se necesita registrar el turno de inmediato.
 
+<Frame>
+  ![Image](/images/image-219.png)
+</Frame>
+
 Los campos obligatorios son únicamente tres: **nombre**, **apellido** y **teléfono con prefijo**. También hay dos campos opcionales: **email** y **referido por**.
 
 Una vez creado, el paciente queda registrado en el sistema con esos datos. Posteriormente, desde el módulo Pacientes, se le puede enviar un link de actualización de datos para que complete toda su información, incluyendo los campos obligatorios que quedaron pendientes. Esta dinámica permite no interrumpir el flujo de atención en el momento del turno y permite completar la ficha del paciente después.
@@ -101,6 +146,10 @@ Una vez creado, el paciente queda registrado en el sistema con esos datos. Poste
 
 Al hacer clic en un espacio vacío del calendario y seleccionar **Bloqueo de agenda**, se abre un formulario con los siguientes campos:
 
+<Frame>
+  ![Image](/images/image-220.png)
+</Frame>
+
 - **Rango de fechas** — Fecha de inicio y de fin del bloqueo. Puede ser un mismo día, varios días, una semana o más.
 - **Horario** — Desde qué hora hasta qué hora estará bloqueada la agenda.
 - **Motivo** — Campo opcional. El motivo no es visible en la vista del calendario, pero queda registrado y se puede consultar haciendo clic en el bloqueo.
@@ -108,12 +157,16 @@ Al hacer clic en un espacio vacío del calendario y seleccionar **Bloqueo de age
 Los bloqueos aparecen en el calendario como un espacio ocupado, indicando visualmente que esa franja no está disponible para nuevos turnos.
 
 <Frame>
-  ![Image](/images/image-177.png)
+  ![Image](/images/image-221.png)
 </Frame>
 
 ---
 
 ### Vista del calendario
+
+<Frame>
+  ![Image](/images/image-222.png)
+</Frame>
 
 El calendario se organiza de la siguiente manera:
 
@@ -124,6 +177,10 @@ El calendario se organiza de la siguiente manera:
 Cada cita aparece en la franja horaria y columna correspondiente, mostrando el nombre del paciente. Si la cita tiene descripción cargada, aparece un ícono de nota junto al nombre.
 
 Dentro del calendario encontrás dos flechas para avanzar o retroceder por día o por semana según la vista activa, y el botón **Hoy** para volver rápidamente al día actual si te moviste mucho en el calendario.
+
+<Frame>
+  ![Image](/images/image-223.png)
+</Frame>
 
 Las citas también se pueden mover y redimensionar directamente desde el calendario sin necesidad de entrar al detalle:
 
