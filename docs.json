@@ -34,13 +34,14 @@
       },
       {
         "tab": "Guías",
-        "groups": [
+        "pages": [
           {
             "group": "Tutoriales Paso a Paso",
             "pages": [
               "tutorial-crear-paciente",
               "tutorial-agendar-turno",
-              "tutorial-registrar-pago"
+              "tutorial-registrar-pago",
+              "tutorial-ver-ingresos-y-egresos"
             ]
           },
           {
