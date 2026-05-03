@@ -1,0 +1,121 @@
+---
+title: "Cómo entender el inventario de Stock"
+---
+
+El módulo **Stock** te permite llevar el control de insumos, medicamentos, indumentaria y cualquier producto que tu clínica use o venda. La pantalla principal del módulo es el **Inventario**, donde ves todos los productos cargados con su stock actual, fechas de vencimiento y categoría. OCLÜ además te avisa automáticamente cuando algún producto cayó al stock mínimo. Esta guía te muestra cómo leer la pantalla y aprovechar todas las funciones.
+
+## Cuándo usarlo
+
+- Cada vez que necesitás verificar cuánto stock tenés de un producto antes de pedirlo o usarlo.
+- Cuando recibís la alerta de stock mínimo y querés ver qué productos están en rojo.
+- Cuando vas a generar una orden de compra y necesitás un listado en PDF o Excel.
+- Cuando estás auditando los productos vencidos o próximos a vencer.
+
+## Cómo llegar a esta sección
+
+1. Iniciá sesión en OCLÜ.
+2. En la barra lateral izquierda, hacé clic en el ícono de Stock (cuarto ícono desde arriba, con forma de caja).
+
+> Si entrás al módulo y hay algún producto que alcanzó el stock mínimo, OCLÜ te muestra una **advertencia emergente** apenas cargás la pantalla. Por ejemplo: "Hay 1 producto que alcanzaron el stock mínimo." Hacé clic en **Entendido** para cerrar y seguir trabajando.
+
+<Frame>
+  ![Image](/images/image-272.png)
+</Frame>
+
+## Las tres tabs del módulo
+
+Arriba de la pantalla de Stock hay tres tabs:
+
+- **Inventario** (la activa por defecto): listado de todos los productos.
+- **Movimientos:** historial de entradas y salidas de stock (qué se compró, qué se usó, quién lo registró).
+- **Proveedores:** listado de los proveedores con los que trabajás.
+
+Esta guía se concentra en la tab **Inventario**.
+
+## Qué muestra el Inventario
+
+### Filtros y búsqueda (arriba)
+
+- **Buscar por nombre:** campo para encontrar un producto específico tipeando parte del nombre.
+- **Filtrar inventario:** dropdown con criterios de filtrado (por categoría, vencimiento, stock crítico, etc.).
+
+### Botones (arriba a la derecha)
+
+- **Agregar producto** (azul): abre el formulario para cargar un producto nuevo al inventario.
+- **Más opciones:** dropdown con acciones avanzadas sobre el inventario.
+- **PDF** (ícono rojo): exporta el listado actual a PDF.
+- **Excel** (ícono verde): exporta el listado actual a Excel.
+
+<Frame>
+  ![Image](/images/image-273.png)
+</Frame>
+
+### Tabla de productos
+
+Las columnas son:
+
+- **Nombre:** del producto (por ejemplo "Cepillo de dientes", "Hilo Dental", "Bata", "Ibuprofeno").
+- **Stock de seguridad:** la cantidad mínima que tu clínica definió para ese producto. Si el stock cae a este número, el sistema dispara la alerta. Lo configurás al crear o editar el producto.
+- **Stock:** la cantidad actual disponible. Si está en 0 o por debajo del Stock de seguridad, aparece resaltado en rojo con un ícono de alerta.
+- **Vencimiento:** la fecha de vencimiento del producto. Si no aplica (por ejemplo, indumentaria), aparece "Sin fecha de vencimiento".
+- **Categoría:** clasificación del producto (Insumos, Medicamentos, Indumentaria, etc.). Las categorías las configura cada clínica.
+- **Acciones:** tres íconos por producto.
+
+### Acciones por producto
+
+En la columna **Acciones** del lado derecho de cada fila vas a ver:
+
+- **Editar** (ícono naranja): abre el formulario de edición para modificar nombre, stock de seguridad, vencimiento, categoría, etc.
+- **Toggle activar/desactivar** (verde si activo): permite desactivar un producto sin eliminarlo. Útil cuando dejás de comprarlo pero querés conservar el historial.
+- **Eliminar** (ícono rojo): borra el producto del inventario. Pide confirmación. Si tiene movimientos asociados, puede haber restricciones.
+
+## Cómo identificar productos con stock crítico
+
+OCLÜ te ayuda visualmente:
+
+- **Productos con stock 0:** la columna Stock muestra el número en rojo con un ícono de advertencia.
+- **Productos por debajo del Stock de seguridad:** mismo tratamiento visual (rojo con alerta).
+- **Advertencia al entrar al módulo:** si hay productos en stock crítico, te aparece un modal apenas entrás. Te dice cuántos son.
+
+<Frame>
+  ![Image](/images/image-274.png)
+</Frame>
+
+## Cómo exportar el inventario
+
+Si necesitás un listado para imprimir, compartir con el contador o pasar a un proveedor:
+
+1. Aplicá los filtros que querés exportar (por ejemplo, solo medicamentos, o solo productos en stock crítico).
+2. Hacé clic en el botón rojo **PDF** o el verde **Excel** arriba a la derecha.
+3. El archivo se descarga automáticamente en tu navegador.
+
+> El archivo exportado refleja los filtros aplicados al momento de exportar. Si querés todo el inventario, asegurate de no tener filtros activos.
+
+## Resultado esperado
+
+Vas a poder ver en un golpe de vista qué productos están bien, cuáles están en stock crítico, qué está por vencer y qué categorías hay. Las acciones rápidas te permiten editar, desactivar o eliminar productos sin salir de la pantalla.
+
+## Errores comunes
+
+**No me aparece la advertencia de stock mínimo cuando entro:** significa que ningún producto está por debajo de su stock de seguridad. Buena señal.
+
+**Veo un producto con stock alto pero igual aparece en rojo:** verificá el Stock de seguridad. Si está mal configurado (por ejemplo en 100 cuando debería ser 5), el sistema considera que el stock real está bajo. Editá el producto y ajustá el stock de seguridad.
+
+**El filtro de inventario no filtra como esperaba:** verificá los criterios. Algunos filtros se combinan (ejemplo: categoría \+ stock crítico) y otros se aplican individualmente. Quitá los filtros y volvé a aplicarlos uno por uno.
+
+**Quiero ver productos vencidos:** usá el filtro **Filtrar inventario** y elegí el criterio de vencimiento. Si tu sistema lo permite, podés filtrar por "Vencidos" o "Próximos a vencer".
+
+## Tips y variaciones
+
+- **Stock de seguridad realista:** definí el stock de seguridad pensando en cuánto tardás en reponer. Si tu proveedor entrega en 3 días y usás 2 unidades por día, tu stock de seguridad debería ser al menos 6.
+- **Categorías ordenadas:** mantené las categorías organizadas (Insumos, Medicamentos, Indumentaria, etc.). Te ayuda al filtrar y al hacer reportes.
+- **Auditoría mensual:** una vez al mes, exportá el inventario completo a Excel y revisalo con calma. Detectá productos que llevás meses sin usar y considerá darlos de baja.
+- **Productos con vencimiento:** cargá siempre la fecha de vencimiento de medicamentos e insumos perecederos. El filtro por vencimiento te avisa antes de que se venza.
+
+## Tiempo estimado
+
+5 a 10 segundos para encontrar un producto. 30 segundos para exportar el inventario. 1 minuto para revisar productos en stock crítico.
+
+## Permisos
+
+Ver el inventario, agregar, editar y eliminar productos requiere permisos específicos. Configuralos desde Administrador → Staff → Permisos. Si algún botón aparece deshabilitado, consultá con el administrador.
