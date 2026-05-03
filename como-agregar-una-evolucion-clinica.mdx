@@ -1,0 +1,163 @@
+---
+title: "Cómo agregar una evolución clínica"
+---
+
+Las evoluciones son el registro escrito de lo que pasó en cada consulta del paciente. OCLÜ tiene un editor de texto enriquecido para cargarlas, con opciones de formato, dictado por voz, asistencia de OCLÜ IA, archivos adjuntos y vinculación opcional a un presupuesto. Una vez guardadas, las evoluciones quedan en la historia clínica del paciente y pueden exportarse a PDF. Esta guía te muestra el flujo completo.
+
+## Cuándo usarlo
+
+- Apenas terminás la consulta para registrar lo que se hizo en sesión.
+- Cuando vas a hacer una derivación a otro profesional y querés dejar el contexto clínico.
+- Cuando documentás un control periódico, una indicación post-tratamiento o una observación del paciente.
+- Cuando la secretaria carga lo que el doctor le dictó al final del día (asignándole la evolución al doctor, no a sí misma).
+
+## Requisitos previos
+
+- Tener al paciente cargado en el sistema.
+- Si vas a vincular la evolución a un presupuesto, el presupuesto tiene que estar creado.
+
+## Cómo llegar a esta sección
+
+1. Iniciá sesión en OCLÜ.
+2. En la barra lateral izquierda, hacé clic en el ícono de Pacientes.
+3. Buscá al paciente y hacé clic en su nombre para entrar a la ficha.
+4. En la ficha, hacé clic en la solapa **Historia Clínica**.
+5. En el sub-menú de la izquierda, hacé clic en **Evoluciones**.
+
+> En el breadcrumb superior vas a leer **Home → Pacientes → \[Nombre del paciente\]**.
+
+<Frame>
+  ![Image](/images/image-258.png)
+</Frame>
+
+## Pasos para agregar una evolución
+
+### 1. Hacé clic en Agregar evolución
+
+En la pantalla de Evoluciones, vas a ver:
+
+- Un buscador (**Buscar por contenido**) para filtrar evoluciones existentes.
+- Un contador del **Total de evoluciones** del paciente.
+- Dos botones arriba a la derecha: **Agregar evolución** (azul) y **Generar PDF** (gris).
+
+Hacé clic en el botón azul **Agregar evolución**.
+
+### 2. Completá los datos del formulario
+
+Se abre el modal **Agregar evolución** con los siguientes campos:
+
+**Fecha de la evolución** (obligatorio): viene preselectada con la fecha de hoy. La podés cambiar si estás cargando una evolución retroactiva.
+
+**Presupuesto** (opcional): dropdown para vincular esta evolución a un presupuesto específico del paciente. Si la atención fue parte de un plan de tratamiento, vinculalo. Si fue una consulta general sin presupuesto, dejalo vacío.
+
+> Vincular al presupuesto te permite después filtrar las evoluciones de un tratamiento específico y ver el avance clínico cronológicamente.
+
+**Contenido** (obligatorio): el cuerpo de la evolución. Es un editor de texto enriquecido con barra de herramientas. Más abajo te explico cada función.
+
+**Archivos adjuntos** (opcional): podés subir radiografías, fotos clínicas, recetas escaneadas, o cualquier archivo relevante. Hacé clic en **Adjuntar archivos** y elegí desde tu computadora.
+
+<Frame>
+  ![Image](/images/image-259.png)
+</Frame>
+
+### 3. Usá las herramientas del editor de Contenido
+
+La barra superior del editor tiene los siguientes botones, de izquierda a derecha:
+
+- **B** (Bold / Negrita): seleccioná texto y clickealo, o tipealo desde el botón.
+- **I** (Italic / Cursiva): igual que negrita pero en itálica.
+- **S** (Strikethrough / Tachado): tacha el texto.
+- **U** (Underline / Subrayado): subraya el texto.
+- **H1, H2, H3:** títulos de tres niveles. Útiles para organizar evoluciones largas con secciones.
+- **P:** texto normal (párrafo). Sirve para volver a párrafo después de un título.
+- **Alineación:** alineás el texto a izquierda, centro o derecha.
+- **Lista numerada:** crea una lista 1, 2, 3...
+- **Undo / Redo (flechas):** deshacer y rehacer cambios.
+- **Micrófono (Dictado por voz):** clickealo y empezá a hablar. OCLÜ transcribe lo que decís directamente al editor. Útil cuando tenés las manos ocupadas o querés dictar en lugar de tipear.
+- **Oclü IA:** asistente que te ayuda a redactar el texto que ya escribiste.
+
+### 4. (Opcional) Adjuntar archivos
+
+Si querés sumar archivos a la evolución (radiografías, fotos clínicas, etc.), hacé clic en **Adjuntar archivos** debajo del editor y seleccioná los archivos desde tu computadora.
+
+### 5. Guardá la evolución
+
+Cuando termines, hacé clic en el botón azul **Agregar** abajo a la derecha del modal.
+
+OCLÜ guarda la evolución y la lista de evoluciones se actualiza con el nuevo registro.
+
+## Asignar la evolución a otro profesional
+
+Por defecto, cuando creás una evolución queda asignada al miembro del staff que la cargó. Pero hay un caso muy común: la secretaria carga las evoluciones que el doctor dictó al final del día, y la evolución debería figurar a nombre del doctor que efectivamente atendió, no de la secretaria.
+
+OCLÜ permite eso. **Al crear o editar una evolución, podés elegir a qué profesional asignarla.** El permiso suele asignarse a la secretaria o al administrador. Buscá el campo de asignación de profesional en el formulario (puede aparecer arriba o abajo del editor).
+
+> Si no ves el campo para asignar a otro profesional, no tenés ese permiso. Pediler al administrador que te lo habilite desde Administrador → Staff → Permisos.
+
+## Resultado esperado
+
+La evolución aparece en la tabla de evoluciones del paciente con:
+
+- **Fecha** (la que elegiste).
+- **Profesional** (vos o el que hayas asignado).
+- **N° de presupuesto** (si vinculaste a un presupuesto, aparece como link clickeable).
+- **Descripción** (las primeras líneas del contenido, truncadas).
+- **Acciones:** ícono de editar y de eliminar.
+
+Las evoluciones quedan en orden cronológico (la más reciente arriba) y forman parte permanente de la historia clínica del paciente.
+
+## Generar PDF de evoluciones
+
+Si necesitás un documento con todas las evoluciones del paciente (para una derivación, para entregar al paciente, para un peritaje):
+
+1. En la pantalla de Evoluciones, hacé clic en el botón **Generar PDF** arriba a la derecha (al lado de Agregar evolución).
+2. OCLÜ genera un PDF con todas las evoluciones cargadas, en orden cronológico, con fecha, profesional y contenido completo.
+3. El PDF se descarga en tu navegador.
+
+<Frame>
+  ![Image](/images/image-260.png)
+</Frame>
+
+## Errores comunes
+
+**No veo el campo para asignar la evolución a otro profesional:** no tenés ese permiso. Pediler al administrador que te lo habilite. Por defecto la evolución queda asignada al miembro del staff que la creó.
+
+**El micrófono no funciona:** verificá que tu navegador tenga permisos de micrófono para el sitio de OCLÜ. La primera vez que clickeás el ícono, el navegador puede pedirte autorización.
+
+**OCLÜ IA no responde:** la asistencia de IA puede tener cuota limitada o estar en mantenimiento. Si no responde, escribí la evolución manualmente y reintentá la IA en otro momento.
+
+**Subí un archivo pero no aparece:** verificá el tamaño y formato. OCLÜ acepta formatos comunes (JPG, PNG, PDF, etc.), pero archivos muy pesados pueden fallar al subir. Reducí el tamaño y volvé a intentar.
+
+**Vinculé la evolución al presupuesto equivocado:** editá la evolución desde la tabla (ícono de editar) y cambiá el presupuesto vinculado. Después guardá.
+
+**Cargué la evolución y necesito borrarla:** desde la tabla de evoluciones, ícono rojo de eliminar en la fila correspondiente. Pide confirmación antes de aplicar.
+
+## Tips y variaciones
+
+- **Workflow al final de la consulta:** terminá la atención, abrí la evolución desde la cita (Accesos directos → Evoluciones del panel de detalle de la cita), dictá por voz lo que pasó, revisá y guardá. Lleva 1-2 minutos.
+- **Evoluciones estructuradas:** si tu clínica tiene un formato estándar de evolución (motivo, antecedentes, diagnóstico, plan), guardalo como plantilla en Administrador → Plantillas y reusalo en cada evolución para mantener consistencia.
+- **Vincular siempre al presupuesto:** cuando es parte de un plan, vinculá. Después podés ver todas las evoluciones de ese tratamiento juntas filtrando por número de presupuesto.
+- **OCLÜ IA para evoluciones rápidas:** anotá tres palabras clave ("conducto 4.6, anestesia, control en 7 días") y pediler a OCLÜ IA que expanda esto en una evolución profesional. Revisá lo que sugiere antes de guardar.
+- **Adjuntar antes de cerrar la consulta:** si vas a tomar fotos clínicas o radiografías, hacelo antes de guardar la evolución y adjuntalas en el mismo registro. Después es engorroso volver a la evolución para sumar archivos.
+
+## Tiempo estimado
+
+1 a 5 minutos por evolución, dependiendo de su extensión y si usás dictado/IA.
+
+## Preguntas frecuentes
+
+**¿Puedo editar una evolución después de guardarla?** Sí, desde la tabla de evoluciones, ícono de editar en la fila correspondiente. Tené en cuenta que la edición queda registrada en el sistema (auditoría).
+
+**¿Las evoluciones aparecen en el PDF de Historia Clínica completa?** Sí. Cuando descargás el PDF de HC del paciente desde la solapa Datos Personales, las evoluciones se incluyen automáticamente.
+
+**¿Cuántos archivos puedo adjuntar a una evolución?** Varios. No hay un límite estricto pero el tamaño total puede afectar la velocidad de carga. Si son muchas imágenes, conviene comprimir o dividir en evoluciones separadas.
+
+**¿El paciente ve las evoluciones desde el portal?** Depende de la configuración del portal del paciente. Algunas clínicas las muestran, otras no. Consultalo con tu administrador.
+
+**¿OCLÜ IA aprende de mis evoluciones anteriores?** La asistencia de IA puede usar contexto del paciente y del presupuesto vinculado. Las sugerencias mejoran cuando le das contexto explícito.
+
+**¿Puedo dictar en otro idioma que no sea español?** El reconocimiento de voz suele detectar el idioma del navegador. Si trabajás en otro idioma, configuralo en tu navegador antes de dictar.
+
+## Permisos
+
+Crear, editar, eliminar evoluciones y asignarlas a otros profesionales requiere permisos específicos desde Administrador → Staff → Permisos. Si algún botón o campo aparece deshabilitado, consultá con el administrador.
