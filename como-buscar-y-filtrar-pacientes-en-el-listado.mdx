@@ -1,0 +1,129 @@
+---
+title: "Cómo buscar y filtrar pacientes en el listado"
+---
+
+A medida que tu clínica crece, el listado de pacientes acumula cientos o miles de registros. OCLÜ tiene un buscador, varios filtros y un detector de datos incompletos para que encuentres rápido lo que necesitás. Esta guía te muestra todas las herramientas del listado de pacientes y cuándo usar cada una.
+
+## Cuándo usarlo
+
+- Cuando un paciente llega o llama y necesitás abrir su ficha rápido.
+- Cuando querés revisar qué pacientes tienen datos incompletos para completarlos antes de su próxima cita.
+- Cuando estás haciendo una auditoría de la base de pacientes (duplicados, datos faltantes).
+- Cuando preparás una campaña y querés filtrar pacientes por algún criterio antes de contactarlos.
+
+## Cómo llegar a esta sección
+
+1. Iniciá sesión en OCLÜ.
+2. En la barra lateral izquierda, hacé clic en el ícono de Pacientes (segundo ícono de arriba).
+
+Vas a entrar al listado completo de pacientes registrados en la clínica.
+
+<Frame>
+  ![Image](/images/image-266.png)
+</Frame>
+
+## Las herramientas del listado, una por una
+
+### 1. Buscador
+
+El primer campo arriba a la izquierda es **Buscar pacientes**. Tipeá lo que querés encontrar y la lista se filtra al instante.
+
+> El buscador trabaja en conjunto con el dropdown que viene a su derecha (**Buscar por**). Mirá el siguiente punto.
+
+### 2. Buscar por (filtro de campo)
+
+Al lado del buscador hay un dropdown que dice **Buscar por: Todos los campos**. Define en qué campo del paciente se aplica la búsqueda:
+
+- **Todos los campos** (por defecto): busca en nombre, apellido, email, teléfono, documento, etc. Es lo más amplio. Útil cuando no estás seguro qué dato del paciente sabés.
+- Otros campos específicos (apellido, documento, email, teléfono, número de HC, etc.): restringen la búsqueda solo a ese campo. Útil cuando tenés un dato exacto y querés evitar coincidencias falsas.
+
+### 3. Botón Incompletos
+
+Es un botón gris con un número entre paréntesis (por ejemplo "Incompletos (9)"). Te muestra cuántos pacientes en tu base tienen al menos un dato obligatorio sin completar.
+
+Hacé clic para filtrar el listado y ver solo esos pacientes. Te sirve para:
+
+- Ir completando los datos faltantes uno por uno.
+- Identificar pacientes que se cargaron rápido (con el mínimo) y que necesitan ampliar su ficha antes de la próxima atención.
+- Hacer una campaña de envío masivo de antecedentes (botón **Actualización de datos** del lado).
+
+### 4. Botón Actualización de datos
+
+A la derecha de Incompletos. Te abre el modal de envío masivo de actualización de antecedentes a todos los pacientes que lo necesiten. Hay una guía dedicada a este flujo: **Cómo gestionar pacientes con links de registro, actualización e historia clínica**.
+
+### 5. Botones Agregar paciente e Importar
+
+Arriba a la derecha del listado:
+
+- **Agregar paciente** (azul): para crear un paciente nuevo manualmente. Hay una guía dedicada: **Cómo crear un paciente**.
+- **Importar** (gris con flechita hacia abajo): para subir varios pacientes a la vez desde un archivo. Útil para migraciones desde otro sistema.
+
+### 6. Ordenamiento por columnas
+
+En las cabeceras de las columnas (ID, Nombre, HC\*) vas a ver flechas pequeñas arriba/abajo. Hacé clic en la cabecera para ordenar el listado por esa columna ascendente o descendente.
+
+> Es útil para por ejemplo ordenar por HC y ver los códigos en orden, o por ID para encontrar los más recientes (ID alto) o los más antiguos (ID bajo).
+
+### 7. Acciones por paciente
+
+En la columna Acciones del lado derecho, cada paciente tiene íconos rápidos:
+
+- **Editar** (ícono naranja): abre la ficha del paciente para modificar datos.
+- **Eliminar** (ícono rojo): borra el paciente. Pide confirmación. Tené en cuenta que eliminar un paciente con citas, presupuestos o historial puede no ser permitido o puede tener consecuencias.
+
+> Para abrir la ficha completa del paciente (no solo editar), hacé clic en el nombre del paciente en la columna Nombre. Te lleva a la ficha con todas las solapas (Datos Personales, Historia Clínica, Presupuestos, Balance).
+
+## Pasos para encontrar un paciente
+
+### Caso A: Sé el nombre o apellido
+
+1. En el campo **Buscar pacientes**, tipeá las primeras letras del nombre o apellido.
+2. Dejá **Buscar por: Todos los campos** o cambialo a Apellido si querés ser más estricto.
+3. La lista se filtra al instante. Hacé clic en el paciente correcto.
+
+### Caso B: Sé el documento
+
+1. Cambiá **Buscar por** a Documento.
+2. Tipeá el número en el buscador.
+3. La lista te muestra el paciente exacto (el documento es único en el sistema).
+
+### Caso C: Sé el HC interno
+
+1. Cambiá **Buscar por** a HC.
+2. Tipeá el código (por ejemplo HC4640).
+3. Te muestra el paciente correspondiente.
+
+### Caso D: Quiero ver pacientes incompletos
+
+1. Hacé clic en el botón **Incompletos**.
+2. La lista te muestra solo esos pacientes.
+3. Trabajá uno por uno completándolos, o usá el envío masivo desde **Actualización de datos**.
+
+## Resultado esperado
+
+La lista se actualiza al instante con cada cambio de filtro o búsqueda. Hacer clic en cualquier paciente del listado te abre su ficha completa.
+
+## Errores comunes
+
+**El paciente no aparece al buscar:** verificá que estés buscando en el campo correcto (cambiá **Buscar por** a "Todos los campos" para ampliar). Si seguís sin encontrarlo, puede no existir en el sistema todavía.
+
+**Tipeé el documento exacto y no aparece:** el documento puede tener formato distinto al que estás escribiendo (con o sin puntos, espacios, etc.). Probá distintas variantes o usá Todos los campos.
+
+**El número de Incompletos no coincide con lo que esperaba:** el sistema cuenta como incompleto cualquier paciente al que le falte un campo obligatorio. Eso incluye datos del paso 2 del formulario de creación (domicilio), no solo los obvios.
+
+**Eliminé un paciente por error:** dependiendo de la configuración, puede que la eliminación sea irrecuperable. Si tenía datos importantes, consultá con soporte cuanto antes.
+
+## Tips y variaciones
+
+- **Atajo más rápido:** la mayoría de los días vas a buscar por nombre o apellido. Dejá **Buscar por: Todos los campos** y simplemente tipeá.
+- **Para evitar duplicados:** antes de crear un paciente nuevo, buscá su documento en el listado. Si aparece, no lo crees de nuevo; entrá a su ficha existente.
+- **Combinar Incompletos con la lista del día:** mirá los pacientes que tenés agendados hoy y cruzá con el filtro de Incompletos para detectar quién va a llegar sin todos sus datos cargados. Avisale en recepción para completar antes de la atención.
+- **Lista ordenada por HC ascendente:** clickeá la cabecera HC\* para ordenar. Te queda como mini-índice.
+
+## Tiempo estimado
+
+5 a 15 segundos para encontrar un paciente conocido. 1 a 2 minutos para revisar la lista de incompletos.
+
+## Permisos
+
+Editar, eliminar pacientes y acceder al envío masivo de actualización requieren permisos específicos. Si algún botón aparece deshabilitado, consultá con el administrador desde Administrador → Staff → Permisos.
