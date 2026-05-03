@@ -1,0 +1,143 @@
+---
+title: "Cómo crear un bloqueo de agenda"
+---
+
+Los bloqueos de agenda sirven para reservar tiempo en el calendario en el que un profesional no va a atender pacientes: un congreso, una cirugía externa, una licencia, una reunión interna, etc. Una vez creado, el bloqueo aparece en la grilla con un candado y nadie puede agendar una cita encima. OCLÜ te ofrece dos formas de crearlos según el caso de uso. Esta guía te muestra ambas.
+
+## Cuándo usarlo
+
+- Cuando un profesional tiene un evento puntual que le impide atender (congreso, capacitación, viaje).
+- Cuando alguien va a faltar uno o varios días por motivo personal o vacaciones.
+- Cuando hay una reunión interna del equipo en horario de atención.
+- Cuando el consultorio cierra por mantenimiento o feriado.
+- Cuando una sala de cirugía está reservada para una intervención larga.
+
+## Las dos formas, en una vista rápida
+
+| Forma | Cuándo conviene | Dónde se crea |
+| --- | --- | --- |
+| Desde el calendario | Eventos del día o cercanos. Bloqueos cortos y puntuales. | Vista diaria del calendario |
+| Desde Administrador → Staff | Eventos a futuro, ausencias largas, programación anticipada de varios bloqueos. | Configuración de horarios del profesional |
+
+Ambas formas crean el mismo tipo de bloqueo. La diferencia es práctica: la primera es rápida y visual; la segunda permite cargar bloqueos para fechas lejanas sin tener que ir saltando entre días en la grilla.
+
+---
+
+## Forma 1: Desde el calendario (rápida y visual)
+
+Ideal para bloqueos del día o de los próximos días, cuando ya estás trabajando en la agenda.
+
+### Cómo llegar
+
+1. En la barra lateral izquierda, hacé clic en el ícono del calendario para entrar a la **Vista diaria**.
+2. Posicionate en el día que querés bloquear usando el campo de fecha o las flechas `<` y `>`.
+
+### Pasos
+
+1. Hacé clic en una **celda libre** de la grilla, en la columna del profesional que va a estar ausente y a la altura del horario de inicio del bloqueo.
+2. Se abre un modal pequeño con dos opciones: **Nueva Cita** y **Bloqueo de Agenda**. Hacé clic en **Bloqueo de Agenda**.
+
+<Frame>
+  ![Image](/images/image-251.png)
+</Frame>
+
+3. Se abre el formulario para crear el bloqueo. Completá:
+   - **Fecha y hora de inicio:** vienen pre-cargadas con la celda que cliqueaste, ajustalas si hace falta.
+   - **Fecha y hora de fin:** definí cuándo termina el bloqueo. Puede ser unas horas después (medio día) o varios días después (semana de vacaciones).
+   - **Motivo** (opcional pero recomendado): texto breve que describe por qué está bloqueado el horario. Ejemplos: "Congreso de Endodoncia", "Vacaciones", "Cirugía externa", "Reunión de equipo". Le ayuda al equipo a entender el bloqueo cuando lo ven en la grilla.
+4. Hacé clic en el botón **Agregar bloqueo**.
+
+<Frame>
+  ![Image](/images/image-252.png)
+</Frame>
+
+### Resultado
+
+El bloqueo aparece automáticamente en la grilla del calendario, en la columna del profesional, con un **candado** y el texto **Bloqueo de agenda** (más el motivo si lo cargaste). Nadie puede agendar una cita encima de un bloqueo.
+
+<Frame>
+  ![Image](/images/image-253.png)
+</Frame>
+
+---
+
+## Forma 2: Desde Administrador → Staff (programación a futuro)
+
+Ideal para eventos lejanos en el tiempo, ausencias largas, o cuando vas a cargar varios bloqueos seguidos.
+
+### Cómo llegar
+
+1. En la barra lateral izquierda, expandí el menú **Administrador** y hacé clic en **Staff**.
+2. En el listado de staff, buscá al profesional que vas a bloquear.
+3. En la columna **Acciones** del profesional, hacé clic en el ícono de **Configuración** (engranaje) o el botón equivalente.
+4. Dentro del menú del profesional, entrá a **Configuración de horarios**.
+5. Hacé scroll hacia abajo en la pantalla de configuración. Vas a encontrar un apartado titulado **Bloqueos de agenda**.
+
+### Pasos
+
+1. En el apartado **Bloqueos de agenda**, hacé clic en **Agregar nuevo bloqueo**.
+2. Completá los campos:
+   - **Fecha y hora de inicio:** podés elegir cualquier fecha futura.
+   - **Fecha y hora de fin:** define cuándo termina.
+   - **Motivo** (opcional): descripción breve del bloqueo.
+3. Confirmá con el botón **Guardar** o **Agregar**.
+
+El bloqueo queda registrado y aparece automáticamente en el calendario del profesional cuando llegue la fecha. Si en el futuro alguien intenta agendar una cita en ese horario, el sistema lo va a rechazar.
+
+<Frame>
+  ![Image](/images/image-254.png)
+</Frame>
+
+### Cuándo conviene esta forma
+
+- Cuando el profesional ya sabe que va a tener un congreso en tres meses.
+- Cuando alguien se va de vacaciones programadas un par de semanas.
+- Cuando vas a programar varios bloqueos de una sola vez (por ejemplo, todos los viernes del mes próximo).
+- Cuando no querés navegar día por día en el calendario para crear el bloqueo.
+
+---
+
+## Resultado esperado (ambas formas)
+
+- El bloqueo aparece en la grilla del calendario en la columna del profesional, con candado y el texto "Bloqueo de agenda" (más el motivo si lo cargaste).
+- Nadie puede agendar una cita encima del bloqueo (a menos que tenga permisos avanzados y forcé la acción).
+- Si alguien intenta arrastrar una cita existente al rango bloqueado, el sistema rechaza el movimiento.
+
+## Errores comunes
+
+**No me aparece la opción "Bloqueo de Agenda" cuando clickeo una celda:** verificá tus permisos. Si no tenés permiso de crear bloqueos, el modal puede aparecer solo con la opción "Nueva Cita". Pediler al administrador que te habilite el permiso desde Administrador → Staff → Permisos.
+
+**Cargué el bloqueo pero el sistema me dejó agendar una cita encima:** revisá si el profesional tiene habilitado el solapamiento de citas. Con esa opción activa, los bloqueos no funcionan como barrera dura. Desactivá el solapamiento desde Administrador → Staff → Configuración de horarios si querés que los bloqueos sean estrictos.
+
+**El bloqueo no aparece en el calendario:** refrescá la página. Si tras refrescar sigue sin aparecer, verificá que la fecha y horario hayan quedado bien guardados (entrá al detalle del bloqueo desde el listado en Configuración de horarios).
+
+**Borré un bloqueo por error:** podés volver a crearlo siguiendo cualquiera de las dos formas. La acción de eliminación es definitiva, no hay un "deshacer" automático.
+
+## Tips y variaciones
+
+- **Bloqueos por equipo entero:** si todo el consultorio cierra (feriado, día completo de capacitación), tenés que cargar el bloqueo en cada profesional uno por uno. No hay un botón de "bloquear toda la clínica" automático.
+- **Motivo descriptivo:** aunque sea opcional, cargá siempre un motivo. El equipo lo ve en la grilla y le ayuda a explicar al paciente por qué no se puede agendar ese día ("El doctor está en un congreso").
+- **Bloqueos cortos vs largos:** un bloqueo de 1 hora durante el día y un bloqueo de 2 semanas se manejan igual. El sistema soporta ambos sin diferencia.
+- **Eliminar un bloqueo:** desde el calendario, clickeá el bloque del bloqueo y vas a tener la opción de eliminarlo. Desde Administrador → Staff → Configuración de horarios → Bloqueos de agenda, también podés eliminar bloqueos del listado.
+- **No bloquea el día completo automáticamente:** si querés bloquear todo el día (8:00 a 20:00), tenés que definir ese rango en el formulario. No hay una casilla de "día completo".
+
+## Tiempo estimado
+
+- Desde el calendario: 30 segundos por bloqueo.
+- Desde Administrador → Staff: 1 minuto el primer bloqueo (más navegación), 30 segundos cada uno adicional una vez que estás en la pantalla.
+
+## Preguntas frecuentes
+
+**¿Puedo crear un bloqueo recurrente (todos los lunes a la mañana)?** Hoy hay que crear cada bloqueo individualmente. Para eventos recurrentes, ajustá el horario hábil del profesional desde Configuración de horarios (más eficiente que cargar bloqueos repetidos).
+
+**¿Los pacientes ven los bloqueos cuando piden turno por el portal?** Sí. El portal del paciente respeta los bloqueos: no le ofrece esos horarios al elegir turno.
+
+**¿Puedo agendar un turno encima de un bloqueo si el paciente insiste?** Solo si tenés permisos avanzados o si el profesional tiene activado el solapamiento de citas. Por defecto, el bloqueo es una barrera dura.
+
+**¿El bloqueo afecta los pagos a doctores o reportes?** No. Los bloqueos son solo del calendario. No tienen impacto financiero directo.
+
+**¿Qué diferencia hay entre un bloqueo y una cita en estado "Cancelado"?** Una cita cancelada queda como registro de un turno que se canceló. Un bloqueo es tiempo no disponible que nunca tuvo paciente asignado. Son cosas distintas.
+
+## Permisos
+
+Crear, editar y eliminar bloqueos depende de los permisos del miembro del staff desde Administrador → Staff → Permisos. Si no ves la opción "Bloqueo de Agenda" en el modal del calendario o no podés acceder a la configuración de horarios del staff, consultá con el administrador.
