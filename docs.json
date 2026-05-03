@@ -38,6 +38,7 @@
           {
             "group": "Tutoriales Paso a Paso",
             "pages": [
+              "tour-por-la-pantalla-principal-de-ocl-ue",
               "tutorial-crear-paciente",
               "tutorial-agendar-turno",
               "tutorial-registrar-pago",
