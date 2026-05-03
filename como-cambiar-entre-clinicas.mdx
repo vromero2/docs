@@ -1,0 +1,97 @@
+---
+title: "Cómo cambiar entre clínicas"
+---
+
+OCLÜ permite que una misma cuenta tenga varias clínicas configuradas (por ejemplo, una organización con tres sedes en distintas ciudades). Cuando trabajás con multi-clínica, parte de la información se comparte entre todas las sedes (los pacientes, por ejemplo) y parte es específica de cada clínica (la agenda, las finanzas). Esta guía te muestra cómo alternar entre clínicas y qué información ves en cada caso.
+
+## Cuándo usarlo
+
+- Cuando tu organización tiene varias clínicas en la misma cuenta de OCLÜ.
+- Cuando necesitás trabajar la agenda, los presupuestos o las finanzas de una sede distinta a la que tenés activa.
+- Cuando trabajás como administrador de varias clínicas y vas alternando según la consulta del día.
+
+## Requisitos previos
+
+- Tu cuenta tiene que tener acceso a más de una clínica.
+- Las clínicas adicionales se cargan desde **Administrador → Clínicas** por un usuario con permisos.
+- Tu usuario tiene que estar asignado a las clínicas que querés ver. La asignación de staff a clínicas se hace desde **Administrador → Staff → menú de acciones del miembro del staff**.
+
+## Cómo llegar a esta sección
+
+El selector de clínica está siempre disponible arriba a la izquierda de cualquier pantalla del sistema, al lado del logo de OCLÜ.
+
+1. Iniciá sesión en OCLÜ.
+2. En la parte superior izquierda, vas a ver el logo **OCLÜ** y a su lado una flecha hacia abajo (▼).
+3. Hacé clic en la flecha.
+
+<Frame>
+  ![Captura De Pantalla 2026 05 03 200252](/images/Captura-de-pantalla-2026-05-03-200252.png)
+</Frame>
+
+## Pasos para cambiar de clínica
+
+1. Hacé clic en la flecha ▼ al lado del logo OCLÜ. Se abre un modal titulado **Cambiar clínica**.
+2. En el modal, mirá el campo **Seleccionar clínica**. Es un dropdown con todas las clínicas a las que tu usuario tiene acceso.
+3. Hacé clic en el dropdown y elegí la clínica a la que querés cambiar.
+4. Hacé clic en el botón azul **Confirmar cambios**.
+
+<Frame>
+  ![Captura De Pantalla 2026 05 03 200318](/images/Captura-de-pantalla-2026-05-03-200318.png)
+</Frame>
+
+## Qué se comparte y qué es específico de cada clínica
+
+Esta es la parte más importante para entender cómo funciona OCLÜ multi-clínica.
+
+### Información que se comparte entre todas las clínicas
+
+- **Listado de pacientes:** un paciente cargado en cualquier clínica aparece en todas. No tenés que cargarlo dos veces si va a atenderse en varias sedes.
+- **Datos personales del paciente:** nombre, apellido, documento, fecha de nacimiento, contacto, domicilio, seguro médico. Todo es único por paciente.
+- **Antecedentes médicos del paciente:** la historia médica, medicamentos, hábitos y antecedentes odontológicos cargados en la sección Antecedentes se comparten entre clínicas.
+- **Multimedia del paciente:** los archivos cargados en la sección Multimedia (radiografías, fotos clínicas, documentos) se comparten entre clínicas.
+
+### Información específica de cada clínica
+
+- **Calendario y citas:** cada clínica tiene su propio espacio de trabajo. Las citas, los horarios y los profesionales asignados son específicos de la sede activa.
+- **Presupuestos:** cada presupuesto pertenece a la clínica donde se creó. No se ven los presupuestos de una sede al estar en otra.
+- **Balance del paciente:** los movimientos financieros (cobros, pagos, revocaciones) son por clínica. Un paciente puede tener saldos distintos en cada sede.
+- **Finanzas:** las cajas, ingresos, egresos, ajustes y reportes financieros son por clínica.
+- **Stock (inventario):** cada clínica lleva su propio inventario de productos.
+- **Laboratorio (solicitudes):** las solicitudes de laboratorio son por clínica.
+
+### Staff y permisos
+
+- Los **administradores** suelen tener acceso a toda la información de todas las clínicas.
+- El resto del staff se asigna individualmente a las clínicas donde va a trabajar desde **Administrador → Staff → menú de acciones del miembro**. Cada miembro solo accede a las sedes donde lo asignaron.
+
+## Resultado esperado
+
+Cuando confirmás el cambio, OCLÜ recarga la sesión con la nueva clínica activa. Vas a ver:
+
+- La misma lista de pacientes (con sus mismos datos, antecedentes y multimedia).
+- Distinto calendario, distintos presupuestos, distinto balance para cada paciente, distintas cajas y reportes financieros, distinto stock y distintas solicitudes de laboratorio.
+
+## Errores comunes
+
+**No me aparece el dropdown con varias opciones:** tu usuario probablemente solo tiene acceso a una clínica. Si deberías tener acceso a otra, pedile al administrador que te asigne desde Administrador → Staff.
+
+**Cambié de clínica pero veo los mismos pacientes:** es normal. El listado de pacientes se comparte entre todas las clínicas. Lo que cambia son los datos específicos de cada sede (presupuestos, balance, citas, etc.).
+
+**Veo un paciente cargado en otra clínica que no esperaba:** es normal por lo mismo. El listado de pacientes es global. Los datos clínicos compartidos (antecedentes, multimedia) también se ven, pero los presupuestos y balance solo aparecen si los creaste en esta clínica.
+
+**No encuentro una clínica que esperaba ver en el dropdown:** verificá que la clínica esté creada en Administrador → Clínicas y que tu usuario tenga permisos sobre ella.
+
+## Tips y variaciones
+
+- **Nombrá las clínicas con criterio:** ponéles nombres claros (por ejemplo "OCLÜ Buenos Aires", "OCLÜ Córdoba") para distinguirlas rápido en el dropdown.
+- **Antes de hacer cambios importantes:** verificá siempre qué clínica está activa. Es fácil cargar un presupuesto o registrar un pago en la clínica equivocada si no prestás atención al selector.
+- **Pacientes que se atienden en varias sedes:** no necesitás duplicar la ficha. Mantené un solo registro del paciente, y atendelo en cada clínica con sus presupuestos y balance independientes en cada sede.
+- **Asignación de staff:** cuando incorporás un nuevo miembro al equipo, asignale solo las clínicas donde va a trabajar para evitar accesos innecesarios.
+
+## Tiempo estimado
+
+5 segundos para alternar entre dos clínicas.
+
+## Permisos
+
+El acceso a múltiples clínicas se configura desde Administrador → Staff. Los administradores suelen tener acceso a todas; el resto del staff solo a las clínicas donde fue asignado. Si necesitás trabajar con más clínicas pero no las ves en el dropdown, consultá con el administrador.
