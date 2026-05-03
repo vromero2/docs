@@ -1,0 +1,137 @@
+---
+title: "Estados de un presupuesto y cómo funcionan"
+---
+
+Cada presupuesto en OCLÜ tiene un **estado** que indica en qué etapa del flujo comercial-clínico está. El estado afecta lo que se puede hacer con el presupuesto y cómo se ve en los listados y reportes. Entender los estados te ayuda a tener la cartera de presupuestos limpia y a hacer seguimiento eficiente. Esta guía te muestra los seis estados disponibles, cómo cambiar entre ellos y qué significa cada uno.
+
+## Cuándo usarlo
+
+- Cuando querés entender por qué un presupuesto figura en un estado y qué podés hacer desde ahí.
+- Cuando necesitás cambiar manualmente el estado de un presupuesto (por ejemplo de Pendiente a Aprobado cuando el paciente confirma).
+- Cuando estás revisando la cartera y querés filtrar por estado para ver, por ejemplo, todos los pendientes de aprobación.
+- Cuando un presupuesto quedó obsoleto y querés marcarlo como Eliminado o Cerrado para mantener limpia la lista.
+
+## Cómo llegar al estado de un presupuesto
+
+1. En la barra lateral izquierda, hacé clic en el ícono de Pacientes y entrá a la ficha del paciente.
+2. Hacé clic en la solapa **Presupuestos**.
+3. Hacé clic en el nombre del presupuesto para abrir su detalle.
+4. En la sección **Información básica del presupuesto**, mirá la fila superior derecha: ahí ves la etiqueta **Estado** con el estado actual (por ejemplo "Aprobado" en verde, "Pendiente" en amarillo, etc.).
+
+<Frame>
+  ![Image](/images/image-244.png)
+</Frame>
+
+> Tip: clickear la etiqueta de Estado dentro del propio presupuesto te muestra el detalle de todos los estados disponibles en una pantalla, útil cuando estás aprendiendo el sistema.
+
+## Los seis estados, uno por uno
+
+### 1. Borrador
+
+**Qué significa:** el presupuesto está recién creado pero todavía no se le envió al paciente. Es un trabajo en curso.
+
+**Cómo llega a este estado:** automáticamente, cuando creás el presupuesto. Es el estado inicial.
+
+**Qué se puede hacer:** editarlo libremente (agregar o quitar prestaciones, cambiar precios, modificar comentarios), enviárselo al paciente, eliminarlo si te equivocaste.
+
+**Cuándo conviene:** mientras estás armando el plan de tratamiento y todavía no hablaste con el paciente sobre los costos.
+
+### 2. Pendiente
+
+**Qué significa:** el presupuesto fue enviado al paciente y estás esperando su respuesta (aprobación o rechazo).
+
+**Cómo llega a este estado:** hay dos formas:
+
+- **Automático:** desde dentro del presupuesto, cuando hacés clic en **Enviar presupuesto → Vía Mail**, el sistema cambia el estado a Pendiente automáticamente. Te muestra un cartel confirmando.
+- **Manual:** podés cambiarlo a Pendiente sin enviarlo, si por ejemplo se lo mostraste en pantalla o se lo entregaste impreso.
+
+**Qué se puede hacer:** seguir editándolo, reenviarlo, recibir pagos (lo que en la práctica suele significar que el paciente lo aprobó), o pasarlo manualmente a Aprobado, Rechazado o Eliminado.
+
+**Cuándo conviene:** después de que se lo enviaste y mientras esperás la respuesta. Te sirve para filtrar la cartera y ver todos los presupuestos en seguimiento.
+
+### 3. Aprobado
+
+**Qué significa:** el paciente aceptó el presupuesto y se va a ejecutar el plan.
+
+**Cómo llega a este estado:** **siempre manual.** Vos lo cambiás a Aprobado cuando el paciente confirma, ya sea verbalmente, por mensaje, o cuando paga la primera seña.
+
+**Qué se puede hacer:** recibir pagos, agendar citas vinculadas al presupuesto, registrar evoluciones, avanzar las prestaciones (con los botones de progreso 25%, 50%, 75%, 100%) y pasarlo manualmente a Cerrado cuando termine todo.
+
+**Cuándo conviene:** este es el estado "activo" de la mayoría de los presupuestos en ejecución.
+
+### 4. Rechazado
+
+**Qué significa:** el paciente decidió no aceptar el presupuesto.
+
+**Cómo llega a este estado:** **siempre manual.** Vos lo marcás como Rechazado cuando el paciente te lo dice.
+
+**Qué se puede hacer:** queda visible en la lista pero no se le pueden agregar pagos ni evoluciones. Sirve como registro histórico.
+
+**Cuándo conviene:** dejar claro en la cartera por qué un presupuesto no avanzó, en lugar de eliminarlo. Te ayuda a analizar después por qué se rechazan presupuestos y mejorar la presentación.
+
+### 5. Eliminado
+
+**Qué significa:** el presupuesto se marcó como inválido. Puede ser porque te equivocaste al crearlo, porque las condiciones cambiaron, o porque hay que rehacerlo desde cero.
+
+**Cómo llega a este estado:** **siempre manual.** Antes de eliminarlo, **es probable que tengas que revocar pagos o eliminar evoluciones asociadas** si hubo movimientos. La capacidad de revocar y eliminar depende de tus permisos.
+
+**Qué se puede hacer:** queda registrado pero ya no se opera con él.
+
+**Cuándo conviene:** cuando algo falló (un error en las prestaciones, un cambio de plan, un duplicado) y vas a crear un presupuesto nuevo desde cero.
+
+### 6. Cerrado
+
+**Qué significa:** se completaron todas las prestaciones del presupuesto. Es el estado de "finalizado con éxito".
+
+**Cómo llega a este estado:** **siempre manual y opcional.** Vos elegís marcarlo como Cerrado cuando todas las prestaciones están al 100% y el saldo restante es cero.
+
+**Qué se puede hacer:** queda como referencia histórica. Útil para reportes de productividad, comparar tiempos de tratamientos, etc.
+
+**Cuándo conviene:** no es obligatorio cerrar presupuestos completados. Es solo un marcador organizativo. Algunas clínicas los cierran prolijamente, otras los dejan en Aprobado indefinidamente.
+
+## Resumen del flujo
+
+- **Único cambio automático:** Borrador → Pendiente al enviar por email (si elegís esa opción).
+- **Todos los demás cambios son manuales.**
+- **Eliminado** se puede aplicar desde cualquier estado, pero conviene revocar pagos y eliminar evoluciones primero.
+
+## Errores comunes
+
+**No puedo cambiar el estado a Aprobado:** verificá tus permisos. Si no tenés permiso de modificar estados, el dropdown va a aparecer deshabilitado. Pediler al administrador que te habilite el permiso.
+
+**Al enviar el presupuesto por mail no cambió a Pendiente:** asegurate de que clickeaste **Enviar presupuesto → Vía Mail** desde dentro del presupuesto, no desde el listado. El cambio automático se dispara desde el envío individual.
+
+**Necesito cambiar un presupuesto Aprobado a Borrador:** no es lo más limpio. Si las prestaciones todavía no se ejecutaron, podés editarlo directamente sin volver a Borrador. Si ya hubo pagos o avances, mejor crear un nuevo presupuesto y eliminar el anterior.
+
+**El estado dice Pendiente pero el paciente ya pagó algo:** registrá el pago, eso no cambia el estado automáticamente. Si querés reflejar que está aprobado, cambialo manualmente a Aprobado.
+
+**No puedo eliminar un presupuesto:** si tiene pagos recibidos o evoluciones, el sistema te puede pedir que primero revoques esos pagos y elimines las evoluciones. Hacelo en ese orden.
+
+## Tips y variaciones
+
+- **Workflow recomendado:** Borrador → enviar por mail → Pendiente automático → cambiar manualmente a Aprobado o Rechazado según respuesta → Cerrado al finalizar todas las prestaciones.
+- **Para limpiar la cartera:** usá el filtro **Filtrar por estado** en el listado de presupuestos del paciente para ver solo los Aprobados (los activos en ejecución), los Pendientes (los que esperan respuesta), o los Borradores (los que están a medio armar).
+- **Auditoría comercial:** revisar periódicamente cuántos presupuestos están en Pendiente más de X días te ayuda a detectar pacientes que necesitan un seguimiento (un llamado, un nuevo envío).
+- **Cerrado vs Aprobado:** si no te molesta tener todos los presupuestos terminados como Aprobados, podés saltearte el paso de Cerrar. Pero si querés tener limpio el listado de "activos", marcalos como Cerrado al finalizar.
+
+## Tiempo estimado
+
+5 a 10 segundos para cambiar manualmente un estado.
+
+## Preguntas frecuentes
+
+**¿Puedo deshacer un cambio de estado?** Sí, mientras tengas permisos. Volvé al estado anterior manualmente desde el dropdown.
+
+**¿El paciente ve el estado de su presupuesto?** Si tiene activado el portal del paciente, sí, ve el estado actualizado. Si no, solo lo ve interno tu equipo.
+
+**¿Hay una notificación automática cuando cambia el estado?** No. Los cambios de estado son internos. Si querés avisar al paciente, mandá un mensaje aparte.
+
+**¿Puedo crear estados personalizados?** No. Los seis estados son fijos en el sistema. No es como los estados de calendario que sí se pueden personalizar.
+
+**¿Qué pasa si elimino un presupuesto Aprobado con pagos?** El sistema te puede pedir que primero revoques los pagos. La revocación no devuelve plata; solo invalida el registro. Después podés reasignar ese pago a otro presupuesto.
+
+**¿Hay diferencia visual entre los estados?** Sí. Cada estado tiene un color: Borrador (gris), Pendiente (amarillo), Aprobado (verde), Rechazado (rojo), Eliminado (gris tachado), Cerrado (azul oscuro). En el listado se ven como etiquetas de colores fáciles de identificar.
+
+## Permisos
+
+Cambiar estados, eliminar presupuestos y revocar pagos requiere permisos específicos. Configuralos desde Administrador → Staff → Permisos. Si el dropdown de Estado aparece deshabilitado o no ves el botón de Eliminar, consultá con el administrador.
