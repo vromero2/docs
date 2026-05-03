@@ -1,345 +1,137 @@
-# Tutorial: Cómo Crear un Paciente
+---
+title: "Cómo crear un paciente"
+description: "Aprendé a cargar un paciente nuevo en OCLÜ con todos sus datos personales, de contacto, domicilio y seguro médico."
+---
 
-Este tutorial tiene como finalidad **guiar al usuario de manera clara y ordenada** en el proceso de **registro de un nuevo paciente dentro de OCLÜ**, asegurando una correcta carga de los datos personales, administrativos y clínicos necesarios.
-
-A lo largo de este instructivo se detallan los pasos requeridos para ingresar la información básica del paciente, verificar su correcta identificación y dejar el registro preparado para su posterior utilización en los distintos módulos del sistema, tales como agenda, presupuestos, historia clínica y facturación.
+Esta guía te muestra cómo registrar un paciente nuevo desde el módulo Pacientes. El sistema te lleva por un wizard de dos pasos que separa los datos básicos (obligatorios para identificar al paciente) de los datos adicionales (domicilio y seguro médico). Una vez creado, el paciente queda disponible para asignarle citas, presupuestos, evoluciones y todos los demás registros clínicos.
 
 <iframe src="https://www.youtube.com/embed/vVG_UGFw9ys" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
----
+## Cuándo usarlo
 
-## ¿Cuándo Usar Este Tutorial?
+- Cuando un paciente nuevo se acerca a la clínica para hacer su primera consulta.
+- Cuando un paciente que llamó para pedir un turno necesita estar registrado para poder agendárselo.
+- Cuando estás migrando una agenda en papel y querés ir cargando los pacientes a medida que pasan.
+- Como alternativa a este flujo manual, podés enviar al paciente el **Link para registro** y que se cargue solo (mirá la guía **Cómo gestionar pacientes con links de registro, actualización e historia clínica**).
 
-- Llega un paciente nuevo a la clínica
-- Alguien llama para solicitar un turno y no está registrado
-- Necesitas crear la ficha antes de la primera consulta
+## Requisitos previos
 
----
+- Tener al paciente físicamente o sus datos disponibles (documento, fecha de nacimiento, teléfono, email si aplica).
+- Saber el domicilio completo del paciente (dirección, país, provincia, localidad).
 
-## Paso 1: Ir al Módulo de Pacientes
+## Cómo llegar a esta sección
 
-1. **Inicia sesión** en OCLÜ
-2. En el **menú lateral izquierdo**, haz clic en **"Pacientes"**
-3. Verás la lista de todos los pacientes ya registrados
+1. Iniciá sesión en OCLÜ.
+2. En la barra lateral izquierda, hacé clic en el segundo ícono (un grupo de personas). Te lleva al listado de **Pacientes**.
+3. Arriba a la derecha, hacé clic en el botón azul **Agregar paciente**.
 
----
+> En el breadcrumb superior vas a leer **Home → Pacientes → Agregar**.
 
-## Paso 2: Verificar que el Paciente No Existe
+<Frame>
+  ![Image](/images/image-231.png)
+</Frame>
 
-Antes de crear un paciente nuevo, verifica que no esté ya registrado:
+## Pasos para crear el paciente
 
-1. Usa la **caja de búsqueda** en la parte superior
-2. Escribe el **nombre** o **documento** del paciente
-3. Si aparece en los resultados: **Ya está registrado**, no lo crees nuevamente
-4. Si NO aparece: Continúa con el registro
+El formulario tiene dos pasos: **Datos básicos** y **Datos adicionales**. Un indicador arriba muestra en cuál estás.
 
-**Consejo**: Buscar por documento es más preciso que por nombre (pueden haber personas con el mismo nombre).
+### Paso 1: Datos básicos
 
----
+Completá los campos. Los marcados con asterisco rojo (`*`) son obligatorios.
 
-## Paso 3: Hacer Clic en "Agregar Paciente"
+**Nombre** (obligatorio): el nombre de pila del paciente.
 
-1. Haz clic en el botón **azul "Agregar Paciente"** (tiene un símbolo \+)
-2. Se abrirá un formulario en dos partes
+**Apellido** (obligatorio): el apellido completo.
 
----
+**Email** (opcional): correo electrónico del paciente. Aunque el campo no es obligatorio, conviene cargarlo siempre que esté disponible: sin email no vas a poder enviarle notificaciones, recordatorios de citas, links de actualización de datos ni recetas digitales.
 
-## Paso 4: Completar Datos Básicos (Parte 1)
+**Fecha de nacimiento** (obligatorio): formato DD/MM/AAAA. Podés tipear directamente o usar el calendario que aparece al hacer clic en el campo.
 
-### Información Personal
+**Género** (obligatorio): elegí entre **Masculino**, **Femenino** o **Indefinido** del dropdown.
 
-**Campos con asterisco (\*) son obligatorios. Debes completarlos sí o sí.**
+**Prefijo** (obligatorio): por defecto viene **\+54 (Argentina)**. Si el paciente tiene un número de otro país, cambialo desde el dropdown.
 
-#### Nombre \*
+**Teléfono** (obligatorio): número sin el prefijo (ya lo seleccionaste arriba). Por ejemplo, si el número completo es \+54 11 1234-5678, escribí 1112345678.
 
-Escribe el nombre del paciente (solo nombre, sin apellido).
+**Documento de identidad** (obligatorio): número de DNI, LE, LC, pasaporte o el documento que corresponda. El campo acepta cualquier formato.
 
-**Ejemplo**: Juan
+**Número de historia clínica** (opcional): si tu clínica usa códigos internos de HC (por ejemplo HC-001, HC-2024-045), ingresá acá el número. Si no lo usás, dejalo vacío. El sistema le asigna un ID interno al paciente igual.
 
-#### Apellido \*
+**Subir imagen** (opcional): a la izquierda hay un cuadro para cargar una foto del paciente. Es útil para identificarlo visualmente en la ficha.
 
-Escribe el apellido del paciente.
+<Frame>
+  ![Image](/images/image-232.png)
+</Frame>
 
-**Ejemplo**: Pérez
+Una vez completados todos los obligatorios, hacé clic en el botón azul **Paso siguiente** abajo a la derecha. Si te falta algún campo obligatorio, OCLÜ te lo indica con un mensaje rojo bajo el campo y un toast en la esquina superior derecha; corregí y volvé a intentar.
 
-#### Email
+### Paso 2: Datos adicionales
 
-Correo electrónico del paciente (si lo tiene).
+Esta pantalla tiene dos secciones: **Domicilio** y **Seguro Médico**.
 
-**Ejemplo**: [juan.perez@gmail.com](mailto:juan.perez@gmail.com)
+**Domicilio** (todos los campos obligatorios):
 
-**Nota**: No es obligatorio, pero es útil para enviar presupuestos y recordatorios.
+- **Dirección:** calle y número, departamento si aplica.
+- **País de residencia:** elegí del dropdown.
+- **Provincia:** ingresá la provincia (ej: Buenos Aires, Córdoba).
+- **Localidad o municipio:** ingresá la localidad (ej: La Plata, Villa Crespo).
 
-#### Fecha de Nacimiento \*
+**Seguro Médico** (todos los campos opcionales):
 
-Haz clic en el campo y selecciona la fecha en el calendario.
+- **Seguro Médico:** elegí del dropdown si el paciente tiene cobertura. La lista de opciones la configura tu clínica desde Administrador.
+- **Plan de Seguro Médico:** plan específico (ej: 210, Plata, Premium).
+- **Número de Afiliado:** número de afiliado del paciente en la cobertura.
+- **Referido:** si alguien lo derivó (otro paciente, otro profesional, una campaña), anotalo acá. Útil para análisis posteriores de origen de pacientes.
 
-**Formato**: DD/MM/AAAA
+Cuando termines, hacé clic en el botón azul **Guardar** abajo a la derecha. (Si necesitás corregir algo del paso 1, hacé clic en **Paso anterior**.)
 
-**Ejemplo**: 15/03/1985
+## Resultado esperado
 
-#### Género \*
+OCLÜ guarda el paciente y te lleva directamente a su ficha personal. En el breadcrumb vas a ver **Home → Pacientes → \[Apellido Nombre\]**. Desde ahí podés:
 
-Selecciona del menú desplegable:
+- Cargar antecedentes clínicos en la solapa **Historia Clínica**.
+- Crear un presupuesto desde la solapa **Presupuestos**.
+- Ver el balance financiero del paciente en **Balance**.
+- Asignarle una cita desde el calendario.
+- Enviarle el **Link paciente** para que acceda a su portal.
 
-- Masculino
-- Femenino
-- Otro
+El paciente también aparece en el listado general de Pacientes. Si dejaste algún campo opcional vacío (por ejemplo email), va a contar en el filtro **Incompletos** del listado hasta que lo completes.
 
-#### Teléfono \*
+## Errores comunes
 
-Escribe el número de teléfono con el código de área.
+**"El género es obligatorio" / "El teléfono es obligatorio" / etc.:** te falta completar un campo del paso 1. Mirá los mensajes rojos bajo cada campo y corregilos.
 
-**Formato**: (Código de área) Número
+**Documento duplicado:** si ingresás un documento que ya existe en otro paciente, el sistema te avisa. Verificá si el paciente ya está cargado buscándolo en el listado por documento.
 
-**Ejemplo**: (351) 123-4567
+**No puedo avanzar al paso 2:** seguro hay validación pendiente en el paso 1. Hacé scroll hacia arriba y revisá si algún campo tiene marca de error.
 
-**Consejo**: Incluye el código de área aunque sea de tu misma ciudad.
+**No encuentro el seguro médico del paciente en la lista:** el catálogo de seguros lo configura cada clínica desde Administrador. Si falta uno, agregalo desde ahí o pediselo al administrador.
 
-#### Documento de Identidad \*
+**Cargué el teléfono con el prefijo y aparece duplicado:** el campo Teléfono espera el número SIN prefijo (el prefijo va en el campo Prefijo, separado). Editá y borrá los números que sobran.
 
-Número de DNI, LC, LE u otro documento.
+## Tips y variaciones
 
-**Ejemplo**: 12.345.678
+- **Si el paciente no llegó todavía y necesitás reservarle el turno:** cargalo con los datos mínimos que tengas y completalo después. Va a aparecer en el filtro Incompletos hasta tener todo.
+- **Para cargar pacientes en lote:** usá la opción **Importar** del listado de Pacientes (botón al lado de Agregar paciente). Acepta archivos con varios pacientes a la vez.
+- **Para que el paciente se cargue solo:** hacé clic en **Link para registro** arriba a la derecha del formulario. Te genera un link que podés enviarle por WhatsApp o pegar en un QR. El paciente completa sus datos desde el celular.
+- **Foto del paciente:** la imagen que subas aparece en su ficha y en el calendario al lado del nombre. Útil para reconocerlo visualmente, sobre todo en clínicas grandes.
 
-**Nota**: Solo números, sin puntos ni espacios.
+## Tiempo estimado
 
-#### Número de Historia Clínica (HC)
+2 a 3 minutos por paciente con todos los datos a mano.
 
-Número único que le asignas al paciente en tu clínica.
+## Preguntas frecuentes
 
-**Ejemplo**: HC-001, 001, o el formato que uses
+**¿Puedo crear un paciente sin email?** Sí, el email es opcional. Pero sin email no podés enviarle notificaciones de citas, recordatorios, links de actualización ni recetas digitales. Conviene cargarlo siempre que esté disponible.
 
-**Consejo**: Usa números secuenciales para mantener orden (001, 002, 003...).
+**¿Puedo editar los datos del paciente después de crearlo?** Sí. Desde el listado de Pacientes hacé clic en el nombre del paciente y vas a entrar a su ficha. En **Datos Personales → Información** podés modificar todos los campos y guardar con el botón **Guardar cambios**.
 
----
+**¿Qué diferencia hay entre el Documento y el Número de historia clínica?** El **Documento** es el DNI / LE / LC / pasaporte del paciente — un dato externo que lo identifica civilmente. El **Número de historia clínica** es un código interno que cada clínica usa para organizar sus carpetas o expedientes. El sistema le asigna además un ID interno automático; los tres son distintos.
 
-## Paso 5: Hacer Clic en "Siguiente"
+**¿Y si el paciente no tiene domicilio fijo o no quiere darlo?** El domicilio es obligatorio. Como mínimo, ingresá país y provincia. Si no sabés la dirección exacta, podés poner "Sin dato" en el campo Dirección y completarlo más adelante.
 
-Cuando hayas completado todos los campos obligatorios de la Parte 1:
+**¿Puedo subir una foto desde la cámara directamente?** El cuadro **Subir imagen** acepta archivos del dispositivo. Si estás cargando desde el celular, podés usar la cámara y la foto se carga al cuadro.
 
-1. Haz clic en el botón **"Siguiente"** (parte inferior del formulario)
-2. Si falta algo obligatorio, el sistema te lo indicará con un mensaje rojo
-3. Si todo está bien, pasarás a la Parte 2
+## Permisos
 
----
-
-## Paso 6: Completar Datos Adicionales (Parte 2)
-
-### Dirección Completa
-
-#### Calle y Número \*
-
-**Ejemplo**: Av. Colón 1234
-
-#### Piso / Departamento
-
-Si vive en departamento.
-
-**Ejemplo**: 5° B
-
-#### País \*
-
-Selecciona del menú desplegable.
-
-**Por defecto**: Argentina
-
-#### Provincia \*
-
-Selecciona la provincia donde vive.
-
-**Ejemplo**: Córdoba
-
-#### Localidad \*
-
-Escribe la ciudad o localidad.
-
-**Ejemplo**: Córdoba Capital
-
-#### Código Postal
-
-**Ejemplo**: 5000
-
-### Seguro Médico (Opcional)
-
-#### ¿Tiene Obra Social o Prepaga?
-
-Si el paciente tiene cobertura médica:
-
-1. Selecciona **"Sí"**
-2. Aparecerán más campos:
-
-#### Nombre del Seguro
-
-**Ejemplo**: OSDE, Swiss Medical, APROSS
-
-#### Plan
-
-Tipo de plan que tiene.
-
-**Ejemplo**: Plan 210, Plan Familia
-
-#### Número de Afiliado
-
-Número de credencial del paciente.
-
-**Ejemplo**: 123456789/00
-
-### Referido Por
-
-¿Cómo llegó el paciente a tu clínica?
-
-Opciones comunes:
-
-- Recomendación (¿de quién?)
-- Redes sociales
-- Búsqueda en internet
-- Cartel en la calle
-- Ya era paciente
-
-**Uso**: Esto te ayuda a saber qué canales de marketing funcionan mejor.
-
----
-
-## Paso 7: Guardar el Paciente
-
-1. Revisa que toda la información esté correcta
-2. Haz clic en el botón **verde "Guardar"**
-3. Espera unos segundos mientras el sistema procesa
-4. Verás un mensaje verde: **"Paciente creado correctamente"**
-5. El sistema te llevará automáticamente a la ficha del paciente recién creado
-
----
-
-## Paso 8: ¿Qué Hacer Después de Crear el Paciente?
-
-Una vez creado el paciente, puedes:
-
-### Agendar un Turno
-
-Si el paciente llamó para pedir un turno:
-
-1. Ve al módulo **"Agenda"**
-2. Crea una nueva cita para este paciente
-
-### Completar Antecedentes Médicos
-
-Si es la primera consulta:
-
-1. En la ficha del paciente, ve a **"Expediente"**
-2. Haz clic en **"Antecedentes"**
-3. Registra alergias, enfermedades, medicación
-
-### Subir Fotos o Radiografías
-
-1. Ve a **"Expediente"** → **"Multimedia"**
-2. Sube las fotos o archivos del paciente
-
----
-
-## Errores Comunes y Soluciones
-
-### Error: "El email no es válido"
-
-**Causa**: El formato del correo está mal escrito.
-
-**Solución**: Verifica que tenga el formato correcto: [nombre@dominio.com](mailto:nombre@dominio.com)
-
-### Error: "El número de HC ya existe"
-
-**Causa**: Ya hay otro paciente con ese número de historia clínica.
-
-**Solución**:
-
-- Usa un número diferente
-- O verifica si el paciente ya está registrado (sería un duplicado)
-
-### Error: "Falta completar campos obligatorios"
-
-**Causa**: Hay campos con asterisco (\*) que están vacíos.
-
-**Solución**: Revisa el formulario y completa todos los campos marcados con \*.
-
-### El botón "Guardar" no hace nada
-
-**Causa**: Hay errores en el formulario que debes corregir primero.
-
-**Solución**: Lee los mensajes de error en rojo y corrígelos.
-
----
-
-## Consejos y Mejores Prácticas
-
-### ✅ HACER
-
-- **Verificar antes de crear**: Busca siempre primero para evitar duplicados
-- **Pedir documento**: Es el dato más confiable para identificar personas
-- **Completar email y teléfono**: Permite enviar recordatorios automáticos
-- **Usar HC secuencial**: Facilita la organización (001, 002, 003...)
-- **Confirmar datos con el paciente**: Lee en voz alta para verificar
-
-### ❌ NO HACER
-
-- **No crear duplicados**: Si ya existe, edita el existente
-- **No inventar datos**: Si el paciente no quiere dar un dato opcional, déjalo vacío
-- **No usar HC de otro paciente**: Cada número debe ser único
-- **No apurarse**: Tómate el tiempo para cargar bien los datos
-
----
-
-## Tiempo Estimado
-
-Una vez que practicas, crear un paciente te toma **2-3 minutos**.
-
----
-
-## Preguntas Frecuentes
-
-### ¿Puedo editar los datos después?
-
-**Sí**, puedes editar la información del paciente cuando quieras:
-
-1. Busca el paciente en la lista
-2. Haz clic en el botón de **editar** (lápiz amarillo)
-3. Modifica lo que necesites
-4. Guarda los cambios
-
-### ¿Qué pasa si el paciente no tiene email?
-
-**No hay problema**. El campo email no es obligatorio. Simplemente déjalo vacío.
-
-Sin email, no podrás:
-
-- Enviar presupuestos por correo
-- Enviar recordatorios automáticos por email
-
-Pero podrás:
-
-- Enviar recordatorios por WhatsApp (usando el teléfono)
-- Imprimir presupuestos y dárselos en mano
-
-### ¿Puedo agregar más información después?
-
-**Sí**, la ficha del paciente tiene muchas más secciones que completarás con el tiempo:
-
-- Antecedentes médicos
-- Fotos y radiografías
-- Presupuestos
-- Evoluciones
-
-Este tutorial solo cubre la creación básica.
-
-### ¿Qué pasa si me equivoco al crear un paciente?
-
-Si te das cuenta inmediatamente:
-
-- Edita el paciente y corrige el error
-
-Si creaste un paciente duplicado por error:
-
-- Contacta al administrador para eliminarlo
-- No todos los usuarios pueden eliminar pacientes (por seguridad)
-
----
-
-¿Necesitas ayuda adicional? Consulta la [sección de Preguntas Frecuentes](preguntas-frecuentes) o contacta a soporte.
+La opción de crear pacientes y editarlos requiere permisos específicos en Administrador → Staff → Permisos. Si no ves el botón **Agregar paciente** o no podés editar campos, consultá la configuración con el administrador del sistema.

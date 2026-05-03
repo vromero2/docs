@@ -1,323 +1,132 @@
-# Tutorial: Cómo Notificar y Enviar Recordatorios de Citas
+---
+title: "Cómo notificar y enviar recordatorios de citas"
+description: "Avisale al paciente que tiene una cita agendada o recordásela antes del día, por email o WhatsApp."
+---
 
-Este tutorial tiene como objetivo guiar al usuario de manera ordenada y precisa en el proceso de notificación de citas y envío de recordatorios a los pacientes dentro de OCLÜ, asegurando una correcta comunicación con el paciente y un adecuado control de la asistencia a los turnos agendados.
-
-A lo largo de este instructivo se detallan los pasos necesarios para notificar al paciente al momento de crear una cita, así como también para enviar recordatorios por email o WhatsApp a citas previamente agendadas. El correcto uso de esta funcionalidad permite mantener al paciente informado, generar confirmaciones de asistencia y reducir significativamente la cantidad de inasistencias en la clínica.
-
-Este proceso resulta fundamental para llevar un seguimiento claro de las citas, optimizar la gestión de la agenda profesional y mejorar la experiencia general del paciente. Asimismo, contribuye a una comunicación ordenada, profesional y eficiente entre la clínica y los pacientes.
+OCLÜ te permite avisarle al paciente sobre su cita de tres formas: en automático al crear o editar la cita (vía email), como recordatorio manual por email desde el detalle de la cita, o como recordatorio manual por WhatsApp. Esta guía cubre las tres y te muestra cuándo conviene usar cada una.
 
 <iframe src="https://www.youtube.com/embed/bXVfYcN6sUg" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
-## ¿Cuándo Usar Este Tutorial?
+## Cuándo usarlo
 
-- Acabas de agendar una cita y querés avisarle al paciente
-- Querés recordarle a un paciente una cita programada para los próximos días
-- Necesitas confirmar la asistencia de pacientes con citas en estado "Pendiente"
-- Querés reducir las inasistencias enviando recordatorios anticipados
-- Buscás profesionalizar la comunicación con tus pacientes
+- Apenas creás una cita nueva y querés que el paciente reciba la confirmación al instante.
+- Uno o dos días antes del turno, para recordarle al paciente que asista.
+- Cuando un paciente te pregunta si tiene cita y querés mandarle el detalle por escrito.
+- Cuando reagendás una cita y querés avisarle del nuevo horario.
+- Cuando querés dejar un registro escrito de la confirmación, en lugar de un llamado telefónico.
 
-## Diferencia entre Notificación y Recordatorio
+## Diferencia entre notificación y recordatorio
 
-Antes de comenzar, es importante distinguir ambos conceptos:
+- **Notificación:** se envía en el momento de crear o editar la cita. Confirma la reserva del horario.
+- **Recordatorio:** se envía después, generalmente uno o dos días antes del turno. Refresca la cita en la mente del paciente y reduce la tasa de ausencias.
 
-**Notificación de cita:** Es el aviso que se envía al paciente _en el mismo momento_ en que se agenda la cita por primera vez. Sirve para confirmar que el turno fue registrado correctamente.
+Ambas son acciones manuales o semi-automáticas que vos disparás desde el sistema. OCLÜ no manda recordatorios solo automáticamente, salvo que tu clínica haya configurado un flujo de Automatizaciones aparte.
 
-**Recordatorio de cita:** Es un mensaje que se envía a una cita _ya existente_, generalmente uno o dos días antes del turno, para que el paciente no se olvide de asistir.
+## Requisitos previos
 
-Ambas funciones están disponibles en OCLÜ y pueden enviarse por email o por WhatsApp.
+- La cita ya tiene que estar creada (o estar creándose en ese momento). Si no sabés cómo crear una cita, leé primero la guía **Cómo agendar un turno**.
+- El paciente tiene que tener el email cargado en su ficha personal para recibir mensajes por mail. Para WhatsApp, necesita tener el teléfono cargado con prefijo correcto. Verificalo en **Pacientes → ficha del paciente → Datos Personales → Información → Contacto**.
 
----
+## Forma 1: Notificar al crear o editar la cita
 
-# PARTE 1: Notificar al Paciente al Crear una Cita
+Esta es la forma más rápida. Sirve para confirmar la cita al paciente apenas la agendás.
 
-## Paso 1: Ir al Módulo Calendario
+### Cómo llegar
 
-- Inicia sesión en OCLÜ
-- En el menú lateral izquierdo, haz clic en **"Calendario"**
-- Se abrirá la **Vista Diaria** con la agenda de los doctores
+1. Iniciá sesión en OCLÜ.
+2. En la barra lateral izquierda, hacé clic en el ícono del calendario para entrar a la **Vista diaria**.
+3. Posicionate en el día de la cita y abrí el formulario **Agregar cita diaria** (clickeando una celda libre y eligiendo **Nueva Cita**, o con el botón `+` arriba a la derecha de la grilla).
 
-## Paso 2: Crear una Nueva Cita
+### Pasos
 
-- Selecciona la fecha en la que querés agendar la cita usando el campo **"Fecha y modo de vista"**
-- Haz clic en el botón **"\+"** ubicado en la esquina superior derecha del calendario o directamente sobre el horario libre del doctor
-- Se abrirá la ventana emergente **"Agregar cita diaria"**
+1. Completá los datos de la cita normalmente: paciente, doctor, horario, descripción, etc.
+2. Antes de guardar, mirá al final del formulario. Vas a ver un checkbox que dice **Notificar de inmediato vía email**.
+3. Tildá el checkbox.
 
-## Paso 3: Completar el Formulario de Cita
+<Frame>
+  ![Captura De Pantalla 2026 05 03 162759](/images/Captura-de-pantalla-2026-05-03-162759.png)
+</Frame>
 
-### Paciente \*
+4. Hacé clic en el botón azul **Agregar** para guardar la cita.
+5. Apenas se guarde, OCLÜ envía el email de notificación al paciente con los datos de la cita (fecha, horario, profesional, modalidad, descripción).
 
-Selecciona al paciente desde el desplegable.
+> El mismo checkbox aparece cuando editás una cita existente. Si ya la habías creado sin notificar y querés avisarle al paciente al guardar el cambio, tildalo antes de presionar **Guardar cambios**.
 
-Si el paciente no existe, podés hacer clic en **"Agregar nuevo paciente"** para crearlo desde cero.
+## Forma 2: Recordatorio manual por email
 
-### Presupuesto
+Útil para mandar un aviso uno o dos días antes de la cita, o cuando creaste la cita sin notificar y después decidiste avisar.
 
-Si el paciente tiene un presupuesto activo, podés asociarlo a la cita.
+### Cómo llegar?
 
-Si no tiene ninguno, dejá el campo vacío.
+1. Entrá a la **Vista diaria** del calendario.
+2. Posicionate en el día de la cita.
+3. Hacé clic sobre el bloque de la cita en la grilla. Se abre un panel lateral derecho llamado **Detalles de la cita**.
 
-### Doctor Asignado \*
+<Frame>
+  ![Image](/images/image-240.png)
+</Frame>
 
-Selecciona el profesional que va a atender al paciente.
+### Pasos
 
-### Box Asignado
+1. En el panel **Detalles de la cita**, buscá el bloque **Enviar Recordatorio** (está debajo de la información básica de la cita).
+2. Hacé clic en el botón **Vía Email** (es el botón celeste con un ícono de sobre).
+3. OCLÜ envía el email de recordatorio al paciente en ese momento.
 
-Indica en qué consultorio o box se realizará la atención.
+## Forma 3: Recordatorio manual por WhatsApp
 
-Este campo es opcional pero recomendable para clínicas con múltiples boxes.
+Generalmente tiene mayor tasa de apertura que el email y es la opción preferida para recordatorios del día anterior.
 
-### Estado de la Cita \*
+### Pasos
 
-Selecciona el estado inicial:
+1. Desde el mismo panel **Detalles de la cita** (clickeando la cita en la grilla), buscá el bloque **Enviar Recordatorio**.
+2. Hacé clic en el botón **Vía WhatsApp** (botón verde con ícono de WhatsApp).
+3. OCLÜ envía el mensaje al número cargado en la ficha del paciente.
 
-- **Pendiente:** El paciente todavía no confirmó su asistencia (color amarillo)
-- **Confirmado:** El paciente ya confirmó que va a asistir (color verde)
-- **Cancelado:** La cita fue cancelada (color rojo)
+> Asegurate de que el teléfono del paciente tenga el prefijo del país correcto (por ejemplo \+54 para Argentina). Sin prefijo válido, el envío puede fallar.
 
-### Rango Horario
+## Resultado esperado
 
-Define la hora de inicio y la hora de fin de la cita.
+El paciente recibe el mensaje en el canal correspondiente:
 
-Por defecto el sistema sugiere un bloque de 30 minutos.
+- **Email:** llega a la casilla cargada en su ficha. Incluye fecha, horario, profesional, modalidad y descripción.
+- **WhatsApp:** llega al número cargado. Incluye los mismos datos en formato más conciso.
 
-### Descripción
+La acción queda registrada en el sistema. Podés repetir el envío las veces que necesites.
 
-Notas opcionales sobre el motivo de la cita.
+## Errores comunes
 
-Ejemplos:
+**El botón de email aparece deshabilitado:** el paciente no tiene email cargado en su ficha. Cargalo en Pacientes → ficha → Datos Personales → Contacto y volvé a intentar.
 
-- "Control mensual de ortodoncia"
-- "Limpieza y revisión general"
-- "Continuación de tratamiento de conducto"
+**El botón de WhatsApp aparece deshabilitado:** el paciente no tiene teléfono o le falta el prefijo del país. Editalo en la ficha y agregá el prefijo correcto (por ejemplo \+54).
 
-## Paso 4: Activar la Notificación por Email
+**El paciente dice que no recibió el email:** verificá que el email esté escrito sin errores de tipeo. Pediler que revise spam y promociones. Algunos proveedores (especialmente cuentas corporativas) bloquean correos automáticos.
 
-En la parte inferior del formulario verás una casilla con la leyenda **"Notificar de inmediato vía email"**.
+**Mandé varios recordatorios y el paciente recibió varios mensajes:** cada clic en el botón dispara un envío nuevo. El sistema no tiene un anti-duplicado automático. Tené criterio: lo más habitual es uno al confirmar y otro 24 a 48 horas antes.
 
-- Tildá el checkbox si querés que el paciente reciba un email automático apenas se cree la cita
-- Si lo dejás sin tildar, la cita se creará pero el paciente no recibirá ningún aviso
+## Tips y variaciones
 
-**Importante:** Para que la notificación funcione, el paciente debe tener un correo electrónico cargado en su ficha.
+- **Combinar canales:** lo más común es email para la confirmación inicial y WhatsApp para el recordatorio del día anterior. Aprovechás la formalidad del primero y la inmediatez del segundo.
+- **Plazo ideal del recordatorio:** entre 24 y 48 horas antes del turno. Más cerca puede que el paciente ya no lo lea a tiempo; más lejos, lo olvida.
+- **Turnos de pacientes nuevos:** si es la primera cita, conviene reforzar con una llamada el mismo día además del email/WhatsApp.
 
-## Paso 5: Guardar la Cita
+## Tiempo estimado
 
-- Haz clic en el botón **"Agregar"** (color azul)
-- Verás el mensaje **"Creando cita..."** en la esquina superior derecha mientras el sistema procesa la solicitud
-- Una vez creada, la cita aparecerá visible en el calendario con el color correspondiente al estado seleccionado
-- Si tildaste la casilla de notificación, el email se envía automáticamente al paciente
+10 a 20 segundos por envío manual.
 
----
+## Preguntas frecuentes
 
-# PARTE 2: Enviar Recordatorio por Email a una Cita Existente
+**¿Cuántas veces puedo mandar el recordatorio?** Las que quieras. Cada clic dispara un envío nuevo. Tené criterio para no saturar al paciente.
 
-<iframe src="https://www.youtube.com/embed/5QMQ5cepvQI" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+**¿OCLÜ manda recordatorios automáticos?** Por defecto no. Si tu clínica configuró Automatizaciones, puede haber envíos programados; consultalo con el administrador.
 
-## Paso 1: Buscar la Cita en el Calendario
+**¿Puedo personalizar el texto del email o del WhatsApp?** La plantilla la define la clínica desde Administrador → Plantillas. Cada miembro del staff envía con la plantilla configurada, no se puede editar el cuerpo en el momento del envío.
 
-- Ve al módulo **"Calendario"**
-- Navega hasta la fecha de la cita que querés gestionar
-- Localizá visualmente la cita del paciente (cada cita aparece con el nombre del paciente y un color según su estado)
+**¿Qué pasa si reagendo una cita ya notificada?** El recordatorio ya enviado no se borra. Reenvialo manualmente con el nuevo horario o tildá el checkbox de notificación al guardar el cambio.
 
-## Paso 2: Abrir los Detalles de la Cita
+**¿El paciente puede confirmar la asistencia desde el email?** Depende de la plantilla configurada. Algunas incluyen un link de confirmación que cambia el estado de la cita; otras son solo informativas.
 
-- Haz clic sobre la cita
-- Se abrirá un panel lateral derecho llamado **"Detalles de la cita"**
-- Verás la siguiente información:
-  - **Horario** de la cita
-  - **Paciente** asignado
-  - **Doctor a cargo**
-  - Botones de **Historial** y **Reagendar**
+**Diferencia entre el email y el WhatsApp:** el email queda como registro escrito y es asincrónico. El WhatsApp es más inmediato y tiene mayor tasa de apertura. Lo más común es combinarlos según la urgencia.
 
-## Paso 3: Enviar el Recordatorio por Email
+## Permisos
 
-- Dentro del panel, busca la sección **"Enviar Recordatorio"**
-- Haz clic en el botón azul **"Vía Email"**
-- El sistema procesará el envío automáticamente
-
-## Paso 4: Confirmar el Envío
-
-- En la esquina superior derecha aparecerá el mensaje **"Recordatorio enviado por email correctamente"**
-- El paciente recibirá un correo con todos los datos de su próxima cita
-
-**Importante:** El paciente debe tener un email válido cargado en su ficha. De lo contrario, el envío no se realizará correctamente.
-
----
-
-# PARTE 3: Enviar Recordatorio por WhatsApp
-
-<iframe src="https://www.youtube.com/embed/oFIcG-vQi7I" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
-
-## Paso 1: Acceder a Detalles de la Cita
-
-- Ingresá al **Calendario** y abrí la cita correspondiente haciendo clic sobre ella
-- Se desplegará el panel **"Detalles de la cita"** del lado derecho
-
-## Paso 2: Hacer Clic en "Vía WhatsApp"
-
-- Dentro de la sección **"Enviar Recordatorio"**, haz clic en el botón verde **"Vía WhatsApp"**
-- El sistema generará automáticamente un mensaje preconfigurado con los datos de la cita
-
-## Paso 3: Confirmar el Envío
-
-- Se abrirá una nueva ventana o pestaña de WhatsApp Web (o la app de WhatsApp en el celular)
-- El mensaje ya estará redactado con los datos del paciente y de la cita
-- Solo tenés que hacer clic en **"Enviar"** para que el paciente lo reciba
-
-**Importante:** El paciente debe tener un número de teléfono válido (con código de país) cargado en su ficha para que esta función opere correctamente.
-
----
-
-## ¿Qué Información Recibe el Paciente?
-
-Tanto en el email como en el WhatsApp, el paciente recibe:
-
-- **Nombre de la clínica**
-- **Nombre del paciente**
-- **Fecha y horario** de la cita
-- **Profesional** asignado
-- **Box o consultorio** (si fue completado)
-- **Datos de contacto** de la clínica para reprogramar o cancelar
-
-## Errores Comunes y Soluciones
-
-### Error: "El paciente no tiene email registrado"
-
-**Causa:** El paciente no posee correo electrónico cargado en su ficha.
-
-**Solución:**
-
-- Ve al módulo Pacientes
-- Abrí la ficha del paciente
-- Cargá el email en el campo correspondiente
-- Volvé a intentar el envío
-
-### Error: El recordatorio por WhatsApp no se envía
-
-**Causa:** El número de teléfono está mal cargado o no tiene código de país.
-
-**Solución:**
-
-- Verificá que el número incluya el código de país (ej: \+54 para Argentina)
-- Confirmá que no tenga espacios, guiones ni caracteres especiales
-- Volvé a intentar el envío
-
-### Error: El email no llega al paciente
-
-**Causa:** El correo puede haber caído en la carpeta de Spam o el email cargado es incorrecto.
-
-**Solución:**
-
-- Pedile al paciente que revise su carpeta de Spam o Correo no deseado
-- Confirmá con él que el email cargado en su ficha sea el correcto
-- Si todo está bien y no llega, contactá al equipo de soporte de OCLÜ
-
-### Error: No aparece la opción "Notificar de inmediato vía email"
-
-**Causa:** Estás viendo una cita ya creada en lugar del formulario de creación.
-
-**Solución:**
-
-- Esa opción solo aparece al **crear** una cita nueva
-- Para citas existentes, usá la opción **"Enviar Recordatorio"** dentro de los detalles de la cita
-
-## Consejos y Mejores Prácticas
-
-### ✅ HACER
-
-- **Notificar siempre que se cree una cita:** Tildá el checkbox de notificación inmediata como costumbre
-- **Enviar recordatorios 24 a 48hs antes:** Es el plazo ideal para reducir inasistencias
-- **Verificar los datos de contacto:** Antes de enviar, confirmá que el email y teléfono del paciente estén bien cargados
-- **Usar WhatsApp para casos urgentes:** Tiene mayor tasa de apertura que el email
-- **Combinar canales:** Para pacientes importantes, podés enviar ambos recordatorios (email y WhatsApp)
-
-### ❌ NO HACER
-
-- **No enviar recordatorios con demasiada anticipación:** Si lo enviás con una semana de anticipación, es probable que el paciente lo olvide
-- **No abusar de los recordatorios:** Enviar varios mensajes seguidos al mismo paciente puede generar molestias
-- **No olvidar verificar el contacto:** Un email o número mal cargado significa que el paciente no recibirá el aviso
-- **No reemplazar la confirmación verbal:** El recordatorio digital es un complemento, no un sustituto del contacto humano cuando sea necesario
-
-## Tipos de Envíos Comunes
-
-### Notificación al Crear Cita Nueva
-
-Se envía automáticamente al momento de agendar el turno.
-
-Ejemplo: El paciente sacó turno el lunes para el viernes, y recibe inmediatamente un email confirmando los datos.
-
-### Recordatorio Anticipado
-
-Se envía 24 o 48hs antes de la cita para refrescar la memoria del paciente.
-
-Ejemplo: La cita es el viernes a las 10:00, le mandás el recordatorio el jueves a la mañana.
-
-### Recordatorio el Mismo Día
-
-Se envía la mañana del día de la cita, ideal para turnos en horarios de tarde.
-
-Ejemplo: La cita es a las 17:00, mandás el recordatorio a las 9:00 de ese mismo día.
-
-### Recordatorio para Confirmar Asistencia
-
-Se envía a citas en estado **Pendiente** para que el paciente confirme su asistencia.
-
-Ejemplo: La cita está en amarillo (pendiente), enviás el recordatorio y le pedís que responda si va a asistir.
-
-## Ver Historial de Comunicaciones
-
-Para ver los recordatorios y notificaciones enviados a una cita:
-
-- Abrí los **Detalles de la cita** haciendo clic sobre ella
-- Hacé clic en el botón **"Historial"** ubicado en la parte superior del panel
-- Verás el registro de:
-  - Fecha y hora de cada envío
-  - Canal utilizado (email o WhatsApp)
-  - Estado del envío (enviado correctamente o con error)
-
-## Tiempo Estimado
-
-Notificar una cita al crearla te toma **menos de 5 segundos** (solo tildar el checkbox).
-
-Enviar un recordatorio a una cita existente te toma **entre 10 y 20 segundos** por paciente.
-
-## Preguntas Frecuentes
-
-### ¿La notificación al crear la cita es automática o tengo que activarla?
-
-No es automática. Tenés que tildar manualmente la casilla **"Notificar de inmediato vía email"** cada vez que crees una cita.
-
-Si la dejás sin tildar, la cita se crea pero el paciente no recibe ningún aviso.
-
-### ¿Puedo enviar recordatorios masivos a varios pacientes a la vez?
-
-Actualmente, los recordatorios se envían **uno por uno** desde cada cita.
-
-Si querés enviar a muchos pacientes, deberás repetir el proceso para cada uno.
-
-### ¿El recordatorio por WhatsApp se envía automáticamente o tengo que apretar enviar?
-
-El sistema **prepara** el mensaje automáticamente con los datos de la cita, pero vos tenés que hacer clic en **"Enviar"** dentro de WhatsApp para que llegue al paciente.
-
-### ¿Puedo personalizar el contenido del email o WhatsApp?
-
-El contenido es generado automáticamente por el sistema con un formato estándar.
-
-Para personalizaciones, podés contactar al equipo de OCLÜ.
-
-### ¿Qué pasa si el paciente no tiene email ni WhatsApp cargado?
-
-No vas a poder enviar el recordatorio digital.
-
-En ese caso, deberás contactarlo telefónicamente o cargar sus datos en la ficha antes de reintentar.
-
-### ¿Puedo enviar varios recordatorios a la misma cita?
-
-Sí, podés enviar tantos recordatorios como necesites haciendo clic nuevamente en los botones **"Vía Email"** o **"Vía WhatsApp"** desde los detalles de la cita.
-
-Pero recordá no abusar para no molestar al paciente.
-
-### ¿Queda registro de los recordatorios enviados?
-
-Sí, OCLÜ guarda un historial de las comunicaciones enviadas.
-
-Podés consultarlo desde el botón **"Historial"** dentro de los detalles de la cita.
+La visibilidad de los botones de notificación depende de los permisos asignados al miembro del staff desde Administrador → Staff → Permisos. Si no ves los botones **Vía Email** o **Vía WhatsApp**, verificá tu configuración.

@@ -1,323 +1,141 @@
-# Tutorial: Cómo Registrar un Pago
-
-Este tutorial tiene como objetivo **guiar al usuario de manera ordenada y precisa** en el proceso de **registro de un pago realizado por un paciente dentro de OCLÜ**, asegurando una correcta imputación del cobro y un adecuado control financiero.
-
-A lo largo de este instructivo se detallan los pasos necesarios para asociar el pago al paciente correspondiente, seleccionar el concepto o presupuesto relacionado y definir el monto, la forma de pago y la fecha de la operación. El correcto registro de los pagos permite mantener actualizada la información económica de la clínica y reflejar con exactitud los ingresos percibidos.
-
-Este proceso resulta fundamental para llevar un **seguimiento claro de los cobros**, controlar saldos pendientes y garantizar la coherencia entre la información clínica, administrativa y financiera. Asimismo, contribuye a una gestión transparente, ordenada y confiable de los movimientos económicos de la clínica.
-
+---
+title: "Cómo registrar un pago"
+description: "Aprendé a recibir un pago de un paciente desde uno o varios presupuestos, en una o varias cajas, combinando métodos de pago y monedas."
 ---
 
-## ¿Cuándo Usar Este Tutorial?
+Esta guía te muestra cómo registrar un pago en OCLÜ deseda y con qué método de pago. Soporta múltiples métodos combinados, doble moneda con cotización editable y vincula automáticamente el pago al historial financiero del paciente.
 
-- Un paciente paga por un tratamiento
-- Cobras una señ o anticipo
-- El paciente abona una cuota de su plan de pago
-- Necesitas registrar el cobro y entregar un recibo
+## Cuándo usarlo
 
----
+- Cuando un paciente abona la totalidad o parte de un tratamiento ya presupuestado.
+- Cuando un paciente da una seña al aprobar el presupuesto.
+- Cuando recibís un pago en cuotas (registrás cada cuota como un pago separado).
+- Cuando combinás métodos de pago (por ejemplo parte en efectivo y parte por transferencia).
+- Cuando registrreado. Si no, creá primero el presupuesto desde **Pacientes → ficha → Presupuestos → Agregar presupuesto** (mirá la guía **Cómo crear un presupuesto**).
+- Las cajas y bancos donde vas a depositar el pago tienen que estar configuradas en tu clínica desde **Administrador → Cajas y bancos**. Cada caja tiene asociados los métodos de pago que acepta (por ejemplo, una caja de efectivo solo acepta efectivo; una caja bancaria, transferencia).
 
-## Paso 1: Buscar al Paciente
+## Cómo llegar a esta sección
 
-1. **Inicia sesión** en OCLÜ
-2. Ve al módulo **"Pacientes"**
-3. **Busca al paciente** usando la caja de búsqueda (nombre o documento)
-4. **Haz clic en el paciente** para abrir su ficha
+1. Iniciá sesión en OCLÜ.
+2. En la barra lateral izquierda, hacé clic en el ícono de Pacientes.
+3. Buscá al paciente y hacé clic en su nombre para entrar a la ficha.
+4. En la ficha, hacé clic en la solapa **Presupuestos**.
+5. Arriba a la derecha vas a ver tres botones: **Agregar presupuesto**, **Recibir pago** y **Gestionar presupuestos**. Hacé clic en **Recibir pago**.
 
----
+> En el breadcrumb superior vas a leer **Home → Pacientes → Presupuestos → Pagos**.
 
-## Paso 2: Ir a la Sección Balance
+<Frame>
+  ![Image](/images/image-236.png)
+</Frame>
 
-1. Dentro de la ficha del paciente, verás varias pestañas en la parte superior
-2. Haz clic en la pestaña **"Balance"**
-3. Verás el resumen financiero del paciente:
-   - Total que debe (presupuestos aprobados)
-   - Total que ya pagó
-   - **Saldo pendiente** (lo que falta pagar)
-   - Historial de pagos anteriores
+## Pasos para registrar el pago
 
----
+El wizard tiene tres pasos: **Presupuestos**, **Prestaciones** y **Pago**. Un indicador arriba muestra en cuál estás.
 
-## Paso 3: Hacer Clic en "Registrar Pago"
+### Paso 1: Seleccionar a qué presupuestos imputar el pago
 
-1. Busca el botón **verde "Registrar Pago"**
-2. Haz clic
-3. Se abrirá una ventana emergente con el formulario de pago
+OCLÜ te muestra la lista de los presupuestos del paciente con cuatro columnas: Nombre del presupuesto, Doctor a cargo, Abonado y Por abonar.
 
----
+1. Tildá el checkbox del o los presupuestos que querés cancelar con este pago. Podés marcar más de uno si el paciente abona varios a la vez.
+2. Hacé clic en el botón azul **Siguiente** abajo a la derecha.
 
-## Paso 4: Completar el Formulario de Pago
+> Si los presupuestos están en monedas distintas (uno en ARS y otro en USD), tenelo en cuenta porque el paso 2 te pide elegir la moneda con la que vas a registrar el pago.
 
-### Monto \*
+<Frame>
+  ![Image](/images/image-237.png)
+</Frame>
 
-Escribe cuánto está pagando el paciente.
+### Paso 2: Seleccionar prestaciones y moneda
 
-**Ejemplos**:
+Esta pantalla te muestra el detalle de las prestaciones de los presupuestos elegidos. Arriba tenés tres campos clave:
 
-- Pago completo: El saldo pendiente total
-- Pago parcial: Una parte del total (ej: una cuota)
-- Señade anticipo: 30%, 50%, etc.
+**Moneda:** la moneda con la que vas a registrar el pago (Pesos ARS o Dólares USD). Por defecto viene Pesos ARS.
 
-**Importante**: El monto NO puede ser mayor al saldo pendiente.
+**Cotización:** si la moneda del pago difiere de la moneda del presupuesto, OCLÜ aplica esta cotización para convertir. El valor viene precargado pero lo podés editar para usar el tipo de cambio que corresponda al día (oficial, blue, MEP, lo que use tu clínica).
 
-### Moneda \*
+**Monto a pagar:** el total del pago que estás registrando. Si tildás prestaciones puntuales, el monto se completa solo. También lo podés tipear directamente.
 
-Selecciona en qué moneda paga:
+Debajo está la lista de prestaciones de cada presupuesto con su precio, lo abonado, lo que falta y un indicador de progreso.
 
-- Peso Argentino (ARS)
-- Dólar (USD)
-- Otras (según configuración)
+1. Tildá las prestaciones que se cubren con este pago. OCLÜ calcula el **Monto a abonar** por cada prestación según la cotización aplicada.
+2. Verificá que el **Total** abajo a la derecha coincida con lo que efectivamente vas a recibir.
+3. Hacé clic en **Siguiente**.
 
-**Si paga en moneda diferente a la del presupuesto**, el sistema aplicará el tipo de cambio automáticamente.
+> Si el paciente paga "a cuenta" sin imputar a una prestación específica, podés ingresar el monto manualmente sin tildar prestaciones. El saldo queda como adelanto a aplicar después.
 
-### Método de Pago \*
+### Paso 3: Caja, método de pago y confirmación
 
-Selecciona cómo paga el paciente:
+Esta es la pantalla final. Acá definís dónde se registra el dinero y cómo se recibe.
 
-- **Efectivo**: Dinero en mano
-- **Tarjeta de Débito**
-- **Tarjeta de Crédito**
-- **Transferencia Bancaria**
-- **Cheque**
-- **Mercado Pago**
-- **Otros métodos digitales**
+**Caja a usar:** elegí del dropdown la caja donde se imputa el pago. La lista de cajas la configura tu clínica (ejemplos típicos: Caja efectivo ARS, Banco ARS, Mercado pago, Banco USD).
 
-### Caja de Destino \*
+**Método de Pago:** las opciones cambian según la caja elegida. Por ejemplo:
 
-Selecciona a qué caja va el dinero:
+- Si elegís **Caja efectivo ARS**, el método disponible es **Efectivo**.
+- Si elegís **Banco ARS**, el método es **Transferencia bancaria**.
+- Si elegís una caja de Mercado Pago o procesador, los métodos son los habilitados en esa caja (débito, crédito, MP).
 
-- **Caja Principal**: Si paga en efectivo
-- **Banco Santander**: Si fue transferencia o depósito
-- **Terminal POS**: Si pago con tarjeta
+**Total a Pagar:** se completa con el monto del paso 2.
 
-**Consejo**: Cada método de pago suele ir a una caja específica.
+**Combinar métodos de pago:** si el paciente paga con más de un medio (por ejemplo, parte en efectivo y parte por transferencia), hacé clic en el botón **Agregar Método de Pago** y se suma una nueva fila. Cada fila tiene su propia caja, método y monto. OCLÜ muestra abajo dos tarjetas comparativas: **Total a pagar** y **Total pagando**. Tienen que coincidir antes de poder finalizar.
 
-### Fecha de Pago \*
+**Fecha del pago:** por defecto viene la fecha de hoy. Si registrás un pago retroactivo, cambiala desde el calendario.
 
-Por defecto aparece la fecha de hoy.
+<Frame>
+  ![Image](/images/image-238.png)
+</Frame>
 
-**Cámbiala solo si**:
+Una vez que las dos tarjetas (**Total a pagar** y **Total pagando**) muestran el mismo monto, hacé clic en el botón azul **Finalizar** abajo a la derecha.
 
-- Estás registrando un pago de días anteriores
-- El cheque tiene fecha diferida
+## Resultado esperado
 
-### Presupuesto Asociado
+OCLÜ confirma el pago y vuelve a la solapa Presupuestos del paciente. Vas a ver:
 
-Si el paciente tiene varios presupuestos activos, selecciona a cuál aplicar este pago.
+- El presupuesto al que imputaste el pago muestra el nuevo saldo restante actualizado.
+- En la solapa **Balance** del paciente aparece un nuevo movimiento "Pago recibido" con el monto, la moneda y la caja donde se imputó.
+- El pago figura en el módulo Finanzas → Ingresos del día y se suma al cierre de caja.
 
-**Si solo tiene un presupuesto**, aparecerá seleccionado automáticamente.
+## Errores comunes
 
-### Sistema de Pago en Cuotas para Presupuestos
+**El botón Siguiente no se activa en el paso 1:** no tildaste ningún presupuesto. Marcá al menos uno.
 
-Dentro del proceso de **creación de presupuestos**, el sistema incorpora la opción de **Pago en Cuotas**, que permite configurar planes de financiación de manera simple y automática.
+**El botón Finalizar está deshabilitado:** las tarjetas **Total a pagar** y **Total pagando** no coinciden. Ajustá los montos o agregá otro método de pago para cubrir la diferencia.
 
-Al activar esta opción, el usuario puede definir la **cantidad de cuotas**, establecer si el presupuesto cuenta o no con **pago adelantado**, y seleccionar la **fecha de vencimiento de la primera cuota**. A partir de estos datos, el sistema calcula automáticamente el monto correspondiente a cada cuota y genera una **vista previa del plan de pagos**, donde se detallan las fechas de vencimiento y los importes estimados.
+**No encuentro la caja correcta en el dropdown:** la lista la configura tu clínica desde Administrador → Cajas y bancos. Si falta una caja, agregala desde ahí o pedísela al administrador.
 
-Además, el sistema permite **realizar adelantos de pago**, los cuales se integran automáticamente al plan de cuotas, ajustando los montos correspondientes y brindando una mayor flexibilidad en la gestión de cobros para cada presupuesto.
+**El método de pago que necesito no aparece:** los métodos están filtrados por caja. Verificá que la caja elegida tenga ese método habilitado en su configuración.
 
-![Para El Chatcito 7](/images/Paraelchatcito7.png)
+**La cotización viene desactualizada:** el valor de cotización es editable. Modificalo manualmente al tipo de cambio del día antes de seleccionar las prestaciones.
 
-![Para El Chatcito 8](/images/Paraelchatcito8.png)
+**Registré un pago en la caja equivocada o con el método equivocado:** no podés "editar" un pago directamente. Tenés que revocarlo y volver a registrarlo correctamente. Mirá la guía **Cómo revocar un pago**.
 
-### Observaciones (Opcional)
+## Tips y variaciones
 
-Notas sobre el pago.
+- **Pago de varios presupuestos a la vez:** tildá los presupuestos en el paso 1 y elegí prestaciones de cada uno en el paso 2. El sistema imputa el pago proporcional o explícito según lo que tildes.
+- **Pago a cuenta sin imputar:** ingresá un monto en el paso 2 sin tildar prestaciones. Queda como saldo a favor del paciente que vas a poder aplicar después.
+- **Doble moneda:** si el presupuesto está en USD pero el paciente paga en ARS, elegí ARS como moneda y verificá la cotización. Si paga directamente en USD, elegí USD y aseguráte de seleccionar una caja en USD.
+- **Pago combinado en partes:** efectivo \+ transferencia es el caso más común. Usá **Agregar Método de Pago** para sumar tantos métodos como necesites.
+- **Pago retroactivo:** si el paciente pagó ayer pero recién lo cargás hoy, cambiá la fecha en el paso 3 al día real del pago. El movimiento queda registrado en la fecha correcta para los reportes financieros.
+- **Recibo:** una vez registrado, podés generar el comprobante desde la solapa Balance del paciente (ícono "Ver comprobante" en la fila del pago).
 
-**Ejemplos**:
+## Tiempo estimado
 
-- "Cuota 2 de 6"
-- "Seña 30% - Falta 70%"
-- "Pago por tratamiento de endodoncia"
+1 a 2 minutos por pago, una vez familiarizado con el wizard.
 
----
+## Preguntas frecuentes
 
-## Paso 5: Guardar y Generar Recibo
+**¿Puedo registrar un pago sin asociarlo a ningún presupuesto?** No directamente. El pago se registra desde el contexto de los presupuestos del paciente. Si querés un pago "general", podés crear un presupuesto vacío o usar el saldo a cuenta.
 
-Tienes dos opciones:
+**¿Puedo cambiar la cotización después de registrar el pago?** No. Una vez finalizado, la cotización queda fija en ese movimiento. Si te equivocaste, revocá el pago y volvé a registrarlo con la cotización correcta.
 
-### Opción A: Guardar y Generar Recibo (Recomendado)
+**¿Cuándo se ven reflejados los pagos en el panel de Finanzas?** Inmediatamente. Apenas finalizás el wizard, el movimiento queda disponible en Finanzas → Ingresos.
 
-1. Haz clic en **"Guardar y Generar Recibo"**
-2. El pago se registra
-3. Se abre automáticamente el recibo en PDF
-4. Puedes:
-   - **Imprimir**: Para entregar al paciente
-   - **Descargar**: Guardar en tu computadora
-   - **Enviar por email**: Si el paciente tiene correo registrado
+**¿Los pagos en USD impactan en el balance ARS de la clínica?** Cada caja tiene su propia moneda. Un pago en USD se acumula en la caja USD; uno en ARS en la caja ARS. El reporte consolidado en Finanzas te permite ver totales por moneda.
 
-### Opción B: Solo Guardar
+**¿Puedo dividir un pago entre dos pacientes?** No. Cada pago corresponde a un único paciente y se registra desde su ficha. Si hay un caso especial, registralo a uno y dejá una nota en observaciones.
 
-1. Haz clic en **"Guardar"**
-2. El pago se registra pero NO se genera recibo
-3. Útil si vas a generar el recibo después
+**¿Cómo entrego el comprobante al paciente?** Después de registrar el pago, andá a la solapa Balance del paciente. En la fila del pago hacé clic en el ícono "Ver comprobante" para descargar o imprimir.
 
----
+## Permisos
 
-## Paso 6: Entregar el Recibo al Paciente
-
-1. **Si imprimiste**: Entrega el comprobante físico
-2. **Si enviaste por email**: Confirma que lo haya recibido
-3. **Guarda una copia**: El sistema automáticamente archiva el recibo digital
-
----
-
-## ¿Qué Muestra el Recibo?
-
-El recibo profesional incluye:
-
-- **Número de recibo único** (ej: REC-001)
-- **Fecha de emisión**
-- **Datos de la clínica** (nombre, dirección, teléfono)
-- **Datos del paciente** (nombre completo, documento)
-- **Detalle del pago**:
-  - Monto pagado
-  - Moneda
-  - Método de pago
-  - Concepto (presupuesto o tratamiento)
-- **Saldo anterior** (cuánto debía antes)
-- **Saldo actual** (cuánto debe ahora)
-
----
-
-## Errores Comunes y Soluciones
-
-### Error: "El monto excede el saldo pendiente"
-
-**Causa**: Intentaste registrar más dinero del que el paciente debe.
-
-**Solución**:
-
-- Verifica cuánto es el saldo pendiente real
-- Ingresa un monto igual o menor
-- Si el paciente pagó de más, habla con el administrador
-
-### No puedo generar el recibo
-
-**Causa**: Faltan datos del paciente o de la clínica.
-
-**Solución**:
-
-- Verifica que el paciente tenga nombre, apellido y documento
-- Confirma que la clínica tenga datos completos en Administración
-
-### El recibo no se imprime
-
-**Causa**: Problema con la impresora o navegador.
-
-**Solución**:
-
-- Descarga el PDF y ábrelo con Adobe Reader
-- Verifica que la impresora esté conectada
-- Intenta desde otro navegador
-
----
-
-## Consejos y Mejores Prácticas
-
-### ✅ HACER
-
-- **Registrar inmediatamente**: No dejes pagos sin registrar
-- **Entregar siempre recibo**: Es obligatorio por ley
-- **Verificar método de pago**: Confirma con el paciente cómo pagó
-- **Contar el efectivo**: Verifica que el monto sea correcto antes de registrar
-- **Anotar observaciones**: Ayuda a recordar detalles del pago
-
-### ❌ NO HACER
-
-- **No registrar pagos "al ojo"**: Usa siempre el sistema
-- **No olvidar entregar recibo**: El paciente tiene derecho a un comprobante
-- **No confundir cajas**: El efectivo va a Caja, las transferencias a Banco
-- **No registrar pagos futuros**: Solo registra pagos ya recibidos
-
----
-
-## Tipos de Pago Comunes
-
-### Pago Completo
-
-El paciente paga todo lo que debe de una vez.
-
-**Ejemplo**: Debe $50,000 y paga $50,000 completos.
-
-### Pago en Cuotas
-
-El paciente paga una parte cada mes.
-
-**Ejemplo**: Debe $60,000 y paga 6 cuotas de $10,000.
-
-Debes registrar cada cuota cuando la pague.
-
-### Seña o Anticipo
-
-El paciente paga una parte para confirmar el tratamiento.
-
-**Ejemplo**: Debe $100,000 y da una seña del 30% ($30,000).
-
-Registra la seña y luego el resto cuando lo pague.
-
-### Pago por Sesión
-
-El paciente paga después de cada consulta.
-
-**Ejemplo**: Cada sesión cuesta $5,000. Registra $5,000 después de cada visita.
-
----
-
-## Ver Historial de Pagos
-
-Para ver todos los pagos anteriores del paciente:
-
-1. En la pestaña **"Balance"**
-2. Desplázate hacia abajo
-3. Verás la tabla **"Historial de Pagos"** con:
-   - Fecha de cada pago
-   - Monto
-   - Método de pago
-   - Recibo generado (puedes hacer clic para verlo)
-
----
-
-## Tiempo Estimado
-
-Registrar un pago te toma **1-2 minutos**.
-
----
-
-## Preguntas Frecuentes
-
-### ¿Puedo editar un pago ya registrado?
-
-Normalmente **NO** se pueden editar pagos (por temas contables).
-
-Si cometiste un error:
-
-- Habla con el administrador
-- Puede anular el pago y crear uno nuevo
-
-### ¿Qué pasa si el paciente no tiene presupuesto aprobado?
-
-El sistema puede impedirte registrar el pago.
-
-**Solución**:
-
-- Primero crea y aprueba el presupuesto
-- Luego registra el pago
-
-### ¿Puedo registrar un pago en efectivo y tarjeta al mismo tiempo?
-
-No en una sola transacción.
-
-**Solución**:
-
-- Registra dos pagos separados
-- Uno por efectivo y otro por tarjeta
-
-### ¿El recibo tiene validez legal?
-
-Sí, los recibos generados por OCLÜ son comprobantes válidos.
-
-Contienen todos los datos requeridos por ley.
-
----
-
-¿Necesitas ayuda adicional? Consulta la [sección de Preguntas Frecuentes](preguntas-frecuentes.mdx) o contacta a soporte.
+La capacidad de registrar pagos, cambiar cotización, elegir cualquier caja o revocar pagos depende de los permisos del miembro del staff. Configuralos desde Administrador → Staff → Permisos. Si no ves el botón **Recibir pago** o algún campo del wizard, consultá con el administrador.

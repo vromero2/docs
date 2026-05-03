@@ -1,378 +1,132 @@
-# Tutorial: Cómo Agendar un Turno
-
-Este tutorial tiene como objetivo **guiar al usuario paso a paso** en el proceso de **agendar un turno para un paciente dentro de OCLÜ**, asegurando una correcta carga de la información y una gestión eficiente de las citas.
-
-A lo largo de este instructivo se detallan las acciones necesarias para seleccionar al paciente, definir el profesional y el horario correspondiente, y registrar los datos asociados a la cita. El tutorial está diseñado para facilitar el uso del sistema, minimizando errores y optimizando el tiempo de gestión administrativa.
-
-<iframe src="https://www.youtube.com/embed/qqTkuotSP_A" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
-
+---
+title: "Cómo agendar un turno"
+description: "Aprendé a crear una cita en el calendario, asignarla a un profesional y un box, definir si es presencial o virtual, y notificar al paciente en el mismo paso."
 ---
 
-## ¿Cuándo Usar Este Tutorial?
+Esta guía te muestra cómo cargar un turno desde la vista diaria del calendario de OCLÜ. Vas a ver las tres formas de iniciar la creación, qué información completar en el formulario y cómo notificar al paciente automáticamente al guardar. Es el flujo más usado del sistema y conviene dominarlo bien.
 
-- Un paciente llama para solicitar un turno
-- Un paciente pide turno en persona
-- Necesitas agendar la próxima consulta después de una atención
-- Quieres bloquear un horario en la agenda
+## Cuándo usarlo
 
----
+- Cuando un paciente nuevo pide una cita y necesitás reservarle el horario.
+- Cuando un paciente conocido vuelve a la clínica para una sesión de tratamiento, control o consulta.
+- Cuando un paciente se acerca al mostrador y querés cargarle el turno en el momento.
+- Cuando estás organizando la agenda del día siguiente y completando los huecos libres.
 
-## Paso 1: Ir al Módulo de Agenda
+## Requisitos previos
 
-1. **Inicia sesión** en OCLÜ
-2. En el **menú lateral izquierdo**, haz clic en **"Agenda"**
-3. Verás el calendario con los turnos ya agendados
+- Tener al paciente cargado en el sistema. Si no está cargado, lo podés crear en el momento desde el mismo formulario de la cita usando el botón **Agregar nuevo paciente**.
+- Que el día y horario en el que querés agendar caigan dentro del horario hábil del profesional. Si no, OCLÜ te muestra una advertencia y no te deja agendar (los bloqueos y horarios fuera de la jornada se ven con líneas diagonales en la grilla).
 
----
+## Cómo llegar a esta sección
 
-## Paso 2: Elegir la Vista del Calendario
+1. Iniciá sesión en OCLÜ.
+2. En la barra lateral izquierda, hacé clic en el primer ícono (un calendario). Te lleva a la **Vista diaria** del calendario, que es la pantalla de trabajo principal del módulo.
 
-OCLÜ tiene dos formas de ver la agenda:
+> En el breadcrumb superior vas a leer **Home → Vista diaria**.
 
-### Vista Diaria (Recomendada para Agendar)
+<Frame>
+  ![Captura De Pantalla 2026 04 21 114550](/images/Captura-de-pantalla-2026-04-21-114550.png)
+</Frame>
 
-- Muestra todo un día completo
-- Ves los horarios de 6:00 AM a 10:00 PM
-- Ideal para encontrar huecos disponibles
+## Pasos para crear el turno
 
-### Vista Semanal
+### 1. Posicionate en el día correcto
 
-- Muestra 7 días en pantalla
-- Útil para planificar a futuro
-- No es la mejor para agendar turnos del día
+El calendario abre en el día actual. Para moverte:
 
-**Para este tutorial, usa la Vista Diaria**.
+- Cambiá la fecha desde el campo de fecha (formato DD-MM-AAAA) en la card **Fecha y modo de vista**.
+- Usá las flechas `<` y `>` arriba de la grilla para avanzar o retroceder un día.
+- Volvé al día actual con el botón **Hoy**, arriba a la derecha de la grilla.
 
----
+### 2. Abrí el formulario de nueva cita
 
-## Paso 3: Seleccionar la Fecha del Turno
+Tenés tres formas de iniciar la creación:
 
-1. En la parte superior del calendario, verás la **fecha actual**
-2. Para cambiar de día:
-   - **Botón "Anterior" (\<)**: Va al día previo
-   - **Botón "Siguiente" (\>)**: Va al día siguiente
-   - **Botón "Hoy"**: Vuelve al día de hoy
-   - **Clic en la fecha**: Abre un calendario donde eliges el día específico
+**Opción A — Click en una celda libre (la más rápida):** Hacé clic en una celda vacía de la grilla, en la columna del profesional y a la altura del horario en el que querés agendar. Se abre un modal pequeño con dos opciones: **Nueva Cita** y **Bloqueo de Agenda**. Hacé clic en **Nueva Cita**.
 
-**Selecciona el día en que el paciente quiere el turno**.
+> Esta opción ya deja preasignados el profesional de esa columna y el horario que cliqueaste. Te ahorra elegirlos a mano.
 
----
+<Frame>
+  ![Image](/images/image-234.png)
+</Frame>
 
-## Paso 4: Identificar Horarios Disponibles
+**Opción B — Botón `+` general:** Arriba a la derecha de la grilla, al lado del botón **Hoy**, hay un botón con un ícono `+`. Hacé clic ahí. Se abre el formulario completamente vacío (paciente, doctor, box, horario y descripción todos en blanco). Útil cuando la cita no responde a un horario fijo o querés cargarla sin moverte por la grilla.
 
-Observa el calendario del día seleccionado:
+**Opción C — Arrastrar para definir un rango horario:** Si querés que la cita dure más que el bloque mínimo de la grilla (media hora), mantené apretado el clic en una celda libre y arrastrá hacia abajo hasta el horario en el que querés que termine. Al soltar, se abre el modal y, al elegir Nueva Cita, el formulario aparece con el rango horario ya completo (por ejemplo 11:30 a 13:00 para una cita de 90 minutos).
 
-- **Espacios blancos/vacíos**: Horarios disponibles ✅
-- **Bloques de color**: Ya hay turnos agendados ❌
-- **Bloques grises**: Pausas o bloqueos (almuerzo, reuniones)
+### 3. Completá los datos del formulario
 
-**Busca un espacio vacío en el horario que el paciente prefiere**.
+Una vez abierto el formulario **Agregar cita diaria**, completá los siguientes campos. Los marcados con asterisco rojo (`*`) son obligatorios.
 
----
+**Paciente** (obligatorio): Hacé clic en el campo y empezá a escribir el apellido o nombre del paciente. OCLÜ te sugiere coincidencias en una lista desplegable. Hacé clic en el paciente correcto.
 
-## Paso 5: Hacer Clic en el Horario Deseado
+> Si el paciente no aparece porque todavía no está cargado, hacé clic en **Agregar nuevo paciente** debajo del campo. Lo creás en el momento sin salir del formulario.
 
-Hay dos formas de crear un turno:
+**Presupuesto** (opcional): Si la cita corresponde a un tratamiento de un presupuesto ya creado, lo podés vincular acá. Eso te va a permitir, después, asociar evoluciones y pagos a ese mismo presupuesto.
 
-### Opción A: Clic Directo en el Horario (Más Rápido)
+**Doctor asignado** (obligatorio): Si abriste el formulario clickeando una celda, viene preseleccionado con el doctor de esa columna. Si lo abriste con el botón `+`, elegilo de la lista.
 
-1. Haz clic en el **espacio vacío** del horario que quieres
-2. Se abrirá el formulario con la fecha y hora ya completadas
-3. Salta al Paso 6
+**Box asignado** (opcional): Si tu clínica trabaja con boxes (consultorios), elegí cuál se usa para esta cita. Si no usás boxes, dejalo vacío.
 
-### Opción B: Botón "Nueva Cita"
+**Estado de la cita** (obligatorio): Por defecto viene en **Pendiente**. El sistema trae tres estados predeterminados: **Pendiente**, **Confirmado** y **Cancelado**. Cualquier otro estado que veas (por ejemplo Reagendado, En curso, etc.) es personalizado y se crea desde Administrador → Estados de calendario. Lo más habitual al crear una cita nueva es dejarlo en Pendiente.
 
-1. Haz clic en el botón **azul "Nueva Cita"** (parte superior)
-2. Se abrirá el formulario vacío
-3. Deberás completar fecha y hora manualmente
-4. Continúa en el Paso 6
+**Modalidad** (obligatorio): Elegí **Presencial** o **Virtual**. Por defecto viene Presencial.
 
-**Recomendamos la Opción A (clic directo) porque es más rápida**.
+**Rango horario** (obligatorio): Hora de inicio y hora de fin. Si abriste el formulario clickeando una celda o arrastrando, viene preseleccionado. Lo podés ajustar tipeando el horario directamente o usando el reloj.
 
----
+**Descripción** (opcional pero recomendado): Una nota breve sobre el motivo de la cita: "Control de tratamiento periodontal", "Conducto pieza 4.6", "Primera consulta", etc. Le ayuda al profesional a saber qué esperar antes de la atención.
 
-## Paso 6: Completar el Formulario de la Cita
+<Frame>
+  ![Image](/images/image-235.png)
+</Frame>
 
-Se abrirá una ventana emergente con el formulario.
+### 4. Decidí si querés notificar al paciente en el momento
 
-### Seleccionar Paciente \*
+Al final del formulario hay un checkbox: **Notificar de inmediato vía email**. Si lo tildás, OCLÜ envía un email al paciente con la confirmación apenas guardes la cita. Si no lo tildás, podés enviarle el aviso después manualmente desde el detalle de la cita.
 
-**Si el paciente ya está registrado**:
+> Si el paciente no tiene email cargado, este checkbox no va a poder enviar la notificación. Cargalo previamente en su ficha.
 
-1. Haz clic en el campo "Paciente"
-2. Comienza a escribir el nombre o apellido
-3. Aparecerá una lista de sugerencias
-4. Haz clic en el paciente correcto
+### 5. Guardá la cita
 
-**Si el paciente NO está registrado**:
+Hacé clic en el botón azul **Agregar**, abajo a la derecha del formulario. La ventana se cierra y la cita aparece en la grilla del calendario en la columna del profesional y el horario indicados, con el color que corresponde al estado.
 
-1. Haz clic en **"Crear paciente"** (en el mismo formulario)
-2. Completa sus datos básicos
-3. Guarda
-4. El paciente quedará seleccionado automáticamente
+## Resultado esperado
 
-### Fecha \*
+La nueva cita aparece como un bloque de color en la grilla del calendario, mostrando el nombre del paciente y el horario. Si tildaste **Notificar de inmediato vía email**, el paciente recibe un mail con los datos de la cita en los segundos siguientes.
 
-Ya debería estar completada si hiciste clic en el horario.
+## Errores comunes
 
-**Si necesitas cambiarla**:
+**"No puedes agendar citas fuera de los horarios hábiles":** clickeaste una celda en zona rayada (líneas diagonales) o en un día en el que el profesional no atiende. Mové la cita a un horario hábil o ajustá la disponibilidad del profesional desde Administrador → Staff → Configuración de horarios.
 
-1. Haz clic en el campo de fecha
-2. Selecciona el día en el calendario
-3. Haz clic en "Aceptar"
+**El paciente no aparece al buscar:** verificá que esté escrito correctamente el apellido. Si confirmás que no existe, usá **Agregar nuevo paciente** desde el mismo formulario o cargalo previamente en Pacientes.
 
-### Hora de Inicio \*
+**El sistema rechaza la cita por superposición:** ya hay otro turno en ese horario para el mismo profesional o box. O lo movés a otro horario, o habilitás el solapamiento de citas (sobreturnos) desde Administrador → Staff (por profesional) o Administrador → Clínicas → Configuración de boxes (por box).
 
-La hora en que comienza el turno.
+**Tildé "Notificar" pero el paciente no recibió el mail:** revisá que el email cargado en la ficha del paciente esté escrito correctamente y pedile que mire también la carpeta de spam o promociones.
 
-**Ya debería estar completada si hiciste clic en el horario**.
+## Tips y variaciones
 
-**Si necesitas cambiarla**:
+- **Para ver los datos del paciente sin salir de la cita:** una vez creada, abrila clickeando el bloque y vas a ver accesos directos a Datos Personales, Multimedia, Evoluciones y Presupuestos del paciente.
+- **Para reagendar una cita existente arrastrándola:** ver guía relacionada **Cómo reagendar una cita arrastrándola**.
+- **Para extender o acortar la duración de una cita ya creada:** ver guía relacionada **Cómo estirar la duración de una cita**.
+- **Para crear un bloqueo en lugar de una cita:** desde el mismo modal del paso 2, elegí **Bloqueo de Agenda** en vez de Nueva Cita.
 
-1. Haz clic en el campo de hora
-2. Selecciona la hora y minutos
-3. Haz clic en "Aceptar"
+## Tiempo estimado
 
-**Ejemplo**: 09:00, 14:30, 16:00
+1 a 2 minutos por cita, una vez familiarizado con el flujo.
 
-### Duración \*
+## Preguntas frecuentes
 
-Cuánto tiempo durará el turno.
+**¿Puedo agendar para más de un paciente a la vez?** No. Cada cita corresponde a un paciente. Para agendar varias citas seguidas, repetí el flujo o usá el método de arrastre para reservar bloques largos y después subdividir.
 
-Opciones comunes:
+**¿Qué pasa si me equivoco al guardar?** Hacé clic en el bloque de la cita en la grilla y se abre el panel de detalle. Desde ahí podés editar todos los campos, cambiar el estado, o eliminar la cita.
 
-- **15 minutos**: Consultas rápidas
-- **30 minutos**: Consulta estándar
-- **1 hora**: Tratamientos largos
-- **1:30 horas**: Endodoncias, cirugías
-- **Personalizado**: Escribe el tiempo exacto
+**¿La modalidad Virtual genera un link de videollamada automático?** Esto depende de la integración configurada en tu clínica. Consultá con el administrador del sistema o la documentación del módulo de telemedicina.
 
-**El sistema calculará automáticamente la hora de fin**.
+**¿Puedo crear citas recurrentes (todas las semanas a la misma hora)?** Por ahora hay que crearlas una por una. Para agilizar repeticiones podés copiar la información manualmente.
 
-**Ejemplo**: Si la hora de inicio es 09:00 y la duración es 30 min, el turno será de 09:00 a 09:30.
+**¿Puedo crear una cita sin paciente cargado?** No. El paciente es un campo obligatorio. Si necesitás "reservar" un hueco sin paciente definido, usá un Bloqueo de Agenda con un motivo descriptivo.
 
-### Doctor (Opcional)
+## Permisos
 
-Si tu clínica tiene varios profesionales, selecciona quién atenderá:
-
-1. Haz clic en el campo "Doctor"
-2. Selecciona de la lista
-3. El turno aparecerá en la columna de ese doctor en el calendario
-
-**Si solo hay un doctor**, este campo puede no aparecer o estar pre-seleccionado.
-
-### Motivo de la Consulta
-
-Anota por qué viene el paciente.
-
-**Ejemplos**:
-
-- Primera consulta
-- Control
-- Dolor molar inferior derecho
-- Continuar tratamiento de conducto
-- Colocación de corona
-- Limpieza dental
-
-**Uso**: Ayuda al doctor a prepararse antes de atender.
-
-### Estado del Turno
-
-Indica en qué situación está el turno.
-
-Opciones comunes:
-
-- **Pendiente**: Recién creado, no confirmado
-- **Confirmada**: El paciente confirmó que vendrá
-- **En curso**: El paciente está siendo atendido ahora
-- **Completada**: La atención finalizó
-- **Cancelada**: Se anuló el turno
-- **No asistió**: El paciente no vino
-
-**Para un turno nuevo, selecciona "Pendiente"** (es lo más común).
-
-### Observaciones (Opcional)
-
-Notas adicionales sobre el turno.
-
-**Ejemplos**:
-
-- "Paciente llegará 15 minutos antes"
-- "Traer radiografía panorámica"
-- "Llamar un día antes para confirmar"
-
----
-
-## Paso 7: Guardar el Turno
-
-1. **Revisa que todos los datos sean correctos**:
-   - Paciente
-   - Fecha y hora
-   - Duración
-   - Doctor (si aplica)
-2. **Haz clic en el botón verde "Guardar"**
-3. Verás un mensaje verde: **"Cita creada correctamente"**
-4. El turno aparecerá en el calendario como un **bloque de color**
-
----
-
-## Paso 8: Confirmar con el Paciente
-
-Después de agendar:
-
-1. **Repite en voz alta** (si el paciente está presente o en el teléfono):
-   - Día: "Su turno es el lunes 15 de enero"
-   - Hora: "A las 9:00 de la mañana"
-   - Doctor: "Con el Dr. Pérez" (si corresponde)
-2. **Pregunta si tiene alguna duda**
-3. **Recuerda al paciente**:
-   - Llegar 10 minutos antes
-   - Traer documentos que necesite (estudios, radiografías)
-   - Llamar si necesita cancelar o reprogramar
-
-## ¿Qué Hacer Después de Agendar?
-
-### Si es un Paciente Nuevo
-
-1. Registra sus datos completos (si aún no lo hiciste)
-2. Pídele que llegue 15 minutos antes para completar antecedentes
-
-### Si es un Paciente Recurrente
-
-1. Verifica si tiene tratamientos pendientes
-2. Prepara su ficha antes del turno
-3. Revisa si tiene deudas pendientes
-
-### Si el Turno es para Hoy
-
-1. Márcalo como "Confirmada" cuando el paciente llegue
-2. Avisa al doctor que el paciente está esperando
-
----
-
-## Errores Comunes y Soluciones
-
-### Error: "Ya existe una cita en este horario"
-
-**Causa**: Intentaste agendar en un horario ya ocupado.
-
-**Solución**:
-
-- Elige otro horario disponible
-- O reprograma la cita existente si es necesario
-
-### Error: "El doctor no está disponible en este horario"
-
-**Causa**: El doctor no trabaja en ese día/hora.
-
-**Solución**:
-
-- Verifica los horarios de atención del doctor
-- Elige un horario dentro de su disponibilidad
-- O selecciona otro doctor
-
-### No puedo crear citas
-
-**Causa**: No tienes permiso para agendar turnos.
-
-**Solución**:
-
-- Habla con el administrador para que te otorgue el permiso "Crear citas"
-
-### El turno no aparece en el calendario
-
-**Causa**: Creaste el turno en otra fecha o con otro doctor (si hay filtros activos).
-
-**Solución**:
-
-- Verifica que estés viendo la fecha correcta
-- Si hay filtro de doctor, asegúrate de que esté en "Todos los doctores"
-
----
-
-## Consejos y Mejores Prácticas
-
-### ✅ HACER
-
-- **Confirmar horarios en voz alta**: Evita malentendidos
-- **Dejar espacios entre turnos**: Al menos 10 minutos para no atrasarse
-- **Anotar el motivo**: Ayuda al doctor a prepararse
-- **Verificar teléfono del paciente**: Para poder contactarlo si es necesario
-- **Actualizar estados**: Marca como "Confirmada" cuando el paciente confirme
-
-### ❌ NO HACER
-
-- **No sobrecargar la agenda**: Respeta los tiempos de cada tratamiento
-- **No agendar en pausas**: Respeta horarios de almuerzo o descanso
-- **No prometer horarios sin verificar**: Primero mira la agenda, luego confirma
-- **No olvidar guardar**: Siempre haz clic en "Guardar"
-
----
-
-## Reprogramar o Cancelar un Turno
-
-### Para Reprogramar
-
-1. Haz clic en el turno en el calendario
-2. Selecciona **"Editar"**
-3. Cambia la fecha u hora
-4. Guarda
-
-**O más rápido**: Arrastra el bloque del turno a otro horario (solo en vista diaria).
-
-### Para Cancelar
-
-1. Haz clic en el turno en el calendario
-2. Selecciona **"Eliminar"** o cambia el estado a **"Cancelada"**
-3. Confirma la acción
-
-**Consejo**: Es mejor cambiar el estado a "Cancelada" que eliminar, así queda registro.
-
----
-
-## Tiempo Estimado
-
-Una vez que practicas, agendar un turno te toma **1-2 minutos**.
-
----
-
-## Preguntas Frecuentes
-
-### ¿Puedo agendar múltiples turnos para el mismo paciente?
-
-**Sí**, un paciente puede tener todos los turnos que necesite. Simplemente crea una cita para cada consulta.
-
-### ¿Qué pasa si el paciente llega fuera de horario?
-
-Si el paciente llega tarde:
-
-1. Si aún puedes atenderlo, déjalo como está
-2. Si necesitas moverlo, edita la hora del turno
-3. Si no puedes atenderlo, cancela y reagenda
-
-### ¿Cómo bloqueo un horario que no quiero que se use?
-
-Para bloquear un horario (ej: almuerzo, reunión):
-
-1. Haz clic en el botón **"Agregar Pausa"**
-2. Selecciona fecha, hora de inicio y fin
-3. Escribe el motivo ("Almuerzo", "Reunión", etc.)
-4. Guarda
-
-El bloque aparecerá en gris y no podrás agendar turnos ahí.
-
-### ¿Puedo ver la agenda de otro doctor?
-
-**Depende de tus permisos**:
-
-- Si tienes permiso "Seleccionar doctores": Sí, puedes ver todos
-- Si no: Solo verás tu propia agenda (si eres doctor) o la agenda general
-
-Para cambiar de doctor:
-
-1. Usa el filtro **"Doctor"** en la parte superior
-2. Selecciona el doctor que quieres ver
-
----
-
-¿Necesitas ayuda adicional? Consulta la [sección de Preguntas Frecuentes](preguntas-frecuentes) o contacta a soporte.
+La visibilidad de algunos botones (eliminar la cita, cambiar el estado, vincular a un presupuesto) depende de los permisos asignados al miembro del staff. Si no ves alguna opción descrita acá, consultá la configuración de permisos en Administrador → Staff.
