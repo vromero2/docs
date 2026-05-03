@@ -1,0 +1,136 @@
+---
+title: "Cómo habilitar sobreturnos"
+---
+
+Por defecto, OCLÜ no deja agendar dos citas en el mismo horario para el mismo profesional o el mismo box. Eso evita errores de doble-reserva. Pero hay situaciones en las que sí necesitás permitir que se superpongan: cuando el profesional puede atender dos pacientes en simultáneo, cuando un box es compartido por varios doctores en el mismo turno, o cuando manejás "sobreturnos" como práctica habitual de la clínica. Esta guía te muestra cómo habilitar el solapamiento, en los dos lugares donde se configura: por profesional y por box.
+
+## Cuándo usarlo
+
+- Cuando el profesional atiende a un paciente mientras el asistente prepara el siguiente en otro sillón.
+- Cuando un box (consultorio) es compartido por varios profesionales en el mismo turno con sillones distintos.
+- Cuando la clínica acepta sobreturnos como política para no rechazar pacientes urgentes.
+- Cuando un profesional hace consultas cortas en paralelo a otra atención (chequeo rápido durante una espera).
+
+> Importante: si activás el solapamiento, los **bloqueos de agenda dejan de funcionar como barrera dura**. Cualquiera puede agendar encima de un bloqueo. Tenelo en cuenta antes de habilitarlo.
+
+## Las dos configuraciones
+
+OCLÜ tiene dos lugares distintos para habilitar el solapamiento. Funcionan independientes: podés tener uno activado y el otro no, según cómo trabaje tu clínica.
+
+| Configuración | Dónde se hace | Para qué sirve |
+| --- | --- | --- |
+| Por profesional | Administrador → Staff → Configuración de horarios del profesional | Permite que ese profesional reciba más de una cita simultánea |
+| Por box | Administrador → Clínicas → Configuración de boxes → editar box | Permite que el box reciba más de una cita simultánea (para profesionales distintos en el mismo box) |
+
+Si querés solapamiento total, activá ambas. Si solo querés permitir sobreturnos al profesional pero no compartir el box, activá solo la primera. Etc.
+
+---
+
+## Configuración 1: Por profesional
+
+Permite que un profesional reciba dos o más citas en el mismo horario.
+
+### Cómo llegar
+
+1. En la barra lateral izquierda, expandí el menú **Administrador** y hacé clic en **Staff**.
+2. En el listado de staff, buscá al profesional que querés configurar.
+3. En la columna **Acciones** del profesional, hacé clic en el ícono que abre su menú de acciones.
+4. Entrá a **Configuración de horarios**.
+
+### Pasos
+
+1. Una vez dentro de la configuración de horarios del profesional, mirá arriba de todo: vas a ver una sección titulada **Configuración de agenda**.
+2. Dentro de esa sección hay un checkbox que dice **Permitir solapamiento de citas**.
+3. Tildá el checkbox para activarlo.
+4. Guardá los cambios con el botón correspondiente (típicamente **Guardar** abajo de la pantalla).
+
+<Frame>
+  ![Image](/images/image-255.png)
+</Frame>
+
+### Resultado
+
+A partir del momento en que guardás, OCLÜ va a permitir agendar más de una cita en el mismo horario para ese profesional. Si arrastrás una cita existente al horario de otra, también lo va a permitir.
+
+> Para desactivarlo: desmarcá el checkbox y guardá. Las citas que ya estaban superpuestas no se mueven, pero no vas a poder agregar nuevas superpuestas hasta volver a activar.
+
+---
+
+## Configuración 2: Por box
+
+Permite que un box (consultorio) reciba dos o más citas en el mismo horario, posiblemente con profesionales distintos.
+
+### Cómo llegar
+
+1. En la barra lateral izquierda, expandí el menú **Administrador** y hacé clic en **Clínicas**.
+2. En el listado de clínicas, buscá la clínica donde está el box.
+3. En la columna **Acciones** de la clínica, hacé clic en el menú de acciones.
+4. Entrá a **Configuración de boxes**.
+
+### Pasos
+
+1. En el listado de boxes de la clínica, buscá el box que querés configurar.
+2. Hacé clic en el ícono de **Editar** del box.
+3. En el formulario de edición del box, vas a encontrar un checkbox que dice **Permitir solapamiento de citas**.
+4. Tildá el checkbox para activarlo.
+5. Confirmá con **Guardar**.
+
+<Frame>
+  ![Image](/images/image-256.png)
+</Frame>
+
+### Resultado
+
+OCLÜ va a permitir que el box reciba más de una cita simultánea, independientemente de qué profesional sea el dueño de cada cita.
+
+---
+
+## Cómo se ve cuando hay solapamiento activo
+
+En la grilla del calendario, las citas superpuestas aparecen lado a lado dentro de la misma columna del profesional (o del box, según la vista que tengas activada). Si hay tres o más, OCLÜ las muestra apretadas y podés clickear cualquiera para abrir su detalle.
+
+<Frame>
+  ![Image](/images/image-257.png)
+</Frame>
+
+## Errores comunes
+
+**Activé el checkbox pero el sistema sigue rechazando el sobreturno:** verificá que hayas guardado los cambios. Algunos browsers no aplican el cambio si no clickeás Guardar explícitamente. También revisá que estés activando el checkbox en el lugar correcto: por profesional Y por box son configs distintas.
+
+**Activé por profesional pero la cita igual se rechaza:** puede ser que el conflicto esté en el box, no en el profesional. Activá también la opción del box.
+
+**No encuentro el checkbox en Configuración de horarios:** asegurate de mirar la sección **Configuración de agenda** arriba de todo. A veces queda fuera de la vista por el scroll.
+
+**Después de activar, los bloqueos de agenda dejaron de funcionar:** es esperado. Con solapamiento activo, los bloqueos no son barrera dura. Si los necesitás estrictos, desactivá el solapamiento para ese profesional o box.
+
+**Activé sin querer y ahora hay dos citas en el mismo horario que no quería:** desactivá el checkbox para evitar futuras superposiciones, y desde el calendario reagendá manualmente las citas conflictivas a horarios distintos.
+
+## Tips y variaciones
+
+- **Política de sobreturnos:** definí internamente cuándo conviene activar el solapamiento. No es lo mismo "puedo recibir un sobreturno urgente excepcional" que "trabajo en paralelo todos los días". Para el primer caso, activalo solo cuando lo necesites; para el segundo, dejalo permanentemente activo.
+- **Combinación con boxes:** si tu clínica usa boxes, conviene tener una política coherente entre profesional y box. Si activás solapamiento por profesional pero no por box, el sistema va a rechazar los sobreturnos cuando colisione la asignación del box.
+- **Permitir solo por profesional puntual:** podés tener algunos profesionales con solapamiento activado y otros no. Cada configuración es individual.
+- **Auditoría:** revisá periódicamente quiénes tienen solapamiento activo. Es un permiso que conviene revisar para evitar accidentes en el calendario.
+- **Combinación con bloqueos:** si necesitás que el profesional tenga sobreturnos en consultas pero NO durante un evento específico, lo más limpio es desactivar el solapamiento durante el rango del evento (con un bloqueo) y reactivarlo después. Es trabajoso pero evita errores.
+
+## Tiempo estimado
+
+30 segundos por configuración (profesional o box) una vez que estás en la pantalla.
+
+## Preguntas frecuentes
+
+**¿Puedo activar el solapamiento solo para un día específico?** No directamente. La configuración es global para el profesional o el box. Para un día específico, podés activar el solapamiento, agendar el sobreturno, y desactivarlo de nuevo si querés mantener la regla estricta el resto de los días.
+
+**¿Cuántas citas puedo superponer en el mismo horario?** No hay límite técnico. El sistema permite cuantas quepan visualmente en la columna. Pero por sentido común, más de 2 o 3 superposiciones se vuelven inmanejables.
+
+**¿El paciente sabe que tiene un sobreturno?** No automáticamente. Para el paciente, el aviso es igual al de cualquier turno. Si querés que sepa que es un sobreturno, aclaralo aparte por mensaje.
+
+**¿El solapamiento afecta los pagos a doctores o reportes?** No directamente. Los pagos y reportes se calculan según las citas y prestaciones registradas, independientemente de si están solapadas o no.
+
+**¿Por qué hay dos configuraciones distintas (por profesional y por box)?** Porque hay clínicas que solo trabajan con profesionales (sin boxes) y otras que comparten boxes entre profesionales. Las dos configuraciones permiten cubrir ambos casos sin conflicto.
+
+**¿Qué pasa si tengo un box compartido y un profesional con horarios solapados?** Ambas configuraciones se respetan independientemente. Si el profesional permite solapamiento pero el box no, la cita se rechaza por el box. Tienen que coincidir las dos para que funcione.
+
+## Permisos
+
+Cambiar la configuración de horarios del staff y la configuración de boxes requiere permisos avanzados. Configuralos desde Administrador → Staff → Permisos. Si no podés acceder a Configuración de horarios o Configuración de boxes, consultá con el administrador.
