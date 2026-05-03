@@ -1,0 +1,120 @@
+---
+title: "Cómo leer el Balance financiero del paciente"
+---
+
+La solapa **Balance** de la ficha del paciente te muestra el historial completo de movimientos financieros: las prestaciones que se le cobraron, los pagos que recibiste, los pagos revocados. Es la pantalla a la que vas cada vez que querés saber cuánto debe un paciente, qué pagó y cuándo. Esta guía te explica cómo leer cada columna y qué significa cada tipo de movimiento.
+
+## Cuándo usarlo
+
+- Cuando un paciente pregunta cuánto debe o cuánto pagó.
+- Cuando necesitás ver el comprobante de un pago específico.
+- Cuando querés revocar un pago (ver guía **Cómo revocar un pago**).
+- Cuando estás haciendo una auditoría financiera de un paciente.
+- Cuando querés ver si un paciente tiene saldo a favor o deuda en una moneda específica (ARS o USD).
+
+## Cómo llegar a esta sección
+
+1. Iniciá sesión en OCLÜ.
+2. En la barra lateral izquierda, hacé clic en el ícono de Pacientes.
+3. Buscá al paciente y hacé clic en su nombre.
+4. En la ficha, hacé clic en la solapa **Balance** (la última, a la derecha de Presupuestos).
+
+<Frame>
+  ![Image](/images/image-271.png)
+</Frame>
+
+## Qué muestra la pantalla
+
+Vas a ver una tabla con todos los movimientos del paciente en orden cronológico (los más recientes arriba). Tiene un buscador de movimientos y las siguientes columnas:
+
+- **Fecha:** cuándo ocurrió el movimiento.
+- **Detalle:** descripción del movimiento. Puede ser:
+  - El nombre de una prestación cobrada (ej: "Tratamiento de Conducto Unirradicular", "Composite Nanohíbrido Anterior"). Aparece en color y a veces como link clickeable al presupuesto.
+  - Una etiqueta verde **"Pago recibido"** cuando el paciente abonó algo.
+  - Una etiqueta **"Pago revocado"** tachada cuando un pago fue anulado.
+- **Monto:** el valor del movimiento.
+  - Negativo (rojo) cuando es una deuda (prestación cobrada).
+  - Positivo (verde) cuando es un pago recibido.
+  - Tachado cuando es un pago revocado (no afecta el saldo).
+- **Cotización:** si el movimiento involucra dos monedas (por ejemplo un pago en USD aplicado a un presupuesto en ARS), acá aparece el tipo de cambio que se usó. Si no hay conversión, queda con un guión.
+- **Usuario:** miembro del staff que registró el movimiento. En algunos pagos puede aparecer en blanco si fue anterior a la trazabilidad.
+- **Balance ARS:** el saldo acumulado del paciente en pesos hasta ese movimiento.
+- **Balance USD:** el saldo acumulado en dólares.
+- **Acciones:** dos íconos en cada fila de pago.
+
+## Los tipos de movimiento, uno por uno
+
+### 1. Prestación cobrada (deuda)
+
+Aparece en rojo con monto negativo (por ejemplo "−\$400.000,00 ARS"). En la columna Detalle vas a ver el nombre de la prestación que se le facturó al paciente (a veces como link al presupuesto donde se imputó).
+
+> Esto significa: la prestación se le cobró al paciente pero todavía no la pagó. Aumenta su deuda.
+
+### 2. Pago recibido
+
+Aparece con etiqueta verde "Pago recibido" en la columna Detalle y monto positivo verde (por ejemplo "\+\$400.000,00 ARS").
+
+> Esto significa: el paciente abonó esa cantidad. Reduce su deuda. Si supera lo que debía, queda como saldo a favor.
+
+### 3. Pago revocado
+
+Aparece tachado en gris, con etiqueta "Pago revocado" y el monto del pago original también tachado.
+
+> Esto significa: ese pago fue anulado del registro. **No afecta el saldo del paciente** (queda como si no hubiera pasado, pero visible para auditoría). Mirá la guía **Cómo revocar un pago** para entender el flujo.
+
+## Las acciones por pago
+
+En la columna **Acciones** del lado derecho, cada **pago recibido** tiene dos íconos:
+
+- **Ícono azul (Ver comprobante):** abre el comprobante del pago en una nueva ventana o lo descarga. Útil para entregar al paciente o archivar.
+- **Ícono rojo (Revocar pago):** inicia el flujo de revocación. Pide motivo y queda registrado. Hay una guía dedicada a este flujo.
+
+> Las **prestaciones cobradas** (filas rojas) y los **pagos revocados** (tachados) no tienen estas acciones, porque no son objetos pagables individualmente.
+
+## Cómo leer las columnas Balance ARS y Balance USD
+
+Las dos últimas columnas te muestran el saldo acumulado del paciente hasta ese movimiento, separado por moneda:
+
+- **Balance ARS:** suma todos los movimientos en pesos.
+- **Balance USD:** suma todos los movimientos en dólares.
+
+Vas a ver en cada fila cómo el balance va cambiando:
+
+- Si el balance está en negativo (rojo), el paciente debe.
+- Si está en cero, está al día.
+- Si está en positivo (verde), tiene saldo a favor.
+
+> Si el paciente trabaja con presupuestos en ambas monedas, mirá ambas columnas para entender su situación completa. Una puede estar en cero y la otra en deuda.
+
+## Cómo encontrar un movimiento específico
+
+Si la lista es larga, usá el **buscador de movimientos** arriba a la izquierda. Tipeá parte del nombre de la prestación o del concepto y la lista se filtra al instante.
+
+## Resultado esperado
+
+La solapa Balance te da una visión completa y cronológica del paciente. Para cualquier consulta financiera, esta es la pantalla de referencia.
+
+## Errores comunes
+
+**No veo los íconos de Acciones en algunas filas:** los íconos solo aparecen en las filas de pagos recibidos. Las prestaciones cobradas y los pagos revocados no son acciones individuales.
+
+**El balance no coincide con lo que esperaba:** verificá si hay pagos revocados (tachados) que estás contando incorrectamente. Los pagos revocados no afectan el balance final.
+
+**El paciente dice que pagó algo que no aparece:** verificá la fecha. Si el pago fue cargado por otro miembro del staff, puede estar en otra fecha. Si no aparece en absoluto, el pago no se registró y hay que cargarlo.
+
+**Aparece un balance en USD pero el paciente nunca pagó en dólares:** revisá los presupuestos del paciente. Si tiene un presupuesto en USD aunque solo le hayas cargado pagos en ARS, el balance USD muestra la deuda en esa moneda hasta que ajustes.
+
+## Tips y variaciones
+
+- **Antes de cobrar a un paciente:** abrí Balance para ver si tiene saldo a favor (puede aplicarse al cobro) o deuda anterior (sumás al cobro de hoy).
+- **Para entregar comprobantes en lote:** filtrá por fecha o concepto si necesitás varios comprobantes seguidos. Cada uno se descarga individual con el ícono azul.
+- **Auditoría mensual:** abrí Balance de pacientes que sospechás tienen inconsistencias (por ejemplo deuda muy antigua sin movimientos). El historial completo te ayuda a entender qué pasó.
+- **Si vas a revocar varios pagos:** hacelos uno por uno desde el ícono rojo. La revocación pide motivo (mínimo 10 caracteres) en cada caso.
+
+## Tiempo estimado
+
+10 a 30 segundos para abrir y consultar el balance de un paciente. 1 minuto si vas a descargar un comprobante específico.
+
+## Permisos
+
+Ver el balance suele estar disponible para todo el staff con acceso a la ficha del paciente. Las acciones de Ver comprobante y Revocar pago dependen de los permisos asignados desde Administrador → Staff → Permisos. Si no ves los íconos de acciones, consultá con el administrador.
